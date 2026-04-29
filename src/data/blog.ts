@@ -545,3 +545,15 @@ export function getUniqueCategories(): string[] {
 export function formatDate(dateStr: string): string {
   return dateStr;
 }
+
+export function getBlogImage(slug: string): string {
+  const images: Record<string, string> = {
+    'guia-comprar-piso-barcelona-10-pasos': '/images/blog/guia-comprar-piso.jpg',
+    'mejores-barrios-vivir-barcelona-2025': '/images/blog/mejores-barrios.jpg',
+    'comprar-vivienda-barcelona-extranjero': '/images/blog/comprar-extranjero.jpg',
+    'atico-o-piso-ventajas-barcelona': '/images/blog/atico-o-piso.jpg',
+    'reformas-aumentan-valor-piso-barcelona': '/images/blog/reformas.jpg',
+    'hipotecas-2025-guia-completa': '/images/blog/hipotecas.jpg',
+  };
+  return images[slug] || '/images/blog/default.jpg';
+}

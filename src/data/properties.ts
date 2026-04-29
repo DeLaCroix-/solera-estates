@@ -477,3 +477,35 @@ export function getUniqueNeighborhoods(): string[] {
 export function formatPrice(price: number, currency: string = '€'): string {
   return `${currency} ${price.toLocaleString('es-ES')}`;
 }
+
+export function getPropertyImage(slug: string, index: number = 1): string {
+  const images: Record<string, string[]> = {
+    'atico-de-lujo-pedralbes': ['/images/properties/atico-pedralbes-1.jpg', '/images/properties/atico-pedralbes-2.jpg'],
+    'piso-eixample-derecho': ['/images/properties/piso-eixample-1.jpg', '/images/properties/piso-eixample-2.jpg'],
+    'casa-moderna-sarria': ['/images/properties/casa-sarria-1.jpg', '/images/properties/casa-sarria-2.jpg'],
+    'atico-doble-gracia': ['/images/properties/atico-gracia-1.jpg', '/images/properties/atico-gracia-2.jpg'],
+    'piso-con-vistas-diagonal-mar': ['/images/properties/piso-diagonal-mar-1.jpg', '/images/properties/piso-diagonal-mar-2.jpg'],
+    'local-comercial-el-born': ['/images/properties/local-born-1.jpg', '/images/properties/local-born-2.jpg'],
+    'oficinas-representativas-gotico': ['/images/properties/oficinas-gotico-1.jpg', '/images/properties/oficinas-gotico-2.jpg'],
+    'piso-reformado-poble-sec': ['/images/properties/piso-poble-sec-1.jpg', '/images/properties/piso-poble-sec-2.jpg'],
+    'piso-sant-antoni': ['/images/properties/piso-sant-antoni-1.jpg', '/images/properties/piso-sant-antoni-2.jpg'],
+    'casa-con-piscina-les-corts': ['/images/properties/casa-les-corts-1.jpg', '/images/properties/casa-les-corts-2.jpg'],
+    'atico-reformado-gracia': ['/images/properties/atico-reformado-gracia-1.jpg', '/images/properties/atico-reformado-gracia-2.jpg'],
+    'piso-estudio-inversion-sant-marti': ['/images/properties/estudio-sant-marti-1.jpg', '/images/properties/estudio-sant-marti-2.jpg'],
+    'piso-de-lujo-passeig-gracia': ['/images/properties/piso-passeig-gracia-1.jpg', '/images/properties/piso-passeig-gracia-2.jpg'],
+  };
+  const imgs = images[slug];
+  return imgs ? imgs[Math.min(index, imgs.length - 1)] : '';
+}
+
+export function getBlogImage(slug: string): string {
+  const images: Record<string, string> = {
+    'guia-comprar-piso-barcelona-10-pasos': '/images/blog/guia-comprar-piso.jpg',
+    'mejores-barrios-vivir-barcelona-2025': '/images/blog/mejores-barrios.jpg',
+    'comprar-vivienda-barcelona-extranjero': '/images/blog/comprar-extranjero.jpg',
+    'atico-o-piso-ventajas-barcelona': '/images/blog/atico-o-piso.jpg',
+    'reformas-aumentan-valor-piso-barcelona': '/images/blog/reformas.jpg',
+    'hipotecas-2025-guia-completa': '/images/blog/hipotecas.jpg',
+  };
+  return images[slug] || '/images/blog/default.jpg';
+}
