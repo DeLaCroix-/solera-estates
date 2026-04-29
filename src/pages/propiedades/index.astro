@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PropertySearch from '../../components/PropertySearch.astro';
+import { properties, formatPrice, getUniqueTypes, getUniqueNeighborhoods } from '../../data/properties';
+
+const tipo = Astro.url.searchParams.get('tipo') || '';
+const ubicacion = Astro.url.searchParams.get('ubicacion') || '';
+const precioMin = parseInt(Astro.url.searchParams.get('precioMin') || '0');
+const precioMax = parseInt(Astro.url.searchParams.get('precioMax') || '99999999');
+
+const filtered = properties.filter(p => {
+  if (tipo && p.type !== tipo) return false;
+  if (ubicacion && p.neighborhood !== ubicacion && p.district !== ubicacion) return false;
+  if (precioMin && p.price < precioMin) return false;
+  if (precioMax && p.price > precioMax) return false;
+  return true;
+});
+
+const types = getUniqueTypes();
+const neighborhoods = getUniqueNeighborhoods();
+
+const pageTitle = tipo 
+  ? `Pisos y ${tipo}s en Venta en Barcelona | Solera Estates`
+  : 'Propiedades en Venta en Barcelona | Solera Estates';
+const pageDesc = tipo
+  ? `Encuentra los mejores ${tipo}s en venta en Barcelona. Solera Estates te ofrece una selección exclusiva de propiedades en las mejores zonas de la ciudad.`
+  : 'Explora nuestro catálogo de pisos, áticos y casas de lujo en Barcelona. Encuentra tu propiedad ideal en Eixample, Gràcia, Sarrià y más zonas exclusivas.';
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical={"https://soleraestates.com/propiedades"}>
+  <section class="pt-32 pb-8 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-8 animate-fade-up">
+        <h1 class="section-title text-white">Propiedades en Barcelona</h1>
+        <p class="section-subtitle mx-auto mt-4">
+          {filtered.length} propiedades disponibles en las mejores zonas de Barcelona
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <PropertySearch />
+
+  <section class="py-12 md:py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {filtered.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {filtered.map((property, i) => (
+            <a
+              href={`/propiedades/${property.slug}`}
+              class="group glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-solera-500/5 animate-fade-up"
+              style={`animation-delay: ${i * 0.05}s`}
+            >
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <div class={`absolute inset-0 bg-gradient-to-br ${
+                  i % 3 === 0 ? 'from-solera-500/20 to-solera-700/40' :
+                  i % 3 === 1 ? 'from-warm-500/20 to-solera-600/40' :
+                  'from-solera-400/20 to-surface-3/40'
+                }`}>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                  </div>
+                </div>
+                <div class="absolute top-3 left-3 flex gap-2">
+                  {property.featured && <span class="property-tag featured">Destacado</span>}
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.9)] to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3">
+                  <span class="text-2xl font-heading font-bold text-white">{formatPrice(property.price)}</span>
+                </div>
+              </div>
+              <div class="p-5">
+                <h2 class="text-white font-heading font-semibold text-lg mb-2 group-hover:text-solera-300 transition-colors">
+                  {property.title}
+                </h2>
+                <div class="flex items-center gap-1.5 text-slate-400 text-sm mb-4">
+                  <svg class="w-4 h-4 text-solera-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>{property.neighborhood}</span>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-700/50">
+                  <div class="flex items-center gap-4 text-slate-400 text-xs">
+                    <span>{property.size} m²</span>
+                    <span>{property.bedrooms} {property.bedrooms === 1 ? 'hab' : 'hab'}</span>
+                    <span>{property.bathrooms} baños</span>
+                  </div>
+                  <svg class="w-5 h-5 text-slate-500 group-hover:text-solera-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-20">
+          <svg class="w-16 h-16 text-slate-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <p class="text-slate-400 text-lg mb-4">No encontramos propiedades con esos filtros</p>
+          <a href="/propiedades" class="btn-primary">Ver todas las propiedades</a>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,108 @@
+---
+// Property Search Component
+---
+
+<section class="relative -mt-20 z-20 pb-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="propertySearch" class="glass-card p-6 md:p-8">
+      <h2 class="sr-only">Buscador de propiedades</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- Tipo -->
+        <div class="space-y-1.5">
+          <label class="text-xs text-slate-400 font-medium uppercase tracking-wider" for="tipo">Tipo</label>
+          <select id="tipo" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-slate-200 text-sm focus:outline-none focus:border-solera-500 focus:ring-1 focus:ring-solera-500/30 transition-colors appearance-none">
+            <option value="">Todos los tipos</option>
+            <option value="piso">Piso</option>
+            <option value="ático">Ático</option>
+            <option value="casa">Casa</option>
+            <option value="local">Local</option>
+            <option value="oficina">Oficina</option>
+          </select>
+        </div>
+        
+        <!-- Ubicación -->
+        <div class="space-y-1.5">
+          <label class="text-xs text-slate-400 font-medium uppercase tracking-wider" for="ubicacion">Ubicación</label>
+          <select id="ubicacion" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-slate-200 text-sm focus:outline-none focus:border-solera-500 focus:ring-1 focus:ring-solera-500/30 transition-colors appearance-none">
+            <option value="">Todas las zonas</option>
+            <option value="Eixample">Eixample</option>
+            <option value="Gràcia">Gràcia</option>
+            <option value="Sarrià-Sant Gervasi">Sarrià-Sant Gervasi</option>
+            <option value="Pedralbes">Pedralbes</option>
+            <option value="Sant Martí">Sant Martí</option>
+            <option value="Ciutat Vella">Ciutat Vella</option>
+            <option value="Sants-Montjuïc">Sants-Montjuïc</option>
+            <option value="Les Corts">Les Corts</option>
+          </select>
+        </div>
+        
+        <!-- Precio Min -->
+        <div class="space-y-1.5">
+          <label class="text-xs text-slate-400 font-medium uppercase tracking-wider" for="precioMin">Precio mínimo</label>
+          <select id="precioMin" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-slate-200 text-sm focus:outline-none focus:border-solera-500 focus:ring-1 focus:ring-solera-500/30 transition-colors appearance-none">
+            <option value="">Sin mínimo</option>
+            <option value="100000">100.000 €</option>
+            <option value="200000">200.000 €</option>
+            <option value="300000">300.000 €</option>
+            <option value="400000">400.000 €</option>
+            <option value="500000">500.000 €</option>
+            <option value="750000">750.000 €</option>
+            <option value="1000000">1.000.000 €</option>
+          </select>
+        </div>
+        
+        <!-- Precio Max -->
+        <div class="space-y-1.5">
+          <label class="text-xs text-slate-400 font-medium uppercase tracking-wider" for="precioMax">Precio máximo</label>
+          <select id="precioMax" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-slate-200 text-sm focus:outline-none focus:border-solera-500 focus:ring-1 focus:ring-solera-500/30 transition-colors appearance-none">
+            <option value="">Sin máximo</option>
+            <option value="200000">200.000 €</option>
+            <option value="300000">300.000 €</option>
+            <option value="400000">400.000 €</option>
+            <option value="500000">500.000 €</option>
+            <option value="750000">750.000 €</option>
+            <option value="1000000">1.000.000 €</option>
+            <option value="2000000">2.000.000 €</option>
+            <option value="5000000">5.000.000 €</option>
+          </select>
+        </div>
+        
+        <!-- Search Button -->
+        <div class="space-y-1.5 flex items-end">
+          <button id="searchBtn" class="w-full px-6 py-3 rounded-xl font-medium text-sm bg-gradient-to-r from-solera-500 to-solera-600 text-white hover:from-solera-400 hover:to-solera-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-solera-500/20">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const searchBtn = document.getElementById('searchBtn');
+  if (searchBtn) {
+    searchBtn.addEventListener('click', () => {
+      const tipo = document.getElementById('tipo').value;
+      const ubicacion = document.getElementById('ubicacion').value;
+      const precioMin = document.getElementById('precioMin').value;
+      const precioMax = document.getElementById('precioMax').value;
+      
+      const params = new URLSearchParams();
+      if (tipo) params.set('tipo', tipo);
+      if (ubicacion) params.set('ubicacion', ubicacion);
+      if (precioMin) params.set('precioMin', precioMin);
+      if (precioMax) params.set('precioMax', precioMax);
+      
+      const qs = params.toString();
+      window.location.href = '/propiedades' + (qs ? '?' + qs : '');
+    });
+
+    // Enter key triggers search
+    document.querySelectorAll('#propertySearch select').forEach(el => {
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') searchBtn.click();
+      });
+    });
+  }
+</script>

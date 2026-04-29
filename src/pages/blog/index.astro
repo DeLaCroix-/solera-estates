@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { blogPosts } from '../../data/blog';
+---
+
+<Layout
+  title="Blog Inmobiliario | Solera Estates"
+  description="Guías, consejos y novedades sobre el mercado inmobiliario en Barcelona. Descubre todo lo que necesitas saber para comprar, vender o alquilar tu propiedad."
+  canonical="https://soleraestates.com/blog"
+>
+  <section class="pt-32 pb-8 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-12 animate-fade-up">
+        <h1 class="section-title text-white">Blog Inmobiliario</h1>
+        <p class="section-subtitle mx-auto mt-4">
+          Guías, consejos y análisis del mercado inmobiliario en Barcelona para ayudarte a tomar la mejor decisión
+        </p>
+      </div>
+
+      <!-- Categories filter -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        {[...new Set(blogPosts.map(p => p.category))].map(cat => (
+          <a
+            href={`/blog?categoria=${encodeURIComponent(cat)}`}
+            class="px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-slate-400 hover:bg-solera-500/20 hover:text-solera-300 transition-all border border-slate-700/50"
+          >{cat}</a>
+        ))}
+        <a href="/blog" class="px-4 py-2 rounded-full text-sm font-medium bg-solera-500/20 text-solera-300 border border-solera-500/30 transition-all">Todos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Featured post -->
+      {blogPosts.length > 0 && (
+        <a href={`/blog/${blogPosts[0].slug}`} class="group block glass-card overflow-hidden mb-10 transition-all duration-500 hover:-translate-y-1">
+          <div class="grid md:grid-cols-2">
+            <div class="h-64 md:h-full bg-gradient-to-br from-solera-500/20 to-solera-700/40 flex items-center justify-center">
+              <svg class="w-20 h-20 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="property-tag">{blogPosts[0].category}</span>
+                <span class="text-slate-500 text-sm">{blogPosts[0].date}</span>
+              </div>
+              <h2 class="text-white font-heading font-semibold text-2xl mb-3 group-hover:text-solera-300 transition-colors">
+                {blogPosts[0].title}
+              </h2>
+              <p class="text-slate-400 leading-relaxed mb-4">{blogPosts[0].excerpt}</p>
+              <div class="flex items-center justify-between text-sm mt-auto">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-solera-500 to-solera-700 flex items-center justify-center text-white text-xs font-bold">
+                    {blogPosts[0].author.split(' ').map(n => n[0]).join('').slice(0,2)}
+                  </div>
+                  <div>
+                    <div class="text-slate-300">{blogPosts[0].author}</div>
+                    <div class="text-slate-500 text-xs">{blogPosts[0].authorRole}</div>
+                  </div>
+                </div>
+                <span class="text-solera-400 group-hover:text-solera-300 transition-colors font-medium flex items-center gap-1">
+                  Leer más
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      )}
+
+      <!-- Rest of posts -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {blogPosts.slice(1).map((post, i) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="group glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2 animate-fade-up"
+            style={`animation-delay: ${i * 0.1}s`}
+          >
+            <div class={`h-44 bg-gradient-to-br ${
+              post.category === 'Guías' ? 'from-solera-500/20 to-solera-700/40' :
+              post.category === 'Mercado' ? 'from-warm-500/20 to-solera-600/40' :
+              post.category === 'Finanzas' ? 'from-solera-400/20 to-surface-3/40' :
+              post.category === 'Consejos' ? 'from-warm-400/20 to-solera-500/30' :
+              'from-solera-500/15 to-surface-3/50'
+            }`}>
+              <div class="h-full flex items-center justify-center">
+                <svg class="w-14 h-14 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="property-tag">{post.category}</span>
+                <span class="text-slate-500 text-xs">{post.date}</span>
+              </div>
+              <h2 class="text-white font-heading font-semibold text-lg mb-2 group-hover:text-solera-300 transition-colors line-clamp-2">
+                {post.title}
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed line-clamp-2 mb-4">{post.excerpt}</p>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-500">{post.author}</span>
+                <span class="text-solera-400 group-hover:text-solera-300 transition-colors font-medium flex items-center gap-1">
+                  Leer más <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

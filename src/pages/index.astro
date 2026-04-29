@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroSection from '../components/HeroSection.astro';
+import PropertySearch from '../components/PropertySearch.astro';
+import FeaturedProperties from '../components/FeaturedProperties.astro';
+import StatsSection from '../components/StatsSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import ContactSection from '../components/ContactSection.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Solera Estates | Inmobiliaria de Lujo en Barcelona"
+  description="Descubre las mejores propiedades en Barcelona. Solera Estates, tu agencia inmobiliaria de confianza con más de 15 años de experiencia. Pisos, áticos y casas de lujo en las mejores zonas de Barcelona."
+  canonical="https://soleraestates.com"
+>
+  <HeroSection />
+  <PropertySearch />
+  <FeaturedProperties />
+  <StatsSection />
+  <Testimonials />
+  <BlogPreview />
+  <ContactSection />
 </Layout>

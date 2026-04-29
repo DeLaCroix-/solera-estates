@@ -1,0 +1,88 @@
+---
+import { getFeaturedProperties, formatPrice } from '../data/properties';
+
+const featured = getFeaturedProperties();
+---
+
+<section class="py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12 md:mb-16 animate-fade-up">
+      <span class="inline-block text-solera-400 text-sm font-medium uppercase tracking-widest mb-3">Propiedades</span>
+      <h2 class="section-title text-white">
+        Propiedades <span class="gradient-text">Destacadas</span>
+      </h2>
+      <p class="section-subtitle mx-auto mt-4">
+        Las mejores propiedades seleccionadas para ti en las zonas más exclusivas de Barcelona
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {featured.map((property, i) => (
+        <a
+          href={`/propiedades/${property.slug}`}
+          class="group glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-solera-500/5 animate-fade-up"
+          style={`animation-delay: ${i * 0.1}s`}
+        >
+          <!-- Image placeholder -->
+          <div class="relative h-48 md:h-56 overflow-hidden">
+            <div class={`absolute inset-0 bg-gradient-to-br ${
+              i % 3 === 0 ? 'from-solera-500/20 to-solera-700/40' :
+              i % 3 === 1 ? 'from-warm-500/20 to-solera-600/40' :
+              'from-solera-400/20 to-surface-3/40'
+            }`}>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-16 h-16 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              </div>
+            </div>
+            <!-- Tags -->
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span class="property-tag featured">Destacado</span>
+              {property.type === 'ático' && <span class="property-tag new">Ático</span>}
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.9)] to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <span class="text-2xl font-heading font-bold text-white">{formatPrice(property.price)}</span>
+            </div>
+          </div>
+          
+          <!-- Content -->
+          <div class="p-5">
+            <h3 class="text-white font-heading font-semibold text-lg mb-2 group-hover:text-solera-300 transition-colors">
+              {property.title}
+            </h3>
+            <div class="flex items-center gap-1.5 text-slate-400 text-sm mb-4">
+              <svg class="w-4 h-4 text-solera-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>{property.neighborhood}, {property.district}</span>
+            </div>
+            
+            <div class="flex items-center justify-between pt-4 border-t border-slate-700/50">
+              <div class="flex items-center gap-4 text-slate-400 text-xs">
+                <span class="flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                  {property.size} m²
+                </span>
+                <span class="flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  {property.bedrooms} {property.bedrooms === 1 ? 'hab' : 'hab'}
+                </span>
+                <span class="flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  {property.bathrooms} baños
+                </span>
+              </div>
+              <svg class="w-5 h-5 text-slate-500 group-hover:text-solera-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/propiedades" class="btn-secondary text-base px-8 py-4">
+        Ver todas las propiedades
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

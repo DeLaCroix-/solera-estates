@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { blogPosts } from '../../data/blog';
+
+export async function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const related = (post.relatedPosts || []).map(slug => blogPosts.find(p => p.slug === slug)).filter(Boolean);
+const htmlContent = post.content
+  .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-heading font-semibold text-white mt-10 mb-4">$1</h2>')
+  .replace(/^### (.+)$/gm, '<h3 class="text-xl font-heading font-semibold text-white mt-8 mb-3">$1</h3>')
+  .replace(/\*\*(.+?)\*\*/g, '<strong class="text-solera-300 font-semibold">$1</strong>')
+  .replace(/^(.+)$/gm, (match) => {
+    if (match.startsWith('<h') || match.startsWith('<strong') || match.trim() === '') return match;
+    return `<p class="text-slate-300 leading-relaxed mb-4">${match}</p>`;
+  });
+---
+
+<Layout
+  title={`${post.title} | Solera Estates Blog`}
+  description={post.excerpt}
+  canonical={`https://soleraestates.com/blog/${post.slug}`}
+  ogType="article"
+  ogTitle={post.title}
+>
+  <article>
+    <section class="pt-32 pb-8 relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid opacity-30"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6">
+          <a href="/" class="hover:text-solera-400 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <a href="/blog" class="hover:text-solera-400 transition-colors">Blog</a>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-slate-400 truncate">{post.title}</span>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-4">
+          <span class="property-tag">{post.category}</span>
+          <span class="text-slate-500 text-sm">{post.date}</span>
+          <span class="text-slate-600">·</span>
+          <span class="text-slate-500 text-sm">{post.readTime}</span>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-heading font-bold text-white leading-tight mb-6">
+          {post.title}
+        </h1>
+
+        <div class="flex items-center gap-4 pb-8 border-b border-slate-800/50">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-solera-500 to-solera-700 flex items-center justify-center text-white font-bold font-heading">
+            {post.author.split(' ').map(n => n[0]).join('').slice(0,2)}
+          </div>
+          <div>
+            <div class="text-white font-heading font-semibold">{post.author}</div>
+            <div class="text-slate-400 text-sm">{post.authorRole}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Featured image placeholder -->
+        <div class="h-64 md:h-96 rounded-2xl bg-gradient-to-br from-solera-500/20 to-solera-700/40 flex items-center justify-center mb-12">
+          <svg class="w-24 h-24 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+
+        <!-- Article content -->
+        <div class="prose-content" set:html={htmlContent} />
+
+        <!-- Tags -->
+        {post.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-10 pt-8 border-t border-slate-800/50">
+            <span class="text-slate-400 text-sm font-medium mr-2">Tags:</span>
+            {post.tags.map(tag => (
+              <span class="px-3 py-1 rounded-full bg-white/5 text-slate-300 text-xs border border-slate-700/50">{tag}</span>
+            ))}
+          </div>
+        )}
+
+        <!-- Share -->
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-800/50">
+          <span class="text-slate-400 text-sm font-medium">Compartir:</span>
+          {['Twitter', 'Facebook', 'LinkedIn', 'WhatsApp'].map(social => (
+            <span class="px-4 py-2 rounded-lg bg-white/5 text-slate-400 text-xs border border-slate-700/50 hover:bg-solera-500/20 hover:text-solera-300 transition-all cursor-pointer">{social}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Related posts -->
+    {related.length > 0 && (
+      <section class="pb-20 relative">
+        <div class="absolute inset-0 bg-grid opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 class="section-title text-white mb-10">Artículos relacionados</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            {related.map((rp, i) => rp && (
+              <a href={`/blog/${rp.slug}`} class="group glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2">
+                <div class="h-40 bg-gradient-to-br from-solera-500/20 to-solera-700/40 flex items-center justify-center">
+                  <svg class="w-12 h-12 text-white/10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2"/></svg>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-white font-heading font-semibold text-sm mb-1 group-hover:text-solera-300 transition-colors line-clamp-2">{rp.title}</h3>
+                  <p class="text-slate-500 text-xs">{rp.date}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </article>
+</Layout>
+
+<style>
+  .prose-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; line-height: 1.3; color: #f1f5f9; font-family: 'Outfit Variable', sans-serif; font-weight: 600; }
+  .prose-content h3 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.25rem; line-height: 1.3; color: #f1f5f9; font-family: 'Outfit Variable', sans-serif; font-weight: 600; }
+  .prose-content p { margin-bottom: 1rem; line-height: 1.75; color: #cbd5e1; }
+  .prose-content strong { color: #36aaf5; font-weight: 600; }
+  .prose-content ul { margin-bottom: 1rem; padding-left: 1.5rem; }
+  .prose-content li { margin-bottom: 0.5rem; color: #cbd5e1; line-height: 1.7; }
+  .prose-content hr { margin: 2rem 0; border-color: rgba(71, 85, 105, 0.3); }
+</style>

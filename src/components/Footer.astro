@@ -1,0 +1,201 @@
+---
+const { siteUrl = 'https://soleraestates.com' } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">SE</span>
+          <span class="footer-logo-text">Solera Estates</span>
+        </div>
+        <p>Inmobiliaria de lujo en Barcelona con más de 15 años de experiencia. Encuentra la propiedad de tus sueños en las mejores zonas de la ciudad.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Propiedades</h4>
+        <a href="/propiedades?tipo=piso">Pisos</a>
+        <a href="/propiedades?tipo=ático">Áticos</a>
+        <a href="/propiedades?tipo=casa">Casas</a>
+        <a href="/propiedades?tipo=local">Locales</a>
+        <a href="/propiedades?tipo=oficina">Oficinas</a>
+      </div>
+      <div class="footer-column">
+        <h4>Zonas</h4>
+        <a href="/propiedades?zona=Eixample">Eixample</a>
+        <a href="/propiedades?zona=Gràcia">Gràcia</a>
+        <a href="/propiedades?zona=Sarrià">Sarrià - Sant Gervasi</a>
+        <a href="/propiedades?zona=Pedralbes">Pedralbes</a>
+        <a href="/propiedades?zona=Diagonal+Mar">Diagonal Mar</a>
+      </div>
+      <div class="footer-column">
+        <h4>Empresa</h4>
+        <a href="/sobre-nosotros">Sobre Nosotros</a>
+        <a href="/blog">Blog</a>
+        <a href="/contacto">Contacto</a>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Política de Privacidad</a>
+      </div>
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <div class="contact-item">
+          <span>C. Lorem Ipsum, 123</span>
+          <span>08001 Barcelona</span>
+        </div>
+        <div class="contact-item">
+          <a href="tel:+34931234567">+34 931 234 567</a>
+        </div>
+        <div class="contact-item">
+          <a href="mailto:info@soleraestates.com">info@soleraestates.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Lun - Vie: 9:00 - 19:00</span>
+          <span>Sáb: 10:00 - 14:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Solera Estates. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-primary);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 4rem 0 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .footer-logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-links a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.2s ease;
+  }
+
+  .social-links a:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .footer-column h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-column a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-column a:hover {
+    color: var(--color-accent);
+  }
+
+  .contact-item {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .contact-item a {
+    display: inline;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .contact-item span {
+    display: block;
+  }
+
+  .footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
