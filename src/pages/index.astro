@@ -828,7 +828,9 @@ const schema = {
                   </div>
 
                   <div>
-                    <label for="hc-interes" class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">Me interesa</label>
+                    <label class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
+                      Me interesa <span class="text-red-500">*</span>
+                    </label>
                     <div class="grid grid-cols-2 gap-2" id="interest-group" role="group" aria-label="Tipo de consulta">
                       {['Comprar', 'Vender', 'Invertir', 'Valoración'].map(opt => (
                         <label class="interest-option flex items-center gap-2.5 bg-cream border border-cream-dark rounded-xl px-3 py-2.5 cursor-pointer hover:border-gold hover:bg-gold-pale transition-all text-sm text-dark font-medium">
@@ -837,16 +839,35 @@ const schema = {
                         </label>
                       ))}
                     </div>
+                    <p id="interes-error" class="hidden text-red-500 text-xs mt-1">Por favor, selecciona una opción.</p>
                   </div>
 
                   <div>
-                    <label for="hc-mensaje" class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">Mensaje</label>
+                    <label for="hc-mensaje" class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
+                      Mensaje <span class="text-red-500">*</span>
+                    </label>
                     <textarea
-                      id="hc-mensaje" name="mensaje" rows="3"
+                      id="hc-mensaje" name="mensaje" rows="3" required
                       placeholder="Cuéntanos qué buscas: barrio, presupuesto, tipo de propiedad..."
                       class="w-full bg-cream rounded-xl px-4 py-3 text-sm text-dark border border-cream-dark focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all resize-none placeholder-muted/40"
                     ></textarea>
                   </div>
+
+                  <!-- Consentimiento RGPD -->
+                  <div class="flex items-start gap-3 bg-cream rounded-xl px-4 py-3 border border-cream-dark">
+                    <input
+                      type="checkbox"
+                      id="hc-consent"
+                      name="consent"
+                      class="mt-0.5 w-4 h-4 accent-gold flex-shrink-0 cursor-pointer"
+                    />
+                    <label for="hc-consent" class="text-xs text-muted leading-relaxed cursor-pointer">
+                      He leído y acepto la{' '}
+                      <a href="/politica-de-privacidad" class="text-navy underline hover:text-gold transition-colors font-medium">Política de Privacidad</a>
+                      {' '}y consiento el tratamiento de mis datos personales para recibir información sobre propiedades inmobiliarias. <span class="text-red-500 font-semibold">*</span>
+                    </label>
+                  </div>
+                  <p id="consent-error" class="hidden text-red-500 text-xs -mt-2 px-1">Debes aceptar la política de privacidad para continuar.</p>
 
                   <!-- Submit -->
                   <button
@@ -885,10 +906,50 @@ const schema = {
     <script>
       document.getElementById('home-contact-form')?.addEventListener('submit', (e) => {
         e.preventDefault();
+        const form = e.currentTarget as HTMLFormElement;
+
+        // Validate radio "interes"
+        const interesSelected = form.querySelector('input[name="interes"]:checked');
+        const interesError = document.getElementById('interes-error');
+        if (!interesSelected) {
+          interesError?.classList.remove('hidden');
+          return;
+        } else {
+          interesError?.classList.add('hidden');
+        }
+
+        // Validate consent checkbox
+        const consent = document.getElementById('hc-consent') as HTMLInputElement;
+        const consentError = document.getElementById('consent-error');
+        if (!consent?.checked) {
+          consentError?.classList.remove('hidden');
+          consent?.closest('div')?.classList.add('border-red-400');
+          return;
+        } else {
+          consentError?.classList.add('hidden');
+          consent?.closest('div')?.classList.remove('border-red-400');
+        }
+
         const btn = document.getElementById('hc-submit') as HTMLButtonElement;
         const success = document.getElementById('hc-success');
         if (btn) btn.style.display = 'none';
         success?.classList.remove('hidden');
+      });
+
+      // Clear radio error on selection
+      document.querySelectorAll('input[name="interes"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          document.getElementById('interes-error')?.classList.add('hidden');
+        });
+      });
+
+      // Clear consent error on check
+      document.getElementById('hc-consent')?.addEventListener('change', (e) => {
+        const cb = e.target as HTMLInputElement;
+        if (cb.checked) {
+          document.getElementById('consent-error')?.classList.add('hidden');
+          cb.closest('div')?.classList.remove('border-red-400');
+        }
       });
     </script>
 
