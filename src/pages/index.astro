@@ -70,14 +70,14 @@ const schema = {
             </div>
 
             <h1 id="hero-title" class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-dark leading-tight mb-6" data-animate data-animate-delay="1">
-              Inmobiliaria de Lujo<br/>
+              Tu Agencia Inmobiliaria<br/>
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-navy via-navy-light to-gold">
-                en Barcelona
+                de Confianza en Barcelona
               </span>
             </h1>
 
             <p class="text-lg text-muted leading-relaxed max-w-lg mb-2" data-animate data-animate-delay="2">
-              Expertos en la <strong class="text-dark">venta de pisos y casas exclusivas en Barcelona</strong>. Propiedades de lujo en Eixample, Sarrià, Pedralbes, Gràcia y Barceloneta.
+              Compramos, vendemos y asesoramos en <strong class="text-dark">pisos, áticos y casas en Barcelona</strong>. Eixample, Sarrià, Gràcia, Barceloneta, Pedralbes y más.
             </p>
             <p class="text-base text-muted leading-relaxed max-w-lg mb-8" data-animate data-animate-delay="2">
               Más de 15 años ayudando a familias e inversores en Barcelona a encontrar su propiedad ideal.
@@ -408,12 +408,12 @@ const schema = {
           {[
             { name: 'Eixample', slug: 'eixample', img: 'https://images.unsplash.com/photo-1571278103789-a36c181e3932?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Modernismo y elegancia' },
             { name: 'Gràcia', slug: 'gracia', img: 'https://images.unsplash.com/photo-1755407060090-36811ba059fe?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Bohemio y familiar' },
-            { name: 'Sarrià', slug: 'sarria', img: 'https://images.unsplash.com/photo-1560356062-e67bd9e034d5?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Exclusivo y tranquilo' },
-            { name: 'Barceloneta', slug: 'barceloneta', img: 'https://images.unsplash.com/photo-1696941586183-84526dd38c29?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Frente al mar' },
+            { name: 'Sarrià', slug: 'sarria', img: 'https://images.unsplash.com/photo-1691182991531-89ba66e393b3?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Exclusivo y tranquilo' },
+            { name: 'Barceloneta', slug: 'barceloneta', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Frente al mar' },
             { name: 'El Born', slug: 'born', img: 'https://images.unsplash.com/photo-1675205399703-8bb69619f29a?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Trendy y cultural' },
-            { name: 'Poblenou', slug: 'poblenou', img: 'https://images.unsplash.com/photo-1722338696500-f4d1cab7d057?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Tech y creativo' },
-            { name: 'Pedralbes', slug: 'pedralbes', img: 'https://images.unsplash.com/photo-1560356062-e67bd9e034d5?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Lujo y privacidad' },
-            { name: 'Les Corts', slug: 'les-corts', img: 'https://images.unsplash.com/photo-1650493124216-2a005ac8619e?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Residencial premium' },
+            { name: 'Poblenou', slug: 'poblenou', img: 'https://images.unsplash.com/photo-1760993486233-b95aa9e996a8?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Tech y creativo' },
+            { name: 'Pedralbes', slug: 'pedralbes', img: 'https://images.unsplash.com/photo-1693478077029-9e38b4912129?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Lujo y privacidad' },
+            { name: 'Les Corts', slug: 'les-corts', img: 'https://images.unsplash.com/photo-1566069103894-587289090876?auto=format&fit=crop&w=400&h=280&q=80', desc: 'Residencial premium' },
           ].map((barrio, i) => (
             <a
               href={`/propiedades?barrio=${barrio.slug}`}
