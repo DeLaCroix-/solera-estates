@@ -1,10 +1,21 @@
-@import "@fontsource-variable/outfit";
-@import "@fontsource-variable/playfair-display";
+@import "@fontsource/fira-sans/400.css";
+@import "@fontsource/fira-sans/600.css";
+@import "@fontsource/fira-sans/700.css";
+@import "@fontsource/fira-sans/800.css";
+@import "@fontsource/hind-madurai/400.css";
+@import "@fontsource/hind-madurai/500.css";
+@import "@fontsource/hind-madurai/600.css";
+@import "@fontsource/hind-madurai/700.css";
+@import "@fontsource/catamaran/400.css";
+@import "@fontsource/catamaran/500.css";
+@import "@fontsource/catamaran/600.css";
+@import "@fontsource/catamaran/700.css";
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Outfit Variable", "Outfit", system-ui, sans-serif;
-  --font-display: "Playfair Display Variable", "Playfair Display", Georgia, serif;
+  --font-sans: "Catamaran", system-ui, sans-serif;
+  --font-display: "Fira Sans", sans-serif;
+  --font-heading: "Hind Madurai", sans-serif;
 
   --color-navy: #0D2B52;
   --color-navy-light: #1B4F8A;
@@ -115,6 +126,11 @@
 .group:hover .property-gold-bar {
   width: 100%;
 }
+
+/* Global font rules */
+h1 { font-family: "Fira Sans", sans-serif; }
+h2 { font-family: "Hind Madurai", sans-serif !important; }
+h3, h4 { font-family: "Hind Madurai", sans-serif !important; }
 
 /* Article prose styles */
 .prose-article h2 { @apply font-display text-2xl font-bold text-dark mt-10 mb-4; }

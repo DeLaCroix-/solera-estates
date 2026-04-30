@@ -13,12 +13,13 @@ export interface BlogPost {
   category: string;
 }
 
+// Unsplash URLs verified via API - Barcelona real estate
 const BLOG_IMAGES = {
-  keys:        'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&h=480&q=80',
-  barcelona:   'https://images.unsplash.com/photo-1583422409516-2895a77efaad?auto=format&fit=crop&w=800&h=480&q=80',
-  investment:  'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&h=480&q=80',
-  neighborhood:'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&h=480&q=80',
-  selling:     'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&h=480&q=80',
+  keys:        'https://images.unsplash.com/photo-1592303985550-82e3f38f1a25?auto=format&fit=crop&w=800&h=480&q=80',
+  barcelona:   'https://images.unsplash.com/photo-1494352970903-9e3043c6b57e?auto=format&fit=crop&w=800&h=480&q=80',
+  investment:  'https://images.unsplash.com/photo-1754039985021-5c50d180d7cd?auto=format&fit=crop&w=800&h=480&q=80',
+  neighborhood:'https://images.unsplash.com/photo-1571278103789-a36c181e3932?auto=format&fit=crop&w=800&h=480&q=80',
+  selling:     'https://images.unsplash.com/photo-1567934452596-4d1a296c439e?auto=format&fit=crop&w=800&h=480&q=80',
 };
 
 export const blogPosts: BlogPost[] = [
