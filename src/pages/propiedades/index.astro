@@ -1,99 +1,254 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PropertySearch from '../../components/PropertySearch.astro';
-import { properties, formatPrice, getUniqueTypes, getUniqueNeighborhoods, getPropertyImage } from '../../data/properties';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PropertyCard from '../../components/PropertyCard.astro';
+import { properties } from '../../data/properties';
 
-const tipo = Astro.url.searchParams.get('tipo') || '';
-const ubicacion = Astro.url.searchParams.get('ubicacion') || '';
-const precioMin = parseInt(Astro.url.searchParams.get('precioMin') || '0');
-const precioMax = parseInt(Astro.url.searchParams.get('precioMax') || '99999999');
-
-const filtered = properties.filter(p => {
-  if (tipo && p.type !== tipo) return false;
-  if (ubicacion && p.neighborhood !== ubicacion && p.district !== ubicacion) return false;
-  if (precioMin && p.price < precioMin) return false;
-  if (precioMax && p.price > precioMax) return false;
-  return true;
-});
-
-const types = getUniqueTypes();
-const neighborhoods = getUniqueNeighborhoods();
-
-const pageTitle = tipo 
-  ? `Pisos y ${tipo}s en Venta en Barcelona | Solera Estates`
-  : 'Propiedades en Venta en Barcelona | Solera Estates';
-const pageDesc = tipo
-  ? `Encuentra los mejores ${tipo}s en venta en Barcelona. Solera Estates te ofrece una selección exclusiva de propiedades en las mejores zonas de la ciudad.`
-  : 'Explora nuestro catálogo de pisos, áticos y casas de lujo en Barcelona. Encuentra tu propiedad ideal en Eixample, Gràcia, Sarrià y más zonas exclusivas.';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Propiedades en venta en Barcelona - Solera Estates",
+  "description": "Listado de propiedades de lujo en venta en Barcelona: pisos, áticos, villas y lofts en los mejores barrios.",
+  "url": "https://soleraestates.com/propiedades",
+  "numberOfItems": properties.length,
+  "itemListElement": properties.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "url": `https://soleraestates.com/propiedades/${p.slug}`,
+    "name": p.title,
+  })),
+};
 ---
 
-<Layout title={pageTitle} description={pageDesc} canonical={"https://soleraestates.com/propiedades"}>
-  <section class="pt-32 pb-8 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid opacity-30"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-8 animate-fade-up">
-        <h1 class="section-title text-white">Propiedades en Barcelona</h1>
-        <p class="section-subtitle mx-auto mt-4">
-          {filtered.length} propiedades disponibles en las mejores zonas de Barcelona
+<Layout
+  title="Propiedades en Venta en Barcelona | Solera Estates"
+  description="Encuentra tu propiedad ideal en Barcelona. Pisos, áticos, villas y lofts de lujo en Eixample, Gràcia, Sarrià, Barceloneta, Pedralbes y más barrios. Filtra por precio, tipo y ubicación."
+  canonical="/propiedades"
+  schema={schema}
+>
+  <Header />
+
+  <main class="pt-20">
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-navy to-navy-light py-16 lg:py-20" aria-labelledby="properties-title">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center">
+        <p class="text-gold text-sm font-semibold uppercase tracking-widest mb-3" data-animate>Catálogo Completo</p>
+        <h1 id="properties-title" class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4" data-animate data-animate-delay="1">
+          Propiedades en Barcelona
+        </h1>
+        <p class="text-cream/70 max-w-xl mx-auto" data-animate data-animate-delay="2">
+          Descubre nuestra selección exclusiva de propiedades en los barrios más cotizados de Barcelona. Pisos, áticos, villas y más.
         </p>
+
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center mt-6" aria-label="Migas de pan">
+          <ol class="flex items-center gap-2 text-sm text-cream/50" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="/" class="hover:text-gold transition-colors" itemprop="item"><span itemprop="name">Inicio</span></a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span class="text-gold font-medium" itemprop="name">Propiedades</span>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ol>
+        </nav>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <PropertySearch />
+    <!-- Filters + Listing -->
+    <section class="py-12 lg:py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-  <section class="py-12 md:py-20 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {filtered.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {filtered.map((property, i) => (
-            <a
-              href={`/propiedades/${property.slug}`}
-              class="group glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-solera-500/5 animate-fade-up"
-              style={`animation-delay: ${i * 0.05}s`}
+        <!-- Filter Bar -->
+        <div class="bg-white rounded-2xl shadow-sm border border-cream-dark/60 p-5 mb-10" data-animate>
+          <form id="filter-form" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 items-end" aria-label="Filtros de búsqueda">
+            <div>
+              <label for="f-tipo" class="block text-xs font-semibold text-navy mb-1.5 uppercase tracking-wide">Tipo</label>
+              <select id="f-tipo" name="tipo" class="w-full bg-cream rounded-xl px-3 py-2.5 text-sm text-dark border border-cream-dark focus:outline-none focus:ring-2 focus:ring-gold/40">
+                <option value="">Todos</option>
+                <option value="piso">Piso</option>
+                <option value="atico">Ático</option>
+                <option value="villa">Villa</option>
+                <option value="loft">Loft</option>
+                <option value="apartamento">Apartamento</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-barrio" class="block text-xs font-semibold text-navy mb-1.5 uppercase tracking-wide">Barrio</label>
+              <select id="f-barrio" name="barrio" class="w-full bg-cream rounded-xl px-3 py-2.5 text-sm text-dark border border-cream-dark focus:outline-none focus:ring-2 focus:ring-gold/40">
+                <option value="">Todos</option>
+                <option value="eixample">Eixample</option>
+                <option value="gracia">Gràcia</option>
+                <option value="sarria">Sarrià</option>
+                <option value="barceloneta">Barceloneta</option>
+                <option value="born">El Born</option>
+                <option value="poblenou">Poblenou</option>
+                <option value="pedralbes">Pedralbes</option>
+                <option value="les-corts">Les Corts</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-precio-min" class="block text-xs font-semibold text-navy mb-1.5 uppercase tracking-wide">Precio mín.</label>
+              <select id="f-precio-min" name="precio-min" class="w-full bg-cream rounded-xl px-3 py-2.5 text-sm text-dark border border-cream-dark focus:outline-none focus:ring-2 focus:ring-gold/40">
+                <option value="0">Sin mínimo</option>
+                <option value="200000">200.000€</option>
+                <option value="400000">400.000€</option>
+                <option value="700000">700.000€</option>
+                <option value="1000000">1.000.000€</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-precio-max" class="block text-xs font-semibold text-navy mb-1.5 uppercase tracking-wide">Precio máx.</label>
+              <select id="f-precio-max" name="precio-max" class="w-full bg-cream rounded-xl px-3 py-2.5 text-sm text-dark border border-cream-dark focus:outline-none focus:ring-2 focus:ring-gold/40">
+                <option value="">Sin límite</option>
+                <option value="300000">300.000€</option>
+                <option value="500000">500.000€</option>
+                <option value="800000">800.000€</option>
+                <option value="1500000">1.500.000€</option>
+                <option value="3000000">3.000.000€</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-habitaciones" class="block text-xs font-semibold text-navy mb-1.5 uppercase tracking-wide">Habitaciones</label>
+              <select id="f-habitaciones" name="habitaciones" class="w-full bg-cream rounded-xl px-3 py-2.5 text-sm text-dark border border-cream-dark focus:outline-none focus:ring-2 focus:ring-gold/40">
+                <option value="">Todas</option>
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
+            <button type="button" id="filter-btn" class="btn-gold text-white font-semibold py-2.5 rounded-xl text-sm">
+              Filtrar
+            </button>
+          </form>
+        </div>
+
+        <!-- Results count -->
+        <div class="flex items-center justify-between mb-6">
+          <p id="results-count" class="text-sm text-muted">
+            Mostrando <span class="font-semibold text-dark" id="count-num">{properties.length}</span> propiedades en Barcelona
+          </p>
+          <button id="reset-btn" class="text-xs text-muted hover:text-navy transition-colors underline hidden">
+            Limpiar filtros
+          </button>
+        </div>
+
+        <!-- Grid -->
+        <div id="properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {properties.map((property, i) => (
+            <div
+              class="property-item"
+              data-tipo={property.type}
+              data-barrio={property.neighborhood}
+              data-precio={property.price}
+              data-habitaciones={property.bedrooms}
             >
-              <div class="relative h-48 md:h-56 overflow-hidden">
-                <img
-                  src={getPropertyImage(property.slug)}
-                  alt={property.title}
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div class="absolute top-3 left-3 flex gap-2">
-                  {property.featured && <span class="property-tag featured">Destacado</span>}
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.9)] to-transparent"></div>
-                <div class="absolute bottom-3 left-3 right-3">
-                  <span class="text-2xl font-heading font-bold text-white">{formatPrice(property.price)}</span>
-                </div>
-              </div>
-              <div class="p-5">
-                <h2 class="text-white font-heading font-semibold text-lg mb-2 group-hover:text-solera-300 transition-colors">
-                  {property.title}
-                </h2>
-                <div class="flex items-center gap-1.5 text-slate-400 text-sm mb-4">
-                  <svg class="w-4 h-4 text-solera-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  <span>{property.neighborhood}</span>
-                </div>
-                <div class="flex items-center justify-between pt-4 border-t border-slate-700/50">
-                  <div class="flex items-center gap-4 text-slate-400 text-xs">
-                    <span>{property.size} m²</span>
-                    <span>{property.bedrooms} {property.bedrooms === 1 ? 'hab' : 'hab'}</span>
-                    <span>{property.bathrooms} baños</span>
-                  </div>
-                  <svg class="w-5 h-5 text-slate-500 group-hover:text-solera-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </div>
-              </div>
-            </a>
+              <PropertyCard property={property} delay={i % 3 + 1} />
+            </div>
           ))}
         </div>
-      ) : (
-        <div class="text-center py-20">
-          <svg class="w-16 h-16 text-slate-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <p class="text-slate-400 text-lg mb-4">No encontramos propiedades con esos filtros</p>
-          <a href="/propiedades" class="btn-primary">Ver todas las propiedades</a>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-20">
+          <svg class="w-16 h-16 text-cream-dark mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3 class="font-display text-xl font-semibold text-dark mb-2">No hay resultados</h3>
+          <p class="text-muted mb-6">Prueba con otros filtros o contacta con nuestro equipo para buscar propiedades off-market.</p>
+          <a href="/contacto" class="btn-gold text-white font-semibold px-8 py-3 rounded-full inline-block">
+            Contactar con un agente
+          </a>
         </div>
-      )}
-    </div>
-  </section>
+
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-10">
+        <h2 class="font-display text-2xl font-bold text-dark mb-4">Propiedades en Venta en Barcelona: Tu Agencia de Confianza</h2>
+        <div class="prose prose-sm text-muted max-w-none leading-relaxed space-y-4">
+          <p>Solera Estates es la agencia inmobiliaria especializada en propiedades de lujo y alta gama en Barcelona. Nuestro portfolio incluye pisos modernistas en el Eixample, áticos con terraza en Gràcia, villas privadas en Sarrià y lofts de diseño en Poblenou.</p>
+          <p>Si buscas <strong>comprar un piso en Barcelona</strong>, un <strong>ático con vistas al mar</strong> o una <strong>villa de lujo en Barcelona</strong>, nuestro equipo de agentes API certificados te ayudará a encontrar la propiedad que se adapta perfectamente a tus necesidades y presupuesto.</p>
+          <p>También disponemos de un servicio exclusivo de <strong>propiedades off-market en Barcelona</strong>: propiedades que no se publican en portales pero que están disponibles para compradores cualificados. Contacta con nosotros para acceder a este portfolio privado.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
 </Layout>
+
+<script>
+  // Read URL params on load
+  const params = new URLSearchParams(window.location.search);
+  const tipoParam    = params.get('tipo') ?? '';
+  const barrioParam  = params.get('barrio') ?? '';
+  const precioParam  = params.get('precio') ?? '';
+
+  if (tipoParam)   (document.getElementById('f-tipo') as HTMLSelectElement).value = tipoParam;
+  if (barrioParam) (document.getElementById('f-barrio') as HTMLSelectElement).value = barrioParam;
+  if (precioParam) (document.getElementById('f-precio-max') as HTMLSelectElement).value = precioParam;
+
+  function filterProperties() {
+    const tipo        = (document.getElementById('f-tipo') as HTMLSelectElement).value;
+    const barrio      = (document.getElementById('f-barrio') as HTMLSelectElement).value;
+    const precioMin   = parseInt((document.getElementById('f-precio-min') as HTMLSelectElement).value) || 0;
+    const precioMax   = parseInt((document.getElementById('f-precio-max') as HTMLSelectElement).value) || Infinity;
+    const habitaciones = parseInt((document.getElementById('f-habitaciones') as HTMLSelectElement).value) || 0;
+
+    const items = document.querySelectorAll<HTMLElement>('.property-item');
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const itemTipo   = item.dataset.tipo ?? '';
+      const itemBarrio = item.dataset.barrio ?? '';
+      const itemPrecio = parseInt(item.dataset.precio ?? '0');
+      const itemHab    = parseInt(item.dataset.habitaciones ?? '0');
+
+      const tipoMatch   = !tipo   || itemTipo === tipo;
+      const barrioMatch = !barrio || itemBarrio === barrio;
+      const precioMatch = itemPrecio >= precioMin && itemPrecio <= precioMax;
+      const habMatch    = !habitaciones || itemHab >= habitaciones;
+
+      const visible = tipoMatch && barrioMatch && precioMatch && habMatch;
+      item.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+
+    const countEl = document.getElementById('count-num');
+    if (countEl) countEl.textContent = String(visibleCount);
+
+    const emptyState = document.getElementById('empty-state');
+    const grid = document.getElementById('properties-grid');
+    if (emptyState && grid) {
+      emptyState.classList.toggle('hidden', visibleCount > 0);
+      grid.classList.toggle('hidden', visibleCount === 0);
+    }
+
+    const resetBtn = document.getElementById('reset-btn');
+    const hasFilters = tipo || barrio || precioMin > 0 || precioMax < Infinity || habitaciones > 0;
+    resetBtn?.classList.toggle('hidden', !hasFilters);
+  }
+
+  document.getElementById('filter-btn')?.addEventListener('click', filterProperties);
+  document.getElementById('reset-btn')?.addEventListener('click', () => {
+    (document.getElementById('f-tipo') as HTMLSelectElement).value = '';
+    (document.getElementById('f-barrio') as HTMLSelectElement).value = '';
+    (document.getElementById('f-precio-min') as HTMLSelectElement).value = '0';
+    (document.getElementById('f-precio-max') as HTMLSelectElement).value = '';
+    (document.getElementById('f-habitaciones') as HTMLSelectElement).value = '';
+    filterProperties();
+  });
+
+  // Apply filters from URL on load
+  if (tipoParam || barrioParam || precioParam) {
+    filterProperties();
+  }
+</script>

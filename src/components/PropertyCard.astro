@@ -1,0 +1,124 @@
+---
+import type { Property } from '../data/properties';
+import { formatPrice } from '../data/properties';
+
+interface Props {
+  property: Property;
+  animate?: boolean;
+  delay?: number;
+}
+
+const { property, animate = true, delay = 0 } = Astro.props;
+
+const typeLabels: Record<string, string> = {
+  atico: 'Ático',
+  piso: 'Piso',
+  villa: 'Villa',
+  loft: 'Loft',
+  apartamento: 'Apartamento',
+  duplex: 'Dúplex',
+};
+
+const statusColors: Record<string, string> = {
+  available: 'bg-emerald-100 text-emerald-700',
+  reserved:  'bg-amber-100 text-amber-700',
+  sold:      'bg-red-100 text-red-700',
+};
+
+const statusLabels: Record<string, string> = {
+  available: 'Disponible',
+  reserved:  'Reservado',
+  sold:      'Vendido',
+};
+---
+
+<article
+  class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-400 overflow-hidden border border-cream-dark/50"
+  data-animate
+  data-animate-delay={String(delay)}
+  aria-label={`Propiedad: ${property.title}`}
+>
+  <!-- Image -->
+  <a href={`/propiedades/${property.slug}`} class="property-img-wrap block relative aspect-[4/3] overflow-hidden">
+    <img
+      src={property.image}
+      alt={`${property.title} - ${property.location}`}
+      loading="lazy"
+      width="800"
+      height="600"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+    />
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-dark/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+    <!-- Type Badge -->
+    <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-navy text-xs font-bold px-3 py-1.5 rounded-full shadow-sm uppercase tracking-wide">
+      {typeLabels[property.type] ?? property.type}
+    </span>
+
+    <!-- Status Badge -->
+    <span class={`absolute top-4 right-4 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm ${statusColors[property.status]}`}>
+      {statusLabels[property.status]}
+    </span>
+
+    <!-- Quick View Button (shows on hover) -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+      <span class="btn-gold text-white text-xs font-semibold px-5 py-2.5 rounded-full whitespace-nowrap shadow-lg">
+        Ver Propiedad →
+      </span>
+    </div>
+  </a>
+
+  <!-- Gold accent bar -->
+  <div class="property-gold-bar"></div>
+
+  <!-- Content -->
+  <div class="p-5">
+    <!-- Price -->
+    <div class="flex items-start justify-between gap-3 mb-3">
+      <p class="text-2xl font-display font-bold text-navy leading-tight">
+        {formatPrice(property.price)}
+      </p>
+      <span class="text-xs text-muted bg-cream-dark/60 px-2 py-1 rounded-lg shrink-0 mt-1">
+        Ref: {property.reference}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-base font-semibold text-dark mb-1 leading-snug line-clamp-2">
+      <a href={`/propiedades/${property.slug}`} class="hover:text-navy transition-colors">
+        {property.title}
+      </a>
+    </h3>
+
+    <!-- Location -->
+    <p class="text-sm text-muted flex items-center gap-1.5 mb-4">
+      <svg class="w-3.5 h-3.5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+      </svg>
+      {property.location}
+    </p>
+
+    <!-- Specs -->
+    <div class="flex items-center gap-4 pt-4 border-t border-cream-dark/60">
+      <div class="flex items-center gap-1.5 text-sm text-muted" title={`${property.bedrooms} dormitorios`}>
+        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12h18M3 7c0-1.1.9-2 2-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+        </svg>
+        <span>{property.bedrooms} hab.</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-sm text-muted" title={`${property.bathrooms} baños`}>
+        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 9V2h12v7M3 9h18v2a6 6 0 01-6 6H9a6 6 0 01-6-6V9z"/>
+        </svg>
+        <span>{property.bathrooms} baños</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-sm text-muted ml-auto" title={`${property.sqm}m² construidos`}>
+        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+        </svg>
+        <span>{property.sqm}m²</span>
+      </div>
+    </div>
+  </div>
+</article>

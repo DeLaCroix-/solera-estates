@@ -1,449 +1,348 @@
 export interface Property {
   slug: string;
   title: string;
-  type: 'piso' | 'ático' | 'casa' | 'local' | 'oficina';
+  location: string;
   neighborhood: string;
-  district: string;
   price: number;
-  currency: string;
-  size: number; // m²
+  type: string;
   bedrooms: number;
   bathrooms: number;
-  floor?: string;
-  yearBuilt: number;
-  energyRating: string;
+  sqm: number;
+  image: string;
+  gallery: string[];
   description: string;
+  longDescription: string;
   features: string[];
-  images: string[];
   featured: boolean;
-  status: 'venta' | 'alquiler';
-  coords: { lat: number; lng: number };
+  status: 'available' | 'reserved' | 'sold';
+  reference: string;
+}
+
+// Unsplash photo IDs assignados por tipo de propiedad
+const UNSPLASH = {
+  penthouse:    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2',
+  apartment:    'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
+  seaview:      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6',
+  villa:        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750',
+  modern:       'https://images.unsplash.com/photo-1586023492125-27b2c045efd7',
+  loft:         'https://images.unsplash.com/photo-1556020685-ae41abfc9365',
+  luxury:       'https://images.unsplash.com/photo-1613977257363-707ba9348227',
+  elegant:      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0',
+  bedroom:      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0',
+  kitchen:      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136',
+  bathroom:     'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14',
+  exterior:     'https://images.unsplash.com/photo-1568605114967-8130f3a36994',
+  terrace:      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9',
+  interior2:    'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92',
+  duplex:       'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd',
+};
+
+function img(base: string, w = 800, h = 540) {
+  return `${base}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 }
 
 export const properties: Property[] = [
   {
-    slug: 'atico-de-lujo-pedralbes',
-    title: 'Ático de Lujo con Terraza en Pedralbes',
-    type: 'ático',
-    neighborhood: 'Pedralbes',
-    district: 'Sarrià-Sant Gervasi',
-    price: 3500000,
-    currency: '€',
-    size: 250,
-    bedrooms: 4,
-    bathrooms: 3,
-    floor: '8ª',
-    yearBuilt: 2020,
-    energyRating: 'A',
-    description: 'Espectacular ático de lujo en la exclusiva zona de Pedralbes con vistas panorámicas de 360° a toda Barcelona. Esta propiedad de 250 m² dispone de 4 amplios dormitorios con armarios empotrados, 3 baños completos de diseño, y una terraza privada de 80 m² con piscina. La cocina es de diseño italiano equipada con electrodomésticos de alta gama. El edificio cuenta con conserje, piscina comunitaria, gimnasio y jardines privados. La finca incluye 2 plazas de parking y trastero. La iluminación natural inunda cada estancia gracias a sus grandes ventanales de suelo a techo con carpintería de aluminio lacado y doble acristalamiento.',
-    features: [
-      'Terraza privada 80 m²',
-      'Piscina privada en terraza',
-      'Vistas panorámicas 360°',
-      'Cocina de diseño italiano',
-      'Suelos de parquet de roble',
-      'Climatización por aerotermia',
-      'Domótica completa',
-      '2 plazas de parking',
-      'Trastero',
-      'Conserje 24h',
-      'Piscina comunitaria',
-      'Gimnasio',
-      'Zonas verdes',
-      'Armarios empotrados',
-      'Videoportero'
-    ],
-    images: ['/images/properties/atico-pedralbes-1.jpg', '/images/properties/atico-pedralbes-2.jpg'],
-    featured: true,
-    status: 'venta',
-    coords: { lat: 41.3951, lng: 2.1078 }
-  },
-  {
-    slug: 'piso-eixample-derecho',
-    title: 'Piso Reformado en Eixample Derecho',
-    type: 'piso',
-    neighborhood: 'Eixample Derecho',
-    district: 'Eixample',
-    price: 890000,
-    currency: '€',
-    size: 120,
+    slug: 'atico-terraza-panoramica-eixample-barcelona',
+    title: 'Ático con Terraza Panorámica en el Eixample',
+    location: 'Eixample Dret, Barcelona',
+    neighborhood: 'eixample',
+    price: 850000,
+    type: 'atico',
     bedrooms: 3,
     bathrooms: 2,
-    floor: '4ª',
-    yearBuilt: 1965,
-    energyRating: 'C',
-    description: 'Piso completamente reformado en el corazón del Eixample Derecho, una de las zonas más emblemáticas de Barcelona. La propiedad cuenta con 120 m² distribuidos en un amplio salón-comedor con techos altos y molduras originales restauradas, cocina abierta totalmente equipada, 3 dormitorios y 2 baños completos. La reforma ha mantenido elementos originales como las vigas de madera y los techos con molduras, combinándolos con acabados contemporáneos de primera calidad. Situado en una finca clásica con ascensor y conserje. A pocos minutos de la Sagrada Familia y el Passeig de Gràcia.',
-    features: [
-      'Totalmente reformado',
-      'Techos altos con molduras',
-      'Suelos hidráulicos originales',
-      'Cocina equipada con electrodomésticos Bosch',
-      'Climatización por conductos',
-      'Ascensor',
-      'Conserje',
-      'Balcón exterior',
-      'Armarios empotrados',
-      'Vigas de madera vistas'
+    sqm: 145,
+    image: img(UNSPLASH.penthouse),
+    gallery: [
+      img(UNSPLASH.penthouse, 1200, 800),
+      img(UNSPLASH.bedroom, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
+      img(UNSPLASH.bathroom, 1200, 800),
+      img(UNSPLASH.terrace, 1200, 800),
     ],
-    images: ['/images/properties/piso-eixample-1.jpg', '/images/properties/piso-eixample-2.jpg'],
+    description: 'Espectacular ático en el corazón del Eixample Dret con terraza privada de 80m² y vistas panorámicas sobre la ciudad de Barcelona.',
+    longDescription: `Este exclusivo ático en pleno Eixample Dret combina la elegancia del modernismo barcelonés con un interiorismo contemporáneo de primer nivel. Situado en el piso 8 de un emblemático edificio modernista en plena Passatge de la Concepció, disfruta de una privilegiada terraza privada de 80m² desde la que se divisan los tejados de Barcelona y la silueta de la Sagrada Família en el horizonte.
+
+La distribución interior de 145m² útiles consta de tres amplios dormitorios —con vestidor en la habitación principal—, dos baños completos con acabados premium y un espacioso salón-comedor de doble altura con grandes ventanales que inundan de luz natural cada rincón. La cocina de diseño integra electrodomésticos Miele y encimera de Silestone.
+
+El edificio cuenta con portero 24 horas, ascensor panorámico y plaza de garaje privada incluida en el precio. Certificado energético B.`,
+    features: [
+      'Terraza privada 80m²',
+      'Vistas panorámicas 360°',
+      'Garaje incluido',
+      'Aire acondicionado',
+      'Ascensor',
+      'Portero 24h',
+      'Cocina equipada Miele',
+      'Vestidor en suite',
+      'Certificado energético B',
+      'Armarios a medida',
+    ],
     featured: true,
-    status: 'venta',
-    coords: { lat: 41.3931, lng: 2.1758 }
+    status: 'available',
+    reference: 'SE-2601',
   },
   {
-    slug: 'casa-moderna-sarria',
-    title: 'Casa Moderna con Jardín en Sarrià',
-    type: 'casa',
-    neighborhood: 'Sarrià',
-    district: 'Sarrià-Sant Gervasi',
-    price: 2200000,
-    currency: '€',
-    size: 350,
+    slug: 'piso-modernista-gracia-barcelona',
+    title: 'Piso Modernista en el Corazón de Gràcia',
+    location: 'Gràcia, Barcelona',
+    neighborhood: 'gracia',
+    price: 420000,
+    type: 'piso',
+    bedrooms: 2,
+    bathrooms: 1,
+    sqm: 88,
+    image: img(UNSPLASH.apartment),
+    gallery: [
+      img(UNSPLASH.apartment, 1200, 800),
+      img(UNSPLASH.bedroom, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
+      img(UNSPLASH.interior2, 1200, 800),
+    ],
+    description: 'Encantador piso reformado con todos los detalles originales del modernismo catalán conservados. Techos altos, suelos hidráulicos y gran luminosidad.',
+    longDescription: `Un auténtico tesoro del patrimonio arquitectónico barcelonés situado en una de las calles más pintorescas de Gràcia. Este piso de 88m² ha sido objeto de una exquisita reforma integral que ha respetado todos los elementos originales: techos de 3,20m con molduras, suelos hidráulicos de época recuperados y carpintería de madera maciza.
+
+La distribución incluye un amplio salón con balcón a la calle de doble hoja, comedor independiente, cocina completamente equipada con acceso a patio interior, dos dormitorios con armarios empotrados y un baño completo renovado con ducha de lluvia.
+
+El edificio data de 1908 y está catalogado como elemento de interés arquitectónico. Calefacción central renovada, instalación eléctrica actualizada. A 5 minutos caminando del metro Fontana.`,
+    features: [
+      'Suelos hidráulicos originales',
+      'Techos 3.20m',
+      'Balcón a calle',
+      'Reforma integral 2024',
+      'Calefacción central',
+      'Patio interior',
+      'Metro Fontana a 5 min',
+      'Certificado energético C',
+    ],
+    featured: true,
+    status: 'available',
+    reference: 'SE-2602',
+  },
+  {
+    slug: 'apartamento-vistas-mar-barceloneta-barcelona',
+    title: 'Apartamento con Vistas al Mar en la Barceloneta',
+    location: 'Barceloneta, Barcelona',
+    neighborhood: 'barceloneta',
+    price: 680000,
+    type: 'apartamento',
+    bedrooms: 2,
+    bathrooms: 2,
+    sqm: 92,
+    image: img(UNSPLASH.seaview),
+    gallery: [
+      img(UNSPLASH.seaview, 1200, 800),
+      img(UNSPLASH.modern, 1200, 800),
+      img(UNSPLASH.bedroom, 1200, 800),
+      img(UNSPLASH.bathroom, 1200, 800),
+    ],
+    description: 'Excepcional apartamento frente al mar con vistas despejadas al Mediterráneo desde el salón y la terraza. Edificio moderno con piscina comunitaria.',
+    longDescription: `Situado en primera línea de mar en la Barceloneta, este apartamento de diseño contemporáneo ofrece unas vistas al Mediterráneo absolutamente privilegiadas. Desde el amplio salón y la terraza de 20m² se contempla un horizonte marino sin obstáculos que convierte cada amanecer en un espectáculo único.
+
+El inmueble se distribuye en 92m² interiores más terraza: salón-comedor abierto a la cocina de diseño, dos dormitorios dobles con baños en suite, ambos orientados al mar. Los acabados son de primera calidad: suelos de microcemento, carpintería lacada y cocina con isla central de Corian.
+
+El edificio, construido en 2018, dispone de piscina comunitaria en la azotea con vistas al mar, gimnasio, conserjería 24 horas y dos plazas de garaje. Acceso directo a la Barceloneta y a 10 minutos del centro ciudad.`,
+    features: [
+      'Vistas directas al mar',
+      'Terraza 20m²',
+      'Piscina comunitaria azotea',
+      'Gimnasio edificio',
+      'Conserjería 24h',
+      'Dos plazas de garaje',
+      'Acabados premium',
+      'Certificado energético A',
+    ],
+    featured: true,
+    status: 'available',
+    reference: 'SE-2603',
+  },
+  {
+    slug: 'villa-lujo-sarria-barcelona',
+    title: 'Villa de Lujo en Sarrià con Jardín y Piscina',
+    location: 'Sarrià, Barcelona',
+    neighborhood: 'sarria',
+    price: 2500000,
+    type: 'villa',
     bedrooms: 5,
     bathrooms: 4,
-    floor: 'Baja',
-    yearBuilt: 2018,
-    energyRating: 'A',
-    description: 'Impresionante casa unifamiliar de diseño moderno en el prestigioso barrio de Sarrià. Con 350 m² construidos sobre una parcela de 400 m², la propiedad ofrece amplios espacios diáfanos, grandes ventanales que conectan con el jardín privado de 200 m² con piscina. Distribuida en 3 plantas más sótano: planta principal con salón de doble altura, cocina-office y comedor; planta primera con 3 dormitorios y 2 baños; planta segunda con suite principal con terraza y vestidor. Sótano con garaje para 3 coches, bodega y sala de juegos. Acabados de máxima calidad con materiales sostenibles.',
+    sqm: 480,
+    image: img(UNSPLASH.villa),
+    gallery: [
+      img(UNSPLASH.villa, 1200, 800),
+      img(UNSPLASH.luxury, 1200, 800),
+      img(UNSPLASH.bedroom, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
+      img(UNSPLASH.exterior, 1200, 800),
+    ],
+    description: 'Magnífica villa singular de lujo en la exclusiva zona de Sarrià. 480m² construidos en parcela privada de 800m² con jardín mediterráneo y piscina infinita.',
+    longDescription: `Oportunidad única de adquirir una de las villas más exclusivas de Sarrià, el barrio residencial más cotizado de Barcelona. Esta propiedad singular de 480m² construidos se asienta sobre una parcela privada de 800m² con jardín mediterráneo diseñado por un reconocido paisajista y piscina infinita con vistas a la ciudad.
+
+La villa, proyectada por un estudio de arquitectura de referencia nacional, distribuye sus espacios en tres plantas: planta baja con sala de estar de doble altura, comedor de gala, cocina-office y habitación de invitados; primera planta con suite principal de 80m² más cuatro dormitorios adicionales; sótano con cine privado, bodega climatizada, sala de fitness y dos plazas de garaje.
+
+Los acabados son de la más alta gama: suelos de mármol travertino, cocina Bulthaup, baños Dornbracht, domótica integral Crestron y sistema de climatización radiante. Parcela completamente vallada y sistema de seguridad perimetral.`,
     features: [
-      'Jardín privado 200 m²',
-      'Piscina climatizada',
-      'Garaje para 3 vehículos',
-      'Suite principal con vestidor',
+      'Piscina infinita privada',
+      'Jardín 800m² diseñado',
+      'Garaje privado 2 plazas',
+      'Cine privado',
+      'Bodega climatizada',
+      'Domótica Crestron',
       'Cocina Bulthaup',
-      'Aerotermia',
-      'Paneles solares',
-      'Domótica',
-      'Bodega',
-      'Sala de juegos',
-      'Aspiración centralizada',
-      'Alarma conectada',
-      'Suelo radiante',
-      'Climatización por conductos'
+      'Baños Dornbracht',
+      'Certificado energético A+',
     ],
-    images: ['/images/properties/casa-sarria-1.jpg', '/images/properties/casa-sarria-2.jpg'],
     featured: true,
-    status: 'venta',
-    coords: { lat: 41.4019, lng: 2.1308 }
+    status: 'available',
+    reference: 'SE-2604',
   },
   {
-    slug: 'atico-doble-gracia',
-    title: 'Ático Dúplex con Vistas en Gràcia',
-    type: 'ático',
-    neighborhood: 'Vila de Gràcia',
-    district: 'Gràcia',
-    price: 650000,
-    currency: '€',
-    size: 95,
-    bedrooms: 2,
-    bathrooms: 2,
-    floor: '6ª',
-    yearBuilt: 1970,
-    energyRating: 'D',
-    description: 'Encantador ático dúplex en el vibrante barrio de Gràcia, reformado con gusto y respetando la esencia del barrio. La planta baja cuenta con un acogedor salón-comedor con cocina americana, un dormitorio y un baño. La planta superior alberga el dormitorio principal con baño en suite y acceso a una terraza privada de 25 m² con vistas a las montañas de Collserola. La finca dispone de ascensor. Situado a pocos pasos de la Plaza del Sol y del mercado de la Llibertat, rodeado de las mejores terrazas, tiendas y restaurantes del barrio.',
-    features: [
-      'Dúplex con terraza 25 m²',
-      'Reformado integralmente',
-      'Vistas a Collserola',
-      'Cocina americana equipada',
-      'Ascensor',
-      'Suelos de parquet',
-      'Climatización split',
-      'Armarios empotrados',
-      'Balcón francés'
-    ],
-    images: ['/images/properties/atico-gracia-1.jpg', '/images/properties/atico-gracia-2.jpg'],
-    featured: true,
-    status: 'venta',
-    coords: { lat: 41.4028, lng: 2.1588 }
-  },
-  {
-    slug: 'piso-con-vistas-diagonal-mar',
-    title: 'Piso con Vistas al Mar en Diagonal Mar',
-    type: 'piso',
-    neighborhood: 'Diagonal Mar',
-    district: 'Sant Martí',
-    price: 520000,
-    currency: '€',
-    size: 85,
-    bedrooms: 3,
-    bathrooms: 2,
-    floor: '12ª',
-    yearBuilt: 2005,
-    energyRating: 'B',
-    description: 'Magnífico piso en la zona de Diagonal Mar con espectaculares vistas al mar Mediterráneo. La propiedad de 85 m² se distribuye en un luminoso salón-comedor con acceso a terraza, cocina independiente equipada, 3 dormitorios (2 dobles) y 2 baños completos. La urbanización dispone de piscina comunitaria, jardines, pista de pádel, gimnasio y sala social. Incluye plaza de parking y trastero. Situado a 5 minutos andando de la playa de la Mar Bella y del centro comercial Diagonal Mar. Excelente conexión de transporte público con parada de metro y tranvía.',
-    features: [
-      'Vistas al mar',
-      'Terraza con vistas',
-      'Piscina comunitaria',
-      'Pista de pádel',
-      'Gimnasio',
-      'Parking incluido',
-      'Trastero',
-      'Cocina independiente',
-      'Armarios empotrados',
-      'Aire acondicionado',
-      'Suelo radiante'
-    ],
-    images: ['/images/properties/piso-diagonal-mar-1.jpg', '/images/properties/piso-diagonal-mar-2.jpg'],
-    featured: true,
-    status: 'venta',
-    coords: { lat: 41.4069, lng: 2.2189 }
-  },
-  {
-    slug: 'local-comercial-el-born',
-    title: 'Local Comercial en El Born',
-    type: 'local',
-    neighborhood: 'El Born',
-    district: 'Ciutat Vella',
-    price: 450000,
-    currency: '€',
-    size: 80,
-    bedrooms: 0,
-    bathrooms: 1,
-    yearBuilt: 1850,
-    energyRating: 'E',
-    description: 'Excelente local comercial en una de las calles más transitadas del emblemático barrio de El Born. Con 80 m² diáfanos y una fachada de 6 metros, este local ofrece una visibilidad excepcional en una zona de alto tránsito peatonal y turístico. Cuenta con techos abovedados de ladrillo visto, suelos de hidráulico original y una entreplanta de 20 m² que puede utilizarse como almacén u oficina. Ideal para negocio de restauración, tienda de moda o galería de arte. Licencia de actividad en tramitación favorable. Baño privado y trastero incluido.',
-    features: [
-      'Fachada 6 metros',
-      'Techos abovedados',
-      'Ladrillo visto',
-      'Suelos hidráulicos originales',
-      'Entreplanta 20 m²',
-      'Alta afluencia peatonal',
-      'Licencia actividad',
-      'Baño privado',
-      'Trastero',
-      'Aire acondicionado'
-    ],
-    images: ['/images/properties/local-born-1.jpg', '/images/properties/local-born-2.jpg'],
-    featured: false,
-    status: 'venta',
-    coords: { lat: 41.3852, lng: 2.1833 }
-  },
-  {
-    slug: 'oficinas-representativas-gotico',
-    title: 'Oficinas Representativas en el Gótico',
-    type: 'oficina',
-    neighborhood: 'Barri Gòtic',
-    district: 'Ciutat Vella',
-    price: 380000,
-    currency: '€',
-    size: 120,
-    bedrooms: 0,
-    bathrooms: 2,
-    floor: '2ª',
-    yearBuilt: 1880,
-    energyRating: 'D',
-    description: 'Prestigiosas oficinas en un edificio histórico del Barri Gòtic de Barcelona, perfectas para despachos profesionales, bufetes de abogados o sedes corporativas. Con 120 m² distribuidos en un amplio espacio diáfano, 3 despachos independientes, sala de reuniones, recepción y 2 baños. El edificio ha sido rehabilitado manteniendo la fachada original del siglo XIX e incorporando todas las comodidades modernas: ascensor, aire acondicionado, fibra óptica y sistema de seguridad. Techos de 4 metros de altura con vigas de madera vistas. Situado a un minuto de la Plaza Sant Jaume y del Ayuntamiento.',
-    features: [
-      'Edificio histórico rehabilitado',
-      'Techos 4 m de altura',
-      'Vigas de madera vistas',
-      '3 despachos independientes',
-      'Sala de reuniones',
-      'Ascensor',
-      'Fibra óptica',
-      'Seguridad 24h',
-      'Aire acondicionado',
-      'Suelos de parquet'
-    ],
-    images: ['/images/properties/oficinas-gotico-1.jpg', '/images/properties/oficinas-gotico-2.jpg'],
-    featured: false,
-    status: 'venta',
-    coords: { lat: 41.3834, lng: 2.1769 }
-  },
-  {
-    slug: 'piso-reformado-poble-sec',
-    title: 'Piso Reformado con Balcón en Poble Sec',
-    type: 'piso',
-    neighborhood: 'Poble Sec',
-    district: 'Sants-Montjuïc',
-    price: 285000,
-    currency: '€',
-    size: 65,
-    bedrooms: 2,
-    bathrooms: 1,
-    floor: '3ª',
-    yearBuilt: 1960,
-    energyRating: 'C',
-    description: 'Piso reformado con excelente gusto en el auténtico barrio de Poble Sec, ideal para parejas o inversores. La vivienda de 65 m² consta de salón-comedor con balcón exterior, cocina americana totalmente equipada, 2 dormitorios dobles y un baño completo con ducha de diseño. Reforma integral realizada en 2022 con carpintería de aluminio Climalit, instalación eléctrica y fontanería nuevas, y suelo laminado de alta calidad. Finca con ascensor. A 10 minutos andando de las principales atracciones: Plaza España, Museo Nacional de Arte de Cataluña y el Parque de Montjuïc. Metro y bus a escasos metros.',
-    features: [
-      'Reformado en 2022',
-      'Balcón exterior',
-      'Cocina americana',
-      'Ascensor',
-      'Carpintería Climalit',
-      'Suelo laminado',
-      'Instalación eléctrica nueva',
-      'Fontanería nueva',
-      'Aire acondicionado split',
-      'Armarios empotrados'
-    ],
-    images: ['/images/properties/piso-poble-sec-1.jpg', '/images/properties/piso-poble-sec-2.jpg'],
-    featured: true,
-    status: 'venta',
-    coords: { lat: 41.3735, lng: 2.1640 }
-  },
-  {
-    slug: 'piso-sant-antoni',
-    title: 'Piso con Encanto en Sant Antoni',
-    type: 'piso',
-    neighborhood: 'Sant Antoni',
-    district: 'Eixample',
+    slug: 'piso-renovado-born-barcelona',
+    title: 'Piso Renovado en El Born',
+    location: 'El Born, Barcelona',
+    neighborhood: 'born',
     price: 395000,
-    currency: '€',
-    size: 75,
-    bedrooms: 2,
-    bathrooms: 2,
-    floor: '1ª',
-    yearBuilt: 1950,
-    energyRating: 'E',
-    description: 'Encantador piso exterior en el animado barrio de Sant Antoni, recientemente renovado. La propiedad ofrece 75 m² distribuidos en un salón comedor muy luminoso con ventanales que dan a la calle, cocina independiente equipada, 2 dormitorios dobles y 2 baños (uno en suite). La reforma ha preservado el encanto original con techos altos y molduras, combinado con cocina y baños modernos. Finca con ascensor y portero automático. Situado a dos calles del emblemático Mercado de Sant Antoni, recientemente rehabilitado, y muy cerca de la avenida del Paral·lel. Zona en plena transformación con numerosos bares, restaurantes y tiendas de diseño.',
-    features: [
-      'Recientemente renovado',
-      'Exterior muy luminoso',
-      'Techos altos con molduras',
-      'Cocina independiente',
-      'Ascensor',
-      'Portero automático',
-      'Baño en suite',
-      'Armarios empotrados',
-      'Aire acondicionado',
-      'Balcón'
-    ],
-    images: ['/images/properties/piso-sant-antoni-1.jpg', '/images/properties/piso-sant-antoni-2.jpg'],
-    featured: false,
-    status: 'venta',
-    coords: { lat: 41.3788, lng: 2.1647 }
-  },
-  {
-    slug: 'casa-con-piscina-les-corts',
-    title: 'Casa Adosada con Piscina en Les Corts',
-    type: 'casa',
-    neighborhood: 'Les Corts',
-    district: 'Les Corts',
-    price: 980000,
-    currency: '€',
-    size: 200,
-    bedrooms: 4,
-    bathrooms: 3,
-    yearBuilt: 1995,
-    energyRating: 'C',
-    description: 'Espaciosa casa adosada en el tranquilo y residencial barrio de Les Corts, perfecta para familias. Con 200 m² distribuidos en 4 plantas, la vivienda cuenta con: sótano con garaje para 2 coches y zona de almacenaje; planta baja con salón de 40 m² con chimenea, cocina-office y aseo; primera planta con 3 dormitorios y 2 baños; segunda planta con suite principal, terraza y acceso a solárium privado. El jardín trasero de 50 m² con piscina es perfecto para disfrutar del clima mediterráneo. Excelente estado de conservación, con calefacción central de gas natural, aire acondicionado y carpintería de aluminio. Cerca del Camp Nou y de la Diagonal.',
-    features: [
-      'Jardín con piscina',
-      'Chimenea',
-      'Garaje 2 coches',
-      'Solárium privado',
-      'Calefacción central gas',
-      'Aire acondicionado',
-      'Cocina-office equipada',
-      'Armarios empotrados',
-      'Terraza',
-      'Muy cerca de la Diagonal'
-    ],
-    images: ['/images/properties/casa-les-corts-1.jpg', '/images/properties/casa-les-corts-2.jpg'],
-    featured: false,
-    status: 'venta',
-    coords: { lat: 41.3868, lng: 2.1325 }
-  },
-  {
-    slug: 'atico-reformado-gracia',
-    title: 'Ático Reformado en el Corazón de Gràcia',
-    type: 'ático',
-    neighborhood: 'Vila de Gràcia',
-    district: 'Gràcia',
-    price: 420000,
-    currency: '€',
-    size: 70,
+    type: 'piso',
     bedrooms: 2,
     bathrooms: 1,
-    floor: '5ª',
-    yearBuilt: 1950,
-    energyRating: 'D',
-    description: 'Bonito ático reformado en la mejor zona de Gràcia, a dos pasos de la Plaza de la Revolució. Con 70 m² bien aprovechados, la vivienda ofrece un salón comedor con techos de madera inclinados que le dan un encanto especial, cocina americana, 2 dormitorios (uno con altillo) y un baño con ducha. La terraza privada de 12 m² orientada a mediodía recibe sol todo el día. Reforma integral de calidad con acabados cuidados. Edificio con ascensor. Una oportunidad única para vivir en el barrio más cool de Barcelona, rodeado de galerías de arte, tiendas de diseño y la mejor oferta gastronómica de la ciudad.',
-    features: [
-      'Ático reformado',
-      'Terraza 12 m²',
-      'Techos inclinados de madera',
-      'Altillo en dormitorio',
-      'Ascensor',
-      'Cocina americana',
-      'Acabados de calidad',
-      'Armarios empotrados',
-      'Climatización split',
-      'Muy luminoso'
+    sqm: 75,
+    image: img(UNSPLASH.modern),
+    gallery: [
+      img(UNSPLASH.modern, 1200, 800),
+      img(UNSPLASH.bedroom, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
     ],
-    images: ['/images/properties/atico-reformado-gracia-1.jpg', '/images/properties/atico-reformado-gracia-2.jpg'],
+    description: 'Precioso piso totalmente renovado en el barrio más trendy de Barcelona. Decoración de diseño, excelente distribución y ubicación inmejorable.',
+    longDescription: `El Born es hoy por hoy uno de los barrios más deseados de Barcelona, y este piso de 75m² en la Carrer del Comerç lo tiene todo: una reforma integral completada en 2024 con materiales de primera calidad, dos dormitorios luminosos, salón-comedor con chimenea decorativa y cocina abierta de diseño.
+
+El estilo interiorista combina elementos industriales —ladrillo visto, vigas metálicas— con toques cálidos de madera y textiles naturales. Los suelos de microcemento aportan continuidad y modernidad. El piso tiene una distribución muy eficiente que aprovecha al máximo cada metro cuadrado.
+
+A un paso del Mercat de Santa Caterina, el Parc de la Ciutadella y las mejores terrazas del barrio. Excelente para uso como primera residencia o inversión con altísima rentabilidad por alquiler de media y larga estancia.`,
+    features: [
+      'Reforma integral 2024',
+      'Chimenea decorativa',
+      'Ladrillo visto original',
+      'Suelos microcemento',
+      'Mercado Santa Caterina a 2 min',
+      'Parc Ciutadella a 3 min',
+      'Inversión alta rentabilidad',
+      'Certificado energético C',
+    ],
     featured: false,
-    status: 'venta',
-    coords: { lat: 41.4008, lng: 2.1567 }
+    status: 'available',
+    reference: 'SE-2605',
   },
   {
-    slug: 'piso-estudio-inversion-sant-marti',
-    title: 'Estudio en Venta – Oportunidad Inversión en Sant Martí',
-    type: 'piso',
-    neighborhood: 'Sant Martí de Provençals',
-    district: 'Sant Martí',
-    price: 180000,
-    currency: '€',
-    size: 45,
+    slug: 'loft-industrial-poblenou-barcelona',
+    title: 'Loft Industrial de Diseño en Poblenou',
+    location: 'Poblenou, Barcelona',
+    neighborhood: 'poblenou',
+    price: 380000,
+    type: 'loft',
     bedrooms: 1,
     bathrooms: 1,
-    floor: '2ª',
-    yearBuilt: 1975,
-    energyRating: 'E',
-    description: 'Excelente oportunidad de inversión en el dinámico barrio de Sant Martí de Provençals. Este acogedor estudio de 45 m² recently renovado cuenta con salón-cocina americana, dormitorio independiente con armario empotrado y baño completo. La zona cuenta con todos los servicios: supermercados, farmacias, centros de salud y excelente conexión de transporte público (metro L1 y L2, bus y proximidad a la estación de Renfe). Alto potencial de rentabilidad por alquiler, con una estimación de rentabilidad del 6-7% anual. Ideal para inversores que buscan entrar en el mercado inmobiliario de Barcelona con una inversión asequible. Comunidad de vecinos tranquila y bien mantenida.',
-    features: [
-      'Reformado',
-      'Dormitorio independiente',
-      'Cocina americana',
-      'Buena conexión transporte',
-      'Alta rentabilidad inversión',
-      'Armarios empotrados',
-      'Aire acondicionado',
-      'Comunidad tranquila',
-      'Calefacción eléctrica',
-      'Zona con todos los servicios'
+    sqm: 95,
+    image: img(UNSPLASH.loft),
+    gallery: [
+      img(UNSPLASH.loft, 1200, 800),
+      img(UNSPLASH.modern, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
     ],
-    images: ['/images/properties/estudio-sant-marti-1.jpg', '/images/properties/estudio-sant-marti-2.jpg'],
+    description: 'Impresionante loft de diseño en antigua fábrica reconvertida del @22 de Barcelona. Techos de 5 metros, diáfano y lleno de carácter.',
+    longDescription: `Poblenou es el nuevo Silicon Valley de Barcelona, y este loft en una icónica fábrica modernista reconvertida es la joya del barrio. Con 95m² de planta abierta y techos de 5 metros, el espacio es imponente: vigas metálicas originales, cristaleras industriales, paredes de ladrillo visto y suelos de hormigón pulido crean una atmósfera única e irrepetible.
+
+La distribución diáfana permite personalizar el espacio a gusto: el área de descanso está elevada en entreplanta (incluida en los 95m²), mientras la zona de estar, cocina de diseño y baño completo con ducha XL se distribuyen en la planta principal. Instalación eléctrica por carril electrificado y radiadores de diseño.
+
+El edificio, con acceso controlado y conserjería, está en pleno Districte 22@, rodeado de empresas tecnológicas y a metros de la playa. Perfecto para profesionales creativos o inversión turística.`,
+    features: [
+      'Techos 5 metros',
+      'Planta diáfana',
+      'Ladrillo visto original',
+      'Vigas metálicas',
+      'Suelo hormigón pulido',
+      'Conserjería edificio',
+      'Distrito 22@',
+      'A 600m de la playa',
+    ],
     featured: false,
-    status: 'venta',
-    coords: { lat: 41.4180, lng: 2.2040 }
+    status: 'available',
+    reference: 'SE-2606',
   },
   {
-    slug: 'piso-de-lujo-passeig-gracia',
-    title: 'Piso de Lujo en Passeig de Gràcia',
-    type: 'piso',
-    neighborhood: 'Passeig de Gràcia',
-    district: 'Eixample',
-    price: 2800000,
-    currency: '€',
-    size: 180,
-    bedrooms: 3,
+    slug: 'atico-duplex-pedralbes-barcelona',
+    title: 'Ático Dúplex Exclusivo en Pedralbes',
+    location: 'Pedralbes, Barcelona',
+    neighborhood: 'pedralbes',
+    price: 1800000,
+    type: 'atico',
+    bedrooms: 4,
     bathrooms: 3,
-    floor: '3ª',
-    yearBuilt: 1920,
-    energyRating: 'B',
-    description: 'Propiedad de representación en el Passeig de Gràcia, la avenida más emblemática de Barcelona, frente a la Casa Batlló de Gaudí. Este majestuoso piso de 180 m² ha sido meticulosamente rehabilitado combinando elementos modernistas originales con las más altas prestaciones tecnológicas. Salón de 60 m² con techos de 4,5 m de altura, molduras originales y chimenea de mármol de Carrara. Cocina de diseño con isla central y electrodomésticos Gaggenau. Suite principal con baño de mármol, hidromasaje y vestidor. Sistema de climatización por conductos, domótica y seguridad avanzada. Portero 24h y parking en el mismo edificio.',
-    features: [
-      'Frente a Casa Batlló',
-      'Techos 4,5 m de altura',
-      'Molduras modernistas originales',
-      'Chimenea de mármol de Carrara',
-      'Cocina Gaggenau',
-      'Suite con hidromasaje',
-      'Domótica avanzada',
-      'Portero 24h',
-      'Parking en edificio',
-      'Suelos de mosaico hidráulico restaurados'
+    sqm: 280,
+    image: img(UNSPLASH.luxury),
+    gallery: [
+      img(UNSPLASH.luxury, 1200, 800),
+      img(UNSPLASH.penthouse, 1200, 800),
+      img(UNSPLASH.bedroom, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
+      img(UNSPLASH.terrace, 1200, 800),
     ],
-    images: ['/images/properties/piso-passeig-gracia-1.jpg', '/images/properties/piso-passeig-gracia-2.jpg'],
+    description: 'Extraordinario ático dúplex en la zona más exclusiva de Barcelona. 280m² interiores más 120m² de terrazas con vistas a la ciudad y la sierra de Collserola.',
+    longDescription: `Pedralbes es la zona más exclusiva y tranquila de Barcelona, y este ático dúplex en un edificio de lujo representa lo mejor que la ciudad puede ofrecer. Con 280m² distribuidos en dos plantas y 120m² adicionales de terrazas, la propiedad combina amplitud, privacidad y unas vistas excepcionales.
+
+La planta inferior alberga un salón de doble altura con chimenea de bioetanol, comedor para 14 personas, cocina italiana de alta gama y una habitación doble con baño propio. La planta superior, conectada por una elegante escalera de cristal y acero, acoge la suite principal de 60m² con vestidor y baño de mármol, además de dos dormitorios adicionales con baños en suite.
+
+Las terrazas, accesibles desde todas las estancias del piso superior, disponen de jardín privado, jacuzzi de hidromasaje y zona de barbacoa. El edificio ofrece seguridad 24 horas, conserjería, piscina comunitaria y spa. Incluye tres plazas de garaje.`,
+    features: [
+      'Terrazas 120m²',
+      'Chimenea bioetanol',
+      'Jacuzzi privado',
+      'Escalera cristal-acero',
+      'Suite principal 60m²',
+      'Spa edificio',
+      'Tres plazas de garaje',
+      'Seguridad 24h',
+      'Certificado energético A',
+    ],
     featured: true,
-    status: 'venta',
-    coords: { lat: 41.3924, lng: 2.1651 }
-  }
+    status: 'available',
+    reference: 'SE-2607',
+  },
+  {
+    slug: 'piso-avenida-diagonal-barcelona',
+    title: 'Piso Elegante en Avenida Diagonal',
+    location: 'Les Corts, Barcelona',
+    neighborhood: 'les-corts',
+    price: 560000,
+    type: 'piso',
+    bedrooms: 3,
+    bathrooms: 2,
+    sqm: 130,
+    image: img(UNSPLASH.elegant),
+    gallery: [
+      img(UNSPLASH.elegant, 1200, 800),
+      img(UNSPLASH.modern, 1200, 800),
+      img(UNSPLASH.kitchen, 1200, 800),
+      img(UNSPLASH.bathroom, 1200, 800),
+    ],
+    description: 'Piso de representación en primera línea de la Diagonal, el eje más emblemático de Barcelona. Tres dormitorios, reforma total y parking incluido.',
+    longDescription: `La Avenida Diagonal es la arteria más importante y representativa de Barcelona, y este piso de 130m² en su tramo más cotizado es una oportunidad de primer orden. Con una reforma integral finalizada en 2023, la propiedad luce un estado como nuevo con los mejores materiales del mercado.
+
+El salón-comedor de 45m² con ventanales a la Diagonal es el corazón de la vivienda: parquet de roble natural, techo preparado para cortinas eléctricas y acceso a balcón terciado con vistas al bulevar arbolado. La cocina office es completamente independiente y está equipada con Siemens y Gaggenau. Tres dormitorios: uno principal con baño en suite y dos dobles con baño compartido de mármol Carrara.
+
+El edificio, de arquitectura clásica barcelonesa, dispone de portero presencial, ascensor de diseño y sala de reuniones comunitaria. Incluye plaza de garaje en planta -1.`,
+    features: [
+      'Vistas a la Diagonal',
+      'Parquet roble natural',
+      'Reforma 2023',
+      'Cocina Gaggenau',
+      'Portero presencial',
+      'Balcón terciado',
+      'Garaje incluido',
+      'Certificado energético B',
+    ],
+    featured: false,
+    status: 'available',
+    reference: 'SE-2608',
+  },
 ];
 
 export function getPropertyBySlug(slug: string): Property | undefined {
@@ -462,50 +361,10 @@ export function getPropertiesByNeighborhood(neighborhood: string): Property[] {
   return properties.filter(p => p.neighborhood === neighborhood);
 }
 
-export function getUniqueDistricts(): string[] {
-  return [...new Set(properties.map(p => p.district))];
-}
-
-export function getUniqueTypes(): string[] {
-  return [...new Set(properties.map(p => p.type))];
-}
-
-export function getUniqueNeighborhoods(): string[] {
-  return [...new Set(properties.map(p => p.neighborhood))];
-}
-
-export function formatPrice(price: number, currency: string = '€'): string {
-  return `${currency} ${price.toLocaleString('es-ES')}`;
-}
-
-export function getPropertyImage(slug: string, index: number = 1): string {
-  const images: Record<string, string[]> = {
-    'atico-de-lujo-pedralbes': ['/images/properties/atico-pedralbes-1.jpg', '/images/properties/atico-pedralbes-2.jpg'],
-    'piso-eixample-derecho': ['/images/properties/piso-eixample-1.jpg', '/images/properties/piso-eixample-2.jpg'],
-    'casa-moderna-sarria': ['/images/properties/casa-sarria-1.jpg', '/images/properties/casa-sarria-2.jpg'],
-    'atico-doble-gracia': ['/images/properties/atico-gracia-1.jpg', '/images/properties/atico-gracia-2.jpg'],
-    'piso-con-vistas-diagonal-mar': ['/images/properties/piso-diagonal-mar-1.jpg', '/images/properties/piso-diagonal-mar-2.jpg'],
-    'local-comercial-el-born': ['/images/properties/local-born-1.jpg', '/images/properties/local-born-2.jpg'],
-    'oficinas-representativas-gotico': ['/images/properties/oficinas-gotico-1.jpg', '/images/properties/oficinas-gotico-2.jpg'],
-    'piso-reformado-poble-sec': ['/images/properties/piso-poble-sec-1.jpg', '/images/properties/piso-poble-sec-2.jpg'],
-    'piso-sant-antoni': ['/images/properties/piso-sant-antoni-1.jpg', '/images/properties/piso-sant-antoni-2.jpg'],
-    'casa-con-piscina-les-corts': ['/images/properties/casa-les-corts-1.jpg', '/images/properties/casa-les-corts-2.jpg'],
-    'atico-reformado-gracia': ['/images/properties/atico-reformado-gracia-1.jpg', '/images/properties/atico-reformado-gracia-2.jpg'],
-    'piso-estudio-inversion-sant-marti': ['/images/properties/estudio-sant-marti-1.jpg', '/images/properties/estudio-sant-marti-2.jpg'],
-    'piso-de-lujo-passeig-gracia': ['/images/properties/piso-passeig-gracia-1.jpg', '/images/properties/piso-passeig-gracia-2.jpg'],
-  };
-  const imgs = images[slug];
-  return imgs ? imgs[Math.min(index, imgs.length - 1)] : '';
-}
-
-export function getBlogImage(slug: string): string {
-  const images: Record<string, string> = {
-    'guia-comprar-piso-barcelona-10-pasos': '/images/blog/guia-comprar-piso.jpg',
-    'mejores-barrios-vivir-barcelona-2025': '/images/blog/mejores-barrios.jpg',
-    'comprar-vivienda-barcelona-extranjero': '/images/blog/comprar-extranjero.jpg',
-    'atico-o-piso-ventajas-barcelona': '/images/blog/atico-o-piso.jpg',
-    'reformas-aumentan-valor-piso-barcelona': '/images/blog/reformas.jpg',
-    'hipotecas-2025-guia-completa': '/images/blog/hipotecas.jpg',
-  };
-  return images[slug] || '/images/blog/default.jpg';
+export function formatPrice(price: number): string {
+  return new Intl.NumberFormat('es-ES', {
+    style: 'currency',
+    currency: 'EUR',
+    maximumFractionDigits: 0,
+  }).format(price);
 }

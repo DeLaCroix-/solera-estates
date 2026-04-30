@@ -1,0 +1,84 @@
+---
+import type { BlogPost } from '../data/blog';
+import { formatDate } from '../data/blog';
+
+interface Props {
+  post: BlogPost;
+  animate?: boolean;
+  delay?: number;
+}
+
+const { post, animate = true, delay = 0 } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  'Guías':    'bg-blue-100 text-blue-700',
+  'Inversión':'bg-emerald-100 text-emerald-700',
+  'Mercado':  'bg-purple-100 text-purple-700',
+  'Barrios':  'bg-amber-100 text-amber-700',
+  'Vender':   'bg-rose-100 text-rose-700',
+};
+---
+
+<article
+  class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-400 overflow-hidden border border-cream-dark/50 flex flex-col"
+  data-animate
+  data-animate-delay={String(delay)}
+  aria-label={`Artículo del blog: ${post.title}`}
+>
+  <!-- Image -->
+  <a href={`/blog/${post.slug}`} class="block relative aspect-[16/10] overflow-hidden">
+    <img
+      src={post.image}
+      alt={`${post.title} - Blog Solera Estates Barcelona`}
+      loading="lazy"
+      width="800"
+      height="500"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+    <!-- Category Badge -->
+    <span class={`absolute top-4 left-4 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm backdrop-blur-sm ${categoryColors[post.category] ?? 'bg-white/90 text-dark'}`}>
+      {post.category}
+    </span>
+  </a>
+
+  <!-- Content -->
+  <div class="p-5 flex flex-col flex-1">
+    <!-- Meta -->
+    <div class="flex items-center gap-3 text-xs text-muted mb-3">
+      <time datetime={post.date}>{formatDate(post.date)}</time>
+      <span class="w-1 h-1 rounded-full bg-muted/40 inline-block"></span>
+      <span>{post.readTime} min lectura</span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-display font-semibold text-dark leading-snug mb-3 line-clamp-2 group-hover:text-navy transition-colors">
+      <a href={`/blog/${post.slug}`}>{post.title}</a>
+    </h3>
+
+    <!-- Excerpt -->
+    <p class="text-sm text-muted leading-relaxed line-clamp-3 flex-1 mb-4">
+      {post.excerpt}
+    </p>
+
+    <!-- Footer -->
+    <div class="flex items-center justify-between pt-4 border-t border-cream-dark/60 mt-auto">
+      <!-- Author -->
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-navy to-navy-light flex items-center justify-center text-xs text-white font-bold">
+          {post.author.split(' ').map(w => w[0]).join('').slice(0, 2)}
+        </div>
+        <span class="text-xs font-medium text-dark">{post.author}</span>
+      </div>
+
+      <!-- Read more -->
+      <a href={`/blog/${post.slug}`} class="text-xs font-semibold text-navy hover:text-gold transition-colors flex items-center gap-1">
+        Leer más
+        <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>

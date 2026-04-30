@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const teamMembers = [
+  {
+    name: 'Marcos Álvarez',
+    role: 'Fundador & Agente API',
+    bio: `Con más de 20 años de experiencia en el mercado inmobiliario barcelonés, Marcos fundó Solera Estates en 2010 con una visión clara: crear una agencia inmobiliaria que pusiera genuinamente los intereses del cliente en el centro de cada operación.
+
+Licenciado en Economía por la Universidad de Barcelona y Agente de la Propiedad Inmobiliaria colegiado (nº XXXXX), Marcos es reconocido como uno de los expertos de referencia en propiedades de lujo en Barcelona. Ha gestionado operaciones por valor superior a 300 millones de euros a lo largo de su carrera.
+
+Su profundo conocimiento del mercado local, su red de contactos internacional y su capacidad para conectar las necesidades de compradores e inversores con el inmueble perfecto son sus grandes fortalezas.`,
+    img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&h=700&q=80',
+    languages: ['Español', 'Inglés', 'Catalán', 'Francés'],
+    specialties: ['Propiedades de lujo', 'Inversión inmobiliaria', 'Negociación', 'Mercado prime Barcelona'],
+    email: 'marcos@soleraestates.com',
+    phone: '+34 600 000 001',
+    linkedin: '#',
+  },
+  {
+    name: 'Jorge Navarro',
+    role: 'Director Comercial',
+    bio: `Jorge llegó a Solera Estates en 2015 con un bagaje excepcional en ventas de alto valor y gestión de clientes premium en el sector financiero. Hoy lidera el departamento comercial con un equipo de agentes altamente cualificados.
+
+Especialista en el mercado de inversión inmobiliaria barcelonesa, Jorge ha desarrollado una red de relaciones con los principales family offices, fondos de inversión y grandes patrimonios que operan en el mercado inmobiliario de Barcelona.
+
+Su enfoque consultivo y su capacidad para entender tanto las necesidades del comprador como las expectativas del vendedor hacen de él un negociador brillante que siempre encuentra el punto de equilibrio donde todos ganan.`,
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&h=700&q=80',
+    languages: ['Español', 'Inglés', 'Catalán', 'Italiano'],
+    specialties: ['Inversores nacionales e internacionales', 'Portafolio inmobiliario', 'Gestión de equipos', 'Negociación avanzada'],
+    email: 'jorge@soleraestates.com',
+    phone: '+34 600 000 002',
+    linkedin: '#',
+  },
+  {
+    name: 'Eduardo Tejera',
+    role: 'Director de Marketing',
+    bio: `Eduardo es el estratega creativo detrás de la marca Solera Estates. Con formación en marketing digital y experiencia previa en agencias de comunicación de lujo en Madrid y Londres, se unió al equipo en 2018 para transformar la presencia digital y la estrategia de marca de la agencia.
+
+Bajo su dirección, Solera Estates ha multiplicado por 5 su visibilidad online, desarrollado una presencia en redes sociales con decenas de miles de seguidores cualificados y posicionado la agencia como referente del sector en Barcelona.
+
+Eduardo lidera también la estrategia de marketing internacional, coordinando la presencia de Solera Estates en portales premium de todo el mundo para atraer compradores de alto poder adquisitivo.`,
+    img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&h=700&q=80',
+    languages: ['Español', 'Inglés', 'Portugués', 'Catalán'],
+    specialties: ['Marketing inmobiliario digital', 'SEO y posicionamiento', 'Branding de lujo', 'Estrategia internacional'],
+    email: 'eduardo@soleraestates.com',
+    phone: '+34 600 000 003',
+    linkedin: '#',
+  },
+];
+
+const values = [
+  { icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`, title: 'Integridad', desc: 'Actuamos siempre con total transparencia y honestidad, poniendo los intereses del cliente por encima de todo.' },
+  { icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>`, title: 'Excelencia', desc: 'Buscamos la perfección en cada detalle de nuestro servicio, desde la primera llamada hasta la firma ante notario.' },
+  { icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>`, title: 'Personas', desc: 'Cada cliente es único. Nos tomamos el tiempo necesario para entender sus necesidades y superar sus expectativas.' },
+  { icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`, title: 'Visión Global', desc: 'Presencia internacional y red de contactos en más de 15 países para conectar Barcelona con el mundo.' },
+];
+---
+
+<Layout
+  title="Nuestro Equipo | Solera Estates Barcelona"
+  description="Conoce al equipo de Solera Estates: Marcos Álvarez (Fundador y API), Jorge Navarro (Director Comercial) y Eduardo Tejera (Director de Marketing). Expertos inmobiliarios en Barcelona."
+  canonical="/equipo"
+>
+  <Header />
+
+  <main class="pt-20">
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-navy to-navy-light py-16 lg:py-24" aria-labelledby="team-title">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div data-animate>
+            <p class="text-gold text-sm font-semibold uppercase tracking-widest mb-4">Nuestro Equipo</p>
+            <h1 id="team-title" class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              Expertos Apasionados<br/>por Barcelona
+            </h1>
+            <p class="text-cream/70 text-lg leading-relaxed mb-8">
+              Un equipo reducido y selecto de profesionales con décadas de experiencia combinada en el mercado inmobiliario barcelonés. Nos enorgullece ofrecer un servicio personalizado, cercano y de la más alta calidad.
+            </p>
+            <div class="flex flex-wrap gap-6">
+              {[
+                { num: '15+', label: 'Años de historia' },
+                { num: '850+', label: 'Familias atendidas' },
+                { num: '98%', label: 'Clientes satisfechos' },
+              ].map(s => (
+                <div>
+                  <p class="text-3xl font-display font-bold text-gold">{s.num}</p>
+                  <p class="text-xs text-cream/60 uppercase tracking-wide">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Team photo collage -->
+          <div class="grid grid-cols-3 gap-3" data-animate data-animate-delay="2">
+            {teamMembers.map((m, i) => (
+              <div class={`rounded-2xl overflow-hidden ${i === 1 ? 'mt-8' : ''} shadow-lg`}>
+                <img
+                  src={m.img}
+                  alt={`${m.name} - ${m.role} Solera Estates`}
+                  width="300"
+                  height="350"
+                  loading="eager"
+                  class="w-full h-full object-cover aspect-[3/4]"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Members Detail -->
+    <section class="py-20 lg:py-28 bg-cream" aria-labelledby="team-detail-title">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="text-center mb-16" data-animate>
+          <h2 id="team-detail-title" class="font-display text-3xl lg:text-4xl font-bold text-dark section-title-accent centered">
+            Conoce al Equipo
+          </h2>
+        </div>
+
+        <div class="space-y-20">
+          {teamMembers.map((member, i) => (
+            <article class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`} data-animate>
+              <!-- Image -->
+              <div class={`${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <div class="relative">
+                  <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/5]">
+                    <img
+                      src={member.img}
+                      alt={`${member.name} - ${member.role} en Solera Estates Barcelona`}
+                      width="600"
+                      height="700"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <!-- Decoration -->
+                  <div class={`absolute -bottom-4 ${i % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 rounded-2xl bg-gold-pale border-2 border-gold/20 -z-10`}></div>
+
+                  <!-- Contact Links -->
+                  <div class="absolute bottom-6 left-6 right-6 flex gap-2">
+                    <a href={`mailto:${member.email}`}
+                       class="flex-1 bg-white/90 backdrop-blur-sm text-navy text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 hover:bg-gold hover:text-white transition-all"
+                       aria-label={`Email a ${member.name}`}>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                      Email
+                    </a>
+                    <a href={`tel:${member.phone.replace(/\s/g, '')}`}
+                       class="flex-1 bg-white/90 backdrop-blur-sm text-navy text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 hover:bg-navy hover:text-white transition-all"
+                       aria-label={`Llamar a ${member.name}`}>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                      </svg>
+                      Llamar
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class={`${i % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <p class="text-xs font-bold text-gold uppercase tracking-widest mb-2">{member.role}</p>
+                <h3 class="font-display text-3xl font-bold text-dark mb-5">{member.name}</h3>
+
+                <div class="space-y-4 text-muted leading-relaxed text-sm mb-7">
+                  {member.bio.split('\n\n').filter(p => p.trim()).map(paragraph => (
+                    <p>{paragraph.trim()}</p>
+                  ))}
+                </div>
+
+                <!-- Languages -->
+                <div class="mb-5">
+                  <p class="text-xs font-semibold text-navy uppercase tracking-wide mb-2">Idiomas</p>
+                  <div class="flex flex-wrap gap-2">
+                    {member.languages.map(lang => (
+                      <span class="bg-cream-dark text-dark text-xs font-medium px-3 py-1.5 rounded-full">{lang}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- Specialties -->
+                <div>
+                  <p class="text-xs font-semibold text-navy uppercase tracking-wide mb-2">Especialidades</p>
+                  <ul class="space-y-2">
+                    {member.specialties.map(spec => (
+                      <li class="flex items-center gap-2 text-sm text-muted">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gold shrink-0 inline-block"></span>
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 bg-navy" aria-labelledby="values-title">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="text-center mb-12" data-animate>
+          <p class="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Nuestros Valores</p>
+          <h2 id="values-title" class="font-display text-3xl lg:text-4xl font-bold text-white">
+            Lo que nos Hace Diferentes
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {values.map((v, i) => (
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300" data-animate data-animate-delay={String(i + 1)}>
+              <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" set:html={v.icon}></svg>
+              </div>
+              <h3 class="font-display font-bold text-white text-lg mb-2">{v.title}</h3>
+              <p class="text-cream/60 text-sm leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="py-20 bg-cream" aria-labelledby="join-title">
+      <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center" data-animate>
+        <h2 id="join-title" class="font-display text-3xl font-bold text-dark mb-4">¿Quieres Unirte a Nuestro Equipo?</h2>
+        <p class="text-muted mb-8 leading-relaxed">
+          Estamos siempre en busca de profesionales apasionados por el sector inmobiliario y por Barcelona. Si compartes nuestros valores y tienes ganas de crecer en un entorno exigente y estimulante, queremos conocerte.
+        </p>
+        <a href="mailto:jobs@soleraestates.com" class="btn-gold text-white font-semibold px-8 py-4 rounded-full inline-block">
+          Envíanos tu Candidatura →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

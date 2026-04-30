@@ -3,557 +3,415 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   content: string;
-  category: string;
+  image: string;
+  date: string;
   author: string;
   authorRole: string;
-  authorAvatar: string;
-  date: string;
-  readTime: string;
-  featuredImage: string;
   tags: string[];
-  relatedPosts?: string[];
+  metaDescription: string;
+  readTime: number;
+  category: string;
 }
+
+const BLOG_IMAGES = {
+  keys:        'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&h=480&q=80',
+  barcelona:   'https://images.unsplash.com/photo-1583422409516-2895a77efaad?auto=format&fit=crop&w=800&h=480&q=80',
+  investment:  'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&h=480&q=80',
+  neighborhood:'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&h=480&q=80',
+  selling:     'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&h=480&q=80',
+};
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'guia-comprar-piso-barcelona-10-pasos',
-    title: 'Guía para comprar piso en Barcelona: 10 pasos esenciales',
-    excerpt: 'Descubre todo lo que necesitas saber para comprar una vivienda en Barcelona en 2025. Desde la búsqueda inicial hasta la firma de escrituras, te guiamos paso a paso.',
-    content: `
-## Introducción
-
-Comprar una vivienda en Barcelona es una de las decisiones más importantes que puedes tomar. La capital catalana ofrece un mercado inmobiliario dinámico y diverso, con opciones para todos los gustos y presupuestos. En esta guía completa, te explicamos los 10 pasos esenciales para **comprar piso Barcelona** con éxito.
-
-## Paso 1: Define tu presupuesto
-
-Antes de empezar a buscar, es fundamental que tengas claro cuánto puedes gastar. Ten en cuenta no solo el precio de compra, sino también los gastos adicionales:
-
-- **Impuestos**: ITP (6-10% para vivienda usada) o IVA (10% para vivienda nueva) + AJD (1-1.5%)
-- **Notaría y registro**: aproximadamente 1-2% del precio
-- **Gestoría**: entre 300-600 €
-- **Tasación**: entre 300-600 €
-
-Si necesitas hipoteca, los bancos suelen financiar hasta el 80% del valor de tasación (o del precio de compra, el menor de ambos).
-
-## Paso 2: Obtén una preaprobación hipotecaria
-
-Contar con una preaprobación hipotecaria te dará ventaja en la negociación. Los vendedores sabrán que eres un comprador serio y con capacidad financiera. En 2025, los tipos de interés se han estabilizado, con ofertas desde el 2.5% TAE para perfiles solventes.
-
-## Paso 3: Elige la zona adecuada
-
-Barcelona es una ciudad de barrios, cada uno con su personalidad. Algunas de las zonas más demandadas para **comprar piso Barcelona** son:
-
-- **Eixample**: clásico, bien comunicado, edificios modernistas
-- **Gràcia**: ambiente de pueblo, vida cultural, terrazas
-- **Sarrià-Sant Gervasi**: exclusivo, familiar, tranquilo
-- **Poble Sec**: auténtico, buena relación calidad-precio
-- **Sant Antoni**: trendy, gastronómico, en plena transformación
-
-## Paso 4: Busca propiedades
-
-Utiliza portales inmobiliarios, visita páginas de agencias como **Solera Estates**, y no descartes el boca a boca. Barcelona tiene un mercado de alta rotación, especialmente en zonas céntricas.
-
-## Paso 5: Visita las propiedades
-
-Nunca compres un piso sin verlo en persona. Presta atención a:
-- Orientación y luz natural
-- Estado de la finca (comunidad, ascensor, fachada)
-- Ruidos del vecindario
-- Posibles humedades o grietas
-
-## Paso 6: Haz una oferta
-
-Una vez que encuentres tu piso ideal, llega el momento de negociar. Estudia los precios de venta en la zona para hacer una oferta realista. En Barcelona, los precios de venta pueden negociarse entre un 5-15% dependiendo de la demanda.
-
-## Paso 7: Firma el contrato de arras
-
-El contrato de arras es un acuerdo vinculante donde entregas una señal (generalmente el 10% del precio). Si el comprador se echa atrás, pierde la señal; si el vendedor se retira, debe devolver el doble.
-
-## Paso 8: Tramita la hipoteca
-
-Una vez firmadas las arras, formaliza tu hipoteca. Compara diferentes entidades y negocia las condiciones: tipo de interés, plazo, vinculaciones (seguros, planes de pensiones, etc.).
-
-## Paso 9: Prepara la documentación
-
-Necesitarás:
-- DNI/NIE y pasaporte
-- Últimas declaraciones de la renta
-- Nóminas y contrato laboral
-- Vida laboral
-- Ahorros justificados
-
-## Paso 10: Firma la escritura pública
-
-El día de la firma, en la notaría, se realiza el pago del resto del precio y se otorga la escritura de compraventa. ¡Enhorabuena, ya eres propietario de un piso en Barcelona!
-
-## Conclusión
-
-Comprar una vivienda en Barcelona es un proceso apasionante. Con esta guía y el acompañamiento de profesionales como **Solera Estates**, tu **inmobiliaria Barcelona** de confianza, el camino será mucho más sencillo. Contáctanos para recibir asesoramiento personalizado.
-    `.trim(),
+    slug: 'comprar-piso-barcelona-guia-completa-2026',
+    title: 'Comprar un Piso en Barcelona: Guía Completa 2026',
+    excerpt: 'Todo lo que necesitas saber para comprar una propiedad en Barcelona en 2026: precios por barrio, impuestos, hipotecas y los errores más comunes a evitar.',
+    image: BLOG_IMAGES.keys,
+    date: '2026-04-20',
+    author: 'Eduardo Tejera',
+    authorRole: 'Director de Marketing',
+    tags: ['Comprar piso', 'Barcelona', 'Guía inmobiliaria', 'Primera vivienda', 'Hipoteca Barcelona'],
+    metaDescription: 'Guía completa para comprar un piso en Barcelona en 2026. Precios actualizados, impuestos, documentación necesaria, mejores barrios y consejos de expertos inmobiliarios.',
+    readTime: 10,
     category: 'Guías',
-    author: 'María Soler',
-    authorRole: 'Directora Comercial',
-    authorAvatar: '/images/team/maria-soler.jpg',
-    date: '25 Abril 2025',
-    readTime: '8 min',
-    featuredImage: '/images/blog/comprar-piso-barcelona.jpg',
-    tags: ['comprar piso Barcelona', 'guía compra vivienda', 'inmobiliaria Barcelona', 'consejos inmobiliarios'],
-    relatedPosts: ['mejores-barrios-vivir-barcelona-2025', 'comprar-vivienda-barcelona-extranjero']
+    content: `
+## Por Qué Barcelona Sigue Siendo una Apuesta Segura en 2026
+
+Barcelona es, sin lugar a dudas, una de las ciudades más deseadas del mundo para vivir e invertir. Su combinación única de clima mediterráneo, oferta cultural incomparable, infraestructuras de primer nivel y una economía diversificada la convierten en un mercado inmobiliario que, a pesar de las fluctuaciones globales, mantiene una demanda sostenida y robusta.
+
+Según los datos del Colegio de Registradores de Cataluña, en el primer trimestre de 2026 el precio medio del metro cuadrado en Barcelona ciudad se sitúa en torno a los **4.800 €/m²**, con variaciones significativas según el barrio y el tipo de inmueble.
+
+## Precios por Barrio: ¿Dónde Comprar en Barcelona?
+
+### Eixample: El Barrio más Cotizado
+
+El Eixample sigue liderando el ranking de precios con una media de **6.200 €/m²** en el Eixample Dret y **5.800 €/m²** en el Eixample Esquerra. La demanda aquí es constante tanto de compradores nacionales como internacionales, atraídos por su arquitectura modernista, sus anchas avenidas y su centralidad absoluta.
+
+### Gràcia: Bohemio y Familiar
+
+Con precios entre **4.500 y 5.200 €/m²**, Gràcia ofrece una excelente relación calidad-precio para quienes buscan el carácter y la vida de barrio parisino en pleno centro de Barcelona. Las calles peatonales, el mercado de l'Abaceria y las plazas animadas hacen de este barrio un lugar muy especial.
+
+### Sarrià-Sant Gervasi y Pedralbes: Lujo y Exclusividad
+
+La zona alta de Barcelona, con precios que oscilan entre **5.500 y 8.500 €/m²** para las mejores propiedades, es el destino favorito de familias con alto poder adquisitivo que buscan tranquilidad, espacios grandes y acceso a los mejores colegios internacionales de la ciudad.
+
+### El Born y Sant Pere: Inversión con Alta Rentabilidad
+
+El Born mantiene precios estables en torno a los **5.000 €/m²**, pero su atractivo inversor radica en la elevadísima rentabilidad de alquiler, tanto de larga estancia como turístico (con las licencias correspondientes).
+
+## Los Gastos e Impuestos que Debes Tener en Cuenta
+
+Una de las sorpresas más desagradables al comprar un piso en Barcelona es no haber tenido en cuenta todos los gastos adicionales. En Cataluña, los más importantes son:
+
+### ITP (Impuesto de Transmisiones Patrimoniales)
+Para vivienda de segunda mano en Cataluña, el ITP es del **10%** sobre el precio de compraventa. Para jóvenes menores de 33 años comprando su primera vivienda habitual, existe una reducción al **5%**.
+
+### IVA y AJD para Obra Nueva
+Si compras obra nueva, en lugar de ITP pagarás **IVA al 10%** más el **Acto Jurídico Documentado (AJD) al 1,5%** sobre el precio.
+
+### Notaría, Registro y Gestoría
+Suma entre **1.500 y 3.000 €** adicionales según el precio de la operación.
+
+### Honorarios de Agencia
+En Barcelona, los honorarios de la agencia inmobiliaria los paga habitualmente el vendedor, no el comprador. En Solera Estates seguimos esta práctica estándar del mercado.
+
+**Regla general**: prevé un **12-14% adicional** sobre el precio de compra para cubrir todos los gastos.
+
+## La Hipoteca en 2026: ¿Tipo Fijo o Variable?
+
+Con el euríbor estabilizándose en torno al 2,8% tras los máximos de 2023, el debate entre hipoteca fija y variable vuelve a estar sobre la mesa.
+
+**Hipoteca fija**: Las entidades españolas ofrecen actualmente tipos desde el **3,2% TIN** para plazos de 25 años. La estabilidad y predictibilidad de la cuota mensual son sus grandes ventajas.
+
+**Hipoteca variable**: Con el euríbor a 12 meses en niveles más moderados, los diferenciales de euríbor + 0,50-0,75% pueden resultar competitivos. Sin embargo, implica exposición a futuras subidas.
+
+Desde Solera Estates colaboramos con los principales brokers hipotecarios de Barcelona para ayudarte a obtener las mejores condiciones del mercado.
+
+## Checklist: Documentación Necesaria para Comprar
+
+Antes de firmar ante notario, asegúrate de revisar:
+
+- **Nota Simple registral actualizada**: confirma la titularidad y cargas del inmueble
+- **Certificado de eficiencia energética** (obligatorio para la escritura)
+- **IBI al corriente de pago** y comprobación de deudas con la comunidad
+- **Cédula de habitabilidad vigente** (en Cataluña es obligatoria)
+- **Estatutos de la comunidad** de propietarios
+- **Último acta de la junta** de comunidad (para detectar derramas pendientes)
+- **Informe del ITE** (Inspección Técnica del Edificio) si el edificio tiene más de 45 años
+
+## Conclusión: Compra Informado y con los Mejores Profesionales
+
+Comprar un piso en Barcelona es una de las decisiones financieras más importantes de tu vida. Contar con el acompañamiento de una agencia inmobiliaria de confianza, un buen abogado y un broker hipotecario independiente marcará la diferencia entre una operación exitosa y un costoso error.
+
+En **Solera Estates** llevamos más de 15 años ayudando a nuestros clientes a encontrar su propiedad ideal en Barcelona. Contacta con nuestro equipo para una consulta sin compromiso.
+    `,
   },
   {
-    slug: 'mejores-barrios-vivir-barcelona-2025',
-    title: 'Los mejores barrios para vivir en Barcelona en 2025',
-    excerpt: 'Análisis completo de los barrios más recomendables para residir en Barcelona en 2025. Precios, servicios, transporte y calidad de vida.',
+    slug: 'mejores-barrios-invertir-barcelona-2026',
+    title: 'Los Mejores Barrios para Invertir en Barcelona en 2026',
+    excerpt: 'Análisis detallado de los barrios de Barcelona con mayor potencial de revalorización y rentabilidad para inversión inmobiliaria en 2026.',
+    image: BLOG_IMAGES.barcelona,
+    date: '2026-04-10',
+    author: 'Jorge Navarro',
+    authorRole: 'Director Comercial',
+    tags: ['Inversión inmobiliaria', 'Barcelona barrios', 'Rentabilidad alquiler', 'Revalorización', 'Invertir en Barcelona'],
+    metaDescription: 'Descubre los mejores barrios de Barcelona para invertir en 2026. Análisis de rentabilidad, precios y tendencias de mercado por zonas: Eixample, Gràcia, Poblenou y más.',
+    readTime: 8,
+    category: 'Inversión',
     content: `
-## Introducción
+## Barcelona: Un Mercado Inmobiliario en Constante Evolución
 
-Barcelona es una ciudad de contrastes y cada barrio ofrece una experiencia de vida única. En 2025, algunos barrios destacan por su calidad de vida, servicios, conexiones y, por supuesto, por los precios de las **viviendas en venta Barcelona**. Analizamos los mejores.
+El mercado inmobiliario barcelonés ha demostrado una notable resiliencia y capacidad de adaptación a lo largo de los últimos años. Tras el impacto de la pandemia y el ciclo de subidas de tipos, 2026 se presenta como un año de consolidación y nuevas oportunidades para inversores con visión a medio y largo plazo.
 
-## Eixample: el clásico con estilo
+En este análisis, el equipo comercial de Solera Estates identifica los barrios y zonas de Barcelona con mayor potencial de rentabilidad y revalorización para este año.
 
-El Eixample sigue siendo el barrio más solicitado para **comprar piso Barcelona**. Sus calles anchas, edificios modernistas y su ubicación céntrica lo convierten en una apuesta segura.
+## Poblenou / 22@: La Estrella del Momento
 
-*Precio medio: 5.500 €/m²*
-*Ideal para: profesionales, familias, inversores*
+Sin duda, el **Districte 22@** y el barrio del Poblenou son la apuesta más interesante del momento. La transformación de este antiguo barrio industrial en el hub tecnológico y creativo de Barcelona ha generado un incremento de precios sostenido del **8-12% anual** en los últimos cinco años.
 
-**Ventajas**: Excelente comunicación (metro, bus, tren), oferta cultural, gastronómica y comercial. Edificios con encanto y fincas rehabilitadas.
+**¿Por qué invertir aquí?**
+- Demanda de alquiler muy alta por parte de profesionales tech internacionales
+- Precio medio todavía un 20-25% inferior al Eixample
+- Importantes proyectos de regeneración urbana en curso
+- Acceso a la playa y zonas verdes
 
-**Inconvenientes**: Precios elevados, ciertas calles muy ruidosas, dificultad de aparcamiento.
+La rentabilidad bruta del alquiler en Poblenou oscila entre el **5,5% y el 7,5%**, muy por encima de la media de la ciudad.
 
-## Gràcia: el pueblo dentro de la ciudad
+## El Born / Sant Pere: Clásico con Proyección
 
-Gràcia conserva el ambiente de pueblo con plazas llenas de vida, tiendas de proximidad y una intensa agenda cultural.
+A pesar de ser ya un barrio muy consolidado y con precios elevados, **El Born** sigue ofreciendo rentabilidades atractivas por alquiler de media y larga estancia, especialmente para perfiles de inquilinos jóvenes y profesionales que valoran la vida urbana activa.
 
-*Precio medio: 4.200 €/m²*
-*Ideal para: jóvenes, parejas, creativos*
+El factor diferencial es la altísima rotación y la demanda siempre activa, lo que minimiza el riesgo de vacíos. Los pisos renovados de 1-2 dormitorios son el producto con mayor liquidez.
 
-**Ventajas**: Ambiente único, terrazas, mercados tradicionales, oferta cultural (Fiesta Mayor, teatro). Buena relación calidad-precio para el centro.
+## Horta-Guinardó y Nou Barris: Los Barrios de Oportunidad
 
-**Inconvenientes**: Calles estrechas, menos zonas verdes, algunos edificios sin ascensor.
+Para inversores con menor capital disponible (**120.000 - 250.000 €**), los barrios del norte de Barcelona como Horta-Guinardó, Nou Barris o Sant Andreu presentan algunas de las mejores oportunidades del mercado:
 
-## Sarrià-Sant Gervasi: exclusividad y tranquilidad
+- Precios entre **2.800 y 3.800 €/m²**
+- Mejoras constantes en infraestructuras y servicios
+- Llegada de nuevas líneas de metro que están revalorizando áreas
+- Rentabilidades brutas del **6-8%** en alquiler residencial
 
-La zona alta de Barcelona es sinónimo de calidad de vida, amplias zonas verdes y las mejores **propiedades de lujo en Barcelona**.
+## Eixample: El Valor Refugio por Excelencia
 
-*Precio medio: 6.800 €/m²*
-*Ideal para: familias, ejecutivos, compradores de lujo*
+El Eixample no es el barrio con mayor rentabilidad por alquiler, pero sí el que ofrece **mayor seguridad de capital** y menor riesgo. Los precios en este barrio no bajan: la demanda internacional y nacional es inagotable.
 
-**Ventajas**: Colegios internacionales, tranquilidad, seguridad, vistas, clima más fresco en verano. Grandes casas con jardín y piscina.
+Para inversores patrimonialistas que buscan preservar y hacer crecer su capital a largo plazo, un piso en el Eixample es posiblemente la inversión inmobiliaria más segura de España.
 
-**Inconvenientes**: Precios muy elevados, menos vida nocturna, transporte público menos frecuente en zonas altas.
+## Factores Clave para el Éxito de tu Inversión
 
-## Poble Sec: auténtico y asequible
+### 1. La Ubicación Específica Importa más que el Barrio
 
-Poble Sec es uno de los barrios más auténticos de Barcelona, con una excelente relación calidad-precio y una ubicación inmejorable al pie de Montjuïc.
+Dentro de cada barrio, la calle, la planta y la orientación pueden marcar diferencias del 20-30% en precio y rentabilidad. Un experto local como el equipo de Solera Estates conoce estos matices.
 
-*Precio medio: 3.200 €/m²*
-*Ideal para: parejas jóvenes, inversores, amantes de la cultura*
+### 2. El Estado del Inmueble
 
-**Ventajas**: Precios asequibles, bien comunicado (metro Paral·lel), oferta cultural (Teatre Lliure, MNAC, CaixaForum), proximidad al centro. Bares y restaurantes con solera como los del carrer Blai.
+En Barcelona, los pisos que necesitan reforma ofrecen los mejores márgenes, siempre que el comprador tenga la capacidad (económica y operativa) de ejecutar la reforma eficientemente. Una reforma bien ejecutada puede incrementar el valor de la propiedad entre un 25% y un 40%.
 
-## Sant Antoni: el barrio trendy
+### 3. El Perfil de Inquilino Objetivo
 
-Sant Antoni vive una auténtica revolución. La rehabilitación de su mercado central ha catapultado la zona como uno de los barrios de moda.
-
-*Precio medio: 4.500 €/m²*
-*Ideal para: profesionales, foodies, familias jóvenes*
-
-**Ventajas**: Mercado de Sant Antoni (referente gastronómico), nuevas aperturas de restaurantes y tiendas de diseño, terrazas, bien comunicado. Proximidad a la avenida del Paral·lel.
-
-## Les Corts: calidad de vida familiar
-
-Les Corts es un barrio residencial con excelentes servicios, zonas verdes y una comunidad muy estable.
-
-*Precio medio: 4.000 €/m²*
-*Ideal para: familias, estudiantes (Universidad de Barcelona)*
-
-**Ventajas**: Grandes zonas verdes (jardins de les Corts, Parc de Cervantes), ambiente tranquilo, buenos colegios, cercanía al Camp Nou y la Diagonal.
+Definir antes de comprar qué tipo de alquiler buscas (estudiantes, jóvenes profesionales, familias, ejecutivos internacionales) determinará qué inmueble y qué zona encaja mejor con tu estrategia.
 
 ## Conclusión
 
-Elegir el barrio adecuado en Barcelona depende de tus prioridades: presupuesto, estilo de vida, trabajo y familia. En **Solera Estates**, como **inmobiliaria Barcelona** con amplia experiencia, te ayudamos a encontrar el barrio y la propiedad que mejor se adapten a ti. Nuestro equipo conoce cada rincón de la ciudad y te asesorará sin compromiso.
-    `.trim(),
+2026 es un buen año para invertir en Barcelona. La estabilización de los tipos de interés, la solidez de la demanda de alquiler y las perspectivas positivas del mercado laboral barcelonés crean un entorno favorable para el inversor informado.
+
+En **Solera Estates** ofrecemos un servicio de **asesoramiento de inversión inmobiliaria** personalizado. Analizamos tu perfil, objetivos y capital disponible para recomendarte la inversión que mejor se adapte a ti.
+    `,
+  },
+  {
+    slug: 'mercado-inmobiliario-barcelona-2026-tendencias',
+    title: 'Mercado Inmobiliario Barcelona 2026: Tendencias y Perspectivas',
+    excerpt: 'Análisis del mercado inmobiliario barcelonés en 2026: evolución de precios, demanda, oferta y qué esperar para los próximos meses.',
+    image: BLOG_IMAGES.investment,
+    date: '2026-03-28',
+    author: 'Marcos Álvarez',
+    authorRole: 'Fundador y API',
+    tags: ['Mercado inmobiliario', 'Barcelona 2026', 'Precios vivienda', 'Tendencias', 'API inmobiliaria'],
+    metaDescription: 'Análisis completo del mercado inmobiliario de Barcelona en 2026: precios, demanda, oferta, tipos de interés y perspectivas para compradores e inversores.',
+    readTime: 7,
+    category: 'Mercado',
+    content: `
+## El Mercado Inmobiliario de Barcelona en 2026: Panorama General
+
+Barcelona vuelve a demostrar su fortaleza como mercado inmobiliario de referencia en el sur de Europa. A pesar de un entorno macroeconómico complejo durante 2024-2025, el mercado barcelonés ha sabido adaptarse y ofrece en 2026 un escenario de relativa estabilidad con perspectivas positivas moderadas.
+
+Como Agente de la Propiedad Inmobiliaria con más de 15 años de experiencia en el mercado barcelonés, puedo afirmar con conocimiento de causa que el momento actual, aunque exigente, presenta oportunidades reales para compradores e inversores con visión a medio plazo.
+
+## Evolución de Precios: ¿Qué ha Pasado y Qué Viene?
+
+### El Ciclo Alcista 2021-2024
+
+Tras la recuperación post-pandémica, el mercado barcelonés vivió un ciclo alcista importante entre 2021 y 2024, impulsado por una combinación de factores: tipos de interés históricamente bajos, recuperación económica sólida y demanda embalsada. En ese período, los precios llegaron a subir un 15-20% en determinadas zonas prime.
+
+### La Corrección 2024-2025
+
+La subida de tipos del BCE frenó parcialmente el mercado. Las transacciones se redujeron y los precios en algunos segmentos mostraron correcciones moderadas del 5-8%. Sin embargo, las zonas más exclusivas (Eixample, Sarrià, Pedralbes) apenas notaron el impacto, con caídas inferiores al 2%.
+
+### Perspectivas 2026-2028
+
+Con el euríbor estabilizado y los tipos del BCE en proceso de moderación, el consenso de los principales analistas apunta a:
+- **Estabilización de precios** en el corto plazo (2026)
+- **Reactivación moderada** con subidas del 3-6% en 2027
+- **Recuperación a ritmo normal** del ciclo para 2028
+
+## La Demanda: Quién Está Comprando en Barcelona
+
+La demanda en el mercado barcelonés es diversa y multicultural, lo que aporta robustez al mercado:
+
+### Compradores Nacionales (55% de las transacciones)
+Principalmente barceloneses que mejoran de vivienda o catalanes que regresan a la ciudad. Alta sensibilidad al tipo hipotecario.
+
+### Compradores Europeos y Estadounidenses (25%)
+Nómadas digitales, jubilados activos y ejecutivos internacionales que eligen Barcelona como base de operaciones. Poco sensibles al tipo hipotecario (suelen comprar al contado).
+
+### Inversores Latinoamericanos y del Oriente Medio (20%)
+Barcelona sigue siendo destino favorito para la diversificación de patrimonio de las clases altas latinoamericanas y para inversores del Golfo Pérsico que buscan activos seguros en Europa.
+
+## La Oferta: El Gran Problema Estructural
+
+El principal desafío del mercado barcelonés sigue siendo la **escasez crónica de oferta**. Barcelona tiene un tejido urbano consolidado con muy poco suelo disponible para nueva construcción. Los proyectos residenciales de obra nueva en marcha en 2026 son insuficientes para cubrir la demanda:
+
+- Solo 2.800 visados de obra nueva residencial en Barcelona ciudad en 2025
+- El 70% de las transacciones corresponden a segunda mano
+- Los plazos para obra nueva premium superan los 3 años desde firma hasta entrega
+
+Esta restricción estructural de oferta es el principal argumento para la resiliencia de los precios barceloneses a medio plazo.
+
+## Tendencias del Sector: Lo que Marca la Diferencia
+
+### Sostenibilidad y Eficiencia Energética
+La demanda de propiedades con certificaciones energéticas A y B se ha disparado un 40% en los últimos dos años. La factura energética importa, y los compradores lo saben. Invertir en mejorar la eficiencia de un inmueble es hoy más rentable que nunca.
+
+### Espacios Flexibles y Home Office
+El trabajo híbrido ha llegado para quedarse. Los pisos con despacho o espacio flexible para trabajar desde casa cotizan con una prima del 8-12% sobre propiedades similares sin este espacio.
+
+### Digitalización del Proceso de Compra
+Las visitas virtuales, los tours 3D y la firma digital de documentos se han normalizado. En Solera Estates ofrecemos estas herramientas para que puedas visitar propiedades desde cualquier parte del mundo.
+
+## Mi Valoración Personal
+
+Después de 15 años en este mercado, mi visión es clara: **Barcelona siempre vuelve**. Es una ciudad que atrae talento, capital y turismo de calidad de forma estructural. Los ciclos existen, pero la tendencia a largo plazo es inequívocamente positiva.
+
+Si tienes capacidad financiera y horizonte temporal de al menos 5-7 años, comprar en Barcelona hoy es una decisión acertada. El mercado no está sobrecalentado como en 2022, y las condiciones hipotecarias, aunque no en mínimos históricos, son perfectamente asumibles con una planificación financiera adecuada.
+
+En **Solera Estates** estamos aquí para ayudarte a navegar este mercado con la información y el asesoramiento que mereces.
+    `,
+  },
+  {
+    slug: 'ventajas-comprar-eixample-barcelona',
+    title: 'Por Qué Comprar en el Eixample de Barcelona es la Mejor Decisión',
+    excerpt: 'El Eixample es el barrio más cotizado de Barcelona. Te contamos por qué sus propiedades son una inversión segura y cómo encontrar las mejores oportunidades.',
+    image: BLOG_IMAGES.neighborhood,
+    date: '2026-03-15',
+    author: 'Eduardo Tejera',
+    authorRole: 'Director de Marketing',
+    tags: ['Eixample Barcelona', 'Comprar Eixample', 'Barrio Eixample', 'Modernismo Barcelona', 'Inversión Eixample'],
+    metaDescription: 'Descubre por qué el Eixample es el mejor barrio de Barcelona para comprar vivienda. Historia, precios, vida de barrio, modernismo y las mejores propiedades disponibles.',
+    readTime: 6,
     category: 'Barrios',
-    author: 'Carlos Márquez',
-    authorRole: 'Agente Inmobiliario Senior',
-    authorAvatar: '/images/team/carlos-marquez.jpg',
-    date: '22 Abril 2025',
-    readTime: '10 min',
-    featuredImage: '/images/blog/barrios-barcelona.jpg',
-    tags: ['mejores barrios Barcelona', 'vivir en Barcelona', 'vivienda Barcelona', 'barrios residenciales'],
-    relatedPosts: ['guia-comprar-piso-barcelona-10-pasos', 'hipotecas-2025-guia-completa']
+    content: `
+## El Eixample: El Corazón Modernista de Barcelona
+
+Diseñado por el visionario urbanista Ildefons Cerdà a mediados del siglo XIX, el Eixample ("Ensanche" en catalán) es uno de los ensanches urbanos más admirados del mundo. Sus manzanas octogonales, sus calles de 20 metros de ancho y la coherencia de su tejido urbano crean un barrio único que combina la grandeza burguesa con la vitalidad contemporánea.
+
+Vivir en el Eixample es vivir en el corazón de Barcelona: rodeado de las mejores tiendas, restaurantes, teatros y museos, a distancia caminable de prácticamente todo lo que la ciudad ofrece.
+
+## Arquitectura Modernista: Un Patrimonio que se Revaloriza
+
+El Eixample concentra la mayor densidad de arquitectura modernista del mundo. La Manzana de la Discordia —con la Casa Batlló de Gaudí, la Casa Amatller de Puig i Cadafalch y la Casa Lleó Morera de Domènech i Montaner— es solo la joya más visible de un barrio repleto de tesoros arquitectónicos.
+
+Vivir en un piso en un edificio modernista del Eixample es, literalmente, vivir dentro de una obra de arte. Los elementos originales —techos con molduras, suelos hidráulicos, vidrieras, carpintería de madera maciza— dan a estos inmuebles un carácter inimitable que el mercado reconoce y valora con primas sostenidas.
+
+## Eixample Dret vs. Eixample Esquerra: ¿Cuál Elegir?
+
+### Eixample Dret (Derecho)
+El más cotizado. Limita con Gràcia y la Diagonal. Calles icónicas como Passeig de Gràcia, Rambla Catalunya y Pau Claris. Precio medio: 5.800-7.000 €/m². Ambiente más exclusivo y menos bullicioso.
+
+### Eixample Esquerra (Izquierdo)
+Más diverso, multicultural y con mayor oferta gastronómica. El Gaixample (zona LGBTQ+) aporta vida y color. Precio medio: 4.800-5.800 €/m². Excelente para inversores: rentabilidad ligeramente superior.
+
+## Por Qué el Eixample es la Inversión Más Segura de Barcelona
+
+### Demanda Internacional Inagotable
+El Eixample está en el mapa mental de compradores de todo el mundo. Cuando un latinoamericano, un europeo del norte o un estadounidense piensa en comprar en Barcelona, piensa en el Eixample. Esta demanda globalizada actúa como seguro anti-crisis.
+
+### Liquidez Máxima
+Un piso en el Eixample es el activo inmobiliario más líquido de Barcelona. Si algún día necesitas vender, encontrarás comprador en semanas, no en meses.
+
+### Rentabilidad de Alquiler Estable
+Aunque la rentabilidad bruta (4,5-5,5%) es inferior a barrios emergentes, la seguridad de alquiler es máxima: mínima tasa de desocupación, inquilinos solventes y perfiles internacionales dispuestos a pagar premium por estar en el Eixample.
+
+## Qué Buscar al Comprar en el Eixample
+
+**La planta importa**: Los pisos del 3º al 6º son los más valorados. Los áticos con terraza son los más codiciados y los que mejor se revalorizan.
+
+**La orientación**: Interior de manzana vs. exterior. Los pisos con vistas al patio interior de manzana (muchos de ellos con jardines privados) son tranquilos y luminosos. Los exteriores con balcón a las grandes avenidas tienen más ambiente pero también más ruido.
+
+**El estado del edificio**: Los edificios sin ascensor o con ITE pendiente pueden parecer oportunidades, pero conllevan gastos importantes. Valora bien el estado de la comunidad antes de comprar.
+
+En **Solera Estates** somos especialistas en el mercado del Eixample. Contamos con un portfolio selecto de propiedades disponibles y acceso a inmuebles off-market que no encontrarás en ningún portal. Contacta con nosotros para descubrir las mejores oportunidades.
+    `,
   },
   {
-    slug: 'comprar-vivienda-barcelona-extranjero',
-    title: 'Todo sobre la compra de vivienda en Barcelona siendo extranjero',
-    excerpt: 'Guía completa para extranjeros que quieren comprar una propiedad en Barcelona. Requisitos legales, fiscales y financieros para no residentes.',
+    slug: 'consejos-vender-casa-barcelona-mejor-precio',
+    title: '7 Consejos Clave para Vender tu Casa en Barcelona al Mejor Precio',
+    excerpt: 'Si quieres vender tu propiedad en Barcelona obteniendo el máximo precio posible, estos 7 consejos de nuestros expertos te ayudarán a conseguirlo.',
+    image: BLOG_IMAGES.selling,
+    date: '2026-03-05',
+    author: 'Jorge Navarro',
+    authorRole: 'Director Comercial',
+    tags: ['Vender casa Barcelona', 'Precio venta vivienda', 'Home staging', 'Tasación Barcelona', 'Cómo vender piso'],
+    metaDescription: 'Aprende los 7 consejos clave para vender tu casa en Barcelona al mejor precio. Home staging, fotografía profesional, precio de salida y estrategia de marketing inmobiliario.',
+    readTime: 7,
+    category: 'Vender',
     content: `
-## Introducción
+## Introducción: El Arte de Vender Bien en Barcelona
 
-Barcelona atrae a compradores internacionales de todo el mundo. Ya sea para vivir, invertir o disfrutar de una segunda residencia, la ciudad condal es un destino prioritario. Si eres extranjero y quieres **comprar piso Barcelona**, esta guía es para ti.
+Vender una propiedad en Barcelona puede ser una experiencia extraordinariamente gratificante o tremendamente frustrante, dependiendo de cómo afrontes el proceso. En Solera Estates llevamos más de 15 años acompañando a propietarios en este camino, y hemos identificado los factores que marcan la diferencia entre una venta rápida al mejor precio y un proceso largo y desgastante.
 
-## ¿Puede un extranjero comprar una vivienda en Barcelona?
+Aquí van nuestros 7 consejos más valiosos.
 
-Sí, absolutamente. No hay restricciones generales para que los extranjeros compren propiedades en España. Sin embargo, los requisitos varían según tu nacionalidad y situación de residencia.
+## 1. Tasación Profesional: El Precio Correcto desde el Primer Día
 
-## Compradores de la UE
+El mayor error que cometen los vendedores en Barcelona es **sobrevalorar su propiedad**. Entendemos el apego emocional y la lógica de "pongo alto para negociar", pero la realidad del mercado actual es muy diferente.
 
-Si eres ciudadano de la Unión Europea, Islandia, Noruega, Liechtenstein o Suiza, el proceso es prácticamente idéntico al de un ciudadano español. Necesitarás tu DNI o pasaporte del país de origen y, si resides en España, tu Certificado de Registro de Ciudadano de la UE (NIE verde).
+Los estudios demuestran que las propiedades que salen al mercado con un precio excesivo tardan hasta 3 veces más en venderse y acaban cerrando a precios inferiores a los que habrían obtenido con un precio correcto desde el inicio. El mercado "penaliza" a las propiedades que llevan meses activas.
 
-## Compradores extracomunitarios
+Confía en una tasación profesional realizada por un experto con datos reales de transacciones en tu zona específica.
 
-Si vienes de fuera de la UE (EE.UU., Reino Unido, China, Latinoamérica, etc.), necesitarás:
+## 2. Home Staging: La Primera Impresión lo es Todo
 
-1. **Número de Identificación de Extranjero (NIE)**: es obligatorio para cualquier transacción inmobiliaria
-2. **Pasaporte en vigor**
-3. **Justificación de fondos**: origen legal del dinero
-4. **Cuenta bancaria en España**
+El **home staging** —la preparación visual y emocional de un inmueble para su venta— puede incrementar el precio de venta entre un **10% y un 15%** y reducir el tiempo en mercado hasta un 70%.
 
-No necesitas residencia para comprar, pero sí para obtener financiación bancaria en condiciones favorables.
+No se trata de grandes inversiones. A menudo, despersonalizar el espacio, retirar el exceso de muebles, realizar una limpieza profunda y añadir pequeños detalles decorativos estratégicos produce una transformación extraordinaria.
 
-## Fiscalidad para no residentes
+En Solera Estates contamos con un equipo de home staging interno que trabaja de la mano con nuestros vendedores.
 
-Los aspectos fiscales son clave al **comprar vivienda en Barcelona siendo extranjero**:
+## 3. Fotografía y Tour Virtual Profesional
 
-- **Impuesto sobre Transmisiones Patrimoniales (ITP)**: 6-10% según la comunidad (en Cataluña, progresivo hasta el 10% para viviendas usadas)
-- **Plusvalía Municipal**: impuesto municipal por la transmisión
-- **IRNR (Impuesto sobre la Renta de No Residentes)**: si alquilas la propiedad, tributas al 24% sobre los ingresos
-- **Impuesto sobre el Patrimonio**: si tu patrimonio global supera los 700.000 €
+En un mundo donde el 95% de los compradores inician su búsqueda online, la calidad de las imágenes de tu propiedad es crítica. Unas fotos de mala calidad, con poca luz o mal encuadradas, alejan a compradores potenciales antes incluso de entrar a ver el piso.
 
-## Financiación hipotecaria para extranjeros
+En Solera Estates invertimos en fotografía profesional con equipos de gran angular y edición de calidad editorial, más tours virtuales 3D que permiten a compradores internacionales visitar la propiedad desde el otro lado del mundo.
 
-Los bancos españoles conceden hipotecas a extranjeros, pero con condiciones diferentes:
+## 4. Marketing Multicanal: Más Alcance, Más Compradores
 
-- **UE**: hasta el 80% del valor de tasación
-- **Extracomunitarios**: normalmente hasta el 60-70%, aunque depende de tu perfil financiero
-- **Documentación**: necesitarás declaración de renta de tu país, extractos bancarios, contrato laboral y referencias
+Publicar en Idealista y Fotocasa ya no es suficiente. Una estrategia de venta efectiva en 2026 incluye:
 
-## Visados de residencia por inversión
+- **Portales internacionales**: Rightmove (Reino Unido), Immowelt (Alemania), A Vendre A Louer (Francia), Jamesedition (lujo global)
+- **Redes sociales**: Instagram y LinkedIn con contenido de calidad para captar compradores nacionales e internacionales
+- **Base de datos privada**: Solera Estates cuenta con más de 2.000 compradores activos registrados buscando propiedades en Barcelona
+- **Marketing por email** segmentado por perfil de comprador
+- **Prensa especializada** para propiedades prime
 
-La "Golden Visa" permite obtener la residencia en España invirtiendo más de 500.000 € en bienes inmuebles. Aunque el gobierno ha anunciado su intención de eliminar este programa, actualmente sigue vigente para nuevas solicitudes hasta nueva disposición legal.
+## 5. Documentación en Regla desde el Principio
 
-## Proceso paso a paso
+Uno de los principales motivos de retraso (o fracaso) en una operación inmobiliaria en Barcelona es la falta de documentación. Prepara con antelación:
 
-1. **Obtén tu NIE**: solicítalo en el consulado español de tu país o en la Comisaría de Policía en España
-2. **Abre una cuenta bancaria**: necesitarás una cuenta en España para la transacción
-3. **Busca con profesionales**: contrata una **inmobiliaria Barcelona** de confianza como Solera Estates
-4. **Firma las arras**: contrato de señal (10% del precio)
-5. **Escritura pública**: firma ante notario
+- **Escritura de propiedad** y últimos recibos del IBI
+- **Cédula de habitabilidad** vigente
+- **Certificado energético** (obligatorio para firmar)
+- **Certificado de deudas** con la comunidad de propietarios
+- **Estatutos de comunidad** y actas de últimas juntas
+- **ITE** si el edificio tiene más de 45 años
 
-## Conclusión
+Tener todo esto preparado transmite seriedad al comprador y agiliza enormemente el proceso.
 
-Comprar una **vivienda en Barcelona** como extranjero es un proceso accesible si cuentas con el asesoramiento adecuado. En **Solera Estates**, nuestra **inmobiliaria Barcelona** tiene amplia experiencia con clientes internacionales. Hablamos inglés, francés, alemán y mandarín. Contáctanos para una primera consulta gratuita.
-    `.trim(),
-    category: 'Extranjeros',
-    author: 'Laura Ferrer',
-    authorRole: 'Asesora Internacional',
-    authorAvatar: '/images/team/laura-ferrer.jpg',
-    date: '18 Abril 2025',
-    readTime: '9 min',
-    featuredImage: '/images/blog/extranjero-comprar-barcelona.jpg',
-    tags: ['comprar vivienda extranjero Barcelona', 'NIE', 'Golden Visa', 'inversión extranjera España'],
-    relatedPosts: ['guia-comprar-piso-barcelona-10-pasos', 'hipotecas-2025-guia-completa']
+## 6. Flexibilidad en las Visitas
+
+Barcelona es una ciudad con compradores de todo el mundo. Muchos visitan el piso en fin de semana o en horarios no convencionales. La flexibilidad para mostrar el inmueble en diferentes franjas horarias multiplica la exposición a compradores potenciales.
+
+Una agencia inmobiliaria como Solera Estates gestiona las visitas de forma profesional, garantizando que tu propiedad esté siempre en su mejor estado y que cada visita sea acompañada por un experto que conoce el inmueble y el barrio a la perfección.
+
+## 7. Negocia con Estrategia, No con el Corazón
+
+Llegado el momento de negociar, es fundamental mantener la cabeza fría. El trabajo de tu agente inmobiliario es clave aquí: gestionar las contraofertas con profesionalidad, identificar compradores con mayor solvencia y compromiso real, y orientarte sobre qué concesiones son razonables en el mercado actual.
+
+En Solera Estates negociamos siempre en defensa de tus intereses, con conocimiento profundo del mercado y datos objetivos sobre precios de cierre en tu zona.
+
+## ¿Listo para Vender tu Propiedad en Barcelona?
+
+Si estás pensando en vender tu piso o propiedad en Barcelona, el primer paso es una **valoración gratuita y sin compromiso** con el equipo de Solera Estates. En 48 horas te proporcionamos un informe detallado con el precio de mercado, nuestra estrategia de venta personalizada y un plan de marketing adaptado a tu propiedad.
+
+Contacta con nosotros hoy.
+    `,
   },
-  {
-    slug: 'atico-o-piso-ventajas-barcelona',
-    title: '¿Ático o piso? Ventajas de cada opción en Barcelona',
-    excerpt: 'Comparativa detallada entre áticos y pisos en Barcelona. Descubre cuál se adapta mejor a tu estilo de vida y presupuesto.',
-    content: `
-## Introducción
-
-Una de las decisiones más comunes al buscar **vivienda en venta Barcelona** es elegir entre un ático o un piso. Ambas opciones tienen ventajas y desventajas que dependen de tus prioridades. Analizamos a fondo cada una.
-
-## Áticos: el cielo de Barcelona
-
-Los áticos son sinónimo de exclusividad y vistas. En una ciudad como Barcelona, con su clima mediterráneo y su skyline único, un ático puede ser una experiencia de vida incomparable.
-
-### Ventajas de los áticos
-
-**Privacidad y tranquilidad**: Al estar en la última planta, no tienes vecinos arriba. El ruido se reduce significativamente.
-
-**Terraza privada**: Muchos áticos en Barcelona incluyen terraza, un lujo en una ciudad donde el espacio exterior cotiza al alza. Perfecto para cenas al aire libre, barbacoas o simplemente tomar el sol.
-
-**Vistas espectaculares**: Desde un ático en el Eixample puedes ver la Sagrada Familia, el Tibidabo o el mar. En Pedralbes o Sarrià, las vistas a Collserola son impresionantes.
-
-**Luz natural**: Al ser la planta más alta, la luz entra sin obstáculos durante todo el día.
-
-### Desventajas de los áticos
-
-**Precio más elevado**: Los áticos suelen tener un sobreprecio del 20-40% respecto a un piso similar en plantas inferiores.
-
-**Calor en verano**: Al recibir más sol, la temperatura puede ser más alta. Un buen aislamiento y aire acondicionado son esenciales.
-
-**Menor oferta**: Hay menos áticos que pisos en el mercado, lo que limita las opciones.
-
-**Acceso**: Dependencia del ascensor, y en edificios antiguos sin ascensor, puede ser un problema.
-
-## Pisos: la opción clásica
-
-Los pisos en plantas intermedias son la opción mayoritaria en Barcelona y ofrecen el mejor equilibrio entre precio y prestaciones.
-
-### Ventajas de los pisos
-
-**Mayor variedad**: La oferta de pisos en venta Barcelona es mucho más amplia, con opciones en todos los barrios y rangos de precio.
-
-**Mejor relación calidad-precio**: Por el mismo precio que un ático pequeño, puedes conseguir un **piso más grande** en la misma zona.
-
-**Menor exposición climática**: Los pisos en plantas intermedias mantienen una temperatura más estable durante todo el año, reduciendo el consumo energético.
-
-**Perfectos para familias**: Los pisos de 3-4 habitaciones son ideales para familias con niños, especialmente en zonas como Les Corts, Sarrià o Sant Gervasi.
-
-### Desventajas de los pisos
-
-**Ruido de vecinos**: Al tener vecinos arriba, el ruido de pasos, muebles o mascotas puede ser molesto.
-
-**Menos luz**: Dependiendo de la orientación y los edificios vecinos, la luz natural puede ser limitada.
-
-**Sin espacio exterior**: La mayoría de pisos en Barcelona no tienen terraza ni balcón amplio.
-
-## ¿Qué opción es mejor para ti?
-
-| Si buscas... | Elige... |
-|---|---|
-| Vistas y privacidad | Ático |
-| Máximo espacio interior | Piso |
-| Terraza y exterior | Ático |
-| Mejor inversión (rentabilidad) | Piso |
-| Tranquilidad absoluta | Ático |
-| Familia con niños | Piso (amplio) |
-| Relación calidad-precio | Piso |
-
-## Conclusión
-
-No hay una respuesta única. La elección entre ático y piso depende de tu estilo de vida, presupuesto y prioridades. En **Solera Estates**, como **inmobiliaria Barcelona** con un extenso catálogo de **pisos en venta Barcelona** y áticos exclusivos, te asesoramos para encontrar la opción perfecta. Visítanos en nuestra oficina o solicita una cita online.
-    `.trim(),
-    category: 'Consejos',
-    author: 'María Soler',
-    authorRole: 'Directora Comercial',
-    authorAvatar: '/images/team/maria-soler.jpg',
-    date: '14 Abril 2025',
-    readTime: '7 min',
-    featuredImage: '/images/blog/atico-vs-piso.jpg',
-    tags: ['ático o piso Barcelona', 'comprar piso Barcelona', 'ático Barcelona', 'vivienda Barcelona'],
-    relatedPosts: ['guia-comprar-piso-barcelona-10-pasos', 'mejores-barrios-vivir-barcelona-2025']
-  },
-  {
-    slug: 'reformas-aumentan-valor-piso-barcelona',
-    title: 'Reformas que aumentan el valor de tu piso en Barcelona',
-    excerpt: 'Descubre qué reformas incrementan realmente el valor de tu vivienda en Barcelona y cuáles son las más rentables de cara a una venta.',
-    content: `
-## Introducción
-
-Si estás pensando en **vender tu piso en Barcelona** o simplemente quieres aumentar su valor patrimonial, las reformas estratégicas pueden marcar la diferencia. No todas las reformas son igual de rentables. Te contamos cuáles tienen el mejor retorno de inversión (ROI) en el mercado inmobiliario barcelonés.
-
-## 1. Reforma de la cocina (ROI: 70-85%)
-
-La cocina es uno de los espacios que más valora un comprador. En Barcelona, una cocina moderna y funcional puede aumentar el valor percibido de la vivienda entre un 5-10%.
-
-**Inversión recomendada**: 6.000 - 15.000 €
-**Qué hacer**: Sustituir electrodomésticos por eficientes (A+++), cambiar encimera por silestone o dekton, instalar mobiliario moderno con mucho almacenaje, renovar grifería.
-
-## 2. Reforma del baño (ROI: 65-80%)
-
-Un baño moderno y bien iluminado es un factor decisivo para muchos compradores.
-
-**Inversión recomendada**: 4.000 - 10.000 €
-**Qué hacer**: Instalar plato de ducha amplio con mampara (las bañeras están en desuso), sanitarios suspendidos, mueble con espejo retroiluminado, grifería termostática.
-
-## 3. Mejora de la eficiencia energética (ROI: 50-70%)
-
-Con la nueva normativa energética europea, la eficiencia es cada vez más valorada. En Barcelona, mejorar el aislamiento y los sistemas de climatización puede aumentar el valor de la **vivienda en Barcelona** significativamente.
-
-**Inversión recomendada**: 8.000 - 25.000 €
-**Qué hacer**: Instalar doble acristalamiento (Climalit), mejorar aislamiento de fachada o cubierta, sustituir caldera por aerotermia o bomba de calor eficiente.
-
-## 4. Suelos y revestimientos (ROI: 50-65%)
-
-Los suelos son una de las primeras cosas que se ven al entrar en un piso. Un buen suelo transforma el espacio.
-
-**Inversión recomendada**: 3.000 - 8.000 €
-**Qué hacer**: Parquet de madera natural o tarima flotante de calidad (roble, haya). Evitar modas pasajeras como el microcemento en todas las superficies.
-
-## 5. Pintura y acabados (ROI: 100-200%)
-
-Es la reforma más rentable de todas. Una mano de pintura profesional en colores neutros puede transformar un piso.
-
-**Inversión recomendada**: 1.000 - 3.000 €
-**Qué hacer**: Pintar todas las paredes en tonos claros y neutros (blanco roto, beige, gris perla). Reparar grietas y desperfectos. Renovar rodapiés.
-
-## 6. Apertura de espacios (ROI: 40-60%)
-
-La tendencia actual en **pisos en venta Barcelona** es hacia espacios abiertos y diáfanos.
-
-**Inversión recomendada**: 5.000 - 15.000 €
-**Qué hacer**: Unir cocina y salón (si la estructura lo permite), eliminar pasillos innecesarios, integrar terrazas ampliando el salón.
-
-## 7. Terraza o balcón (ROI: 50-90%)
-
-En Barcelona, cualquier espacio exterior suma. Si tu piso tiene potencial de terraza o balcón, aprovéchalo.
-
-**Inversión recomendada**: 3.000 - 12.000 €
-**Qué hacer**: Instalar suelo de tarima exterior, incorporar riego automático para plantas, mobiliario de exterior integrado, toldo o pérgola.
-
-## Reformas que NO recomiendo
-
-- **Piscina privada en pisos**: carísima de mantener y no siempre legal
-- **Paredes de cristal interiores**: pasan de moda rápido y restan intimidad
-- **Habitaciones muy pequeñas**: mejor mantener espacios amplios que dividir en mini-habitaciones
-- **Papel pintado muy llamativo**: resta atractivo a compradores con gustos diferentes
-
-## Conclusión
-
-Invertir en reformas inteligentes puede aumentar el valor de tu **vivienda en venta Barcelona** hasta un 20-30%. En **Solera Estates**, te asesoramos sobre qué reformas son más rentables según la zona y el perfil de comprador. Contáctanos para una valoración gratuita de tu propiedad y un plan de reformas personalizado.
-    `.trim(),
-    category: 'Reformas',
-    author: 'Carlos Márquez',
-    authorRole: 'Agente Inmobiliario Senior',
-    authorAvatar: '/images/team/carlos-marquez.jpg',
-    date: '10 Abril 2025',
-    readTime: '8 min',
-    featuredImage: '/images/blog/reformas-valor-piso.jpg',
-    tags: ['reformas piso Barcelona', 'aumentar valor vivienda', 'vender piso Barcelona', 'mejoras vivienda'],
-    relatedPosts: ['guia-comprar-piso-barcelona-10-pasos', 'atico-o-piso-ventajas-barcelona']
-  },
-  {
-    slug: 'hipotecas-2025-guia-completa',
-    title: 'Hipotecas en 2025: guía completa para compradores',
-    excerpt: 'Todo lo que necesitas saber sobre hipotecas en 2025: tipos de interés, condiciones, comparativa de bancos y consejos para conseguir la mejor financiación.',
-    content: `
-## Introducción
-
-El mercado hipotecario en 2025 ha experimentado cambios significativos. Con los tipos de interés del BCE estabilizados y la competencia entre entidades, es un buen momento para quienes quieren **comprar piso Barcelona** con financiación. Esta guía te ayudará a navegar el mundo de las hipotecas.
-
-## Situación actual del mercado hipotecario
-
-Tras las subidas de tipos de 2023-2024, el euríbor se ha estabilizado en torno al 2.8-3.2% en 2025. Esto se traduce en hipotecas con TAE desde el 2.5% para los mejores perfiles.
-
-**Hipoteca media en Barcelona**: 180.000 €
-**Plazo medio**: 27 años
-**Tipo de interés medio**: 3.0% TAE
-
-## Tipos de hipoteca
-
-### Hipoteca fija
-Mantienes el mismo interés durante toda la vida del préstamo.
-
-*Ventajas*: Tranquilidad, cuota predecible, ideal si los tipos suben.
-*Inconvenientes*: Tipo inicial más alto que la variable, comisiones de apertura.
-*TAE actual*: 2.8% - 3.5%
-
-### Hipoteca variable
-El interés se revisa periódicamente según el euríbor más un diferencial.
-
-*Ventajas*: Cuota inicial más baja, si bajan los tipos te beneficias.
-*Inconvenientes*: Incertidumbre, posible subida de cuota.
-*TAE actual*: euríbor + 0.75% a 1.5%
-
-### Hipoteca mixta
-Tipo fijo los primeros años (3-10) y variable después.
-
-*Ventajas*: Lo mejor de ambos mundos, estabilidad inicial y flexibilidad futura.
-*TAE mixta*: 2.5% fijo primeros 5 años, luego variable.
-
-## Requisitos para conseguir hipoteca en 2025
-
-Los bancos han endurecido ligeramente los criterios tras la subida de tipos:
-
-1. **Estabilidad laboral**: mínimo 1 año en el mismo trabajo (3 para autónomos)
-2. **Nivel de endeudamiento**: la cuota no debe superar el 35-40% de tus ingresos netos
-3. **Ahorros**: necesitas al menos el 30-40% del precio (20% entrada + 10-15% gastos)
-4. **Historial crediticio**: sin impagos en los últimos 12 meses
-5. **Edad**: la hipoteca debe finalizar antes de los 75-80 años
-
-## Documentación necesaria
-
-- DNI/NIE
-- Últimas 3 nóminas
-- Últimas 2 declaraciones de la Renta
-- Vida laboral actualizada
-- Contrato de trabajo
-- Extractos bancarios de 3-6 meses
-- Si eres autónomo: últimas 2 declaraciones de IRPF y pagos fraccionados
-
-## Productos vinculados
-
-Los bancos ofrecen mejores condiciones si contratas:
-
-- **Seguro de hogar**: 100-300 €/año
-- **Seguro de vida**: 200-500 €/año
-- **Plan de pensiones**: desde 30 €/mes
-- **Nómina domiciliada**: obligatorio en la mayoría de casos
-- **Seguro de protección de pagos**: opcional
-
-Cada producto vinculado puede reducir el diferencial entre 0.10% y 0.25%.
-
-## Consejos para negociar
-
-1. **Compara al menos 5 entidades**: no te quedes con la primera oferta
-2. **Usa un bróker hipotecario**: pueden conseguirte condiciones hasta un 0.5% mejores
-3. **Negocia las vinculaciones**: no aceptes todas, calcula cuáles compensan realmente
-4. **Aporta más entrada**: reducirás el capital prestado y mejorarás condiciones
-5. **Elige plazo más corto**: si puedes asumir la cuota, ahorrarás miles de euros en intereses
-
-## Simulación de hipoteca para un piso en Barcelona
-
-*Ejemplo para un piso de 300.000 € en el Eixample:*
-
-| Concepto | Importe |
-|---|---|
-| Precio del piso | 300.000 € |
-| Entrada (20%) | 60.000 € |
-| Gastos (12%) | 36.000 € |
-| **Ahorros necesarios** | **96.000 €** |
-| Capital hipoteca | 240.000 € |
-| Plazo | 30 años |
-| Tipo fijo 3.0% TAE | **Cuota: 1.012 €/mes** |
-
-## Conclusión
-
-Conseguir una hipoteca en 2025 para **comprar piso Barcelona** es perfectamente viable si preparas bien tu perfil financiero. En **Solera Estates**, además de ayudarte a encontrar la mejor **vivienda en Barcelona**, te asesoramos sobre financiación y te ponemos en contacto con las mejores entidades. Solicita tu cita gratuita para empezar el proceso de compra de tu nuevo hogar.
-    `.trim(),
-    category: 'Financiación',
-    author: 'Laura Ferrer',
-    authorRole: 'Asesora Internacional',
-    authorAvatar: '/images/team/laura-ferrer.jpg',
-    date: '6 Abril 2025',
-    readTime: '10 min',
-    featuredImage: '/images/blog/hipotecas-2025.jpg',
-    tags: ['hipotecas 2025 Barcelona', 'financiación vivienda', 'comprar piso Barcelona', 'euríbor'],
-    relatedPosts: ['guia-comprar-piso-barcelona-10-pasos', 'comprar-vivienda-barcelona-extranjero']
-  }
 ];
 
-export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find(p => p.slug === slug);
 }
 
-export function getBlogPostsByCategory(category: string): BlogPost[] {
-  return blogPosts.filter(p => p.category === category);
-}
-
-export function getRelatedPosts(post: BlogPost): BlogPost[] {
-  if (!post.relatedPosts || post.relatedPosts.length === 0) return [];
-  return post.relatedPosts
-    .map(slug => getBlogPostBySlug(slug))
-    .filter((p): p is BlogPost => p !== undefined);
-}
-
-export function getUniqueCategories(): string[] {
-  return [...new Set(blogPosts.map(p => p.category))];
+export function getLatestPosts(n = 3): BlogPost[] {
+  return [...blogPosts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, n);
 }
 
 export function formatDate(dateStr: string): string {
-  return dateStr;
-}
-
-export function getBlogImage(slug: string): string {
-  const images: Record<string, string> = {
-    'guia-comprar-piso-barcelona-10-pasos': '/images/blog/guia-comprar-piso.jpg',
-    'mejores-barrios-vivir-barcelona-2025': '/images/blog/mejores-barrios.jpg',
-    'comprar-vivienda-barcelona-extranjero': '/images/blog/comprar-extranjero.jpg',
-    'atico-o-piso-ventajas-barcelona': '/images/blog/atico-o-piso.jpg',
-    'reformas-aumentan-valor-piso-barcelona': '/images/blog/reformas.jpg',
-    'hipotecas-2025-guia-completa': '/images/blog/hipotecas.jpg',
-  };
-  return images[slug] || '/images/blog/default.jpg';
+  return new Date(dateStr).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 }

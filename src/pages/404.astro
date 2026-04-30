@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Página no encontrada | Solera Estates Barcelona"
+  description="La página que buscas no existe. Vuelve al inicio de Solera Estates para encontrar propiedades de lujo en Barcelona."
+>
+  <Header />
+
+  <main class="pt-20 min-h-screen flex items-center bg-cream">
+    <div class="max-w-2xl mx-auto px-6 text-center py-20">
+      <div class="text-9xl font-display font-bold text-gold/30 mb-4" aria-hidden="true">404</div>
+      <h1 class="font-display text-3xl font-bold text-dark mb-4">Página no encontrada</h1>
+      <p class="text-muted mb-8 leading-relaxed">
+        Lo sentimos, la página que buscas no existe o ha sido movida. Puede que la propiedad ya haya sido vendida o la URL haya cambiado.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="btn-gold text-white font-semibold px-8 py-4 rounded-full">
+          Volver al Inicio
+        </a>
+        <a href="/propiedades" class="bg-white border-2 border-navy text-navy font-semibold px-8 py-4 rounded-full hover:bg-navy hover:text-white transition-all">
+          Ver Propiedades
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
