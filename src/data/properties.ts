@@ -339,8 +339,8 @@ El edificio, de arquitectura clásica barcelonesa, dispone de portero presencial
       'Garaje incluido',
       'Certificado energético B',
     ],
-    featured: false,
-    status: 'available',
+    featured: true,
+    status: 'reserved',
     reference: 'SE-2608',
   },
 ];
