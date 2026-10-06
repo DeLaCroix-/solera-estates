@@ -1,0 +1,16 @@
+---
+import type { ImageName, Language } from '../lib/types';
+interface Props { name: ImageName; lang: Language; hero?: boolean; sizes?: string; class?: string; }
+const { name, lang, hero = false, sizes = '(max-width: 760px) 100vw, 50vw', class: className = '' } = Astro.props;
+const dimensions = { hero: [2560, 1440], staircase: [1728, 2304], living: [2496, 1664] };
+const alts = {
+  es: { hero: 'Interior mediterráneo conceptual con un arco de piedra abierto a un patio con olivo.', staircase: 'Escalera escultórica conceptual en piedra clara, iluminada por el sol.', living: 'Salón mediterráneo conceptual con lino, nogal y luz cálida.' },
+  en: { hero: 'Conceptual Mediterranean interior with a stone arch opening onto an olive courtyard.', staircase: 'Conceptual sculptural limestone staircase in sunlight.', living: 'Conceptual Mediterranean living room with linen, walnut and warm light.' },
+};
+const [width, height] = dimensions[name];
+const srcset = (ext: string) => [640, 960, 1440, 1920].map(w => `/assets/${name}-${w}.${ext} ${name === 'staircase' && w === 1920 ? 1728 : w}w`).join(',');
+---
+<picture class={className}>
+  <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
+  <img src={`/assets/${name}-960.webp`} srcset={srcset('webp')} sizes={sizes} width={width} height={height} alt={alts[lang][name]} loading={hero ? 'eager' : 'lazy'} fetchpriority={hero ? 'high' : undefined} decoding="async" />
+</picture>

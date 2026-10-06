@@ -1,0 +1,39 @@
+---
+import { config, tx } from '../lib/site.mjs';
+import type { Language } from '../lib/types';
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const t = (es: string, english: string) => tx(lang, es, english);
+const endpoint = process.env.FORM_ENDPOINT || config.formEndpoint;
+const automatic = Boolean(endpoint && config.formEnabled && config.legalReady);
+const fields = [
+  { name: 'name', label: t('Nombre', 'Name'), help: t('Cómo prefieres que nos dirijamos a ti.', 'How you would like us to address you.'), type: 'text', required: true, max: 100, autocomplete: 'name' },
+  { name: 'email', label: t('Correo electrónico', 'Email address'), help: t('Utilizaremos este correo para responder a tu consulta.', 'We will use this address to reply to your enquiry.'), type: 'email', required: true, max: 254, autocomplete: 'email' },
+  { name: 'phone', label: t('Teléfono', 'Phone number'), help: t('Opcional. Incluye el prefijo si tu número es de otro país.', 'Optional. Include the country code for a number outside Spain.'), type: 'tel', required: false, max: 50, autocomplete: 'tel' },
+  { name: 'area', label: t('¿En qué podemos ayudarte?', 'What would you like help with?'), help: t('Selecciona el motivo principal; puedes ampliar la información en el mensaje.', 'Choose the main subject; you can explain more in your message.'), type: 'select', required: true, max: 100, autocomplete: 'off' },
+  { name: 'location', label: t('Ubicación aproximada del inmueble', 'Approximate property location'), help: t('Basta con indicar la zona de Barcelona.', 'The area of Barcelona is enough.'), type: 'text', required: false, max: 150, autocomplete: 'off' },
+  { name: 'timing', label: t('Fecha o momento del proyecto', 'Timing or project stage'), help: t('Indica si hay una fecha prevista o si estás empezando a valorar opciones.', 'Mention a planned date or tell us if you are still exploring options.'), type: 'text', required: false, max: 150, autocomplete: 'off' },
+  { name: 'message', label: t('Tu consulta', 'Your enquiry'), help: t('Explica la situación y el apoyo que necesitas. No adjuntes ni copies documentación personal.', 'Explain your situation and the support you need. Do not attach or copy personal documents.'), type: 'textarea', required: true, max: 4000, autocomplete: 'off' },
+] as const;
+const options = en ? ['Select an option', 'Property management and care', 'Renovation coordination', 'Property sale advice', 'Housing and arrival in Barcelona', 'I am not sure which service I need'] : ['Selecciona una opción', 'Gestión y cuidado del inmueble', 'Coordinación de una reforma', 'Asesoramiento en venta', 'Vivienda y llegada a Barcelona', 'No sé qué servicio necesito'];
+---
+<form id="enquiry-form" data-mode={automatic ? 'endpoint' : 'email'} data-endpoint={automatic ? endpoint : undefined} data-lang={lang} novalidate>
+  <p class="form-key">{t('Los campos con * son obligatorios.', 'Fields marked * are required.')}</p>
+  <div class="form-grid">{fields.map(field => {
+    const attrs = { id: 'field-' + field.name, name: field.name, required: field.required, 'aria-describedby': `help-${field.name} error-${field.name}`, autocomplete: field.autocomplete };
+    return <div class:list={['field', { 'field-wide': ['area', 'message'].includes(field.name) }]}>
+      <label for={'field-' + field.name}>{field.label}{field.required && <> <span aria-hidden="true">*</span></>}</label>
+      {field.type === 'select' ? <select {...attrs}>{options.map((option, i) => <option value={i ? option : ''}>{option}</option>)}</select>
+        : field.type === 'textarea' ? <textarea {...attrs} rows="5" maxlength={field.max} placeholder={t('Cuéntanos qué necesitas resolver y en qué momento te encuentras.', 'Tell us what you need to resolve and where things currently stand.')} />
+        : <input {...attrs} type={field.type} maxlength={field.max} placeholder={field.name === 'email' ? t('nombre@ejemplo.com', 'name@example.com') : undefined} />}
+      <small id={'help-' + field.name} class="field-help">{field.help}</small><span class="field-error" id={'error-' + field.name}></span>
+    </div>;
+  })}</div>
+  <div class="form-privacy"><p>{t('Responsable: NAT BPO SL. Tus datos se utilizan para atender la consulta y, en su caso, preparar el servicio solicitado. Puedes ejercer tus derechos escribiendo a info@soleraestates.es.', 'Controller: NAT BPO SL. Your information is used to respond to your enquiry and, where relevant, prepare the service you request. You can exercise your rights by emailing info@soleraestates.es.')}</p><a href={en ? '/en/privacy/' : '/privacidad/'}>{t('Consulta cómo tratamos tus datos en la Política de privacidad.', 'Read how we handle your information in our Privacy policy.')}</a></div>
+  {!automatic && <p class="email-mode-note">{t('Se abrirá tu aplicación de correo con la consulta preparada. Revísala y envíala desde allí; no se envía automáticamente.', 'Your email application will open with your enquiry prepared. Review it and send it from there; it is not sent automatically.')}</p>}
+  <button class="button button-dark" type="submit" disabled>{automatic ? t('Enviar consulta', 'Send enquiry') : t('Preparar consulta por correo', 'Prepare enquiry by email')}</button>
+  <p class="form-disclaimer">{t('El envío no confirma una cita ni supone la contratación de un servicio.', 'Sending this form does not confirm an appointment or commission a service.')}</p>
+  <div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+  <noscript><p>{t('Escríbenos directamente a', 'Email us directly at')} <a href="mailto:info@soleraestates.es">info@soleraestates.es</a>.</p></noscript>
+</form>

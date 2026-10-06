@@ -1,9 +1,10 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import { origin } from './src/lib/site.mjs';
 
 export default defineConfig({
-  site: 'https://soleraestates.com',
-  vite: {
-    plugins: [tailwindcss()]
-  }
+  site: origin,
+  output: 'static',
+  trailingSlash: 'always',
+  server: { host: '127.0.0.1', port: 4179 },
+  build: { inlineStylesheets: 'never' },
 });

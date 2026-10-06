@@ -1,0 +1,2291 @@
+{
+  "source": "Solera_Estates_Boutique_Privada_SEO_Barcelona_ES_EN_v2.md",
+  "scope": "H1/H2/H3. FAQ answers and the six blocks per language whose subject changed are aligned. Other copy, CTAs, metadata, URLs and design are preserved.",
+  "changes": [
+    {
+      "lang": "es",
+      "block": "HOME-01",
+      "level": "h1",
+      "before": "Servicios inmobiliarios para propietarios en Barcelona",
+      "after": "Asesoramiento inmobiliario privado en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "level": "h2",
+      "before": "Asesoramiento inmobiliario en Barcelona para cuidar, reformar y vender",
+      "after": "Gestión, reforma y venta de propiedades en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "level": "h3",
+      "before": "Gestión y cuidado de propiedades",
+      "after": "Gestión privada de propiedades"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "level": "h3",
+      "before": "Coordinación de reformas y puesta en valor",
+      "after": "Reforma y puesta en valor"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "level": "h3",
+      "before": "Asesoramiento para la venta",
+      "after": "Asesoramiento en venta"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "level": "h3",
+      "before": "Acompañamiento con tu vivienda y llegada",
+      "after": "Vivienda y llegada"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-03",
+      "level": "h2",
+      "before": "Atención a propietarios que viven en el extranjero",
+      "after": "Una relación cercana, también cuando estás lejos"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "level": "h2",
+      "before": "Cómo coordinamos las decisiones sobre tu inmueble",
+      "after": "La atención comienza por conocer la propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "level": "h3",
+      "before": "Conocer la situación",
+      "after": "Una conversación personal"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "level": "h3",
+      "before": "Acordar el trabajo",
+      "after": "Una propuesta definida"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "level": "h3",
+      "before": "Mantenerte al corriente",
+      "after": "Continuidad en las decisiones"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "level": "h2",
+      "before": "Preguntas frecuentes sobre nuestros servicios",
+      "after": "Antes de comenzar una relación"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": "¿Qué incluyen vuestros servicios inmobiliarios para propietarios en Barcelona?",
+      "after": "¿Qué distingue vuestro asesoramiento inmobiliario privado en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": "¿Puedo consultar si solo tengo una vivienda?",
+      "after": "¿Cómo se inicia una colaboración con Solera Estates?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": "¿Ofrecéis directamente asesoramiento jurídico o fiscal?",
+      "after": "¿Es necesario contratar todos los servicios?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": null,
+      "after": "¿Publicáis un catálogo de inmuebles?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-06",
+      "level": "h2",
+      "before": "Consulta sobre tu inmueble en Barcelona",
+      "after": "Una conversación privada sobre tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-01",
+      "level": "h1",
+      "before": "Solera Estates, asesoramiento al propietario en Barcelona",
+      "after": "Una firma inmobiliaria privada en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-02",
+      "level": "h2",
+      "before": "Una firma centrada en tus decisiones como propietario",
+      "after": "El propietario, antes que la operación"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-03",
+      "level": "h2",
+      "before": "Qué asumimos y qué coordinamos",
+      "after": "Discreción en la información. Claridad en las decisiones."
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-04",
+      "level": "h2",
+      "before": "Alcance, autorizaciones y comunicación",
+      "after": "Una relación que se estudia personalmente"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-05",
+      "level": "h2",
+      "before": "Valora si nuestro enfoque encaja con tu propiedad",
+      "after": "Conozcamos tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-01",
+      "level": "h1",
+      "before": "Gestión de propiedades en Barcelona",
+      "after": "Gestión privada de propiedades en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "level": "h2",
+      "before": "Cuidado del inmueble y coordinación de incidencias",
+      "after": "El cuidado de la propiedad, con una visión de conjunto"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "level": "h3",
+      "before": "Revisión de necesidades y prioridades",
+      "after": "Necesidades y prioridades del inmueble"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "level": "h3",
+      "before": "Información para decidir",
+      "after": "Seguimiento e información al propietario"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-03",
+      "level": "h2",
+      "before": "Gestión de propiedades en Barcelona para propietarios que viven fuera",
+      "after": "Gestión de propiedades en Barcelona para propietarios internacionales"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-04",
+      "level": "h2",
+      "before": "Cómo definimos el seguimiento de tu propiedad",
+      "after": "Una forma de delegar sin perder perspectiva"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-05",
+      "level": "h2",
+      "before": "Qué queda fuera de la gestión habitual",
+      "after": "De la gestión cotidiana a las decisiones importantes"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "level": "h2",
+      "before": "Preguntas frecuentes sobre gestión y cuidado de inmuebles",
+      "after": "Preguntas sobre la gestión privada de una propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "¿Qué incluye la gestión de propiedades en Barcelona?",
+      "after": "¿Qué incluye la gestión privada de propiedades en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "¿Puedo contratar el servicio para una vivienda que utilizo ocasionalmente?",
+      "after": "¿Podéis cuidar una vivienda que utilizo solo durante algunas estancias?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "¿Podéis coordinaros con mis proveedores actuales?",
+      "after": "¿Puedo conservar a los profesionales con los que ya trabajo?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "¿El servicio incluye atención las 24 horas?",
+      "after": "¿El servicio incluye alquileres, custodia de llaves o atención de urgencias?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-07",
+      "level": "h2",
+      "before": "Solicita gestión para tu propiedad en Barcelona",
+      "after": "Confía la gestión de tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-02",
+      "level": "h2",
+      "before": "Define la reforma antes de encargar los trabajos",
+      "after": "El proyecto empieza por cómo quieres vivir la propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-02",
+      "level": "h3",
+      "before": "Uso del inmueble y prioridades",
+      "after": "Conservación, uso y carácter"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-02",
+      "level": "h3",
+      "before": "Alcance, presupuesto y decisiones abiertas",
+      "after": "Prioridades y presupuesto de referencia"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "level": "h2",
+      "before": "Cómo organizamos la coordinación de reformas en Barcelona",
+      "after": "Cómo coordinamos tu reforma en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "level": "h3",
+      "before": "Propuestas que puedan compararse",
+      "after": "Propuestas y responsabilidades"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "level": "h3",
+      "before": "Interlocución y seguimiento de decisiones",
+      "after": "Interlocución durante los trabajos"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "level": "h3",
+      "before": "Cierre de actuaciones y asuntos pendientes",
+      "after": "Revisión y asuntos pendientes"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-04",
+      "level": "h2",
+      "before": "Puesta en valor según el uso del inmueble",
+      "after": "Puesta en valor con un propósito definido"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-05",
+      "level": "h2",
+      "before": "El papel del despacho y el de los profesionales técnicos",
+      "after": "La misma interlocución durante tu ausencia"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "level": "h2",
+      "before": "Preguntas frecuentes sobre la coordinación de una reforma",
+      "after": "Preguntas antes de iniciar una reforma"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "level": "h3",
+      "before": "¿Podéis coordinar la reforma si vivo en el extranjero?",
+      "after": "¿Puedo acudir si ya tengo arquitecto o empresa de reformas?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "level": "h3",
+      "before": "¿Puedo seguir trabajando con mi arquitecto o empresa de reformas?",
+      "after": "¿Cómo se aprueban los cambios de alcance o presupuesto?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "level": "h3",
+      "before": "¿Cómo se acuerdan el presupuesto y las modificaciones?",
+      "after": "¿Podéis acompañar una reforma que se prepara antes de vender?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-07",
+      "level": "h2",
+      "before": "Planifica la reforma de tu inmueble en Barcelona",
+      "after": "Conversemos sobre tu reforma en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-02",
+      "level": "h2",
+      "before": "Prepara la venta con información del inmueble y de tus prioridades",
+      "after": "Antes de decidir cómo salir al mercado"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "level": "h3",
+      "before": "Ordenar información y documentación",
+      "after": "Información y preparación del inmueble"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "level": "h3",
+      "before": "Valorar preparación y alternativas",
+      "after": "Propuestas y decisiones del propietario"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "level": "h3",
+      "before": "Coordinar decisiones y siguientes pasos",
+      "after": "Coordinación de la operación"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-04",
+      "level": "h2",
+      "before": "Coordinación con agencias y profesionales especializados",
+      "after": "La exposición de la propiedad se decide contigo"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "level": "h2",
+      "before": "Preguntas frecuentes sobre el acompañamiento al vendedor",
+      "after": "Preguntas sobre el acompañamiento en venta"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "¿Qué incluye vuestro asesoramiento para vender una propiedad en Barcelona?",
+      "after": "¿Qué incluye el asesoramiento para vender una propiedad en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "¿Puedo consultar si ya trabajo con una agencia o tengo comprador?",
+      "after": "¿Podéis acompañarme si ya tengo agencia o comprador?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "¿Podéis acompañarme si vivo fuera?",
+      "after": "¿Vender de forma privada implica no anunciar la propiedad?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "¿Cómo se determinan los honorarios?",
+      "after": "¿Cómo comienza el trabajo si resido en el extranjero?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-06",
+      "level": "h2",
+      "before": "Consulta la venta de tu propiedad en Barcelona",
+      "after": "Valora la venta de tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-01",
+      "level": "h1",
+      "before": "Relocation en Barcelona: apoyo con tu vivienda y llegada",
+      "after": "Relocation en Barcelona: acompañamiento privado para tu llegada"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-02",
+      "level": "h2",
+      "before": "Prepara el traslado antes de cerrar decisiones",
+      "after": "La vivienda, dentro de tu forma de vivir"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-02",
+      "level": "h3",
+      "before": "Prioridades de vivienda",
+      "after": "Prioridades residenciales"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-02",
+      "level": "h3",
+      "before": "Calendario y situación actual",
+      "after": "Fechas y decisiones pendientes"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-03",
+      "level": "h2",
+      "before": "Qué incluye nuestro acompañamiento de relocation en Barcelona",
+      "after": "Cómo organizamos tu acompañamiento de relocation en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-04",
+      "level": "h2",
+      "before": "Vivienda, documentación y residencia son asuntos distintos",
+      "after": "Cuando la propiedad ya forma parte de tus planes"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-05",
+      "level": "h2",
+      "before": "Cuando ya tienes una propiedad",
+      "after": "Una coordinación clara con cada especialista"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "level": "h2",
+      "before": "Preguntas frecuentes antes del traslado",
+      "after": "Preguntas antes de preparar tu llegada"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "level": "h3",
+      "before": "¿Vuestro servicio de relocation en Barcelona incluye buscar o comprar una vivienda?",
+      "after": "¿Qué incluye vuestro servicio de relocation en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "level": "h3",
+      "before": "¿Tramitáis visados o permisos de residencia?",
+      "after": "¿Puedo consultar antes de fijar la fecha del traslado?"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "level": "h3",
+      "before": "¿Puedo consultar antes de tener una fecha definitiva?",
+      "after": "¿Tramitáis visados o permisos de residencia?"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-07",
+      "level": "h2",
+      "before": "Organiza tu llegada a Barcelona",
+      "after": "Prepara tu llegada a Barcelona con una conversación privada"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-01",
+      "level": "h1",
+      "before": "Guías para propietarios y futuros residentes en Barcelona",
+      "after": "Propiedad y criterio en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-02",
+      "level": "h2",
+      "before": "Propiedad, reformas, venta y llegada",
+      "after": "Cuatro perspectivas sobre la propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-03",
+      "level": "h2",
+      "before": "Artículos y guías",
+      "after": "Artículos y perspectivas"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-04",
+      "level": "h2",
+      "before": "Consulta tu caso en Barcelona",
+      "after": "Una conversación sobre tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-01",
+      "level": "h1",
+      "before": "Contacta con Solera Estates en Barcelona",
+      "after": "Una reunión privada con Solera Estates en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-02",
+      "level": "h2",
+      "before": "Qué necesitamos para valorar tu consulta",
+      "after": "El contexto que nos ayuda a conocerte"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-03",
+      "level": "h2",
+      "before": "Envía tu consulta",
+      "after": "Solicitar una reunión privada"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-04",
+      "level": "h2",
+      "before": "Qué ocurre después del primer contacto",
+      "after": "Después de recibir tu solicitud"
+    },
+    {
+      "lang": "es",
+      "block": "GRACIAS-01",
+      "level": "h1",
+      "before": "Hemos recibido tu consulta",
+      "after": "Hemos recibido tu solicitud"
+    },
+    {
+      "lang": "es",
+      "block": "ERROR-01",
+      "level": "h1",
+      "before": "No encontramos esta página",
+      "after": "Esta página no está disponible"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-01",
+      "level": "h1",
+      "before": "Property advisory services in Barcelona",
+      "after": "Private real estate advisory in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "level": "h2",
+      "before": "Property support in Barcelona: care, renovation and sale",
+      "after": "Property care, renovation and sale in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "level": "h3",
+      "before": "Property management and care",
+      "after": "Private property management"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "level": "h3",
+      "before": "Renovation coordination and property improvements",
+      "after": "Renovation and property improvements"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-03",
+      "level": "h2",
+      "before": "Support for owners living abroad",
+      "after": "A personal relationship, wherever you live"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "level": "h2",
+      "before": "How we coordinate decisions about your property",
+      "after": "Attention begins with understanding the property"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "level": "h3",
+      "before": "Understand the starting point",
+      "after": "A personal conversation"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "level": "h3",
+      "before": "Agree the work",
+      "after": "A defined proposal"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "level": "h3",
+      "before": "Keep you informed",
+      "after": "Continuity in decisions"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "level": "h2",
+      "before": "Questions about our services",
+      "after": "Before a relationship begins"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": "What do your property advisory services in Barcelona include?",
+      "after": "What distinguishes your private real estate advisory in Barcelona?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": "Can I contact you about just one home?",
+      "after": "How does a relationship with Solera Estates begin?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": "Do you provide legal or tax advice directly?",
+      "after": "Do I need to engage every service?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "level": "h3",
+      "before": null,
+      "after": "Do you publish property listings?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-06",
+      "level": "h2",
+      "before": "Discuss your property in Barcelona",
+      "after": "A private conversation about your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-01",
+      "level": "h1",
+      "before": "Solera Estates: property owner advice in Barcelona",
+      "after": "A private property advisory firm in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-02",
+      "level": "h2",
+      "before": "A firm focused on your decisions as an owner",
+      "after": "The owner comes before the transaction"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-03",
+      "level": "h2",
+      "before": "What we handle and what we coordinate",
+      "after": "Discretion with information. Clarity in decisions."
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-04",
+      "level": "h2",
+      "before": "Scope, approvals and communication",
+      "after": "Each relationship is considered personally"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-05",
+      "level": "h2",
+      "before": "See whether our approach fits your property",
+      "after": "Let us understand your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-01",
+      "level": "h1",
+      "before": "Property management in Barcelona",
+      "after": "Private property management in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "level": "h2",
+      "before": "Property care and maintenance coordination",
+      "after": "Property care with a complete perspective"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "level": "h3",
+      "before": "Establishing needs and priorities",
+      "after": "The property’s needs and priorities"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "level": "h3",
+      "before": "Coordinating maintenance and service providers",
+      "after": "Maintenance and provider coordination"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "level": "h3",
+      "before": "Information that supports your decisions",
+      "after": "Follow-up and owner updates"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-03",
+      "level": "h2",
+      "before": "Property management in Barcelona for owners living abroad",
+      "after": "Property management in Barcelona for international owners"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-04",
+      "level": "h2",
+      "before": "Agreeing the right level of support",
+      "after": "Delegate the work without losing perspective"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-05",
+      "level": "h2",
+      "before": "What routine property management does not include",
+      "after": "From everyday care to significant decisions"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "level": "h2",
+      "before": "Questions about property management and care",
+      "after": "Questions about private property management"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "What does property management in Barcelona include?",
+      "after": "What does private property management in Barcelona include?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "Can you support a home I only use occasionally?",
+      "after": "Can you look after a home I only use for occasional stays?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "Can you work with my existing service providers?",
+      "after": "Can I retain the professionals I already work with?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "level": "h3",
+      "before": "Is the service available 24 hours a day?",
+      "after": "Does the service include lettings, keyholding or emergency cover?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-07",
+      "level": "h2",
+      "before": "Arrange care for your property in Barcelona",
+      "after": "Entrust the care of your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-02",
+      "level": "h2",
+      "before": "Define the renovation before commissioning work",
+      "after": "Begin with how you want to use the property"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-02",
+      "level": "h3",
+      "before": "The property’s use and your priorities",
+      "after": "Condition, use and character"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-02",
+      "level": "h3",
+      "before": "Scope, budget and unresolved decisions",
+      "after": "Priorities and an initial budget"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "level": "h2",
+      "before": "How we organise renovation coordination in Barcelona",
+      "after": "How we coordinate your renovation in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "level": "h3",
+      "before": "Proposals you can compare",
+      "after": "Proposals and responsibilities"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "level": "h3",
+      "before": "Communication and decision tracking",
+      "after": "Communication during the work"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "level": "h3",
+      "before": "Reviewing completed work and outstanding items",
+      "after": "Review and outstanding matters"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-04",
+      "level": "h2",
+      "before": "Property improvements shaped by their purpose",
+      "after": "Improvements with a defined purpose"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-05",
+      "level": "h2",
+      "before": "Our role and the role of technical professionals",
+      "after": "The same point of contact while you are away"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "level": "h2",
+      "before": "Questions about coordinating a renovation",
+      "after": "Questions before a renovation begins"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "level": "h3",
+      "before": "Can you coordinate a renovation while I live abroad?",
+      "after": "Can I enquire if I already have an architect or contractor?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "level": "h3",
+      "before": "Can I keep my own architect or building contractor?",
+      "after": "How are changes to scope or budget approved?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "level": "h3",
+      "before": "How are budgets and changes agreed?",
+      "after": "Can you support a renovation being considered before a sale?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-07",
+      "level": "h2",
+      "before": "Plan improvements to your property in Barcelona",
+      "after": "Discuss your renovation in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-02",
+      "level": "h2",
+      "before": "Start with the property and your priorities",
+      "after": "Before deciding how to approach the market"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "level": "h3",
+      "before": "Organising information and documents",
+      "after": "Information and property preparation"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "level": "h3",
+      "before": "Considering preparation and options",
+      "after": "Proposals and the owner’s decisions"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "level": "h3",
+      "before": "Coordinating decisions and next steps",
+      "after": "Coordinating the transaction"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-04",
+      "level": "h2",
+      "before": "Working alongside estate agents and specialists",
+      "after": "You decide how your property is presented"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "level": "h2",
+      "before": "Questions about support for sellers",
+      "after": "Questions about support during a sale"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "Can I contact you if I already have an agent or buyer?",
+      "after": "Can you support me if I already have an agent or buyer?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "Can you support me while I live abroad?",
+      "after": "Does selling privately mean the property will not be advertised?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "level": "h3",
+      "before": "How are your fees determined?",
+      "after": "How does the work begin if I live abroad?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-06",
+      "level": "h2",
+      "before": "Discuss selling your property in Barcelona",
+      "after": "Consider the sale of your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-01",
+      "level": "h1",
+      "before": "Relocation support in Barcelona: housing and arrival",
+      "after": "Relocation support in Barcelona: a personal approach to your arrival"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-02",
+      "level": "h2",
+      "before": "Prepare the move before committing to arrangements",
+      "after": "Housing within the way you want to live"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-02",
+      "level": "h3",
+      "before": "Housing priorities",
+      "after": "Residential priorities"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-02",
+      "level": "h3",
+      "before": "Timing and your current position",
+      "after": "Timing and outstanding decisions"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-03",
+      "level": "h2",
+      "before": "What our relocation support in Barcelona covers",
+      "after": "How we organise your relocation support in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-04",
+      "level": "h2",
+      "before": "Housing arrangements and residence permission are separate matters",
+      "after": "When a property is already part of your plans"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-05",
+      "level": "h2",
+      "before": "If you already own a property",
+      "after": "Clear coordination with each specialist"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "level": "h2",
+      "before": "Questions before moving",
+      "after": "Questions before preparing your arrival"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "level": "h3",
+      "before": "Does your relocation support in Barcelona include finding or buying a home?",
+      "after": "What does your relocation support in Barcelona include?"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "level": "h3",
+      "before": "Do you process visas or residence permits?",
+      "after": "Can I enquire before setting a moving date?"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "level": "h3",
+      "before": "Can I enquire before my dates are final?",
+      "after": "Do you process visas or residence permits?"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-07",
+      "level": "h2",
+      "before": "Organise your arrival in Barcelona",
+      "after": "Prepare your arrival in Barcelona with a private conversation"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-01",
+      "level": "h1",
+      "before": "Guides for property owners and future residents in Barcelona",
+      "after": "Property perspectives in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-02",
+      "level": "h2",
+      "before": "Property care, renovation, selling and arrival",
+      "after": "Four perspectives on property"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-03",
+      "level": "h2",
+      "before": "Articles and guides",
+      "after": "Articles and perspectives"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-04",
+      "level": "h2",
+      "before": "Discuss your circumstances in Barcelona",
+      "after": "A conversation about your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-01",
+      "level": "h1",
+      "before": "Contact Solera Estates in Barcelona",
+      "after": "A private consultation with Solera Estates in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-02",
+      "level": "h2",
+      "before": "What we need to assess your enquiry",
+      "after": "The context that helps us understand you"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-03",
+      "level": "h2",
+      "before": "Send your enquiry",
+      "after": "Request a private consultation"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-04",
+      "level": "h2",
+      "before": "What happens after your first enquiry",
+      "after": "After we receive your enquiry"
+    },
+    {
+      "lang": "en",
+      "block": "ERROR-01",
+      "level": "h1",
+      "before": "We cannot find this page",
+      "after": "This page is not available"
+    }
+  ],
+  "alignedBlocks": [
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-04",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-05",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-05",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-04",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-04",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-05",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-04",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-05",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-05",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-04",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "reason": "FAQ question/answer pairing"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-04",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-05",
+      "reason": "Heading now describes a different subject"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "reason": "FAQ question/answer pairing"
+    }
+  ],
+  "expectedHeadings": [
+    {
+      "lang": "es",
+      "block": "HOME-01",
+      "type": "h1",
+      "text": "Asesoramiento inmobiliario privado en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "type": "h2",
+      "text": "Gestión, reforma y venta de propiedades en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Gestión privada de propiedades"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Reforma y puesta en valor"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Asesoramiento en venta"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Vivienda y llegada"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-03",
+      "type": "h2",
+      "text": "Una relación cercana, también cuando estás lejos"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "type": "h2",
+      "text": "La atención comienza por conocer la propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "type": "h3",
+      "text": "Una conversación personal"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "type": "h3",
+      "text": "Una propuesta definida"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-04",
+      "type": "h3",
+      "text": "Continuidad en las decisiones"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "type": "h2",
+      "text": "Antes de comenzar una relación"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "¿Qué distingue vuestro asesoramiento inmobiliario privado en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "¿Cómo se inicia una colaboración con Solera Estates?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "¿Es necesario contratar todos los servicios?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "¿Publicáis un catálogo de inmuebles?"
+    },
+    {
+      "lang": "es",
+      "block": "HOME-06",
+      "type": "h2",
+      "text": "Una conversación privada sobre tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-01",
+      "type": "h1",
+      "text": "Una firma inmobiliaria privada en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-02",
+      "type": "h2",
+      "text": "El propietario, antes que la operación"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-03",
+      "type": "h2",
+      "text": "Discreción en la información. Claridad en las decisiones."
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-04",
+      "type": "h2",
+      "text": "Una relación que se estudia personalmente"
+    },
+    {
+      "lang": "es",
+      "block": "FIRMA-05",
+      "type": "h2",
+      "text": "Conozcamos tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-01",
+      "type": "h1",
+      "text": "Gestión privada de propiedades en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "type": "h2",
+      "text": "El cuidado de la propiedad, con una visión de conjunto"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "type": "h3",
+      "text": "Necesidades y prioridades del inmueble"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "type": "h3",
+      "text": "Coordinación de mantenimiento y proveedores"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-02",
+      "type": "h3",
+      "text": "Seguimiento e información al propietario"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-03",
+      "type": "h2",
+      "text": "Gestión de propiedades en Barcelona para propietarios internacionales"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-04",
+      "type": "h2",
+      "text": "Una forma de delegar sin perder perspectiva"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-05",
+      "type": "h2",
+      "text": "De la gestión cotidiana a las decisiones importantes"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "type": "h2",
+      "text": "Preguntas sobre la gestión privada de una propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "¿Qué incluye la gestión privada de propiedades en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "¿Podéis cuidar una vivienda que utilizo solo durante algunas estancias?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "¿Puedo conservar a los profesionales con los que ya trabajo?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "¿El servicio incluye alquileres, custodia de llaves o atención de urgencias?"
+    },
+    {
+      "lang": "es",
+      "block": "GESTION-07",
+      "type": "h2",
+      "text": "Confía la gestión de tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-01",
+      "type": "h1",
+      "text": "Coordinación de reformas en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-02",
+      "type": "h2",
+      "text": "El proyecto empieza por cómo quieres vivir la propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-02",
+      "type": "h3",
+      "text": "Conservación, uso y carácter"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-02",
+      "type": "h3",
+      "text": "Prioridades y presupuesto de referencia"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "type": "h2",
+      "text": "Cómo coordinamos tu reforma en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "type": "h3",
+      "text": "Propuestas y responsabilidades"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "type": "h3",
+      "text": "Interlocución durante los trabajos"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-03",
+      "type": "h3",
+      "text": "Revisión y asuntos pendientes"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-04",
+      "type": "h2",
+      "text": "Puesta en valor con un propósito definido"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-05",
+      "type": "h2",
+      "text": "La misma interlocución durante tu ausencia"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "type": "h2",
+      "text": "Preguntas antes de iniciar una reforma"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "¿Qué incluye vuestra coordinación de reformas en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "¿Puedo acudir si ya tengo arquitecto o empresa de reformas?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "¿Cómo se aprueban los cambios de alcance o presupuesto?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "¿Podéis acompañar una reforma que se prepara antes de vender?"
+    },
+    {
+      "lang": "es",
+      "block": "REFORMA-07",
+      "type": "h2",
+      "text": "Conversemos sobre tu reforma en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-01",
+      "type": "h1",
+      "text": "Asesoramiento para vender una propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-02",
+      "type": "h2",
+      "text": "Antes de decidir cómo salir al mercado"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "type": "h2",
+      "text": "Cómo acompañamos la venta de tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "type": "h3",
+      "text": "Información y preparación del inmueble"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "type": "h3",
+      "text": "Propuestas y decisiones del propietario"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-03",
+      "type": "h3",
+      "text": "Coordinación de la operación"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-04",
+      "type": "h2",
+      "text": "La exposición de la propiedad se decide contigo"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "type": "h2",
+      "text": "Preguntas sobre el acompañamiento en venta"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "¿Qué incluye el asesoramiento para vender una propiedad en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "¿Podéis acompañarme si ya tengo agencia o comprador?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "¿Vender de forma privada implica no anunciar la propiedad?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "¿Cómo comienza el trabajo si resido en el extranjero?"
+    },
+    {
+      "lang": "es",
+      "block": "VENTA-06",
+      "type": "h2",
+      "text": "Valora la venta de tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-01",
+      "type": "h1",
+      "text": "Relocation en Barcelona: acompañamiento privado para tu llegada"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-02",
+      "type": "h2",
+      "text": "La vivienda, dentro de tu forma de vivir"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-02",
+      "type": "h3",
+      "text": "Prioridades residenciales"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-02",
+      "type": "h3",
+      "text": "Fechas y decisiones pendientes"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-03",
+      "type": "h2",
+      "text": "Cómo organizamos tu acompañamiento de relocation en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-04",
+      "type": "h2",
+      "text": "Cuando la propiedad ya forma parte de tus planes"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-05",
+      "type": "h2",
+      "text": "Una coordinación clara con cada especialista"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "type": "h2",
+      "text": "Preguntas antes de preparar tu llegada"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "type": "h3",
+      "text": "¿Qué incluye vuestro servicio de relocation en Barcelona?"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "type": "h3",
+      "text": "¿Puedo consultar antes de fijar la fecha del traslado?"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-06",
+      "type": "h3",
+      "text": "¿Tramitáis visados o permisos de residencia?"
+    },
+    {
+      "lang": "es",
+      "block": "LLEGADA-07",
+      "type": "h2",
+      "text": "Prepara tu llegada a Barcelona con una conversación privada"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-01",
+      "type": "h1",
+      "text": "Propiedad y criterio en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-02",
+      "type": "h2",
+      "text": "Cuatro perspectivas sobre la propiedad"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-03",
+      "type": "h2",
+      "text": "Artículos y perspectivas"
+    },
+    {
+      "lang": "es",
+      "block": "JOURNAL-04",
+      "type": "h2",
+      "text": "Una conversación sobre tu propiedad en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-01",
+      "type": "h1",
+      "text": "Una reunión privada con Solera Estates en Barcelona"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-02",
+      "type": "h2",
+      "text": "El contexto que nos ayuda a conocerte"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-03",
+      "type": "h2",
+      "text": "Solicitar una reunión privada"
+    },
+    {
+      "lang": "es",
+      "block": "CONTACTO-04",
+      "type": "h2",
+      "text": "Después de recibir tu solicitud"
+    },
+    {
+      "lang": "es",
+      "block": "GRACIAS-01",
+      "type": "h1",
+      "text": "Hemos recibido tu solicitud"
+    },
+    {
+      "lang": "es",
+      "block": "ERROR-01",
+      "type": "h1",
+      "text": "Esta página no está disponible"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-01",
+      "type": "h1",
+      "text": "Private real estate advisory in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "type": "h2",
+      "text": "Property care, renovation and sale in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Private property management"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Renovation and property improvements"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Advice for property sellers"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-02",
+      "type": "h3",
+      "text": "Housing and arrival support"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-03",
+      "type": "h2",
+      "text": "A personal relationship, wherever you live"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "type": "h2",
+      "text": "Attention begins with understanding the property"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "type": "h3",
+      "text": "A personal conversation"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "type": "h3",
+      "text": "A defined proposal"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-04",
+      "type": "h3",
+      "text": "Continuity in decisions"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "type": "h2",
+      "text": "Before a relationship begins"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "What distinguishes your private real estate advisory in Barcelona?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "How does a relationship with Solera Estates begin?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "Do I need to engage every service?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-05",
+      "type": "h3",
+      "text": "Do you publish property listings?"
+    },
+    {
+      "lang": "en",
+      "block": "HOME-06",
+      "type": "h2",
+      "text": "A private conversation about your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-01",
+      "type": "h1",
+      "text": "A private property advisory firm in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-02",
+      "type": "h2",
+      "text": "The owner comes before the transaction"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-03",
+      "type": "h2",
+      "text": "Discretion with information. Clarity in decisions."
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-04",
+      "type": "h2",
+      "text": "Each relationship is considered personally"
+    },
+    {
+      "lang": "en",
+      "block": "FIRMA-05",
+      "type": "h2",
+      "text": "Let us understand your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-01",
+      "type": "h1",
+      "text": "Private property management in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "type": "h2",
+      "text": "Property care with a complete perspective"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "type": "h3",
+      "text": "The property’s needs and priorities"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "type": "h3",
+      "text": "Maintenance and provider coordination"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-02",
+      "type": "h3",
+      "text": "Follow-up and owner updates"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-03",
+      "type": "h2",
+      "text": "Property management in Barcelona for international owners"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-04",
+      "type": "h2",
+      "text": "Delegate the work without losing perspective"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-05",
+      "type": "h2",
+      "text": "From everyday care to significant decisions"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "type": "h2",
+      "text": "Questions about private property management"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "What does private property management in Barcelona include?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "Can you look after a home I only use for occasional stays?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "Can I retain the professionals I already work with?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-06",
+      "type": "h3",
+      "text": "Does the service include lettings, keyholding or emergency cover?"
+    },
+    {
+      "lang": "en",
+      "block": "GESTION-07",
+      "type": "h2",
+      "text": "Entrust the care of your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-01",
+      "type": "h1",
+      "text": "Renovation coordination in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-02",
+      "type": "h2",
+      "text": "Begin with how you want to use the property"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-02",
+      "type": "h3",
+      "text": "Condition, use and character"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-02",
+      "type": "h3",
+      "text": "Priorities and an initial budget"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "type": "h2",
+      "text": "How we coordinate your renovation in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "type": "h3",
+      "text": "Proposals and responsibilities"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "type": "h3",
+      "text": "Communication during the work"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-03",
+      "type": "h3",
+      "text": "Review and outstanding matters"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-04",
+      "type": "h2",
+      "text": "Improvements with a defined purpose"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-05",
+      "type": "h2",
+      "text": "The same point of contact while you are away"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "type": "h2",
+      "text": "Questions before a renovation begins"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "What does your renovation coordination in Barcelona include?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "Can I enquire if I already have an architect or contractor?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "How are changes to scope or budget approved?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-06",
+      "type": "h3",
+      "text": "Can you support a renovation being considered before a sale?"
+    },
+    {
+      "lang": "en",
+      "block": "REFORMA-07",
+      "type": "h2",
+      "text": "Discuss your renovation in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-01",
+      "type": "h1",
+      "text": "Property sale advice in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-02",
+      "type": "h2",
+      "text": "Before deciding how to approach the market"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "type": "h2",
+      "text": "How we support the sale of your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "type": "h3",
+      "text": "Information and property preparation"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "type": "h3",
+      "text": "Proposals and the owner’s decisions"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-03",
+      "type": "h3",
+      "text": "Coordinating the transaction"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-04",
+      "type": "h2",
+      "text": "You decide how your property is presented"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "type": "h2",
+      "text": "Questions about support during a sale"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "What does your property sale advice in Barcelona include?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "Can you support me if I already have an agent or buyer?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "Does selling privately mean the property will not be advertised?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-05",
+      "type": "h3",
+      "text": "How does the work begin if I live abroad?"
+    },
+    {
+      "lang": "en",
+      "block": "VENTA-06",
+      "type": "h2",
+      "text": "Consider the sale of your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-01",
+      "type": "h1",
+      "text": "Relocation support in Barcelona: a personal approach to your arrival"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-02",
+      "type": "h2",
+      "text": "Housing within the way you want to live"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-02",
+      "type": "h3",
+      "text": "Residential priorities"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-02",
+      "type": "h3",
+      "text": "Timing and outstanding decisions"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-03",
+      "type": "h2",
+      "text": "How we organise your relocation support in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-04",
+      "type": "h2",
+      "text": "When a property is already part of your plans"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-05",
+      "type": "h2",
+      "text": "Clear coordination with each specialist"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "type": "h2",
+      "text": "Questions before preparing your arrival"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "type": "h3",
+      "text": "What does your relocation support in Barcelona include?"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "type": "h3",
+      "text": "Can I enquire before setting a moving date?"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-06",
+      "type": "h3",
+      "text": "Do you process visas or residence permits?"
+    },
+    {
+      "lang": "en",
+      "block": "LLEGADA-07",
+      "type": "h2",
+      "text": "Prepare your arrival in Barcelona with a private conversation"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-01",
+      "type": "h1",
+      "text": "Property perspectives in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-02",
+      "type": "h2",
+      "text": "Four perspectives on property"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-03",
+      "type": "h2",
+      "text": "Articles and perspectives"
+    },
+    {
+      "lang": "en",
+      "block": "JOURNAL-04",
+      "type": "h2",
+      "text": "A conversation about your property in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-01",
+      "type": "h1",
+      "text": "A private consultation with Solera Estates in Barcelona"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-02",
+      "type": "h2",
+      "text": "The context that helps us understand you"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-03",
+      "type": "h2",
+      "text": "Request a private consultation"
+    },
+    {
+      "lang": "en",
+      "block": "CONTACTO-04",
+      "type": "h2",
+      "text": "After we receive your enquiry"
+    },
+    {
+      "lang": "en",
+      "block": "GRACIAS-01",
+      "type": "h1",
+      "text": "We have received your enquiry"
+    },
+    {
+      "lang": "en",
+      "block": "ERROR-01",
+      "type": "h1",
+      "text": "This page is not available"
+    }
+  ]
+}

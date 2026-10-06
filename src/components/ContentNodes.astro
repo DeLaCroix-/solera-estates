@@ -1,0 +1,12 @@
+---
+import { marked } from 'marked';
+import type { ContentNode } from '../lib/types';
+interface Props { nodes?: ContentNode[]; }
+const { nodes = [] } = Astro.props;
+---
+{nodes.map(node => {
+  const Heading = node.type;
+  return node.type === 'link' ? <a class="text-link" href={node.href}>{node.text}</a>
+    : node.type === 'p' ? <div class="prose" set:html={marked.parse(node.text)} />
+    : <Heading set:html={marked.parseInline(node.text)} />;
+})}

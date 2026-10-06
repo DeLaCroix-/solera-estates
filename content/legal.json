@@ -1,0 +1,172 @@
+{
+  "es": [
+    {
+      "id": "LEGAL",
+      "name": "Aviso legal",
+      "route": "/aviso-legal/",
+      "title": "Aviso legal | Solera Estates",
+      "description": "Identificación del titular de Solera Estates y condiciones de uso de este sitio web.",
+      "sections": [
+        [
+          "Titular del sitio",
+          "Solera Estates es una marca utilizada por NAT BPO SL, con NIF B26663120. Domicilio de contacto: Carrer de Balmes, 32, Pral. 2º, 08007 Barcelona, España. Correo electrónico: info@soleraestates.es. Inscripción en el Registro Mercantil de Barcelona: sección 8, hoja B 649678, inscripción 1."
+        ],
+        [
+          "Información y contratación",
+          "Esta web presenta servicios de acompañamiento al propietario en Barcelona. El contenido es informativo. El alcance, las responsabilidades, la disponibilidad y los honorarios de cualquier encargo se acuerdan de forma individual. Una consulta no constituye una contratación ni confirma una cita. No se ofrece asesoramiento jurídico o fiscal propio a través de esta web."
+        ],
+        [
+          "Contenidos e imágenes",
+          "Los textos, la identidad visual y los elementos del sitio están sujetos a los derechos que correspondan a sus titulares. Las imágenes arquitectónicas son ilustraciones conceptuales creadas con inteligencia artificial; no documentan inmuebles en comercialización, oficinas, clientes ni proyectos ejecutados por Solera Estates. No deben interpretarse como un catálogo de propiedades."
+        ],
+        [
+          "Uso del sitio",
+          "Utiliza el sitio de forma lícita y sin interferir en su funcionamiento. Los enlaces externos permiten consultar recursos de terceros, cuyos contenidos y condiciones corresponden a sus responsables. Si detectas un error, comunícalo a info@soleraestates.es."
+        ],
+        [
+          "Normativa aplicable",
+          "La relación con el usuario se rige por la normativa que resulte aplicable. Nada de lo indicado en esta web limita los derechos imperativos que puedan corresponder a consumidores y usuarios."
+        ]
+      ]
+    },
+    {
+      "id": "PRIVACY",
+      "name": "Privacidad",
+      "route": "/privacidad/",
+      "title": "Política de privacidad | Solera Estates",
+      "description": "Información sobre los datos personales en las consultas dirigidas a Solera Estates, su finalidad y tus derechos.",
+      "sections": [
+        [
+          "Responsable",
+          "NAT BPO SL, NIF B26663120, Carrer de Balmes, 32, Pral. 2º, 08007 Barcelona, España. Para cuestiones de privacidad o para ejercer tus derechos: info@soleraestates.es."
+        ],
+        [
+          "Consultas por correo",
+          "En esta versión, el formulario prepara un mensaje en tu aplicación de correo. Los campos se procesan en tu navegador y no se remiten a un servicio de formularios. Solo recibimos la consulta cuando decides enviarla desde tu aplicación. Puedes escribirnos también directamente. Facilita únicamente los datos de contacto y el contexto necesarios; no envíes documentación de identidad, información bancaria ni datos de otras personas en la primera consulta."
+        ],
+        [
+          "Finalidad y base del tratamiento",
+          "Utilizamos los datos recibidos para atender tu petición y valorar el acompañamiento solicitado. Cuando pides un servicio o una propuesta, el tratamiento responde a las medidas precontractuales que solicitas. Para otras consultas, se limita a la atención de la comunicación y al interés legítimo en responderla. No utilizamos este contacto para incorporarte automáticamente a campañas de marketing ni para tomar decisiones automatizadas sobre ti."
+        ],
+        [
+          "Conservación y acceso",
+          "Conservamos la información durante el tiempo necesario para atender la consulta y, si se formaliza un encargo, para gestionar la relación y cumplir las obligaciones aplicables. El acceso se limita a quienes necesitan intervenir y a proveedores que prestan soporte técnico. La identificación de proveedores y las condiciones de cualquier nuevo canal de recogida se comunicarán antes de activarlo. Esta web se aloja en Netlify, que presta los servicios técnicos de publicación y distribución del contenido."
+        ],
+        [
+          "Tus derechos",
+          "Puedes solicitar acceso, rectificación, supresión, oposición, limitación del tratamiento y, cuando proceda, portabilidad, escribiendo al correo indicado. Si un tratamiento se basa en consentimiento, puedes retirarlo sin afectar al tratamiento anterior. Puedes presentar una reclamación ante la Agencia Española de Protección de Datos, en www.aepd.es."
+        ],
+        [
+          "Cambios",
+          "Revisaremos esta información si cambian los canales de contacto, los proveedores o el uso de datos. La versión actual corresponde al 6 de octubre de 2026."
+        ]
+      ]
+    },
+    {
+      "id": "COOKIES",
+      "name": "Cookies",
+      "route": "/cookies/",
+      "title": "Cookies y tecnologías del sitio | Solera Estates",
+      "description": "Información sobre el uso de cookies, analítica y almacenamiento en esta versión de Solera Estates.",
+      "sections": [
+        [
+          "Tecnologías de esta web",
+          "El código de esta web no instala cookies de publicidad ni incorpora analítica, píxeles de seguimiento, mapas o vídeos externos. Las imágenes y las fuentes se sirven desde el propio sitio. El formulario no guarda tus campos en almacenamiento local."
+        ],
+        [
+          "Alojamiento y seguridad",
+          "Netlify presta el servicio de alojamiento y distribución de esta web. Los mecanismos técnicos de seguridad del alojamiento son distintos de las funciones de publicidad y analítica, que esta web no incorpora."
+        ],
+        [
+          "Gestión y cambios",
+          "Puedes consultar y eliminar las cookies o los datos almacenados desde las opciones de privacidad de tu navegador. Si se incorporan tecnologías de medición o publicidad, se actualizará esta información y se ofrecerán los controles que correspondan antes de su activación. Contacto: info@soleraestates.es. Versión: 6 de octubre de 2026."
+        ]
+      ]
+    }
+  ],
+  "en": [
+    {
+      "id": "LEGAL",
+      "name": "Legal notice",
+      "route": "/en/legal-notice/",
+      "title": "Legal Notice | Solera Estates",
+      "description": "Details of the operator of Solera Estates and the conditions for using this website.",
+      "sections": [
+        [
+          "Website operator",
+          "Solera Estates is a brand used by NAT BPO SL, Spanish tax identification number B26663120. Contact address: Carrer de Balmes, 32, Pral. 2º, 08007 Barcelona, Spain. Email: info@soleraestates.es. Barcelona Commercial Registry: section 8, sheet B 649678, entry 1."
+        ],
+        [
+          "Information and appointments",
+          "This website describes property owner support services in Barcelona. Its content is informational. The scope, responsibilities, availability and fees of any engagement are agreed individually. An enquiry does not commission a service or confirm an appointment. This website does not provide in-house legal or tax advice."
+        ],
+        [
+          "Content and imagery",
+          "The text, visual identity and website elements are subject to their respective owners’ rights. The architectural images are conceptual illustrations created with artificial intelligence. They do not document properties for sale, offices, clients or projects completed by Solera Estates, and must not be interpreted as a property catalogue."
+        ],
+        [
+          "Using this website",
+          "Use this website lawfully and without interfering with its operation. External links give access to third-party resources, whose owners are responsible for their content and conditions. Please report errors to info@soleraestates.es."
+        ],
+        [
+          "Applicable rules",
+          "The relationship with website users is governed by the applicable rules. Nothing on this website limits any mandatory consumer rights."
+        ]
+      ]
+    },
+    {
+      "id": "PRIVACY",
+      "name": "Privacy",
+      "route": "/en/privacy/",
+      "title": "Privacy Policy | Solera Estates",
+      "description": "How personal information in enquiries to Solera Estates is used and how to exercise your rights.",
+      "sections": [
+        [
+          "Controller",
+          "NAT BPO SL, Spanish tax identification number B26663120, Carrer de Balmes, 32, Pral. 2º, 08007 Barcelona, Spain. For privacy enquiries or to exercise your rights: info@soleraestates.es."
+        ],
+        [
+          "Email enquiries",
+          "In this version, the form prepares a message in your email application. Its fields are processed in your browser and are not sent to a form service. We receive your enquiry only when you choose to send it from your email application. You can also email us directly. Provide only the contact details and context needed; do not include identity documents, banking information or other people’s personal details in your initial enquiry."
+        ],
+        [
+          "Purpose and lawful basis",
+          "We use the information received to respond to your request and consider the support you need. Where you request a service or proposal, processing is based on the pre-contractual steps you ask us to take. Other enquiries are limited to handling your communication and our legitimate interest in responding. Contacting us does not automatically add you to marketing campaigns or result in automated decisions about you."
+        ],
+        [
+          "Retention and access",
+          "We keep the information for as long as needed to handle your enquiry and, if a service is commissioned, to manage that relationship and meet applicable obligations. Access is limited to those who need to be involved and providers delivering technical support. Providers and the conditions of any new collection channel will be identified before it is activated. This website is hosted on Netlify, which provides the technical services for publishing and delivering its content."
+        ],
+        [
+          "Your rights",
+          "You may request access, rectification, erasure, objection, restriction and, where applicable, portability by emailing the address above. Where processing is based on consent, you may withdraw it without affecting earlier processing. You may complain to the Spanish Data Protection Agency at www.aepd.es."
+        ],
+        [
+          "Changes",
+          "We will review this information if contact channels, providers or data uses change. This version is dated 6 October 2026."
+        ]
+      ]
+    },
+    {
+      "id": "COOKIES",
+      "name": "Cookies",
+      "route": "/en/cookies/",
+      "title": "Cookies and Site Technologies | Solera Estates",
+      "description": "Information on cookies, analytics and storage in this version of Solera Estates.",
+      "sections": [
+        [
+          "Website technologies",
+          "This website’s code does not install advertising cookies or include analytics, tracking pixels, external maps or embedded videos. Images and fonts are served from the site itself. Form fields are not saved in local storage."
+        ],
+        [
+          "Hosting and security",
+          "Netlify hosts and delivers this website. The hosting service’s technical security mechanisms are separate from advertising and analytics features, which this website does not include."
+        ],
+        [
+          "Controls and changes",
+          "You can inspect and delete cookies or stored data through your browser’s privacy settings. If measurement or advertising technologies are introduced, this information will be updated and the relevant controls provided before activation. Contact: info@soleraestates.es. Version: 6 October 2026."
+        ]
+      ]
+    }
+  ]
+}

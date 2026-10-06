@@ -1,11 +1,13 @@
 [build]
-  command = "npm run build"
+  command = "npm run check:all"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
+  PUBLIC_SITE_INDEXABLE = "false"
+  PUBLIC_SITE_URL = "https://soleraestates.eu"
 
-[[redirects]]
-  from = "/**"
-  to = "/404.html"
-  status = 404
+[dev]
+  command = "npm run dev"
+  targetPort = 4179
+  framework = "#custom"

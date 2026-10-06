@@ -1,7 +1,10 @@
 node_modules/
-dist/
-.cache/
 .env
-
-# Local Netlify folder
-.netlify
+.env.*
+!.env.example
+.sites-runtime/
+.astro/
+.netlify/
+dist/
+qa-output/
+*.zip

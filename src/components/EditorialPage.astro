@@ -1,0 +1,16 @@
+---
+import { pageFor, tx } from '../lib/site.mjs';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from './Hero.astro';
+import EditorialBlock from './EditorialBlock.astro';
+import type { EditorialPage } from '../lib/types';
+interface Props { page: EditorialPage; }
+const { page } = Astro.props;
+---
+<SiteLayout page={page}>
+  {page.id === 'GRACIAS' ? <>
+    <section class="utility-hero wrap receipt-unconfirmed"><p class="eyebrow">Solera Estates</p><h1>{tx(page.lang, 'Tu consulta', 'Your enquiry')}</h1><p>{tx(page.lang, 'Esta página no confirma un envío. Para iniciar una consulta, utiliza nuestro contacto.', 'This page does not confirm a submission. To start an enquiry, use our contact page.')}</p><a class="text-link" href={pageFor('CONTACTO', page.lang).route}>{tx(page.lang, 'Ir a contacto', 'Go to contact')}</a></section>
+    <template id="confirmed-receipt"><Hero page={page} /></template>
+  </> : <Hero page={page} />}
+  {page.blocks.slice(1).map((block, i) => <EditorialBlock block={block} page={page} index={i + 1} />)}
+</SiteLayout>

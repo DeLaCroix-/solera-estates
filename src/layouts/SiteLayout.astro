@@ -1,0 +1,46 @@
+---
+import { origin, pageFor, excludedFromIndex } from '../lib/site.mjs';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../style.css';
+import type { EditorialPage } from '../lib/types';
+interface Props { page: EditorialPage; }
+const { page: p } = Astro.props;
+const alternate = pageFor(p.id, p.lang === 'es' ? 'en' : 'es');
+const graph: Record<string, any>[] = [
+  { '@type': 'Organization', '@id': origin + '/#organization', name: 'Solera Estates', legalName: 'NAT BPO SL', taxID: 'B26663120', url: origin + '/', email: 'info@soleraestates.es' },
+  { '@type': 'WebSite', '@id': origin + '/#website', url: origin + '/', name: 'Solera Estates', publisher: { '@id': origin + '/#organization' }, inLanguage: ['es', 'en'] },
+  { '@type': 'WebPage', '@id': origin + p.route + '#webpage', url: origin + p.route, name: p.title, description: p.description, inLanguage: p.lang, isPartOf: { '@id': origin + '/#website' } },
+];
+if (['GESTION', 'REFORMA', 'VENTA', 'LLEGADA'].includes(p.id)) graph.push({ '@type': 'Service', name: p.blocks[0].nodes.find(n => n.type === 'h1')?.text, serviceType: p.name, areaServed: { '@type': 'City', name: 'Barcelona' }, provider: { '@id': origin + '/#organization' }, url: origin + p.route });
+---
+<!doctype html>
+<html lang={p.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{p.title}</title>
+    <meta name="description" content={p.description} />
+    <meta name="robots" content={excludedFromIndex(p) ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <link rel="canonical" href={origin + p.route} />
+    <link rel="alternate" hreflang={p.lang} href={origin + p.route} />
+    <link rel="alternate" hreflang={alternate.lang} href={origin + alternate.route} />
+    <link rel="alternate" hreflang="x-default" href={origin + pageFor(p.id, 'es').route} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={p.title} />
+    <meta property="og:description" content={p.description} />
+    <meta property="og:url" content={origin + p.route} />
+    <meta property="og:locale" content={p.lang === 'es' ? 'es_ES' : 'en_GB'} />
+    <meta name="theme-color" content="#263e36" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/assets/serif.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
+    <script>import '../app.js';</script>
+  </head>
+  <body id="top" class={`page-${p.id.toLowerCase()}`}>
+    <Header page={p} />
+    <main id="main"><slot /></main>
+    <Footer page={p} />
+  </body>
+</html>

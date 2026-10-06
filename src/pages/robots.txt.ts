@@ -1,12 +1,2 @@
-import type { APIRoute } from 'astro';
-
-export const GET: APIRoute = () => {
-  return new Response(
-    `User-agent: *
-Allow: /
-
-Sitemap: https://soleraestates.com/sitemap.xml
-`,
-    { headers: { 'Content-Type': 'text/plain' } }
-  );
-};
+import { origin } from '../lib/site.mjs';
+export const GET = () => new Response(`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`, { headers: { 'Content-Type': 'text/plain' } });

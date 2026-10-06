@@ -1,35 +1,36 @@
-name: Deploy to Netlify
+name: Validate and deploy Astro to Netlify
 
 on:
   push:
     branches: [master]
+  pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: solera-netlify-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  validate-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_SITE_URL: https://soleraestates.eu
+      PUBLIC_SITE_INDEXABLE: "false"
     steps:
       - uses: actions/checkout@v4
-      
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
-      
+          cache: npm
       - run: npm ci
-      
-      - run: npm run build
-      
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: ./dist
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: false
+      - run: npm run check:all
+      - name: Deploy validated master branch
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          COMMIT_REF: ${{ github.sha }}
+        run: npx netlify-cli@27.11.2 deploy --prod --no-build --dir=dist --message="Astro ${{ github.sha }}" --json

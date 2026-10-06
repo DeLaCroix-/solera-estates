@@ -1,0 +1,34 @@
+---
+import { marked } from 'marked';
+import { pageFor, tx } from '../lib/site.mjs';
+import ContentNodes from './ContentNodes.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { EditorialPage, ImageName } from '../lib/types';
+interface Props { page: EditorialPage; }
+const { page: p } = Astro.props;
+const b = p.blocks[0];
+const title = b.nodes.find(node => node.type === 'h1');
+if (!title) throw new Error(`Missing H1 for ${p.route}`);
+const copy = b.nodes.filter(node => node.type === 'p');
+const links = b.nodes.filter(node => node.type === 'link');
+const images: Record<string, ImageName> = { FIRMA: 'staircase', GESTION: 'living', REFORMA: 'staircase', VENTA: 'hero', LLEGADA: 'living', JOURNAL: 'staircase', CONTACTO: 'hero' };
+const image = images[p.id];
+---
+{p.id === 'HOME' ? <>
+  <section class="home-hero" data-block={b.id}>
+    <ResponsiveImage name="hero" lang={p.lang} hero sizes="100vw" class="hero-image" />
+    <div class="hero-shade"></div>
+    <div class="hero-content"><p class="eyebrow">Private Real Estate Advisory · Barcelona</p><h1 set:html={marked.parseInline(title.text)} /><div class="hero-links">{links.map((node, i) => <a class={i === 0 ? 'button button-light' : 'quiet-link'} href={node.href}>{node.text}</a>)}</div></div>
+    <div class="hero-foot"><span>{tx(p.lang, 'El cuidado de lo que importa.', 'Care for what matters.')}</span><span aria-hidden="true">SOLERA ESTATES</span><span>Barcelona · {tx(p.lang, 'Mediterráneo', 'Mediterranean')}</span></div>
+  </section>
+  <section class="home-intro wrap"><p class="eyebrow">{tx(p.lang, 'Una perspectiva completa', 'A complete perspective')}</p><div class="intro-columns"><ContentNodes nodes={copy} /></div></section>
+</> : <section class:list={['page-hero wrap', { 'utility-hero': !image }]} data-block={b.id}>
+  <div class="page-heading">
+    <nav class="breadcrumbs" aria-label={tx(p.lang, 'Migas de pan', 'Breadcrumbs')}><a href={pageFor('HOME', p.lang).route}>{tx(p.lang, 'Inicio', 'Home')}</a><span aria-hidden="true"> / </span><span>{p.name}</span></nav>
+    <p class="eyebrow">{b.eyebrow || 'Solera Estates · Barcelona'}</p>
+    <h1 set:html={marked.parseInline(title.text)} />
+    <ContentNodes nodes={copy} />
+    <div class="page-hero-links"><ContentNodes nodes={links} /></div>
+  </div>
+  {image && <figure class="page-image"><ResponsiveImage name={image} lang={p.lang} hero /><figcaption>{tx(p.lang, 'Una forma serena de habitar. Imagen conceptual.', 'A considered way of living. Conceptual image.')}</figcaption></figure>}
+</section>}

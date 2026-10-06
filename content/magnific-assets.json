@@ -1,0 +1,56 @@
+{
+  "model": "Seedream 5 Pro",
+  "mode": "seedream-5-pro",
+  "resolution": "2k",
+  "generatedDate": "2026-10-06",
+  "conceptual": true,
+  "usageNote": "AI-generated conceptual brand imagery. Must not be presented as actual Barcelona projects, company offices or real properties.",
+  "requests": 3,
+  "creditsPerImage": 100,
+  "totalCredits": 300,
+  "balanceBefore": 19625,
+  "balanceAfter": 19325,
+  "downloadRegistration": {"recorded": 3, "skipped": 0, "originalOverridesReturned": false},
+  "visualReview": "All three original images inspected. No people, visible text, signage or watermarks. Consistent ivory, stone, walnut and olive palette. Hero has broad dark negative space on the left. Architecture is conceptually plausible; this is not a technical construction review.",
+  "assets": [
+    {
+      "file": "solera-hero-courtyard.png",
+      "identifier": "VXbw72YMMU",
+      "status": "completed",
+      "width": 2560,
+      "height": 1440,
+      "aspectRatio": "16:9",
+      "bytes": 5728779,
+      "sha256": "AED4185F86A9CA94C40E9AB1DD359856C050BB4B4458C9D5DEDFF56391C7A41E",
+      "credits": 100,
+      "webUrl": "https://www.magnific.com/app/creation/VXbw72YMMU",
+      "alt": "Concepto de interior mediterráneo con un gran arco de piedra abierto a un patio con olivo y una butaca de nogal en la sombra."
+    },
+    {
+      "file": "solera-staircase.png",
+      "identifier": "lJWImZZgv9",
+      "status": "completed",
+      "width": 1728,
+      "height": 2304,
+      "aspectRatio": "3:4",
+      "bytes": 5296349,
+      "sha256": "3A987BC80B36BB6FD5AB04A256F018CC942291AB5F56E781F3143535678204D0",
+      "credits": 100,
+      "webUrl": "https://www.magnific.com/app/creation/lJWImZZgv9",
+      "alt": "Concepto de escalera escultórica de piedra clara, con barandilla curva y luz mediterránea sobre paredes de cal."
+    },
+    {
+      "file": "solera-living-vignette.png",
+      "identifier": "Bhj964NoQR",
+      "status": "completed",
+      "width": 2496,
+      "height": 1664,
+      "aspectRatio": "3:2",
+      "bytes": 5818321,
+      "sha256": "646838C33B8A5492B83C9518AA8F40217A5ED78F458530B805D0153751E5AB9F",
+      "credits": 100,
+      "webUrl": "https://www.magnific.com/app/creation/Bhj964NoQR",
+      "alt": "Concepto de salón sereno con sofá de lino, muebles de nogal y una puerta alta que conecta con otra estancia luminosa."
+    }
+  ]
+}

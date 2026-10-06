@@ -1,116 +1,36 @@
 ---
-const navLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/propiedades', label: 'Propiedades' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/equipo', label: 'Equipo' },
-  { href: '/contacto', label: 'Contacto' },
-];
-
-const currentPath = Astro.url.pathname;
+import { pageFor, tx } from '../lib/site.mjs';
+import type { EditorialPage } from '../lib/types';
+interface Props { page: EditorialPage; }
+const { page: p } = Astro.props;
+const lang = p.lang;
+const alternate = pageFor(p.id, lang === 'es' ? 'en' : 'es');
+const contact = pageFor('CONTACTO', lang).route;
 ---
-
-<header id="site-header" class="glass fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <nav class="flex items-center justify-between h-20" aria-label="Navegación principal">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group" aria-label="Solera Estates - Inicio">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-navy to-navy-light flex items-center justify-center shadow-md">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 12L12 3L21 12V20C21 20.55 20.55 21 20 21H15V15H9V21H4C3.45 21 3 20.55 3 20V12Z" fill="#C9A054"/>
-          </svg>
-        </div>
-        <div>
-          <span class="block text-lg font-display font-bold text-navy leading-none tracking-wide">Solera Estates</span>
-          <span class="block text-xs text-gold font-sans tracking-widest uppercase">Barcelona · Luxury Real Estate</span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav -->
-      <ul class="hidden lg:flex items-center gap-8" role="list">
-        {navLinks.map(link => (
-          <li>
-            <a
-              href={link.href}
-              class={`text-sm font-medium tracking-wide transition-colors duration-200 relative group
-                ${currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                  ? 'text-gold'
-                  : 'text-dark hover:text-gold'
-                }`}
-            >
-              {link.label}
-              <span class={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 rounded-full
-                ${currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                  ? 'w-full'
-                  : 'w-0 group-hover:w-full'
-                }`}></span>
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <!-- CTA Button -->
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="tel:+34623446002" class="text-sm text-muted hover:text-navy transition-colors flex items-center gap-1.5">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-          </svg>
-          +34 623 446 002
-        </a>
-        <a href="/propiedades" class="btn-gold text-white text-sm font-semibold px-6 py-3 rounded-full shadow-md">
-          Ver propiedades
-        </a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-navy" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
+<a class="skip" href="#main">{tx(lang, 'Saltar al contenido', 'Skip to content')}</a>
+<header class:list={['site-header', { 'over-hero': p.id === 'HOME' }]}>
+  <a class="brand" href={pageFor('HOME', lang).route} aria-label={`Solera Estates · ${tx(lang, 'Inicio', 'Home')}`}><span>SOLERA</span><small>ESTATES</small></a>
+  <nav class="desktop-nav" aria-label={tx(lang, 'Navegación principal', 'Main navigation')}>
+    <a class="nav-link" href={pageFor('FIRMA', lang).route}>{tx(lang, 'La firma', 'The firm')}</a>
+    <a class="nav-link" href={pageFor('HOME', lang).route + '#servicios'}>{tx(lang, 'Servicios', 'Services')}</a>
+    <a class="nav-link" href={pageFor('JOURNAL', lang).route}>Journal</a>
+  </nav>
+  <div class="header-actions">
+    <nav class="languages" aria-label={tx(lang, 'Cambiar idioma', 'Change language')}>
+      <a href={lang === 'es' ? p.route : alternate.route} lang="es" hreflang="es" aria-current={lang === 'es' ? 'page' : undefined}>ES</a><span aria-hidden="true">/</span><a href={lang === 'en' ? p.route : alternate.route} lang="en" hreflang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
     </nav>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden hidden border-t border-gold-light/30 bg-cream" role="navigation" aria-label="Menú móvil">
-    <ul class="px-6 py-4 space-y-1" role="list">
-      {navLinks.map(link => (
-        <li>
-          <a
-            href={link.href}
-            class={`block px-4 py-3 rounded-xl text-sm font-medium transition-all
-              ${currentPath === link.href
-                ? 'bg-gold-pale text-gold font-semibold'
-                : 'text-dark hover:bg-cream-dark hover:text-navy'
-              }`}
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
-      <li class="pt-2">
-        <a href="/propiedades" class="btn-gold block text-center text-white text-sm font-semibold px-6 py-3 rounded-full">
-          Ver propiedades
-        </a>
-      </li>
-    </ul>
+    <a class="header-contact" href={contact + '#formulario'}>{tx(lang, 'Plantear una consulta', 'Send an enquiry')}</a>
+    <button class="menu-toggle" type="button" aria-controls="menu-panel" aria-expanded="false" aria-label={tx(lang, 'Abrir menú', 'Open menu')} data-open={tx(lang, 'Abrir menú', 'Open menu')} data-close={tx(lang, 'Cerrar menú', 'Close menu')}><span></span><span></span></button>
   </div>
 </header>
-
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
-
-  btn?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
-    menu?.classList.toggle('hidden', isOpen);
-    iconOpen?.classList.toggle('hidden', !isOpen);
-    iconClose?.classList.toggle('hidden', isOpen);
-    btn.setAttribute('aria-expanded', String(!isOpen));
-  });
-</script>
+<nav id="menu-panel" class="menu-panel" hidden aria-label={tx(lang, 'Todas las páginas', 'All pages')}>
+  <div class="menu-inner">
+    <p class="eyebrow">Solera Estates · Barcelona</p>
+    <div class="menu-main">{['HOME', 'FIRMA', 'GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'JOURNAL', 'CONTACTO'].map(id => {
+      const item = pageFor(id, lang);
+      return <a class="menu-link" href={item.route}>{item.name}</a>;
+    })}</div>
+    <a class="text-link" href={pageFor('GESTION', lang).route + tx(lang, '#propietarios-internacionales', '#international-owners')}>{tx(lang, 'Propietarios internacionales', 'International owners')}</a>
+    <a class="menu-email" href="mailto:info@soleraestates.es">info@soleraestates.es</a>
+  </div>
+</nav>
