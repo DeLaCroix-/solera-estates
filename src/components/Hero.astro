@@ -19,7 +19,7 @@ const image = images[p.id];
     <ResponsiveImage name="hero" lang={p.lang} hero sizes="100vw" class="hero-image" />
     <div class="hero-shade"></div>
     <div class="hero-content"><p class="eyebrow">Private Real Estate Advisory · Barcelona</p><h1 set:html={marked.parseInline(title.text)} /><div class="hero-links">{links.map((node, i) => <a class={i === 0 ? 'button button-light' : 'quiet-link'} href={node.href}>{node.text}</a>)}</div></div>
-    <div class="hero-foot"><span>{tx(p.lang, 'El cuidado de lo que importa.', 'Care for what matters.')}</span><span aria-hidden="true">SOLERA ESTATES</span><span>Barcelona · {tx(p.lang, 'Mediterráneo', 'Mediterranean')}</span></div>
+    <div class="hero-foot"><span>{tx(p.lang, 'El cuidado de lo que importa.', 'Care for what matters.')}</span><span aria-hidden="true">SOLERA ESTATES</span></div>
   </section>
   <section class="home-intro wrap"><p class="eyebrow">{tx(p.lang, 'Una perspectiva completa', 'A complete perspective')}</p><div class="intro-columns"><ContentNodes nodes={copy} /></div></section>
 </> : <section class:list={['page-hero wrap', { 'utility-hero': !image }]} data-block={b.id}>
