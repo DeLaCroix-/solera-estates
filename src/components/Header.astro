@@ -17,7 +17,8 @@ const contact = pageFor('CONTACTO', lang).route;
   </nav>
   <div class="header-actions">
     <nav class="languages" aria-label={tx(lang, 'Cambiar idioma', 'Change language')}>
-      <a href={lang === 'es' ? p.route : alternate.route} lang="es" hreflang="es" aria-current={lang === 'es' ? 'page' : undefined}>ES</a><span aria-hidden="true">/</span><a href={lang === 'en' ? p.route : alternate.route} lang="en" hreflang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+      <a href={lang === 'es' ? p.route : alternate.route} lang="es" hreflang="es" aria-label="Español" title="Español" aria-current={lang === 'es' ? 'page' : undefined}><svg class="language-flag" viewBox="0 0 24 16" aria-hidden="true"><path fill="#aa151b" d="M0 0h24v16H0z" /><path fill="#f1bf00" d="M0 4h24v8H0z" /><path fill="#aa151b" d="M6 6h3v3.5a1.5 1.5 0 0 1-3 0z" /><path fill="#f4df9b" d="M6.5 6.5h2v2h-2z" /><path fill="#aa151b" d="M6 5h3v1H6z" /></svg><span>ES</span></a>
+      <a href={lang === 'en' ? p.route : alternate.route} lang="en" hreflang="en" aria-label="English" title="English" aria-current={lang === 'en' ? 'page' : undefined}><svg class="language-flag" viewBox="0 0 24 16" aria-hidden="true"><path fill="#173267" d="M0 0h24v16H0z" /><path stroke="#fff" stroke-width="4" d="m0 0 24 16M24 0 0 16" /><path stroke="#c8102e" stroke-width="1.4" d="m0 0 24 16M24 0 0 16" /><path stroke="#fff" stroke-width="5.3" d="M12 0v16M0 8h24" /><path stroke="#c8102e" stroke-width="3" d="M12 0v16M0 8h24" /></svg><span>EN</span></a>
     </nav>
     <a class="header-contact" href={contact + '#formulario'}>{tx(lang, 'Plantear una consulta', 'Send an enquiry')}</a>
     <button class="menu-toggle" type="button" aria-controls="menu-panel" aria-expanded="false" aria-label={tx(lang, 'Abrir menú', 'Open menu')} data-open={tx(lang, 'Abrir menú', 'Open menu')} data-close={tx(lang, 'Cerrar menú', 'Close menu')}><span></span><span></span></button>

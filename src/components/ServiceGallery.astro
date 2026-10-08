@@ -1,0 +1,45 @@
+---
+import { marked } from 'marked';
+import { groupNodes, tx } from '../lib/site.mjs';
+import ContentNodes from './ContentNodes.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { ContentBlock, ImageName, Language } from '../lib/types';
+interface Props { block: ContentBlock; lang: Language; }
+const { block, lang } = Astro.props;
+const { intro, groups } = groupNodes(block);
+const title = intro.filter(node => node.type === 'h2');
+const introduction = intro.filter(node => node.type !== 'h2');
+const images: ImageName[] = ['living', 'staircase', 'hero', 'terrace'];
+const captions = lang === 'es'
+  ? ['El valor de la tranquilidad', 'Una nueva forma de habitar', 'Cada decisión, con perspectiva', 'Barcelona, tu siguiente capítulo']
+  : ['The value of peace of mind', 'A new way of living', 'Perspective in every decision', 'Barcelona, your next chapter'];
+---
+<section class="services" id={block.anchor || block.id.toLowerCase()} data-block={block.id}>
+  <div class="services-inner wrap">
+    <div class="services-heading">
+      <p class="eyebrow">{tx(lang, 'Áreas de acompañamiento', 'Our areas of expertise')}</p>
+      <div class="services-title"><ContentNodes nodes={title} /></div>
+      <div class="services-introduction"><ContentNodes nodes={introduction} /><span class="services-flourish" aria-hidden="true">S.</span></div>
+    </div>
+    <div class="service-gallery">
+      {groups.map((group, index) => {
+        const link = group.nodes.find(node => node.type === 'link');
+        const copy = group.nodes.filter(node => node.type !== 'link');
+        return <article class="service-card">
+          <a class="service-art" href={link?.href} aria-label={link?.text} tabindex="-1" aria-hidden="true">
+            <ResponsiveImage name={images[index]} lang={lang} sizes="(max-width: 760px) 100vw, (min-width: 1800px) 740px, 44vw" />
+            <span class="service-art-shade"></span>
+            <span class="service-caption">{captions[index]}</span>
+            <span class="service-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.2" /></svg></span>
+          </a>
+          <div class="service-copy">
+            <h3><a href={link?.href} set:html={marked.parseInline(group.title)} /></h3>
+            <ContentNodes nodes={copy} />
+            {link && <a class="text-link service-link" href={link.href}>{link.text}<span aria-hidden="true">↗</span></a>}
+          </div>
+        </article>;
+      })}
+    </div>
+    <p class="services-note">{tx(lang, 'Una mirada integral. Un acompañamiento personal.', 'A complete perspective. A personal approach.')}</p>
+  </div>
+</section>

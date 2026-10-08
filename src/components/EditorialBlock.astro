@@ -4,6 +4,7 @@ import { groupNodes, tx } from '../lib/site.mjs';
 import ContentNodes from './ContentNodes.astro';
 import ResponsiveImage from './ResponsiveImage.astro';
 import ContactForm from './ContactForm.astro';
+import ServiceGallery from './ServiceGallery.astro';
 import type { ContentBlock, EditorialPage } from '../lib/types';
 interface Props { block: ContentBlock; page: EditorialPage; index: number; }
 const { block: b, page: p, index: i } = Astro.props;
@@ -20,19 +21,16 @@ const faq = /Preguntas frecuentes|Frequently asked/i.test(b.label);
 </section> : faq ? <section class="faq wrap" {...attrs}>
   <div class="section-head"><p class="eyebrow">{tx(l, 'Con claridad', 'With clarity')}</p><ContentNodes nodes={h ? [h] : []} /></div>
   <div class="faq-items">{items.map((g, j) => <details open={j === 0}><summary><h3 set:html={marked.parseInline(g.title)} /><span aria-hidden="true" class="plus"></span></summary><div class="faq-answer"><ContentNodes nodes={g.nodes} /></div></details>)}</div>
-</section> : b.id === 'HOME-02' ? <section class="services wrap" {...attrs}>
-  <div class="section-head"><p class="eyebrow">01 — {tx(l, 'Áreas de acompañamiento', 'Our areas of expertise')}</p><ContentNodes nodes={intro} /></div>
-  <div class="service-list">{items.map((g, j) => <article class="service-row"><span class="service-number">0{j + 1}</span><h3 set:html={marked.parseInline(g.title)} /><div><ContentNodes nodes={g.nodes} /></div></article>)}</div>
-</section> : ['HOME-03', 'GESTION-03'].includes(b.id) ? <section class="international" {...attrs}>
+</section> : b.id === 'HOME-02' ? <ServiceGallery block={b} lang={l} /> : ['HOME-03', 'GESTION-03'].includes(b.id) ? <section class="international" {...attrs}>
   <div class="international-image"><ResponsiveImage name="living" lang={l} sizes="(max-width: 900px) 100vw, 50vw" /></div>
   <div class="international-copy"><p class="eyebrow">{tx(l, 'Cerca, incluso a distancia', 'Close, even from afar')}</p><ContentNodes nodes={b.nodes} /></div>
 </section> : b.id === 'HOME-04' ? <section class="method wrap" {...attrs}>
-  <div class="method-title"><p class="eyebrow">02 — {tx(l, 'Nuestra forma de trabajar', 'Our approach')}</p><ContentNodes nodes={intro} /><figure><ResponsiveImage name="staircase" lang={l} /></figure></div>
-  <div class="method-steps">{items.map((g, j) => <div class="method-step"><span class="eyebrow">0{j + 1}</span><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></div>)}</div>
+  <div class="method-title"><p class="eyebrow">{tx(l, 'Nuestra forma de trabajar', 'Our approach')}</p><ContentNodes nodes={intro} /><figure><ResponsiveImage name="staircase" lang={l} /></figure></div>
+  <div class="method-steps">{items.map(g => <div class="method-step"><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></div>)}</div>
 </section> : b.id === 'CONTACTO-03' ? <section class="contact-section wrap" {...attrs}>
   <div class="contact-aside"><ContentNodes nodes={intro} /><div class="enquiry-panel"><p class="eyebrow">{tx(l, 'Contacto directo', 'Direct contact')}</p><a class="email-large" href="mailto:info@soleraestates.eu">info@soleraestates.eu</a><p>Carrer de Balmes, 32, Pral. 2º<br />08007 Barcelona</p></div></div>
   <ContactForm lang={l} />
 </section> : <section class:list={['editorial wrap', { 'has-items': items.length }]} {...attrs}>
-  <div class="section-head"><p class="eyebrow">{String(i).padStart(2, '0')} — {tx(l, 'En perspectiva', 'In perspective')}</p><ContentNodes nodes={h ? [h] : []} /></div>
+  <div class="section-head"><p class="eyebrow">{tx(l, 'En perspectiva', 'In perspective')}</p><ContentNodes nodes={h ? [h] : []} /></div>
   <div class="editorial-body"><ContentNodes nodes={body} />{items.map(g => <div class="editorial-item"><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></div>)}</div>
 </section>}
