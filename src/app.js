@@ -1,3 +1,4 @@
+import { measurementReady, confirmEnquiry } from './privacy.js';
 const toggle=document.querySelector('.menu-toggle');
 const panel=document.querySelector('#menu-panel');
 const header=document.querySelector('.site-header');
@@ -8,7 +9,7 @@ panel?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{setMenu(
 const scrolled=()=>header?.classList.toggle('is-scrolled',window.scrollY>32);window.addEventListener('scroll',scrolled,{passive:true});scrolled();
 const form=document.querySelector('#enquiry-form');
 if(form){
- const en=form.dataset.lang==='en';const t=(es,english)=>en?english:es;const button=form.querySelector('button[type=submit]');const status=form.querySelector('.form-status');button.disabled=false;
+ const en=form.dataset.lang==='en';const t=(es,english)=>en?english:es;const button=form.querySelector('button[type=submit]');const status=form.querySelector('.form-status');measurementReady.finally(()=>{button.disabled=false;});
  let submitting=false;
  const errorText={privacy:t('Lee y marca la información de privacidad.','Please read and acknowledge the privacy information.'),name:t('Introduce tu nombre.','Please enter your name.'),email:t('Introduce un correo electrónico válido.','Please enter a valid email address.'),area:t('Selecciona el motivo de tu consulta.','Please choose the subject of your enquiry.'),message:t('Describe brevemente qué necesitas.','Please briefly describe what you need.')};
  const message=(text,error=false)=>{status.textContent=text;status.classList.toggle('is-error',error);status.focus();};
@@ -30,6 +31,7 @@ if(form){
    const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json'},body:bodyData,signal:AbortSignal.timeout(30000)});
    const result=await response.json().catch(()=>null);
    if(!response.ok||!result||result.ok===false||result.error||result.errors?.length){message(t('No hemos podido enviar tu consulta. Conserva el mensaje e inténtalo de nuevo.','We could not send your enquiry. Keep a copy of your message and try again.'),true);return;}
+   confirmEnquiry(form.id);
    try{sessionStorage.setItem('solera-enquiry-confirmed',String(Date.now()));}catch{message(t('Hemos recibido tu consulta. Revisaremos la información para valorar el siguiente paso.','We have received your enquiry. We will review the information to consider the next step.'));form.reset();return;}
    window.location.assign(en?'/en/thank-you/':'/gracias/');
   }catch{message(t('No hemos podido confirmar el envío. Comprueba tu conexión y evita reenviar varias veces seguidas.','We could not confirm submission. Check your connection and avoid sending repeatedly.'),true);}

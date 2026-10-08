@@ -5,6 +5,7 @@ import ContentNodes from './ContentNodes.astro';
 import ResponsiveImage from './ResponsiveImage.astro';
 import ContactForm from './ContactForm.astro';
 import ServiceGallery from './ServiceGallery.astro';
+import HomeQuestions from './HomeQuestions.astro';
 import type { ContentBlock, EditorialPage } from '../lib/types';
 interface Props { block: ContentBlock; page: EditorialPage; index: number; }
 const { block: b, page: p, index: i } = Astro.props;
@@ -18,7 +19,7 @@ const faq = /Preguntas frecuentes|Frequently asked/i.test(b.label);
 ---
 {closing ? <section class="closing wrap" {...attrs}>
   <p class="eyebrow">{tx(l, 'Tu próximo paso', 'Your next step')}</p><ContentNodes nodes={b.nodes} />
-</section> : faq ? <section class="faq wrap" {...attrs}>
+</section> : b.id === 'HOME-05' ? <HomeQuestions block={b} lang={l} /> : faq ? <section class="faq wrap" {...attrs}>
   <div class="section-head"><p class="eyebrow">{tx(l, 'Con claridad', 'With clarity')}</p><ContentNodes nodes={h ? [h] : []} /></div>
   <div class="faq-items">{items.map((g, j) => <details open={j === 0}><summary><h3 set:html={marked.parseInline(g.title)} /><span aria-hidden="true" class="plus"></span></summary><div class="faq-answer"><ContentNodes nodes={g.nodes} /></div></details>)}</div>
 </section> : b.id === 'HOME-02' ? <ServiceGallery block={b} lang={l} /> : ['HOME-03', 'GESTION-03'].includes(b.id) ? <section class="international" {...attrs}>

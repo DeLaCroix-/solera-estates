@@ -46,7 +46,7 @@ for(const {p,html,document:d} of pages.values()){
  check(!html.includes('info@soleraestates.es'),p.route+' no previous email address');
  const robots=d.querySelector('meta[name="robots"]').getAttribute('content');
  if(['JOURNAL','ERROR','GRACIAS','LEGAL','PRIVACY','COOKIES'].includes(p.id))check(robots.includes('noindex'),p.route+' utility or empty journal excluded');
- check(!/https?:\/\/(fonts\.google|www\.googletagmanager|www\.google-analytics)/.test(html),p.route+' no remote fonts or trackers');
+ check(!/https?:\/\/(fonts\.google|www\.googletagmanager|www\.google-analytics)/.test(html),p.route+' no remote fonts or eager Google tags');
 }
 // Independent count from the supplied master: no editorial headings lost in extraction.
 const raw=source.slice(source.indexOf('## 4. Contenido completo'),source.indexOf('## 6. Textos globales'));

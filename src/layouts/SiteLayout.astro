@@ -2,6 +2,7 @@
 import { origin, pageFor, excludedFromIndex } from '../lib/site.mjs';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PrivacyControls from '../components/PrivacyControls.astro';
 import '../style.css';
 import type { EditorialPage } from '../lib/types';
 interface Props { page: EditorialPage; }
@@ -42,5 +43,6 @@ if (['GESTION', 'REFORMA', 'VENTA', 'LLEGADA'].includes(p.id)) graph.push({ '@ty
     <Header page={p} />
     <main id="main"><slot /></main>
     <Footer page={p} />
+    <PrivacyControls lang={p.lang} />
   </body>
 </html>

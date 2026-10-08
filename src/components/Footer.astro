@@ -14,10 +14,14 @@ const l = page.lang;
     })}</nav>
     <div><p class="eyebrow">{tx(l, 'Contacto', 'Contact')}</p><a href="mailto:info@soleraestates.eu">info@soleraestates.eu</a><p>Barcelona</p><a class="text-link" href={pageFor('CONTACTO', l).route}>{tx(l, 'Plantear una consulta', 'Send an enquiry')}</a></div>
   </div>
-  <nav class="footer-secondary" aria-label={tx(l, 'La firma y avisos legales', 'The firm and legal information')}>{['FIRMA', 'JOURNAL', 'LEGAL', 'PRIVACY', 'COOKIES'].map(id => {
+  <nav class="footer-secondary" aria-label={tx(l, 'La firma', 'The firm')}>{['FIRMA', 'JOURNAL'].map(id => {
     const item = pageFor(id, l);
     return <a class="footer-link" href={item.route}>{item.name}</a>;
   })}</nav>
   <div class="footer-wordmark" aria-hidden="true">SOLERA</div>
-  <div class="footer-bottom"><span>© {new Date().getFullYear()} Solera Estates · NAT BPO SL</span><span>{tx(l, 'Imágenes conceptuales creadas con IA.', 'Conceptual imagery created with AI.')}</span><a href="#top">{tx(l, 'Volver arriba', 'Back to top')}</a></div>
+  <nav class="footer-legal" aria-label={tx(l, 'Información legal', 'Legal information')}>
+    {['LEGAL', 'PRIVACY', 'COOKIES'].map(id => { const item = pageFor(id, l); return <a href={item.route}>{item.name}</a>; })}
+    <button type="button" data-cookie-settings>{tx(l, 'Configurar cookies', 'Cookie settings')}</button>
+  </nav>
+  <div class="footer-bottom"><span>© {new Date().getFullYear()} Solera Estates</span><span>Created with <span aria-label="love">❤️</span> by <a href="https://ventia.group" target="_blank" rel="noopener noreferrer">SEO Agency Ventia Group</a></span></div>
 </footer>

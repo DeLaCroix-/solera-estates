@@ -17,7 +17,7 @@
         ],
         [
           "Contenidos e imágenes",
-          "Los textos, la identidad visual y los elementos del sitio están sujetos a los derechos que correspondan a sus titulares. Las imágenes arquitectónicas son ilustraciones conceptuales creadas con inteligencia artificial; no documentan inmuebles en comercialización, oficinas, clientes ni proyectos ejecutados por Solera Estates. No deben interpretarse como un catálogo de propiedades."
+          "Los textos, la identidad visual y los elementos del sitio están sujetos a los derechos que correspondan a sus titulares. Las imágenes tienen una finalidad ilustrativa: no documentan inmuebles en comercialización, oficinas, clientes ni proyectos ejecutados por Solera Estates. No deben interpretarse como un catálogo de propiedades."
         ],
         [
           "Uso del sitio",
@@ -31,7 +31,7 @@
     },
     {
       "id": "PRIVACY",
-      "name": "Privacidad",
+      "name": "Política de privacidad",
       "route": "/privacidad/",
       "title": "Política de privacidad | Solera Estates",
       "description": "Información sobre los datos personales en las consultas dirigidas a Solera Estates, su finalidad y tus derechos.",
@@ -42,15 +42,19 @@
         ],
         [
           "Consultas mediante formulario y correo",
-          "Al enviar el formulario, los datos que introduces se transmiten a Formspree para registrar la consulta y notificarla a info@soleraestates.eu. También puedes escribirnos directamente por correo. Facilita únicamente los datos de contacto y el contexto necesarios; no envíes documentación de identidad, información bancaria ni datos de otras personas en la primera consulta."
+          "Al enviar el formulario, los datos que introduces se transmiten a Formspree para registrar la consulta y notificarla a info@soleraestates.eu, con copia a clientes@ventia.group. La consulta confirmada se registra también en el CRM de NAT Consulting para que el equipo pueda atenderla y realizar su seguimiento. Este registro es necesario para gestionar la petición y funciona aunque rechaces la analítica. También puedes escribirnos directamente por correo. Facilita únicamente los datos de contacto y el contexto necesarios; no envíes documentación de identidad, información bancaria ni datos de otras personas en la primera consulta."
         ],
         [
           "Finalidad y base del tratamiento",
           "Utilizamos los datos recibidos para atender tu petición y valorar el acompañamiento solicitado. Cuando pides un servicio o una propuesta, el tratamiento responde a las medidas precontractuales que solicitas. Para otras consultas, se limita a la atención de la comunicación y al interés legítimo en responderla. No utilizamos este contacto para incorporarte automáticamente a campañas de marketing ni para tomar decisiones automatizadas sobre ti."
         ],
         [
+          "Analítica opcional",
+          "Solo si aceptas la categoría Analítica, Google Analytics y la actividad web del CRM registran páginas visitadas, origen de la visita, interacciones, tiempo de navegación e identificadores seudónimos. La finalidad es comprender el uso de la web y la relación entre las visitas y las consultas. Si envías un formulario, la actividad consentida de esa sesión puede vincularse a tu consulta dentro del CRM. No enviamos los nombres, correos, teléfonos ni mensajes del formulario a Google Analytics. La base de este tratamiento es tu consentimiento, que puedes retirar desde «Configurar cookies» en el pie de cualquier página. No activamos publicidad personalizada ni herramientas de grabación de sesiones."
+        ],
+        [
           "Conservación y proveedores",
-          "Conservamos la información durante el tiempo necesario para atender la consulta y, si se formaliza un encargo, para gestionar la relación y cumplir las obligaciones aplicables. El acceso se limita a quienes necesitan intervenir y a proveedores que prestan soporte técnico: Formspree, Inc. para la recogida de formularios, Arsys para el correo y Netlify para el alojamiento de la web. Formspree puede tratar datos en Estados Unidos y otros países donde opera y recabar información técnica, como la dirección IP, para la seguridad y prevención del spam. Puedes consultar su [política de privacidad](https://formspree.io/legal/privacy-policy/) y solicitar más información sobre el tratamiento escribiéndonos."
+          "Conservamos la información durante el tiempo necesario para atender la consulta y, si se formaliza un encargo, para gestionar la relación y cumplir las obligaciones aplicables. El acceso se limita a quienes necesitan intervenir y a proveedores que prestan soporte técnico: Formspree, Inc. para la recogida de formularios, Arsys para el correo y Netlify para el alojamiento de la web. Formspree puede tratar datos en Estados Unidos y otros países donde opera y recabar información técnica, como la dirección IP, para la seguridad y prevención del spam. Puedes consultar su [política de privacidad](https://formspree.io/legal/privacy-policy/) y solicitar más información sobre el tratamiento escribiéndonos. La actividad consentida se gestiona en el CRM de NAT Consulting. Google Ireland Limited presta Google Analytics; sus servicios pueden implicar tratamiento fuera del Espacio Económico Europeo. Consulta [cómo utiliza Google la información](https://policies.google.com/technologies/partner-sites) y sus [garantías para transferencias internacionales](https://policies.google.com/privacy/frameworks). Puedes solicitar al responsable información adicional sobre los proveedores y las garantías aplicables."
         ],
         [
           "Tus derechos",
@@ -58,28 +62,40 @@
         ],
         [
           "Cambios",
-          "Revisaremos esta información si cambian los canales de contacto, los proveedores o el uso de datos. La versión actual corresponde al 6 de octubre de 2026."
+          "Revisaremos esta información si cambian los canales de contacto, los proveedores o el uso de datos. Versión: 8 de octubre de 2026."
         ]
       ]
     },
     {
       "id": "COOKIES",
-      "name": "Cookies",
+      "name": "Política de cookies",
       "route": "/cookies/",
-      "title": "Cookies y tecnologías del sitio | Solera Estates",
+      "title": "Política de cookies | Solera Estates",
       "description": "Información sobre el uso de cookies, analítica y almacenamiento en esta versión de Solera Estates.",
       "sections": [
         [
-          "Tecnologías de esta web",
-          "El código de esta web no instala cookies de publicidad ni incorpora analítica, píxeles de seguimiento, mapas o vídeos externos. Las imágenes y las fuentes se sirven desde el propio sitio. El formulario no guarda tus campos en almacenamiento local. Tras un envío confirmado, se guarda temporalmente en sessionStorage una marca de tiempo, sin datos personales, para mostrar la página de confirmación."
+          "Tu elección",
+          "Las cookies y tecnologías similares permiten recordar preferencias y, cuando lo autorizas, medir el uso del sitio. Puedes aceptar o rechazar la analítica con los botones del aviso, o elegirla en la configuración. La navegación y el envío de consultas siguen disponibles si la rechazas. No utilizamos cookies publicitarias."
         ],
         [
-          "Alojamiento y seguridad",
-          "Netlify presta el servicio de alojamiento y distribución de esta web. Los mecanismos técnicos de seguridad del alojamiento son distintos de las funciones de publicidad y analítica, que esta web no incorpora. Al enviar una consulta, Formspree aplica sus mecanismos de seguridad y prevención del spam."
+          "Tecnologías necesarias",
+          "Guardamos tu elección en localStorage con el nombre `solera-privacy-v1`, durante 180 días. Tras ese plazo solicitamos una nueva decisión antes de reactivar la analítica. Después de un formulario confirmado guardamos `solera-enquiry-confirmed` en sessionStorage: contiene solo una marca de tiempo, se consume al abrir la confirmación y deja de ser válida a los 5 minutos. Los campos del formulario no se guardan en localStorage. El componente técnico del CRM permite registrar las consultas enviadas; con la analítica rechazada no registra la navegación ni crea identificadores persistentes de seguimiento."
         ],
         [
-          "Gestión y cambios",
-          "Puedes consultar y eliminar las cookies o los datos almacenados desde las opciones de privacidad de tu navegador. Si se incorporan tecnologías de medición o publicidad, se actualizará esta información y se ofrecerán los controles que correspondan antes de su activación. Contacto: info@soleraestates.eu. Versión: 6 de octubre de 2026."
+          "Analítica del CRM de NAT Consulting",
+          "Con tu consentimiento, el CRM registra visitas, origen, clics de contacto, avance por la página y formularios. Utiliza `nat_visitor_id` como identificador seudónimo de visitante (cookie de 180 días y copia en localStorage), `nat_session_id` como cookie de sesión con 30 minutos de duración y `nat_session` en sessionStorage para agrupar las interacciones. Puede guardar `nat_session_closing` en sessionStorage para cerrar una sesión tras un contacto. Los datos de sesión dejan de reutilizarse tras 30 minutos de inactividad. Los identificadores se eliminan al retirar el consentimiento o al vencer la preferencia. Si envías una consulta, el CRM puede relacionar la actividad consentida de esa sesión con ella."
+        ],
+        [
+          "Google Analytics",
+          "Google Analytics se carga únicamente cuando aceptas Analítica. Utiliza las cookies propias `_ga` y `_ga_<identificador>` para distinguir visitas y sesiones; su duración predeterminada es de hasta 2 años, sujeta a los límites del navegador. Al retirar tu permiso eliminamos las cookies accesibles desde este dominio e impedimos nuevos eventos. No enviamos a Google el contenido ni los datos de contacto del formulario. Más información: [cookies de Google Analytics](https://support.google.com/analytics/answer/11397207) y [uso de datos por Google](https://policies.google.com/technologies/partner-sites)."
+        ],
+        [
+          "Cambiar o retirar el consentimiento",
+          "Puedes volver a abrir el panel mediante «Configurar cookies» en el pie de cualquier página y rechazar la analítica o guardar una nueva elección. El cambio se aplica a partir de ese momento; no elimina automáticamente datos que ya se hubieran tratado. Para ejercer tus derechos, consulta la [Política de privacidad](/privacidad/) o escribe a info@soleraestates.eu. También puedes borrar las cookies y los datos del sitio desde tu navegador."
+        ],
+        [
+          "Alojamiento y formulario",
+          "Netlify aloja la web, y las fuentes e imágenes se sirven desde el propio sitio. Formspree procesa el formulario y aplica controles de seguridad y antispam al enviarlo. Estas funciones necesarias son distintas del seguimiento opcional. Versión: 8 de octubre de 2026."
         ]
       ]
     }
@@ -102,7 +118,7 @@
         ],
         [
           "Content and imagery",
-          "The text, visual identity and website elements are subject to their respective owners’ rights. The architectural images are conceptual illustrations created with artificial intelligence. They do not document properties for sale, offices, clients or projects completed by Solera Estates, and must not be interpreted as a property catalogue."
+          "The text, visual identity and website elements are subject to their respective owners’ rights. The images serve an illustrative purpose: they do not document properties for sale, offices, clients or projects completed by Solera Estates, and must not be interpreted as a property catalogue."
         ],
         [
           "Using this website",
@@ -116,7 +132,7 @@
     },
     {
       "id": "PRIVACY",
-      "name": "Privacy",
+      "name": "Privacy policy",
       "route": "/en/privacy/",
       "title": "Privacy Policy | Solera Estates",
       "description": "How personal information in enquiries to Solera Estates is used and how to exercise your rights.",
@@ -127,15 +143,19 @@
         ],
         [
           "Form and email enquiries",
-          "When you submit the form, the information you enter is sent to Formspree to record your enquiry and notify info@soleraestates.eu. You can also email us directly. Provide only the contact details and context needed; do not include identity documents, banking information or other people’s personal details in your initial enquiry."
+          "When you submit the form, the information you enter is sent to Formspree to record your enquiry and notify info@soleraestates.eu, with a copy to clientes@ventia.group. Confirmed enquiries are also recorded in the NAT Consulting CRM so the team can respond and follow up. This is necessary to handle your request and works even if you reject analytics. You can also email us directly. Provide only the contact details and context needed; do not include identity documents, banking information or other people’s personal details in your initial enquiry."
         ],
         [
           "Purpose and lawful basis",
           "We use the information received to respond to your request and consider the support you need. Where you request a service or proposal, processing is based on the pre-contractual steps you ask us to take. Other enquiries are limited to handling your communication and our legitimate interest in responding. Contacting us does not automatically add you to marketing campaigns or result in automated decisions about you."
         ],
         [
+          "Optional analytics",
+          "Only if you accept Analytics, Google Analytics and the CRM website activity tool record pages visited, traffic sources, interactions, browsing time and pseudonymous identifiers. This helps us understand website use and how visits lead to enquiries. If you submit a form, the consented activity from that session may be linked to your enquiry within the CRM. We do not send form names, email addresses, telephone numbers or messages to Google Analytics. This processing is based on consent, which you can withdraw through “Cookie settings” in the footer of any page. We do not enable personalised advertising or session recording."
+        ],
+        [
           "Retention and providers",
-          "We keep the information for as long as needed to handle your enquiry and, if a service is commissioned, to manage that relationship and meet applicable obligations. Access is limited to those who need to be involved and technical providers: Formspree, Inc. for form collection, Arsys for email and Netlify for website hosting. Formspree may process data in the United States and other countries where it operates and collect technical information, such as IP addresses, for security and spam prevention. You can read its [privacy policy](https://formspree.io/legal/privacy-policy/) and contact us for more information about processing."
+          "We keep the information for as long as needed to handle your enquiry and, if a service is commissioned, to manage that relationship and meet applicable obligations. Access is limited to those who need to be involved and technical providers: Formspree, Inc. for form collection, Arsys for email and Netlify for website hosting. Formspree may process data in the United States and other countries where it operates and collect technical information, such as IP addresses, for security and spam prevention. You can read its [privacy policy](https://formspree.io/legal/privacy-policy/) and contact us for more information about processing. Consented activity is managed within the NAT Consulting CRM. Google Ireland Limited provides Google Analytics; its services may involve processing outside the European Economic Area. Read [how Google uses information](https://policies.google.com/technologies/partner-sites) and its [international transfer safeguards](https://policies.google.com/privacy/frameworks). You may ask the controller for further information about providers and the safeguards applicable to processing."
         ],
         [
           "Your rights",
@@ -143,28 +163,40 @@
         ],
         [
           "Changes",
-          "We will review this information if contact channels, providers or data uses change. This version is dated 6 October 2026."
+          "We will review this information if contact channels, providers or data uses change. Version: 8 October 2026."
         ]
       ]
     },
     {
       "id": "COOKIES",
-      "name": "Cookies",
+      "name": "Cookie policy",
       "route": "/en/cookies/",
-      "title": "Cookies and Site Technologies | Solera Estates",
+      "title": "Cookie policy | Solera Estates",
       "description": "Information on cookies, analytics and storage in this version of Solera Estates.",
       "sections": [
         [
-          "Website technologies",
-          "This website’s code does not install advertising cookies or include analytics, tracking pixels, external maps or embedded videos. Images and fonts are served from the site itself. Form fields are not saved in local storage. After a confirmed submission, a timestamp containing no personal information is temporarily saved in sessionStorage to display the confirmation page."
+          "Your choice",
+          "Cookies and similar technologies remember preferences and, when authorised, measure website use. You can accept or reject analytics in the notice, or choose it in settings. Browsing and enquiry submission remain available if you reject it. We do not use advertising cookies."
         ],
         [
-          "Hosting and security",
-          "Netlify hosts and delivers this website. The hosting service’s technical security mechanisms are separate from advertising and analytics features, which this website does not include. When you submit an enquiry, Formspree applies its security and spam prevention mechanisms."
+          "Necessary technologies",
+          "We remember your choice in localStorage as `solera-privacy-v1` for 180 days. After that period, we ask again before reactivating analytics. After a confirmed form submission, `solera-enquiry-confirmed` is saved in sessionStorage. It contains only a timestamp, is consumed on the confirmation page and expires after 5 minutes. Form fields are not saved in localStorage. The CRM technical component records submitted enquiries; when analytics is rejected it does not record browsing or create persistent tracking identifiers."
         ],
         [
-          "Controls and changes",
-          "You can inspect and delete cookies or stored data through your browser’s privacy settings. If measurement or advertising technologies are introduced, this information will be updated and the relevant controls provided before activation. Contact: info@soleraestates.eu. Version: 6 October 2026."
+          "NAT Consulting CRM analytics",
+          "With consent, the CRM records visits, traffic sources, contact clicks, scrolling and form events. It uses `nat_visitor_id` as a pseudonymous visitor identifier (a 180-day cookie and a localStorage copy), `nat_session_id` as a 30-minute session cookie and `nat_session` in sessionStorage to group interactions. It may store `nat_session_closing` in sessionStorage to close a session after contact. Session data is no longer reused after 30 minutes of inactivity. Identifiers are removed when consent is withdrawn or the preference expires. If you submit an enquiry, the CRM may link the consented activity from that session to your enquiry."
+        ],
+        [
+          "Google Analytics",
+          "Google Analytics loads only when you accept Analytics. Its first-party cookies `_ga` and `_ga_<identifier>` distinguish visitors and sessions. Their default lifetime is up to 2 years, subject to browser limits. If you withdraw consent, we remove cookies accessible from this domain and prevent further events. Form content and contact details are not sent to Google. Read more about [Google Analytics cookies](https://support.google.com/analytics/answer/11397207) and [how Google uses data](https://policies.google.com/technologies/partner-sites)."
+        ],
+        [
+          "Changing or withdrawing consent",
+          "Open the panel through “Cookie settings” in the footer of any page to reject analytics or save a new choice. Changes apply from that point and do not automatically erase data already processed. To exercise your rights, read our [Privacy policy](/en/privacy/) or email info@soleraestates.eu. You can also delete cookies and site data through your browser."
+        ],
+        [
+          "Hosting and enquiries",
+          "Netlify hosts the website, and fonts and images are served from the site itself. Formspree processes enquiry forms and applies security and spam prevention checks when you submit them. These necessary functions are separate from optional tracking. Version: 8 October 2026."
         ]
       ]
     }
