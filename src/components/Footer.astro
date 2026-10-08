@@ -14,7 +14,7 @@ const l = page.lang;
     })}</nav>
     <div><p class="eyebrow">{tx(l, 'Contacto', 'Contact')}</p><a href="mailto:info@soleraestates.eu">info@soleraestates.eu</a><p>Barcelona</p><a class="text-link" href={pageFor('CONTACTO', l).route}>{tx(l, 'Plantear una consulta', 'Send an enquiry')}</a></div>
   </div>
-  <nav class="footer-secondary" aria-label={tx(l, 'La firma', 'The firm')}>{['FIRMA', 'JOURNAL'].map(id => {
+  <nav class="footer-secondary" aria-label={tx(l, 'Más información', 'More information')}>{['BLOG'].map(id => {
     const item = pageFor(id, l);
     return <a class="footer-link" href={item.route}>{item.name}</a>;
   })}</nav>

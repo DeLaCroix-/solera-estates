@@ -13,18 +13,23 @@
     "preview:netlify": "node scripts/serve.mjs",
     "check": "astro check",
     "check:content": "node scripts/qa.mjs --offline",
-    "check:all": "astro check && npm run build && npm run check:content",
-    "check:http": "node scripts/qa.mjs"
+    "check:all": "npm run test:blog && astro check && npm run build && npm run check:content",
+    "check:http": "node scripts/qa.mjs",
+    "test:blog": "node --test scripts/blog.test.mjs",
+    "test:blog:integration": "node scripts/blog-integration.mjs"
   },
   "dependencies": {
     "astro": "7.3.6",
     "linkedom": "0.18.13",
     "marked": "18.1.0",
-    "sharp": "0.35.5"
+    "sanitize-html": "2.18.0",
+    "sharp": "0.35.5",
+    "yaml": "2.9.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@types/node": "22.20.5",
+    "@types/sanitize-html": "2.16.2",
     "css-tree": "3.2.1",
     "typescript": "6.0.3"
   }

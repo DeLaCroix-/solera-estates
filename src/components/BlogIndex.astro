@@ -1,0 +1,35 @@
+---
+import { articles, pageFor, tx } from '../lib/site.mjs';
+import type { Language, BlogArticle } from '../lib/types';
+import ResponsiveImage from './ResponsiveImage.astro';
+import BlogImage from './BlogImage.astro';
+import '../blog.css';
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const posts = articles.filter(a => a.lang === lang) as BlogArticle[];
+const [featured, ...rest] = posts;
+const date = (value: string) => new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Madrid' }).format(new Date(value));
+const themes = [
+  ['GESTION', tx(lang, 'El arte de cuidar', 'The art of caring'), tx(lang, 'Propiedad y gestión', 'Ownership & management')],
+  ['REFORMA', tx(lang, 'Espacios con intención', 'Spaces with intention'), tx(lang, 'Reformas y valor', 'Renovation & value')],
+  ['INVERSION', tx(lang, 'Una visión a largo plazo', 'A long-term perspective'), tx(lang, 'Inversión en Cataluña', 'Investing in Catalonia')],
+  ['LLEGADA', tx(lang, 'Una nueva forma de vivir', 'A new way of living'), tx(lang, 'Llegar a Barcelona', 'Moving to Barcelona')],
+];
+---
+<section class="blog-masthead wrap" aria-labelledby="blog-heading">
+  <div class="blog-kicker"><p class="eyebrow">{tx(lang, 'El Blog de Solera Estates', 'The Solera Estates Blog')}</p><span>{tx(lang, 'Propiedad · Criterio · Barcelona', 'Property · Perspective · Barcelona')}</span></div>
+  <h1 id="blog-heading">{tx(lang, 'Perspectivas.', 'Perspectives.')}</h1>
+  <div class="blog-masthead-bottom"><p>{tx(lang, 'El valor de mirar más allá.', 'The value of looking beyond.')}</p><span>{tx(lang, 'Ideas para comprender tu propiedad. Criterio para decidir su futuro.', 'Ideas to understand your property. Perspective to shape its future.')}</span></div>
+</section>
+{featured ? <section class="blog-feature wrap" aria-label={tx(lang, 'Última publicación', 'Latest publication')}>
+  <a class="blog-feature-image" href={featured.route} aria-label={featured.heading}><BlogImage image={featured.image} lang={lang} eager sizes="(max-width: 760px) 90vw, 65vw" /><span class="blog-image-arrow" aria-hidden="true">↗</span></a>
+  <div class="blog-feature-copy"><p class="eyebrow">{tx(lang, 'Última publicación', 'Latest publication')} <span>—</span> {featured.category}</p><h2><a href={featured.route}>{featured.heading}</a></h2><p>{featured.description}</p><div class="blog-meta"><time datetime={featured.publishDate}>{date(featured.publishDate)}</time><span>{featured.readingMinutes} {tx(lang, 'min de lectura', 'min read')}</span></div><a class="text-link blog-read" href={featured.route}>{tx(lang, 'Leer artículo', 'Read article')} <span aria-hidden="true">↗</span></a></div>
+</section> : <section class="blog-opening wrap" aria-labelledby="blog-opening-title">
+  <div class="blog-opening-image"><ResponsiveImage name="living" lang={lang} hero sizes="100vw" /><span class="blog-photo-caption">{tx(lang, 'La mirada Solera', 'The Solera perspective')}</span></div>
+  <div class="blog-opening-note"><p class="eyebrow">{tx(lang, 'Un espacio para el criterio', 'Room for perspective')}</p><h2 id="blog-opening-title">{tx(lang, 'Las buenas decisiones comienzan por comprender.', 'Good decisions begin with understanding.')}</h2><p>{tx(lang, 'Estamos preparando nuestras primeras publicaciones sobre propiedad, inversión y vida en Barcelona. Un lugar para detenerse, entender el contexto y mirar a largo plazo.', 'We are preparing our first articles on property, investment and life in Barcelona. A space to pause, understand the context and take the long view.')}</p><a class="blog-note-link" href="#blog-perspectives">{tx(lang, 'Explora nuestra mirada', 'Explore our perspective')} <span aria-hidden="true">↓</span></a></div>
+</section>}
+{rest.length > 0 && <section class="blog-collection wrap" aria-labelledby="blog-collection-title"><div class="blog-section-heading"><p class="eyebrow">{tx(lang, 'Para leer con calma', 'Worth taking time for')}</p><h2 id="blog-collection-title">{tx(lang, 'Más perspectivas', 'More perspectives')}</h2></div><div class="blog-grid">{rest.map(post => <article class="blog-card"><a class="blog-card-image" href={post.route} aria-label={post.heading}><BlogImage image={post.image} lang={lang} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 45vw, 30vw" /><span class="blog-image-arrow" aria-hidden="true">↗</span></a><p class="eyebrow">{post.category}</p><h3><a href={post.route}>{post.heading}</a></h3><p class="blog-card-description">{post.description}</p><div class="blog-meta"><time datetime={post.publishDate}>{date(post.publishDate)}</time><span>{post.readingMinutes} {tx(lang, 'min', 'min read')}</span></div></article>)}</div></section>}
+<section id="blog-perspectives" class="blog-perspectives wrap" aria-labelledby="perspectives-title">
+  <div class="blog-perspectives-intro"><p class="eyebrow">{tx(lang, 'Más allá de la lectura', 'Beyond the page')}</p><h2 id="perspectives-title">{tx(lang, 'Del conocimiento al acompañamiento.', 'From perspective to personal guidance.')}</h2><p>{tx(lang, 'Cada propiedad plantea sus propias preguntas. Estas son algunas de las áreas en las que podemos ayudarte.', 'Every property raises its own questions. These are some of the areas in which we can help.')}</p><a class="text-link" href={pageFor('CONTACTO', lang).route}>{tx(lang, 'Hablemos de tu propiedad', 'Let’s talk about your property')} <span aria-hidden="true">↗</span></a></div>
+  <div class="blog-theme-list">{themes.map(([id, title, label]) => <a class="blog-theme" href={pageFor(id, lang).route}><span><small>{label}</small><span class="blog-theme-title">{title}</span></span><span class="blog-theme-arrow" aria-hidden="true">↗</span></a>)}</div>
+</section>

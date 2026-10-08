@@ -5,6 +5,8 @@ import EditorialBlock from './EditorialBlock.astro';
 import InteriorHero from './InteriorHero.astro';
 import InteriorBlock from './InteriorBlock.astro';
 import LegalPage from './LegalPage.astro';
+import BlogIndex from './BlogIndex.astro';
+import BlogArticle from './BlogArticle.astro';
 import '../interiors.css';
 import type { EditorialPage } from '../lib/types';
 interface Props { page: EditorialPage; }
@@ -13,6 +15,8 @@ const { page } = Astro.props;
 <SiteLayout page={page}>
   {page.id === 'HOME' ? <><Hero page={page} />{page.blocks.slice(1).map((block, i) => <EditorialBlock block={block} page={page} index={i + 1} />)}</>
     : page.isLegal ? <LegalPage page={page} />
+    : page.id === 'BLOG' ? <BlogIndex lang={page.lang} />
+    : page.isArticle ? <BlogArticle article={page as import('../lib/types').BlogArticle} />
     : page.id === 'GRACIAS' ? <><InteriorHero page={page} confirmed={false} /><template id="confirmed-receipt"><InteriorHero page={page} /></template></>
     : <><InteriorHero page={page} />{page.blocks.slice(1).map((block, i) => <InteriorBlock block={block} page={page} index={i + 1} />)}</>}
 </SiteLayout>

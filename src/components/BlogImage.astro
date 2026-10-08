@@ -1,0 +1,7 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { BlogImage, Language } from '../lib/types';
+interface Props { image: BlogImage | null; lang: Language; eager?: boolean; sizes?: string; }
+const { image, lang, eager = false, sizes = '(max-width: 760px) 90vw, 50vw' } = Astro.props;
+---
+{image ? <img {...image} sizes={sizes} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} decoding="async" /> : <ResponsiveImage name="living" lang={lang} hero={eager} sizes={sizes} />}

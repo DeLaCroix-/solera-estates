@@ -8,7 +8,7 @@ const root=path.resolve(process.env.OUTPUT_DIR||'dist');
 const routes=JSON.parse(await fs.readFile('qa-output/routes.json','utf8'));
 const editorial=parseContent();
 const failures=[];let checks=0;const check=(ok,message)=>{checks++;if(!ok)failures.push(message);};
-const css=(await Promise.all(['src/style.css','src/interiors.css'].map(file=>fs.readFile(file,'utf8')))).join('\n');
+const css=(await Promise.all(['src/style.css','src/interiors.css','src/blog.css'].map(file=>fs.readFile(file,'utf8')))).join('\n');
 const ast=csstree.parse(css,{onParseError:error=>check(false,'CSS syntax: '+error.message)});
 check(Boolean(ast),'CSS parses');
 csstree.walk(ast,{visit:'Declaration',enter(node){if(node.property.startsWith('--')||this.atrule?.name==='font-face')return;const value=csstree.generate(node.value);if(value.includes('var('))return;const result=csstree.lexer.matchProperty(node.property,node.value);check(!result.error,'CSS value '+node.property+': '+value);}});
@@ -16,6 +16,7 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
 const text=s=>norm(parseHTML('<main>'+marked.parse(s)+'</main>').document.querySelector('main').textContent);
 const pages=new Map();
 for(const p of routes){const html=await fs.readFile(path.join(root,p.route,'index.html'),'utf8');const {document}=parseHTML(html);pages.set(p.route,{p,html,document});}
+for(const route of ['/la-firma/','/en/the-firm/','/journal/','/en/journal/'])check(!pages.has(route),'retired route removed '+route);
 const titleSet=new Set(),descriptionSet=new Set();
 for(const {p,html,document:d} of pages.values()){
  const h1=[...d.querySelectorAll('main h1')].filter(n=>!n.closest('template'));
@@ -28,8 +29,8 @@ for(const {p,html,document:d} of pages.values()){
  check(!descriptionSet.has(description),p.route+' unique description');descriptionSet.add(description);
  const canonical=d.querySelector('link[rel="canonical"]')?.getAttribute('href');
  check(canonical?.endsWith(p.route),p.route+' canonical');
- const alternates=[...d.querySelectorAll('link[rel="alternate"]')];
- check(alternates.length===3,p.route+' three language annotations');
+ const alternates=[...d.querySelectorAll('link[rel="alternate"][hreflang]')];
+ check(alternates.length===(p.alternates ? Object.keys(p.alternates).length+1 : 3),p.route+' actual language annotations');
  for(const a of alternates){const url=new URL(a.getAttribute('href'));const other=pages.get(url.pathname);check(Boolean(other),p.route+' alternate resolves: '+url.pathname);if(other&&a.getAttribute('hreflang')!=='x-default')check(other.document.querySelector(`link[hreflang="${p.lang}"]`)?.getAttribute('href')===canonical,p.route+' reciprocal hreflang');}
  const ids=[...d.querySelectorAll('[id]')].map(n=>n.id);check(ids.length===new Set(ids).size,p.route+' unique IDs');
  check(!/Nota para el equipo|Team note|Regla de tarjetas|Card rule|GLOBAL-FORM|P0[1-9]|\[S\d+\]/.test(d.querySelector('main').textContent),p.route+' no internal instructions');
@@ -37,9 +38,10 @@ for(const {p,html,document:d} of pages.values()){
  for(const script of d.querySelectorAll('script[type="application/ld+json"]')){try{const json=JSON.parse(script.textContent);check(json['@context']==='https://schema.org',p.route+' schema');check(!script.textContent.includes('AggregateRating'),p.route+' no fabricated rating');}catch{check(false,p.route+' JSON-LD parses');}}
  let previous=0;for(const heading of d.querySelectorAll('main h1,main h2,main h3')){if(heading.closest('template'))continue;const level=Number(heading.tagName.slice(1));check(level<=previous+1,p.route+' hierarchy '+heading.textContent);previous=level;}
  for(const a of d.querySelectorAll('a[href]')){const href=a.getAttribute('href');if(/^(mailto:|https?:)/.test(href))continue;const url=new URL(href,'https://example.test'+p.route);const target=pages.get(url.pathname);check(Boolean(target),p.route+' link resolves '+href);if(target&&url.hash)check(Boolean(target.document.getElementById(decodeURIComponent(url.hash.slice(1)))),p.route+' anchor resolves '+href);}
+ check(![...d.querySelectorAll('nav a')].some(a=>/^(La firma|The firm|Journal)$/.test(a.textContent.trim())),p.route+' retired navigation removed');
  const main=d.querySelector('main');const fulltext=norm(main.textContent);
  const ep=editorial.find(q=>q.route===p.route)||(p.id==='INVERSION'?p:null);
- if(ep){for(const block of ep.blocks){check(Boolean(main.querySelector(`[data-block="${block.id}"]`))||p.id==='GRACIAS',p.route+' block '+block.id);for(const n of block.nodes){check(fulltext.includes(text(n.text)),p.route+' preserves '+block.id+' '+n.text.slice(0,75));}}}
+ if(ep){for(const block of ep.blocks){check(Boolean(main.querySelector(`[data-block="${block.id}"]`))||p.id==='GRACIAS',p.route+' block '+block.id);for(const n of block.nodes){if(['/la-firma/','/en/the-firm/'].includes(n.href))continue;check(fulltext.includes(text(n.text)),p.route+' preserves '+block.id+' '+n.text.slice(0,75));}}}
  for(const el of d.querySelectorAll('input:not([type="hidden"]),textarea,select'))check(Boolean(d.querySelector(`label[for="${el.id}"]`)),p.route+' label '+el.id);
  const form=d.querySelector('#enquiry-form');
  if(form){check(/^https:\/\/formspree\.io\/f\/[a-z0-9]+$/.test(form.getAttribute('action')),p.route+' dedicated Formspree endpoint');check(form.querySelector('[name="_gotcha"]')!==null,p.route+' honeypot');check(form.querySelector('[name="privacy"]').hasAttribute('required'),p.route+' privacy acknowledgement');}
@@ -56,7 +58,7 @@ check(sourceHeadings.length===parsedHeadings.length,`all ${sourceHeadings.length
 const sitemap=await fs.readFile(path.join(root,'sitemap.xml'),'utf8');
 for(const [,loc] of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)){const route=new URL(loc).pathname;check(pages.has(route),'sitemap valid '+route);check(!pages.get(route)?.document.querySelector('meta[name="robots"]').getAttribute('content').includes('noindex'),'sitemap excludes noindex '+route);}
 const expectedV2=JSON.parse(await fs.readFile('content/heading-update-v2.json','utf8')).expectedHeadings;
-for(const expected of expectedV2){const page=editorial.find(p=>p.lang===expected.lang&&p.blocks.some(b=>b.id===expected.block));const document=pages.get(page.route).document;const dom=page.id==='GRACIAS'?document.querySelector('template').content:document;const candidates=[...dom.querySelectorAll(`[data-block="${expected.block}"] ${expected.type}`)];check(candidates.some(heading=>norm(heading.textContent)===text(expected.text)),page.route+' exact v2 heading: '+expected.text);}
+for(const expected of expectedV2){const page=editorial.find(p=>p.lang===expected.lang&&p.blocks.some(b=>b.id===expected.block));if(!pages.has(page.route))continue;const document=pages.get(page.route).document;const dom=page.id==='GRACIAS'?document.querySelector('template').content:document;const candidates=[...dom.querySelectorAll(`[data-block="${expected.block}"] ${expected.type}`)];check(candidates.some(heading=>norm(heading.textContent)===text(expected.text)),page.route+' exact v2 heading: '+expected.text);}
 for(const {p,document:d} of pages.values())check(d.querySelector('meta[name="generator"]')?.getAttribute('content').startsWith('Astro v'),p.route+' generated by Astro');
 const base=process.env.QA_BASE_URL||'http://127.0.0.1:4179';
 if(!process.env.QA_OFFLINE&&!process.argv.includes('--offline')){for(const {p,document:local} of pages.values()){const response=await fetch(base+p.route);check(response.status===(p.id==='ERROR'?404:200),p.route+' HTTP status '+response.status);

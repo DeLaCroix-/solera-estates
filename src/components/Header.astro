@@ -1,19 +1,19 @@
 ---
-import { pageFor, tx } from '../lib/site.mjs';
+import { pageFor, tx, alternatesFor } from '../lib/site.mjs';
 import type { EditorialPage } from '../lib/types';
 interface Props { page: EditorialPage; }
 const { page: p } = Astro.props;
 const lang = p.lang;
-const alternate = pageFor(p.id, lang === 'es' ? 'en' : 'es');
+const otherLang = lang === 'es' ? 'en' : 'es';
+const alternate = { route: alternatesFor(p)[otherLang] || pageFor('BLOG', otherLang).route };
 const contact = pageFor('CONTACTO', lang).route;
 ---
 <a class="skip" href="#main">{tx(lang, 'Saltar al contenido', 'Skip to content')}</a>
 <header class:list={['site-header', { 'over-hero': p.id === 'HOME' }]}>
   <a class="brand" href={pageFor('HOME', lang).route} aria-label={`Solera Estates · ${tx(lang, 'Inicio', 'Home')}`}><span>SOLERA</span><small>ESTATES</small></a>
   <nav class="desktop-nav" aria-label={tx(lang, 'Navegación principal', 'Main navigation')}>
-    <a class="nav-link" href={pageFor('FIRMA', lang).route}>{tx(lang, 'La firma', 'The firm')}</a>
     <a class="nav-link" href={pageFor('HOME', lang).route + '#servicios'}>{tx(lang, 'Servicios', 'Services')}</a>
-    <a class="nav-link" href={pageFor('JOURNAL', lang).route}>Journal</a>
+    <a class="nav-link" href={pageFor('BLOG', lang).route}>Blog</a>
   </nav>
   <div class="header-actions">
     <nav class="languages" aria-label={tx(lang, 'Cambiar idioma', 'Change language')}>
@@ -27,7 +27,7 @@ const contact = pageFor('CONTACTO', lang).route;
 <nav id="menu-panel" class="menu-panel" hidden aria-label={tx(lang, 'Todas las páginas', 'All pages')}>
   <div class="menu-inner">
     <p class="eyebrow">Solera Estates · Barcelona</p>
-    <div class="menu-main">{['HOME', 'FIRMA', 'GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION', 'JOURNAL', 'CONTACTO'].map(id => {
+    <div class="menu-main">{['HOME', 'GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION', 'BLOG', 'CONTACTO'].map(id => {
       const item = pageFor(id, lang);
       return <a class="menu-link" href={item.route}>{item.name}</a>;
     })}</div>

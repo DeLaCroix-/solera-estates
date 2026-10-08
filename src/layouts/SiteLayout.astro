@@ -1,19 +1,23 @@
 ---
-import { origin, pageFor, excludedFromIndex } from '../lib/site.mjs';
+import { origin, excludedFromIndex, alternatesFor } from '../lib/site.mjs';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PrivacyControls from '../components/PrivacyControls.astro';
 import '../style.css';
-import type { EditorialPage } from '../lib/types';
+import type { EditorialPage, BlogArticle } from '../lib/types';
 interface Props { page: EditorialPage; }
 const { page: p } = Astro.props;
-const alternate = pageFor(p.id, p.lang === 'es' ? 'en' : 'es');
+const alternates = alternatesFor(p);
+const article = p.isArticle ? p as BlogArticle : null;
+const shareImage = origin + (article?.image?.src || '/assets/hero-1920.webp');
 const graph: Record<string, any>[] = [
   { '@type': 'Organization', '@id': origin + '/#organization', name: 'Solera Estates', legalName: 'NAT BPO SL', taxID: 'B26663120', url: origin + '/', email: 'info@soleraestates.eu' },
   { '@type': 'WebSite', '@id': origin + '/#website', url: origin + '/', name: 'Solera Estates', publisher: { '@id': origin + '/#organization' }, inLanguage: ['es', 'en'] },
   { '@type': 'WebPage', '@id': origin + p.route + '#webpage', url: origin + p.route, name: p.title, description: p.description, inLanguage: p.lang, isPartOf: { '@id': origin + '/#website' } },
 ];
 if (['GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION'].includes(p.id)) graph.push({ '@type': 'Service', name: p.blocks[0].nodes.find(n => n.type === 'h1')?.text, serviceType: p.name, areaServed: p.id === 'INVERSION' ? { '@type': 'AdministrativeArea', name: 'Catalonia' } : { '@type': 'City', name: 'Barcelona' }, provider: { '@id': origin + '/#organization' }, url: origin + p.route });
+if (article) graph.push({ '@type': 'BlogPosting', '@id': origin + p.route + '#article', headline: article.heading, description: article.description, datePublished: article.publishDate, dateModified: article.updatedDate, inLanguage: p.lang, image: shareImage, author: { '@type': article.author === 'Solera Estates' ? 'Organization' : 'Person', name: article.author }, publisher: { '@id': origin + '/#organization' }, mainEntityOfPage: { '@id': origin + p.route + '#webpage' } });
+if (p.id === 'BLOG') graph.push({ '@type': 'Blog', name: 'Solera Estates Blog', url: origin + p.route, inLanguage: p.lang, publisher: { '@id': origin + '/#organization' } });
 ---
 <!doctype html>
 <html lang={p.lang}>
@@ -25,10 +29,13 @@ if (['GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION'].includes(p.id)) grap
     <meta name="description" content={p.description} />
     <meta name="robots" content={excludedFromIndex(p) ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <link rel="canonical" href={origin + p.route} />
-    <link rel="alternate" hreflang={p.lang} href={origin + p.route} />
-    <link rel="alternate" hreflang={alternate.lang} href={origin + alternate.route} />
-    <link rel="alternate" hreflang="x-default" href={origin + pageFor(p.id, 'es').route} />
-    <meta property="og:type" content="website" />
+    {Object.entries(alternates).map(([lang, route]) => <link rel="alternate" hreflang={lang} href={origin + route} />)}
+    <link rel="alternate" hreflang="x-default" href={origin + (alternates.es || p.route)} />
+    {(p.id === 'BLOG' || article) && <link rel="alternate" type="application/rss+xml" title="Solera Estates Blog" href={p.lang === 'es' ? '/blog/rss.xml' : '/en/blog/rss.xml'} />}
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:image" content={shareImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {article && <><meta property="article:published_time" content={article.publishDate} /><meta property="article:modified_time" content={article.updatedDate} /></>}
     <meta property="og:title" content={p.title} />
     <meta property="og:description" content={p.description} />
     <meta property="og:url" content={origin + p.route} />
