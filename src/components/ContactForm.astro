@@ -6,7 +6,7 @@ const { lang } = Astro.props;
 const en = lang === 'en';
 const t = (es: string, english: string) => tx(lang, es, english);
 const endpoint = process.env.FORM_ENDPOINT || config.formEndpoint;
-const automatic = Boolean(endpoint && config.formEnabled && config.legalReady);
+const automatic = Boolean(/^https:\/\/formspree\.io\/f\/[a-z0-9]+$/.test(endpoint) && config.formEnabled && config.legalReady);
 const fields = [
   { name: 'name', label: t('Nombre', 'Name'), help: t('Cómo prefieres que nos dirijamos a ti.', 'How you would like us to address you.'), type: 'text', required: true, max: 100, autocomplete: 'name' },
   { name: 'email', label: t('Correo electrónico', 'Email address'), help: t('Utilizaremos este correo para responder a tu consulta.', 'We will use this address to reply to your enquiry.'), type: 'email', required: true, max: 254, autocomplete: 'email' },
@@ -18,7 +18,11 @@ const fields = [
 ] as const;
 const options = en ? ['Select an option', 'Property management and care', 'Renovation coordination', 'Property sale advice', 'Housing and arrival in Barcelona', 'I am not sure which service I need'] : ['Selecciona una opción', 'Gestión y cuidado del inmueble', 'Coordinación de una reforma', 'Asesoramiento en venta', 'Vivienda y llegada a Barcelona', 'No sé qué servicio necesito'];
 ---
-<form id="enquiry-form" data-mode={automatic ? 'endpoint' : 'email'} data-endpoint={automatic ? endpoint : undefined} data-lang={lang} novalidate>
+<form id="enquiry-form" action={automatic ? endpoint : undefined} method="post" data-mode={automatic ? 'endpoint' : 'email'} data-lang={lang} novalidate>
+  <input type="hidden" name="_subject" value={t('Nueva consulta web · Solera Estates', 'New website enquiry · Solera Estates')} />
+  <input type="hidden" name="language" value={lang} />
+  <input type="hidden" name="page" value={Astro.url.pathname} />
+  <div class="form-honeypot" aria-hidden="true"><label for="field-gotcha">{t('Deja este campo vacío', 'Leave this field empty')}</label><input id="field-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></div>
   <p class="form-key">{t('Los campos con * son obligatorios.', 'Fields marked * are required.')}</p>
   <div class="form-grid">{fields.map(field => {
     const attrs = { id: 'field-' + field.name, name: field.name, required: field.required, 'aria-describedby': `help-${field.name} error-${field.name}`, autocomplete: field.autocomplete };
@@ -30,10 +34,11 @@ const options = en ? ['Select an option', 'Property management and care', 'Renov
       <small id={'help-' + field.name} class="field-help">{field.help}</small><span class="field-error" id={'error-' + field.name}></span>
     </div>;
   })}</div>
-  <div class="form-privacy"><p>{t('Responsable: NAT BPO SL. Tus datos se utilizan para atender la consulta y, en su caso, preparar el servicio solicitado. Puedes ejercer tus derechos escribiendo a info@soleraestates.es.', 'Controller: NAT BPO SL. Your information is used to respond to your enquiry and, where relevant, prepare the service you request. You can exercise your rights by emailing info@soleraestates.es.')}</p><a href={en ? '/en/privacy/' : '/privacidad/'}>{t('Consulta cómo tratamos tus datos en la Política de privacidad.', 'Read how we handle your information in our Privacy policy.')}</a></div>
+  <div class="form-privacy"><p>{t('Responsable: NAT BPO SL. Tus datos se utilizan para atender la consulta y, en su caso, preparar el servicio solicitado. Puedes ejercer tus derechos escribiendo a info@soleraestates.eu.', 'Controller: NAT BPO SL. Your information is used to respond to your enquiry and, where relevant, prepare the service you request. You can exercise your rights by emailing info@soleraestates.eu.')}</p><a href={en ? '/en/privacy/' : '/privacidad/'}>{t('Consulta cómo tratamos tus datos en la Política de privacidad.', 'Read how we handle your information in our Privacy policy.')}</a></div>
+  <div class="form-consent"><input id="field-privacy" name="privacy" type="checkbox" value="accepted" required aria-describedby="error-privacy" /><label for="field-privacy">{t('He leído la', 'I have read the')} <a href={en ? '/en/privacy/' : '/privacidad/'}>{t('Política de privacidad', 'Privacy policy')}</a>. <span aria-hidden="true">*</span></label><span class="field-error" id="error-privacy"></span></div>
   {!automatic && <p class="email-mode-note">{t('Se abrirá tu aplicación de correo con la consulta preparada. Revísala y envíala desde allí; no se envía automáticamente.', 'Your email application will open with your enquiry prepared. Review it and send it from there; it is not sent automatically.')}</p>}
   <button class="button button-dark" type="submit" disabled>{automatic ? t('Enviar consulta', 'Send enquiry') : t('Preparar consulta por correo', 'Prepare enquiry by email')}</button>
   <p class="form-disclaimer">{t('El envío no confirma una cita ni supone la contratación de un servicio.', 'Sending this form does not confirm an appointment or commission a service.')}</p>
   <div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
-  <noscript><p>{t('Escríbenos directamente a', 'Email us directly at')} <a href="mailto:info@soleraestates.es">info@soleraestates.es</a>.</p></noscript>
+  <noscript><p>{t('Escríbenos directamente a', 'Email us directly at')} <a href="mailto:info@soleraestates.eu">info@soleraestates.eu</a>.</p></noscript>
 </form>

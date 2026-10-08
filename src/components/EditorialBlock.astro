@@ -30,7 +30,7 @@ const faq = /Preguntas frecuentes|Frequently asked/i.test(b.label);
   <div class="method-title"><p class="eyebrow">02 — {tx(l, 'Nuestra forma de trabajar', 'Our approach')}</p><ContentNodes nodes={intro} /><figure><ResponsiveImage name="staircase" lang={l} /></figure></div>
   <div class="method-steps">{items.map((g, j) => <div class="method-step"><span class="eyebrow">0{j + 1}</span><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></div>)}</div>
 </section> : b.id === 'CONTACTO-03' ? <section class="contact-section wrap" {...attrs}>
-  <div class="contact-aside"><ContentNodes nodes={intro} /><div class="enquiry-panel"><p class="eyebrow">{tx(l, 'Contacto directo', 'Direct contact')}</p><a class="email-large" href="mailto:info@soleraestates.es">info@soleraestates.es</a><p>Carrer de Balmes, 32, Pral. 2º<br />08007 Barcelona</p></div></div>
+  <div class="contact-aside"><ContentNodes nodes={intro} /><div class="enquiry-panel"><p class="eyebrow">{tx(l, 'Contacto directo', 'Direct contact')}</p><a class="email-large" href="mailto:info@soleraestates.eu">info@soleraestates.eu</a><p>Carrer de Balmes, 32, Pral. 2º<br />08007 Barcelona</p></div></div>
   <ContactForm lang={l} />
 </section> : <section class:list={['editorial wrap', { 'has-items': items.length }]} {...attrs}>
   <div class="section-head"><p class="eyebrow">{String(i).padStart(2, '0')} — {tx(l, 'En perspectiva', 'In perspective')}</p><ContentNodes nodes={h ? [h] : []} /></div>

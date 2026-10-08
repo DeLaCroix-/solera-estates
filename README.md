@@ -32,13 +32,13 @@ Netlify publica dist. netlify.toml define Node 22 y npm run check:all. La web no
 
 La configuración está en src/site-config.json. PUBLIC_SITE_URL y PUBLIC_SITE_INDEXABLE definen el origen y la indexación. La revisión conserva noindex en HTML y cabeceras; noindex no restringe el acceso. El sitemap queda vacío mientras esté desactivada la indexación. Journal espera artículos reales.
 
-No se han cambiado DNS, dominio definitivo, Search Console o analítica. Activar la indexación o conectar un dominio requiere una decisión separada del propietario.
+El dominio definitivo es soleraestates.eu, configurado en Arsys y Netlify. Se han conservado los registros DNS del correo. El repositorio original DeLaCroix-/solera-estates publica desde master mediante GitHub Actions. Search Console, analítica e indexación siguen pendientes de una decisión específica.
 
 ## Contacto
 
-NAT BPO SL, B26663120. Carrer de Balmes, 32, Pral. 2º, 08007 Barcelona. info@soleraestates.es.
+NAT BPO SL, B26663120. Carrer de Balmes, 32, Pral. 2º, 08007 Barcelona. info@soleraestates.eu.
 
-El formulario valida y prepara un correo en la aplicación del visitante. Indica que no envía automáticamente. No se ha enviado un mensaje de prueba ni verificado la recepción del buzón. La integración automática sigue desactivada: requiere proveedor real, política de privacidad correspondiente y prueba de entrega autorizada. La página de gracias no afirma recepción cuando se abre directamente.
+El formulario ES/EN utiliza un endpoint propio de Formspree, validación accesible, aceptación de la información de privacidad, honeypot y protección contra envíos duplicados. Envía mediante AJAX y solo muestra confirmación tras la aceptación del proveedor. Conserva los campos si hay un error. La página de gracias no afirma recepción cuando se abre directamente. El buzón está alojado en Arsys. La recepción de una prueba debe verificarse separadamente de la configuración.
 
 ## Verificación
 

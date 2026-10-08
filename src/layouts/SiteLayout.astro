@@ -8,7 +8,7 @@ interface Props { page: EditorialPage; }
 const { page: p } = Astro.props;
 const alternate = pageFor(p.id, p.lang === 'es' ? 'en' : 'es');
 const graph: Record<string, any>[] = [
-  { '@type': 'Organization', '@id': origin + '/#organization', name: 'Solera Estates', legalName: 'NAT BPO SL', taxID: 'B26663120', url: origin + '/', email: 'info@soleraestates.es' },
+  { '@type': 'Organization', '@id': origin + '/#organization', name: 'Solera Estates', legalName: 'NAT BPO SL', taxID: 'B26663120', url: origin + '/', email: 'info@soleraestates.eu' },
   { '@type': 'WebSite', '@id': origin + '/#website', url: origin + '/', name: 'Solera Estates', publisher: { '@id': origin + '/#organization' }, inLanguage: ['es', 'en'] },
   { '@type': 'WebPage', '@id': origin + p.route + '#webpage', url: origin + p.route, name: p.title, description: p.description, inLanguage: p.lang, isPartOf: { '@id': origin + '/#website' } },
 ];

@@ -1,8 +1,8 @@
 {
   "origin": "https://soleraestates.eu",
   "indexable": false,
-  "formEndpoint": "",
-  "formEnabled": false,
-  "legalReady": false,
+  "formEndpoint": "https://formspree.io/f/xnpjplje",
+  "formEnabled": true,
+  "legalReady": true,
   "brand": "Solera Estates"
 }
