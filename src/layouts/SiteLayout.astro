@@ -13,7 +13,7 @@ const graph: Record<string, any>[] = [
   { '@type': 'WebSite', '@id': origin + '/#website', url: origin + '/', name: 'Solera Estates', publisher: { '@id': origin + '/#organization' }, inLanguage: ['es', 'en'] },
   { '@type': 'WebPage', '@id': origin + p.route + '#webpage', url: origin + p.route, name: p.title, description: p.description, inLanguage: p.lang, isPartOf: { '@id': origin + '/#website' } },
 ];
-if (['GESTION', 'REFORMA', 'VENTA', 'LLEGADA'].includes(p.id)) graph.push({ '@type': 'Service', name: p.blocks[0].nodes.find(n => n.type === 'h1')?.text, serviceType: p.name, areaServed: { '@type': 'City', name: 'Barcelona' }, provider: { '@id': origin + '/#organization' }, url: origin + p.route });
+if (['GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION'].includes(p.id)) graph.push({ '@type': 'Service', name: p.blocks[0].nodes.find(n => n.type === 'h1')?.text, serviceType: p.name, areaServed: p.id === 'INVERSION' ? { '@type': 'AdministrativeArea', name: 'Catalonia' } : { '@type': 'City', name: 'Barcelona' }, provider: { '@id': origin + '/#organization' }, url: origin + p.route });
 ---
 <!doctype html>
 <html lang={p.lang}>

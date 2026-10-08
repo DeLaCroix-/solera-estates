@@ -1,0 +1,200 @@
+/* Interior collection. Kept separate from the approved Home composition. */
+.investment-invitation{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:center;padding:65px 0 30px;margin-top:65px;border-top:1px solid #c9c9bc66}
+.investment-invitation>figure{height:420px;overflow:hidden}.investment-invitation picture{height:100%}.investment-invitation>div{padding-right:7%}.investment-invitation h3{font-size:clamp(40px,4.2vw,64px);line-height:1.05;margin-bottom:25px}.investment-invitation .eyebrow{color:#d9cbb5;font-size:11px}.investment-invitation h3+p{font-size:15px;color:#d4dacf;line-height:1.85}.investment-invitation .service-link{display:flex;justify-content:space-between;gap:20px;max-width:420px}
+@media(max-width:760px){.investment-invitation{grid-template-columns:1fr;gap:35px;margin-top:40px;padding-top:45px;padding-bottom:10px}.investment-invitation>figure{height:300px}.investment-invitation>div{padding:0}.investment-invitation h3{font-size:43px}}
+.interior-hero{padding-top:148px;color:var(--green);background:#ece7dc}
+.interior-hero-top{display:flex;justify-content:space-between;gap:30px;align-items:center;margin-bottom:44px}
+.interior-hero .breadcrumbs{margin:0;font-size:12px}
+.interior-location{font-size:10px;text-transform:uppercase;letter-spacing:.14em}
+.interior-hero-layout{display:grid;grid-template-columns:1.06fr 1fr;align-items:center;gap:6%}
+.interior-hero-heading{padding:35px 0 55px}
+.interior-hero-heading .eyebrow{display:flex;align-items:center;gap:18px}
+.interior-rule{width:48px;height:1px;background:#8d9988;flex-shrink:0}
+.interior-hero h1{font-size:clamp(54px,5.45vw,90px);line-height:1.04;letter-spacing:-.043em;text-wrap:balance}
+.interior-actions{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;margin-top:38px}
+.interior-action{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:48px;padding:12px 0;border:0;border-bottom:1px solid #9ca394;font-size:13px;line-height:1.6;background:transparent;color:inherit;text-align:left;transition:background .25s,color .25s}
+.interior-action>span{font-size:22px;line-height:1;flex-shrink:0;transition:transform .25s}
+.interior-action:hover>span{transform:translate(3px,-3px)}
+.interior-action.is-primary{background:var(--green);color:var(--paper);padding:17px 25px;border:1px solid var(--green)}
+.interior-action.is-primary:hover{background:#3a5145}
+.interior-hero-art{position:relative;height:clamp(490px,44vw,720px);overflow:hidden}
+.interior-hero-art picture{height:100%}
+.interior-hero-art:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#13251fc7);pointer-events:none}
+.interior-hero-art figcaption{position:absolute;z-index:1;bottom:33px;left:34px;right:34px;color:#fff8ec;max-width:350px;font:400 clamp(23px,2.2vw,35px)/1.2 var(--serif);text-wrap:balance}
+.interior-hero--reforma .interior-hero-art img{object-position:50% 57%}
+.interior-hero--llegada .interior-hero-art img{object-position:56% 45%}
+.interior-hero--venta .interior-hero-art img{object-position:60% center}
+.interior-introduction{display:grid;grid-template-columns:.4fr 1fr;gap:8%;padding-top:75px;padding-bottom:80px}
+.interior-introduction>.eyebrow{max-width:220px;padding-top:8px;margin:0;font-size:11px}
+.interior-introduction-copy{display:grid;grid-template-columns:1.2fr 1fr;gap:9%;align-items:start}
+.interior-introduction-copy>.prose:first-child{font:400 clamp(25px,2.3vw,36px)/1.35 var(--serif);letter-spacing:-.018em}
+.interior-introduction-copy>.prose:not(:first-child){font-size:14px;line-height:1.9;color:#526052;padding-top:5px}
+.service-chapters{position:sticky;top:0;z-index:15;background:#f4f0e8f5;border-bottom:1px solid #bfc3b5;backdrop-filter:blur(12px)}
+.service-chapters>.wrap{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.service-chapters>.wrap>span{font:400 23px/1.2 var(--serif);color:var(--green)}
+.service-chapters>.wrap>div{display:flex;gap:34px;align-items:center}
+.service-chapters a{display:flex;align-items:center;min-height:72px;font-size:12px;white-space:nowrap;border-bottom:1px solid transparent}
+.service-chapters a:hover{border-color:var(--green)}
+.service-chapters a:last-child{gap:16px;font-weight:500}
+.service-overview,.firm-manifesto,.journal-perspectives{padding-top:115px;padding-bottom:115px;color:var(--green)}
+.interior-section-top{max-width:1030px}
+.interior-section-top h2{font-size:clamp(43px,4.8vw,76px);line-height:1.07}
+.service-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6%;margin-top:68px}
+.service-principles--pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:12%}
+.principle-line{display:block;width:70px;height:1px;background:#8b9988;margin-bottom:34px}
+.service-principles h3{font-size:clamp(30px,2.65vw,42px);line-height:1.12;margin-bottom:24px;max-width:390px}
+.service-principles .prose{font-size:15px;line-height:1.85;color:#556052;margin-top:15px}
+.service-overview-copy{max-width:820px;margin:42px 0 0 auto;display:grid;gap:24px;font-size:18px;color:#526052}
+.interior-feature{display:grid;grid-template-columns:42% 58%;background:#20392f;color:#f4f0e8}
+.interior-feature-art{position:relative;min-height:680px;overflow:hidden}
+.interior-feature-art picture{position:absolute;inset:0;height:100%}
+.interior-feature-art:after{content:'';position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#14251ac9)}
+.interior-feature-art figcaption{position:absolute;z-index:1;left:12%;right:12%;bottom:48px;font:400 34px/1.2 var(--serif);max-width:340px}
+.interior-feature-copy{padding:95px clamp(38px,6vw,115px)}
+.interior-feature-copy>.eyebrow{color:#cfccb4;font-size:11px;max-width:390px}
+.interior-feature-copy h2{font-size:clamp(43px,4.4vw,68px);line-height:1.06;margin-bottom:34px}
+.interior-feature-copy>.prose{margin-top:24px;color:#d5dacf;max-width:680px;font-size:15px;line-height:1.9}
+.interior-feature-item{padding:30px 0;border-top:1px solid #8a9a815c}
+.interior-feature-item:first-of-type{margin-top:38px}
+.interior-feature-item:last-child{padding-bottom:0}
+.interior-feature-item h3{font-size:32px;line-height:1.15;margin-bottom:18px}
+.interior-feature-item .prose{color:#d5dacf;font-size:14px;line-height:1.9}
+.interior-essay{padding-top:115px;padding-bottom:115px;color:var(--green)}
+.interior-essay-layout{display:grid;grid-template-columns:.9fr 1fr;gap:13%}
+.interior-essay-heading h2{font-size:clamp(41px,4.35vw,66px);line-height:1.08}
+.interior-essay-copy{padding-top:47px;color:#536050;font-size:16px;line-height:1.95}
+.interior-essay-copy>.prose+.prose{margin-top:25px}
+.interior-essay-item{padding:28px 0;border-top:1px solid #b9c0b0}
+.interior-essay-item h3{color:var(--green);font-size:32px;margin-bottom:20px}
+.interior-essay--inset{margin:0 var(--gutter);background:#e9e4d8}
+.interior-essay--inset>.wrap{padding-left:6%;padding-right:6%}
+.interior-questions{background:#e7e5d9;color:var(--green);padding:110px 0}
+.interior-questions-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:10%}
+.interior-questions-heading h2{font-size:clamp(40px,4.3vw,65px);line-height:1.09}
+.interior-question-note{font:400 25px/1.3 var(--serif);max-width:310px;margin-top:35px;color:#5b6856}
+.interior-questions .dialogue-questions{padding-top:0}
+.interior-questions .dialogue-questions h3{font-size:clamp(25px,2.2vw,34px);line-height:1.16}
+.interior-questions .dialogue-answer{font-size:15px;line-height:1.9}
+.interior-closing{position:relative;min-height:680px;display:flex;align-items:center;color:#fff9ee;background:#344439;isolation:isolate;overflow:hidden}
+.interior-closing-art,.interior-closing-shade{position:absolute;inset:0;z-index:-1}
+.interior-closing-art picture{height:100%}
+.interior-closing-art img{object-position:center 57%}
+.interior-closing-shade{background:linear-gradient(90deg,#11231bea 0%,#152c23c9 46%,#12271c38 100%)}
+.interior-closing-content{width:100%;padding-top:120px;padding-bottom:120px}
+.interior-closing h2{font-size:clamp(49px,5.5vw,86px);line-height:1.06;max-width:1000px}
+.interior-closing .prose{max-width:700px;margin-top:30px;color:#e0e4d7;font-size:16px}
+.interior-closing .interior-action.is-primary{background:#f4f0e8;border-color:#f4f0e8;color:#263e36}
+.interior-closing .interior-action.is-primary:hover{background:#ded7c7}
+.interior-closing .interior-action:not(.is-primary){border-color:#b5bcab}
+/* La firma: a manifesto, an architectural pause and a personal invitation. */
+.interior-hero--firma .interior-hero-layout{grid-template-columns:1.35fr .75fr;gap:9%}
+.interior-hero--firma h1{font-size:clamp(64px,6.4vw,104px)}
+.interior-hero--firma .interior-hero-art{height:610px;border-radius:280px 280px 0 0}
+.firm-manifesto-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:13%;align-items:start}
+.firm-manifesto-grid h2{font-size:clamp(46px,5.4vw,82px);line-height:1.05}
+.firm-manifesto-grid>div{padding-top:9px;color:#556052;line-height:1.9}
+.firm-manifesto-grid .prose+.prose{margin-top:25px}
+.firm-panorama{height:clamp(360px,39vw,640px);position:relative;margin-top:65px;overflow:hidden}
+.firm-panorama picture{height:100%}
+.firm-panorama img{object-position:50% 62%}
+.firm-panorama figcaption{position:absolute;bottom:25px;left:28px;background:#f4f0e8e8;padding:12px 18px;text-transform:uppercase;letter-spacing:.15em;font-size:10px}
+.firm-relationship{display:grid;grid-template-columns:.85fr 1fr;gap:14%;align-items:center;padding-top:120px;padding-bottom:120px;color:var(--green)}
+.firm-relationship>figure{height:630px;border-radius:300px 300px 0 0;overflow:hidden}
+.firm-relationship picture{height:100%}
+.firm-relationship h2{font-size:clamp(46px,4.7vw,72px);margin-bottom:35px;line-height:1.07}
+.firm-relationship .prose{color:#556052;margin-top:24px;line-height:1.9}
+/* Journal is a collection of perspectives; no fictitious articles. */
+.interior-hero--journal .interior-hero-layout{grid-template-columns:1fr}
+.interior-hero--journal .interior-hero-heading{max-width:1130px;padding:5px 0 48px}
+.interior-hero--journal h1{font-size:clamp(63px,7.3vw,116px);line-height:1.02;max-width:1130px;text-wrap:balance}
+.interior-hero--journal .interior-actions{margin-top:28px}
+.interior-hero--journal .interior-hero-art{height:460px}
+.interior-hero--journal .interior-hero-art img{object-position:center 62%}
+.interior-hero--journal .interior-hero-art figcaption{max-width:430px}
+.journal-perspective-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:85px 7%;margin-top:65px}
+.journal-perspective:nth-child(even){padding-top:100px}
+.journal-perspective>figure{height:390px;overflow:hidden}
+.journal-perspective picture{height:100%}
+.journal-perspective img{transition:transform .8s}
+.journal-perspective:hover img{transform:scale(1.025)}
+.journal-perspective>div{padding-top:30px;max-width:500px}
+.journal-perspective .prose{font-size:15px;color:#556052;line-height:1.85}
+.journal-perspective strong{font:400 41px/1.12 var(--serif);display:block;margin-bottom:19px;color:var(--green)}
+.journal-perspective .interior-action{margin-top:23px;width:100%}
+.journal-notebook{padding:110px 0;background:#20392f;color:#f4f0e8}
+.journal-notebook-layout{display:grid;grid-template-columns:1fr 1fr;gap:13%}
+.journal-notebook h2{font-size:clamp(45px,4.7vw,74px)}
+.journal-notebook-copy{padding-top:40px;color:#d5dacf;font-size:16px;line-height:1.9}
+.journal-notebook-copy>.text-link{display:table;margin-top:27px}
+/* A private, welcoming enquiry room with an accessible form. */
+.interior-hero--contacto .interior-hero-art{height:510px}
+.interior-hero--contacto h1{font-size:clamp(62px,6.3vw,100px)}
+.interior-essay--contact{padding-top:85px;padding-bottom:85px}
+.private-enquiry{background:#20392f;color:#f4f0e8;padding:110px 0}
+.private-enquiry-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:8%;align-items:start}
+.private-enquiry-intro h2{font-size:clamp(46px,4.5vw,68px);line-height:1.06;margin-bottom:28px}
+.private-enquiry-intro>.prose{color:#d4d9cf;font-size:15px;line-height:1.9;margin-top:20px}
+.private-enquiry-contact{padding-top:45px;margin-top:45px;border-top:1px solid #91a08866}
+.private-enquiry-contact>.eyebrow{color:#d1c8b3;margin-bottom:20px}
+.private-enquiry-contact>a{font:400 clamp(23px,2.3vw,35px)/1.3 var(--serif);display:flex;gap:15px;justify-content:space-between;overflow-wrap:anywhere}
+.private-enquiry-contact>p:last-child{font-size:13px;line-height:1.8;color:#cbd4c6;margin-top:25px}
+.private-enquiry-intro>figure{height:310px;margin-top:42px}
+.private-enquiry-intro>figure picture{height:100%}
+.private-enquiry-paper{background:#f6f2e9;color:var(--green);padding:clamp(28px,3.6vw,64px)}
+.private-enquiry-paper .form-grid{gap:28px 24px}
+.private-enquiry-paper .field input,.private-enquiry-paper .field textarea,.private-enquiry-paper .field select{background:transparent;border:0;border-bottom:1px solid #889581;padding:13px 0}
+.private-enquiry-paper .field textarea{background:#ebe7dc;padding:14px;min-height:175px}
+.private-enquiry-paper .field [aria-invalid=true]{border-color:#8a321d;border-bottom-width:2px}
+.private-enquiry-paper .field label{font-size:13px}
+.private-enquiry-paper .field-help{font-size:11px;line-height:1.65}
+.private-enquiry-paper .button{width:100%;margin-top:10px;min-height:56px}
+.private-enquiry-paper .form-disclaimer{text-align:center;font-size:11px;margin-bottom:0}
+/* Legal documents have their own quiet editorial identity and contents rail. */
+.legal-masthead{padding-top:150px;padding-bottom:65px;color:var(--green)}
+.legal-masthead .breadcrumbs{margin-bottom:45px}
+.legal-masthead-grid{display:grid;grid-template-columns:1fr 230px;gap:12%;align-items:center}
+.legal-masthead h1{font-size:clamp(57px,6.5vw,98px);line-height:1.04;max-width:850px}
+.legal-intro{font-size:15px;max-width:530px;margin:28px 0 0;color:#556052}
+.legal-masthead-grid>figure{height:285px;overflow:hidden;border-radius:140px 140px 0 0}
+.legal-masthead-grid picture{height:100%}
+.legal-masthead .interior-action{margin-top:24px}
+.legal-reading{display:grid;grid-template-columns:270px minmax(0,1fr);gap:9%;padding-bottom:110px;border-top:1px solid var(--line);padding-top:55px;color:var(--green)}
+.legal-index{align-self:start;position:sticky;top:35px;font-size:12px}
+.legal-index summary{font-size:11px;text-transform:uppercase;letter-spacing:.13em;list-style:none;display:flex;justify-content:space-between;padding:12px 0 20px;border-bottom:1px solid #aeb7a5;cursor:pointer}
+.legal-index summary::-webkit-details-marker{display:none}
+.legal-index nav{padding-top:13px}
+.legal-index nav a{display:block;padding:9px 0;color:#52604c;line-height:1.55}
+.legal-index nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.legal-related{border-top:1px solid var(--line);margin-top:30px;padding-top:28px}
+.legal-related>.eyebrow{font-size:10px;margin-bottom:12px}
+.legal-related a{display:flex;justify-content:space-between;gap:12px;min-height:39px;align-items:center}
+.legal-related a[aria-current]{font-weight:500;text-decoration:underline;text-underline-offset:4px}
+.legal-document{max-width:890px}
+.legal-document>section{padding:38px 0;border-bottom:1px solid var(--line)}
+.legal-document>section:first-child{padding-top:8px}
+.legal-document h2{font-size:36px;line-height:1.14;margin-bottom:23px}
+.legal-document .prose{font-size:15px;line-height:1.95;color:#505c4c;overflow-wrap:anywhere}
+.legal-document .prose a{text-decoration:underline;text-underline-offset:4px}
+.legal-contact{padding-top:45px}
+.legal-contact p{font:400 31px/1.25 var(--serif);margin-bottom:18px}
+.legal-contact>a{font-size:15px;display:inline-block;border-bottom:1px solid;overflow-wrap:anywhere}
+/* Utility pages retain honest receipt/error states, in the same visual world. */
+.interior-utility{padding-top:108px;display:grid;grid-template-columns:1.1fr 1fr;min-height:max(790px,100svh);color:#f4f0e8}
+.utility-copy{background:#20392f;padding:60px clamp(30px,5.4vw,104px);display:flex;flex-direction:column;justify-content:space-between;gap:65px}
+.utility-home{display:flex;justify-content:space-between;gap:25px;margin:0;font-size:11px}
+.utility-copy h1{font-size:clamp(55px,5.7vw,87px);line-height:1.04;margin-bottom:32px}
+.utility-copy .prose,.utility-copy>div>p:not(.eyebrow){font-size:15px;color:#d8dfd0;max-width:570px;line-height:1.9}
+.utility-copy .interior-action.is-primary{background:#f4f0e8;color:var(--green);border-color:#f4f0e8}
+.utility-signature{font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#c5ceb9}
+.utility-art{position:relative;min-height:610px;overflow:hidden}
+.utility-art picture{position:absolute;inset:0;height:100%}
+.utility-art img{object-position:62% center}
+@media(min-width:1800px){.interior-feature-copy{padding-right:max(115px,calc((100vw - 1570px)/2))}.interior-feature-art figcaption{left:auto;right:70px}}
+@media(max-width:1100px){
+ .interior-hero{padding-top:138px}.interior-hero-top{margin-bottom:30px}.interior-location{display:none}.interior-hero h1{font-size:clamp(48px,5.9vw,70px)}.interior-hero-art{height:580px}.interior-hero-layout{gap:5%;grid-template-columns:1.05fr .95fr}.interior-introduction{grid-template-columns:1fr;gap:25px;padding-top:55px;padding-bottom:60px}.interior-introduction>.eyebrow{max-width:none}.interior-introduction-copy{gap:8%;grid-template-columns:1.1fr 1fr}.service-chapters>.wrap>span{display:none}.service-chapters>.wrap>div{width:100%;justify-content:space-between;gap:25px}.interior-feature{grid-template-columns:40% 60%}.interior-feature-copy{padding:70px 40px}.interior-feature-copy h2{font-size:48px}.interior-feature-item h3{font-size:30px}.interior-essay-layout{gap:8%}.interior-questions-layout{gap:7%}.interior-hero--firma .interior-hero-layout{grid-template-columns:1.2fr .8fr;gap:5%}.interior-hero--firma h1{font-size:65px}.interior-hero--firma .interior-hero-art{height:570px}.interior-hero--journal h1{font-size:80px}.firm-manifesto-grid{gap:8%}.firm-relationship{gap:9%}.firm-relationship>figure{height:540px}.journal-perspective>figure{height:315px}.journal-perspective strong{font-size:35px}.private-enquiry-layout{grid-template-columns:.85fr 1.15fr;gap:6%}.private-enquiry-intro h2{font-size:47px}.private-enquiry-paper{padding:28px}.private-enquiry-paper .form-grid{grid-template-columns:1fr}.private-enquiry-paper .field-wide{grid-column:auto}.legal-reading{grid-template-columns:220px minmax(0,1fr);gap:7%}.legal-masthead-grid{grid-template-columns:1fr 180px;gap:8%}.legal-masthead-grid>figure{height:240px}.interior-utility{grid-template-columns:1.15fr .85fr}
+}
+@media(max-width:760px){
+ .service-overview,.interior-feature,.interior-essay,.interior-questions,.interior-closing{scroll-margin-top:40px}
+ .interior-hero{padding-top:116px}.interior-hero-top{margin-bottom:22px}.interior-hero .breadcrumbs{font-size:11px}.interior-hero-layout{grid-template-columns:1fr;gap:30px}.interior-hero-heading{padding:12px 0 0}.interior-hero-heading .eyebrow{font-size:10px;margin-bottom:26px;gap:14px}.interior-rule{width:35px}.interior-hero h1{font-size:clamp(45px,8.8vw,65px);line-height:1.06;letter-spacing:-.035em}.interior-actions{margin-top:28px;gap:14px 22px}.interior-action{font-size:12px;gap:20px}.interior-action.is-primary{padding:15px 20px}.interior-hero-art{height:430px;margin-top:5px}.interior-hero-art figcaption{font-size:28px;left:25px;right:25px;bottom:26px}.interior-introduction{padding-top:40px;padding-bottom:50px;gap:24px}.interior-introduction-copy{grid-template-columns:1fr;gap:25px}.interior-introduction-copy>.prose:first-child{font-size:28px;line-height:1.35}.interior-introduction-copy>.prose:not(:first-child){padding-top:0;font-size:14px}.service-chapters>.wrap{padding-left:20px;padding-right:20px}.service-chapters>.wrap>div{overflow-x:auto;gap:24px;scrollbar-width:none}.service-chapters a{min-height:60px;font-size:11px}.service-chapters a:last-child{gap:8px}.service-overview,.firm-manifesto,.journal-perspectives{padding-top:70px;padding-bottom:75px}.interior-section-top h2{font-size:43px}.service-principles,.service-principles--pair{grid-template-columns:1fr;gap:38px;margin-top:42px}.principle-line{margin-bottom:23px;width:50px}.service-principles h3{font-size:33px;max-width:none;margin-bottom:17px}.service-principles .prose{font-size:15px}.service-overview-copy{margin-top:30px;font-size:16px}.interior-feature{grid-template-columns:1fr}.interior-feature-art{min-height:0;height:410px}.interior-feature-art figcaption{font-size:30px;bottom:30px;left:var(--gutter);max-width:270px}.interior-feature-copy{padding:60px var(--gutter) 65px}.interior-feature-copy>.eyebrow{font-size:10px}.interior-feature-copy h2{font-size:43px}.interior-feature-item h3{font-size:31px}.interior-feature-item{padding:25px 0}.interior-essay{padding-top:70px;padding-bottom:70px}.interior-essay-layout{grid-template-columns:1fr;gap:28px}.interior-essay-heading h2{font-size:43px}.interior-essay-copy{padding:0;font-size:15px;line-height:1.9}.interior-essay--inset{margin:0}.interior-essay--inset>.wrap{padding-left:var(--gutter);padding-right:var(--gutter)}.interior-questions{padding:70px 0}.interior-questions-layout{grid-template-columns:1fr;gap:40px}.interior-questions-heading h2{font-size:43px}.interior-question-note{font-size:24px;margin-top:25px;max-width:300px;margin-bottom:12px}.interior-questions .dialogue-questions h3{font-size:26px}.interior-questions .dialogue-answer{font-size:14px}.interior-closing{min-height:660px}.interior-closing-content{padding-top:80px;padding-bottom:80px}.interior-closing h2{font-size:clamp(44px,9.7vw,62px);line-height:1.07}.interior-closing .prose{font-size:15px}.interior-closing .eyebrow{font-size:10px}.interior-closing-shade{background:linear-gradient(90deg,#11231be8,#152c239e)}.interior-closing .interior-actions{align-items:flex-start;flex-direction:column}.interior-closing-art img{object-position:62% center}.interior-hero--firma .interior-hero-layout{grid-template-columns:1fr;gap:35px}.interior-hero--firma h1{font-size:clamp(52px,10vw,75px)}.interior-hero--firma .interior-hero-art{height:470px;width:87%;margin-left:13%}.firm-manifesto-grid{grid-template-columns:1fr;gap:30px}.firm-manifesto-grid h2{font-size:47px}.firm-manifesto-grid>div{padding:0;font-size:15px}.firm-panorama{height:320px;margin-top:40px}.firm-panorama figcaption{font-size:9px;left:17px;bottom:18px;padding:10px 12px}.firm-relationship{grid-template-columns:1fr;gap:45px;padding-top:75px;padding-bottom:75px}.firm-relationship>figure{height:460px;width:85%}.firm-relationship h2{font-size:46px;margin-bottom:28px}.firm-relationship .prose{font-size:15px}.interior-hero--journal .interior-hero-heading{padding-bottom:0}.interior-hero--journal h1{font-size:clamp(51px,10vw,76px)}.interior-hero--journal .interior-hero-art{height:340px}.journal-perspective-grid{grid-template-columns:1fr;gap:50px;margin-top:40px}.journal-perspective:nth-child(even){padding-top:0}.journal-perspective>figure{height:330px}.journal-perspective>div{padding-top:24px;max-width:none}.journal-perspective strong{font-size:36px}.journal-notebook{padding:70px 0}.journal-notebook-layout{grid-template-columns:1fr;gap:30px}.journal-notebook h2{font-size:46px}.journal-notebook-copy{padding:0;font-size:15px}.interior-hero--contacto h1{font-size:clamp(51px,10vw,76px)}.interior-hero--contacto .interior-hero-art{height:390px}.private-enquiry{padding:65px 0}.private-enquiry-layout{grid-template-columns:1fr;gap:40px}.private-enquiry-intro h2{font-size:45px}.private-enquiry-contact{padding-top:30px;margin-top:30px}.private-enquiry-contact>a{font-size:30px}.private-enquiry-intro>figure{height:230px;margin-top:30px}.private-enquiry-paper{padding:30px 23px}.private-enquiry-paper .form-grid{gap:24px}.legal-masthead{padding-top:118px;padding-bottom:42px}.legal-masthead .breadcrumbs{margin-bottom:33px}.legal-masthead-grid{grid-template-columns:1fr;gap:25px}.legal-masthead h1{font-size:clamp(48px,10vw,68px)}.legal-masthead-grid>figure{display:none}.legal-intro{font-size:14px;margin-top:24px}.legal-reading{grid-template-columns:1fr;gap:30px;padding-top:28px;padding-bottom:65px}.legal-index{position:static}.legal-index nav{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.legal-index nav a{font-size:11px;min-height:44px}.legal-related{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;padding-top:15px}.legal-related>.eyebrow{width:100%;margin:0}.legal-related a{gap:12px;min-height:38px;font-size:11px}.legal-document h2{font-size:33px}.legal-document>section{padding:30px 0}.legal-document .prose{font-size:14px;line-height:1.95}.interior-utility{padding-top:88px;grid-template-columns:1fr;min-height:0}.utility-copy{padding:40px var(--gutter) 45px;gap:50px;min-height:620px}.utility-copy h1{font-size:52px}.utility-home{font-size:10px}.utility-copy .interior-actions{flex-direction:column;align-items:flex-start}.utility-art{height:360px;min-height:0}.utility-signature{font-size:9px}
+}
+@media(max-width:380px){.interior-hero h1{font-size:43px}.interior-hero--firma h1,.interior-hero--journal h1,.interior-hero--contacto h1{font-size:48px}.interior-hero-art{height:370px}.interior-section-top h2,.interior-feature-copy h2,.interior-essay-heading h2,.interior-questions-heading h2{font-size:39px}.service-chapters>.wrap{padding-left:16px;padding-right:16px}.service-chapters>.wrap>div{gap:19px}.private-enquiry-contact>a{font-size:26px}.private-enquiry-paper{padding:27px 18px}.legal-index nav{grid-template-columns:1fr}.legal-masthead h1{font-size:45px}.utility-copy h1{font-size:47px}}

@@ -7,8 +7,8 @@ const l = page.lang;
 ---
 <footer class="site-footer">
   <div class="footer-top">
-    <div><p class="eyebrow">Private Real Estate Advisory</p><p class="footer-intro">{tx(l, 'Acompañamiento al propietario en Barcelona: cuidado de inmuebles, coordinación de reformas y asesoramiento en venta. Apoyo con vivienda y llegada para quienes se trasladan a la ciudad.', 'Property owner support in Barcelona: ongoing care, renovation coordination and advice for sellers. Housing and arrival support for people moving to the city.')}</p></div>
-    <nav aria-label={tx(l, 'Servicios', 'Services')}><p class="eyebrow">{tx(l, 'Servicios', 'Services')}</p>{['GESTION', 'REFORMA', 'VENTA', 'LLEGADA'].map(id => {
+    <div><p class="eyebrow">Private Real Estate Advisory</p><p class="footer-intro">{tx(l, 'Acompañamiento al propietario en Barcelona: cuidado de inmuebles, coordinación de reformas y asesoramiento en venta. Apoyo con vivienda y llegada para quienes se trasladan a la ciudad. Asesoramiento para la inversión inmobiliaria en Cataluña.', 'Property owner support in Barcelona: ongoing care, renovation coordination and advice for sellers. Housing and arrival support for people moving to the city. Property investment advice in Catalonia.')}</p></div>
+    <nav aria-label={tx(l, 'Servicios', 'Services')}><p class="eyebrow">{tx(l, 'Servicios', 'Services')}</p>{['GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION'].map(id => {
       const item = pageFor(id, l);
       return <a class="footer-link" href={item.route}>{item.name}</a>;
     })}</nav>

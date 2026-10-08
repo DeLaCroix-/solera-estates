@@ -1,0 +1,17 @@
+---
+import { tx, pageFor } from '../lib/site.mjs';
+import ContentNodes from './ContentNodes.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { EditorialPage } from '../lib/types';
+interface Props { page: EditorialPage; }
+const { page: p } = Astro.props;
+const sections = p.blocks.slice(1);
+---
+<section class="legal-masthead wrap" data-block={p.blocks[0].id}>
+  <nav class="breadcrumbs" aria-label={tx(p.lang, 'Migas de pan', 'Breadcrumbs')}><a href={pageFor('HOME', p.lang).route}>{tx(p.lang, 'Inicio', 'Home')}</a><span aria-hidden="true"> / </span><span>{p.name}</span></nav>
+  <div class="legal-masthead-grid"><div><p class="eyebrow">{tx(p.lang, 'Información y confianza', 'Information & trust')}</p><ContentNodes nodes={p.blocks[0].nodes} /><p class="legal-intro">{tx(p.lang, 'La claridad también forma parte de nuestra manera de acompañarte.', 'Clarity is part of the way we support you.')}</p>{p.id === 'COOKIES' && <button class="interior-action" data-cookie-settings>{tx(p.lang, 'Configurar cookies', 'Cookie settings')} <span aria-hidden="true">↗</span></button>}</div><figure><ResponsiveImage name="staircase" lang={p.lang} sizes="(max-width: 760px) 30vw, 22vw" hero /></figure></div>
+</section>
+<div class="legal-reading wrap">
+  <aside class="legal-index"><details open><summary>{tx(p.lang, 'En esta página', 'On this page')}<span aria-hidden="true">↓</span></summary><nav aria-label={tx(p.lang, 'Índice del documento', 'Document contents')}>{sections.map(b => <a href={`#${b.id.toLowerCase()}`}>{b.label}</a>)}</nav></details><div class="legal-related"><p class="eyebrow">Solera Estates</p>{['LEGAL', 'PRIVACY', 'COOKIES'].map(id => <a href={pageFor(id, p.lang).route} aria-current={id === p.id ? 'page' : undefined}>{pageFor(id, p.lang).name}<span aria-hidden="true">↗</span></a>)}</div></aside>
+  <div class="legal-document">{sections.map(b => <section id={b.id.toLowerCase()} data-block={b.id}><ContentNodes nodes={b.nodes} /></section>)}<div class="legal-contact"><p>{tx(p.lang, 'Una consulta, siempre bienvenida.', 'Your questions are always welcome.')}</p><a href="mailto:info@soleraestates.eu">info@soleraestates.eu <span aria-hidden="true">↗</span></a></div></div>
+</div>

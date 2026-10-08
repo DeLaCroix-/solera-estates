@@ -1,0 +1,18 @@
+---
+import { tx } from '../lib/site.mjs';
+import ContentNodes from './ContentNodes.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { ContentBlock, Language } from '../lib/types';
+interface Props { block: ContentBlock; lang: Language; }
+const { block, lang } = Astro.props;
+const links = block.nodes.filter(n => n.type === 'link');
+---
+<section class="interior-closing" id={block.anchor || block.id.toLowerCase()} data-block={block.id}>
+  <div class="interior-closing-art" aria-hidden="true"><ResponsiveImage name="hero" lang={lang} sizes="100vw" /></div>
+  <div class="interior-closing-shade"></div>
+  <div class="interior-closing-content wrap">
+    <p class="eyebrow">{tx(lang, 'Tu propiedad. Nuestra conversación.', 'Your property. Our conversation.')}</p>
+    <ContentNodes nodes={block.nodes.filter(n => n.type !== 'link')} />
+    <div class="interior-actions">{links.map((link, i) => <a class:list={['interior-action', { 'is-primary': i === 0 }]} href={link.href} data-nat-event="cta_click">{link.text}<span aria-hidden="true">↗</span></a>)}</div>
+  </div>
+</section>

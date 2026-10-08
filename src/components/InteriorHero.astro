@@ -1,0 +1,66 @@
+---
+import { marked } from 'marked';
+import { pageFor, tx } from '../lib/site.mjs';
+import { interiorArt, localText, serviceIds } from '../lib/interiors';
+import ContentNodes from './ContentNodes.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { EditorialPage } from '../lib/types';
+interface Props { page: EditorialPage; confirmed?: boolean; }
+const { page: p, confirmed = true } = Astro.props;
+const b = p.blocks[0];
+const title = b.nodes.find(n => n.type === 'h1')!;
+const copy = b.nodes.filter(n => n.type === 'p');
+const links = b.nodes.filter(n => n.type === 'link');
+const art = interiorArt[p.id];
+const isService = serviceIds.includes(p.id);
+const isUtility = ['GRACIAS', 'ERROR'].includes(p.id);
+const faq = p.blocks.find(block => /Preguntas frecuentes|Frequently asked/i.test(block.label));
+const overview = p.blocks[1];
+const method = p.blocks[2];
+---
+{isUtility ? <section class:list={['interior-utility', { 'receipt-unconfirmed': !confirmed }]} data-block={b.id}>
+  <div class="utility-copy">
+    <a class="utility-home eyebrow" href={pageFor('HOME', p.lang).route}>Solera Estates <span aria-hidden="true">↗</span></a>
+    <div>
+      <p class="eyebrow">{p.id === 'ERROR' ? tx(p.lang, 'Retomemos el camino', 'A new direction') : tx(p.lang, 'El comienzo de una conversación', 'The start of a conversation')}</p>
+      <h1 set:html={marked.parseInline(confirmed ? title.text : tx(p.lang, 'Tu consulta', 'Your enquiry'))} />
+      {confirmed ? <ContentNodes nodes={copy} /> : <p>{tx(p.lang, 'Esta página no confirma un envío. Para iniciar una consulta, utiliza nuestro contacto.', 'This page does not confirm a submission. To start an enquiry, use our contact page.')}</p>}
+      <div class="interior-actions">{confirmed ? links.map((link, i) => <a class:list={['interior-action', { 'is-primary': i === 0 }]} href={link.href}>{link.text}<span aria-hidden="true">↗</span></a>) : <a class="interior-action is-primary" href={pageFor('CONTACTO', p.lang).route}>{tx(p.lang, 'Ir a contacto', 'Go to contact')}<span aria-hidden="true">↗</span></a>}</div>
+    </div>
+    <p class="utility-signature">Private Real Estate Advisory · Barcelona</p>
+  </div>
+  <figure class="utility-art"><ResponsiveImage name="hero" lang={p.lang} hero sizes="(max-width: 760px) 100vw, 50vw" /></figure>
+</section> : <>
+  <section class:list={['interior-hero', `interior-hero--${p.id.toLowerCase()}`, { 'interior-hero--service': isService }]} data-block={b.id}>
+    <div class="interior-hero-top wrap">
+      <nav class="breadcrumbs" aria-label={tx(p.lang, 'Migas de pan', 'Breadcrumbs')}><a href={pageFor('HOME', p.lang).route}>{tx(p.lang, 'Inicio', 'Home')}</a><span aria-hidden="true"> / </span><span>{p.name}</span></nav>
+      <span class="interior-location">Private Real Estate Advisory · Barcelona</span>
+    </div>
+    <div class="interior-hero-layout wrap">
+      <div class="interior-hero-heading">
+        <p class="eyebrow"><span class="interior-rule" aria-hidden="true"></span>{localText(art.label, p.lang)}</p>
+        <h1 set:html={marked.parseInline(title.text)} />
+        <div class="interior-actions">
+          {links.map(link => <a class="interior-action is-primary" href={link.href} data-nat-event="cta_click">{link.text}<span aria-hidden="true">↗</span></a>)}
+          {!links.length && <a class="interior-action" href={`#${overview.anchor || overview.id.toLowerCase()}`}>{tx(p.lang, p.id === 'FIRMA' ? 'Conoce nuestra mirada' : 'Explorar las perspectivas', p.id === 'FIRMA' ? 'Discover our perspective' : 'Explore the perspectives')}<span aria-hidden="true">↓</span></a>}
+        </div>
+      </div>
+      <figure class="interior-hero-art">
+        <ResponsiveImage name={art.image} lang={p.lang} hero sizes={p.id === 'JOURNAL' ? '100vw' : '(max-width: 760px) 100vw, 48vw'} />
+        <figcaption>{localText(art.caption, p.lang)}</figcaption>
+      </figure>
+    </div>
+    <div class="interior-introduction wrap">
+      <p class="eyebrow">{tx(p.lang, p.id === 'JOURNAL' ? 'Propiedad. Perspectiva. Criterio.' : p.id === 'FIRMA' ? 'El valor de una relación' : p.id === 'CONTACTO' ? 'Empecemos por ti' : 'Una atención a tu medida', p.id === 'JOURNAL' ? 'Property. Perspective. Judgement.' : p.id === 'FIRMA' ? 'The value of a relationship' : p.id === 'CONTACTO' ? 'Let’s begin with you' : 'An approach shaped around you')}</p>
+      <div class="interior-introduction-copy"><ContentNodes nodes={copy} /></div>
+    </div>
+  </section>
+  {isService && <nav class="service-chapters" aria-label={tx(p.lang, 'En este servicio', 'In this service')}>
+    <div class="wrap"><span>{localText(art.label, p.lang)}</span><div>
+      <a href={`#${overview.anchor || overview.id.toLowerCase()}`}>{tx(p.lang, 'Servicio', 'Support')}</a>
+      <a href={`#${method.anchor || method.id.toLowerCase()}`}>{tx(p.lang, 'Perspectiva', 'Approach')}</a>
+      {faq && <a href={`#${faq.anchor || faq.id.toLowerCase()}`}>{tx(p.lang, 'Preguntas', 'Questions')}</a>}
+      <a href={pageFor('CONTACTO', p.lang).route + '#formulario'} data-nat-event="cta_click">{tx(p.lang, 'Hablemos', 'Let’s talk')} <span aria-hidden="true">↗</span></a>
+    </div></div>
+  </nav>}
+</>}

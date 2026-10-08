@@ -1,0 +1,62 @@
+---
+import { marked } from 'marked';
+import { groupNodes, pageFor, tx } from '../lib/site.mjs';
+import { interiorArt, serviceIds } from '../lib/interiors';
+import ContentNodes from './ContentNodes.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import ContactForm from './ContactForm.astro';
+import InteriorClosing from './InteriorClosing.astro';
+import type { ContentBlock, EditorialPage, ImageName } from '../lib/types';
+interface Props { block: ContentBlock; page: EditorialPage; index: number; }
+const { block: b, page: p, index: i } = Astro.props;
+const l = p.lang;
+const { intro, groups } = groupNodes(b);
+const titles = intro.filter(n => n.type === 'h2');
+const body = intro.filter(n => n.type !== 'h2');
+const attrs = { id: b.anchor || b.id.toLowerCase(), 'data-block': b.id };
+const isService = serviceIds.includes(p.id);
+const faq = /Preguntas frecuentes|Frequently asked/i.test(b.label);
+const closing = i === p.blocks.length - 1 && p.id !== 'CONTACTO';
+const art = interiorArt[p.id];
+const images: ImageName[] = ['living', 'staircase', 'hero', 'terrace'];
+const journalServices = ['GESTION', 'REFORMA', 'VENTA', 'LLEGADA'];
+---
+{closing ? <InteriorClosing block={b} lang={l} /> : faq ? <section class="interior-questions" {...attrs}>
+  <div class="wrap interior-questions-layout">
+    <div class="interior-questions-heading"><p class="eyebrow">{tx(l, 'Con claridad', 'With clarity')}</p><ContentNodes nodes={titles} /><p class="interior-question-note">{tx(l, 'Una relación de confianza empieza por entenderse.', 'A relationship of trust begins with understanding.')}</p><a class="interior-action" href={pageFor('CONTACTO', l).route} data-nat-event="cta_click">{tx(l, 'Hablemos de tu situación', 'Let’s talk about your situation')}<span aria-hidden="true">↗</span></a></div>
+    <div class="dialogue-questions">{groups.map((g, index) => <details name={`questions-${p.id}-${l}`} open={index === 0}>
+      <summary><h3 set:html={marked.parseInline(g.title)} /><span class="dialogue-toggle" aria-hidden="true"><span></span><span></span></span></summary>
+      <div class="dialogue-answer"><ContentNodes nodes={g.nodes} /></div>
+    </details>)}</div>
+  </div>
+</section> : b.id === 'CONTACTO-03' ? <section class="private-enquiry" {...attrs}>
+  <div class="wrap private-enquiry-layout">
+    <div class="private-enquiry-intro"><p class="eyebrow">{tx(l, 'Un primer encuentro', 'A first introduction')}</p><ContentNodes nodes={intro} /><div class="private-enquiry-contact"><p class="eyebrow">{tx(l, 'Contacto directo', 'Direct contact')}</p><a href="mailto:info@soleraestates.eu">info@soleraestates.eu <span aria-hidden="true">↗</span></a><p>Carrer de Balmes, 32, Pral. 2º<br />08007 Barcelona</p></div><figure><ResponsiveImage name="hero" lang={l} sizes="(max-width: 760px) 100vw, 34vw" /></figure></div>
+    <div class="private-enquiry-paper"><ContactForm lang={l} /></div>
+  </div>
+</section> : b.id === 'JOURNAL-02' ? <section class="journal-perspectives wrap" {...attrs}>
+  <div class="interior-section-top"><p class="eyebrow">{tx(l, 'El cuaderno de Solera', 'The Solera notebook')}</p><ContentNodes nodes={titles} /></div>
+  <div class="journal-perspective-grid">{body.map((node, index) => <article class="journal-perspective">
+    <figure><ResponsiveImage name={images[index]} lang={l} sizes="(max-width: 760px) 100vw, 44vw" /></figure>
+    <div><ContentNodes nodes={[node]} /><a class="interior-action" href={pageFor(journalServices[index], l).route}>{tx(l, 'Conocer este acompañamiento', 'Discover this area of support')}<span aria-hidden="true">↗</span></a></div>
+  </article>)}</div>
+</section> : b.id === 'JOURNAL-03' ? <section class="journal-notebook" {...attrs}>
+  <div class="wrap journal-notebook-layout"><div><p class="eyebrow">{tx(l, 'En preparación', 'In preparation')}</p><ContentNodes nodes={titles} /></div><div class="journal-notebook-copy"><ContentNodes nodes={body} /></div></div>
+</section> : (isService && i === 2) || b.id === 'FIRMA-03' ? <section class="interior-feature" {...attrs}>
+  <figure class="interior-feature-art"><ResponsiveImage name={art.detail} lang={l} sizes="(max-width: 900px) 100vw, 42vw" /><figcaption>{tx(l, 'El valor de mantener la perspectiva.', 'The value of keeping perspective.')}</figcaption></figure>
+  <div class="interior-feature-copy"><p class="eyebrow">{tx(l, 'Todo forma parte de una misma historia', 'Part of the same story')}</p><ContentNodes nodes={intro} />
+    {groups.map(g => <div class="interior-feature-item"><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></div>)}
+  </div>
+</section> : isService && i === 1 ? <section class="service-overview wrap" {...attrs}>
+  <div class="interior-section-top"><p class="eyebrow">{tx(l, 'El acompañamiento', 'Our support')}</p><ContentNodes nodes={titles} /></div>
+  {groups.length ? <div class:list={['service-principles', { 'service-principles--pair': groups.length === 2 }]}>{groups.map(g => <article><span class="principle-line" aria-hidden="true"></span><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></article>)}</div> : <div class="service-overview-copy"><ContentNodes nodes={body} /></div>}
+</section> : b.id === 'FIRMA-02' ? <section class="firm-manifesto wrap" {...attrs}>
+  <p class="eyebrow">{tx(l, 'Nuestra razón de ser', 'Our purpose')}</p><div class="firm-manifesto-grid"><ContentNodes nodes={titles} /><div><ContentNodes nodes={body} /></div></div>
+  <figure class="firm-panorama"><ResponsiveImage name="living" lang={l} sizes="100vw" /><figcaption>Private Real Estate Advisory</figcaption></figure>
+</section> : b.id === 'FIRMA-04' ? <section class="firm-relationship wrap" {...attrs}>
+  <figure><ResponsiveImage name="terrace" lang={l} sizes="(max-width: 760px) 100vw, 38vw" /></figure><div><p class="eyebrow">{tx(l, 'Personal, desde el primer día', 'Personal, from the first day')}</p><ContentNodes nodes={b.nodes} /></div>
+</section> : <section class:list={['interior-essay', { 'interior-essay--inset': isService && i === 4, 'interior-essay--contact': p.id === 'CONTACTO' }]} {...attrs}>
+  <div class="wrap interior-essay-layout"><div class="interior-essay-heading"><p class="eyebrow">{tx(l, p.id === 'CONTACTO' ? 'El valor de escucharte' : 'Una mirada de conjunto', p.id === 'CONTACTO' ? 'The value of listening' : 'A complete perspective')}</p><ContentNodes nodes={titles} /></div>
+    <div class="interior-essay-copy"><ContentNodes nodes={body} />{groups.map(g => <div class="interior-essay-item"><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></div>)}</div>
+  </div>
+</section>}

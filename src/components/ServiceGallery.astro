@@ -1,6 +1,6 @@
 ---
 import { marked } from 'marked';
-import { groupNodes, tx } from '../lib/site.mjs';
+import { groupNodes, pageFor, tx } from '../lib/site.mjs';
 import ContentNodes from './ContentNodes.astro';
 import ResponsiveImage from './ResponsiveImage.astro';
 import type { ContentBlock, ImageName, Language } from '../lib/types';
@@ -40,6 +40,10 @@ const captions = lang === 'es'
         </article>;
       })}
     </div>
+    <article class="investment-invitation">
+      <figure><ResponsiveImage name="hero" lang={lang} sizes="(max-width: 760px) 100vw, 40vw" /></figure>
+      <div><p class="eyebrow">{tx(lang, 'Tu patrimonio, con perspectiva', 'Your assets, in perspective')}</p><h3><a href={pageFor('INVERSION', lang).route}>{tx(lang, 'Inversión inmobiliaria en Cataluña', 'Property investment in Catalonia')}</a></h3><p>{tx(lang, 'Acompañamos a inversores nacionales e internacionales en la compra de propiedades, conectando el asesoramiento inmobiliario, legal y fiscal con cada etapa de la inversión.', 'We support Spanish and international investors buying property, bringing property, legal and tax advice together at every stage of the investment.')}</p><a class="text-link service-link" href={pageFor('INVERSION', lang).route}>{tx(lang, 'Explorar el servicio de inversión', 'Explore property investment')}<span aria-hidden="true">↗</span></a></div>
+    </article>
     <p class="services-note">{tx(lang, 'Una mirada integral. Un acompañamiento personal.', 'A complete perspective. A personal approach.')}</p>
   </div>
 </section>

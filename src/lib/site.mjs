@@ -7,6 +7,7 @@ export const indexable = process.env.PUBLIC_SITE_INDEXABLE ? process.env.PUBLIC_
 export const tx = (lang, es, en) => lang === 'es' ? es : en;
 /** @type {import('./types').EditorialPage[]} */
 export const pages = parseContent();
+pages.push(...JSON.parse(fs.readFileSync('content/investment.json', 'utf8')));
 for (const page of pages) if (page.id === 'LLEGADA') page.name = tx(page.lang, 'Vivir en Barcelona', 'Moving to Barcelona');
 const legal = JSON.parse(fs.readFileSync('content/legal.json', 'utf8'));
 for (const [lang, entries] of Object.entries(legal)) {

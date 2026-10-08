@@ -8,7 +8,7 @@ const root=path.resolve(process.env.OUTPUT_DIR||'dist');
 const routes=JSON.parse(await fs.readFile('qa-output/routes.json','utf8'));
 const editorial=parseContent();
 const failures=[];let checks=0;const check=(ok,message)=>{checks++;if(!ok)failures.push(message);};
-const css=await fs.readFile('src/style.css','utf8');
+const css=(await Promise.all(['src/style.css','src/interiors.css'].map(file=>fs.readFile(file,'utf8')))).join('\n');
 const ast=csstree.parse(css,{onParseError:error=>check(false,'CSS syntax: '+error.message)});
 check(Boolean(ast),'CSS parses');
 csstree.walk(ast,{visit:'Declaration',enter(node){if(node.property.startsWith('--')||this.atrule?.name==='font-face')return;const value=csstree.generate(node.value);if(value.includes('var('))return;const result=csstree.lexer.matchProperty(node.property,node.value);check(!result.error,'CSS value '+node.property+': '+value);}});
@@ -38,7 +38,7 @@ for(const {p,html,document:d} of pages.values()){
  let previous=0;for(const heading of d.querySelectorAll('main h1,main h2,main h3')){if(heading.closest('template'))continue;const level=Number(heading.tagName.slice(1));check(level<=previous+1,p.route+' hierarchy '+heading.textContent);previous=level;}
  for(const a of d.querySelectorAll('a[href]')){const href=a.getAttribute('href');if(/^(mailto:|https?:)/.test(href))continue;const url=new URL(href,'https://example.test'+p.route);const target=pages.get(url.pathname);check(Boolean(target),p.route+' link resolves '+href);if(target&&url.hash)check(Boolean(target.document.getElementById(decodeURIComponent(url.hash.slice(1)))),p.route+' anchor resolves '+href);}
  const main=d.querySelector('main');const fulltext=norm(main.textContent);
- const ep=editorial.find(q=>q.route===p.route);
+ const ep=editorial.find(q=>q.route===p.route)||(p.id==='INVERSION'?p:null);
  if(ep){for(const block of ep.blocks){check(Boolean(main.querySelector(`[data-block="${block.id}"]`))||p.id==='GRACIAS',p.route+' block '+block.id);for(const n of block.nodes){check(fulltext.includes(text(n.text)),p.route+' preserves '+block.id+' '+n.text.slice(0,75));}}}
  for(const el of d.querySelectorAll('input:not([type="hidden"]),textarea,select'))check(Boolean(d.querySelector(`label[for="${el.id}"]`)),p.route+' label '+el.id);
  const form=d.querySelector('#enquiry-form');

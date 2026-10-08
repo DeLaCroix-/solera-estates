@@ -1,0 +1,442 @@
+[
+  {
+    "lang": "es",
+    "name": "Inversión inmobiliaria",
+    "route": "/inversion-inmobiliaria-cataluna/",
+    "title": "Inversión inmobiliaria en Cataluña | Solera Estates",
+    "description": "Asesoramiento inmobiliario, legal y fiscal para invertir en propiedades en Cataluña. Acompañamiento a inversores nacionales e internacionales.",
+    "blocks": [
+      {
+        "id": "INVERSION-01",
+        "label": "Una inversión con perspectiva",
+        "nodes": [
+          {
+            "type": "h1",
+            "text": "Inversión inmobiliaria en Cataluña, con una mirada integral"
+          },
+          {
+            "type": "p",
+            "text": "Una propiedad puede formar parte de algo mucho más amplio: tu patrimonio, tus próximos años o una nueva relación con un país. Te acompañamos para que la decisión de invertir en Cataluña tenga contexto, criterio y continuidad."
+          },
+          {
+            "type": "p",
+            "text": "Asesoramos a inversores nacionales e internacionales en la compra de inmuebles con fines de inversión. Conectamos la perspectiva inmobiliaria con el asesoramiento legal y fiscal, la preparación de los fondos y el cuidado posterior de la propiedad."
+          },
+          {
+            "type": "link",
+            "text": "Hablemos de tu inversión",
+            "href": "/contacto/#formulario"
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-02",
+        "label": "El acompañamiento",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Entender tu proyecto antes de buscar una propiedad"
+          },
+          {
+            "type": "h3",
+            "text": "El inversor y su horizonte"
+          },
+          {
+            "type": "p",
+            "text": "Empezamos por tus objetivos, el presupuesto global, el plazo de inversión y el grado de implicación que deseas mantener. Una compra para conservar patrimonio requiere una lectura distinta de una operación orientada al alquiler, la reforma o una futura venta."
+          },
+          {
+            "type": "h3",
+            "text": "La propiedad y su contexto"
+          },
+          {
+            "type": "p",
+            "text": "Ayudamos a valorar la ubicación, el estado del inmueble, su uso previsto y las actuaciones que puede necesitar. El análisis se adapta a cada operación, en Barcelona y en el resto de Cataluña, para estudiar tanto su encaje como sus limitaciones."
+          },
+          {
+            "type": "h3",
+            "text": "El coste completo de decidir"
+          },
+          {
+            "type": "p",
+            "text": "La perspectiva incluye el precio de compra, los impuestos, los gastos de formalización, una posible reforma y las obligaciones posteriores. Trabajamos con escenarios y supuestos explícitos para que puedas decidir con una visión más completa."
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-03",
+        "label": "Perspectiva legal y fiscal",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "La compra, la fiscalidad y tu patrimonio, dentro de una misma conversación"
+          },
+          {
+            "type": "h3",
+            "text": "Asesoramiento legal inmobiliario"
+          },
+          {
+            "type": "p",
+            "text": "Revisión de la situación jurídica del inmueble y de la documentación relevante para la operación: titularidad, cargas, contratos y condiciones de compra. Coordinamos las comprobaciones que requiera cada caso antes de asumir compromisos y durante la formalización."
+          },
+          {
+            "type": "h3",
+            "text": "Fiscalidad de la inversión"
+          },
+          {
+            "type": "p",
+            "text": "Estudiamos los impuestos y las obligaciones vinculadas a la adquisición, la tenencia, los ingresos y una eventual venta. La residencia fiscal del inversor, la forma de adquirir y el uso del inmueble forman parte del análisis; cada situación requiere una valoración individual."
+          },
+          {
+            "type": "h3",
+            "text": "Coordinación de la operación"
+          },
+          {
+            "type": "p",
+            "text": "Conectamos las decisiones inmobiliarias, legales y fiscales con la documentación, los interlocutores y el calendario de compra. El alcance del asesoramiento y la intervención de los profesionales necesarios quedan definidos en la propuesta."
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-04",
+        "label": "Inversores internacionales",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Invertir desde otro país, con una referencia aquí"
+          },
+          {
+            "type": "p",
+            "text": "Si tu patrimonio está fuera de España, te ayudamos a preparar la vertiente documental y fiscal de la inversión y a coordinar la llegada de fondos con las entidades y los profesionales que intervengan. Se revisan las necesidades de identificación, representación y acreditación del origen de los fondos según el caso."
+          },
+          {
+            "type": "p",
+            "text": "La planificación tiene en cuenta los países implicados, los plazos bancarios, la moneda y las obligaciones de información que puedan corresponder. Las transferencias se realizan a través de las entidades financieras; Solera Estates acompaña y coordina el proceso."
+          },
+          {
+            "type": "p",
+            "text": "Invertir y trasladar tu residencia son decisiones diferentes. Si también planeas vivir en Barcelona, conectamos el proyecto inmobiliario con el acompañamiento de llegada y el estudio de tu situación personal."
+          },
+          {
+            "type": "link",
+            "text": "Conocer el acompañamiento para vivir en Barcelona",
+            "href": "/relocation-barcelona/"
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-05",
+        "label": "Continuidad de la inversión",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "El acompañamiento continúa después de la compra"
+          },
+          {
+            "type": "p",
+            "text": "Una vez formalizada la adquisición, la propiedad necesita atención. Podemos conectar la inversión con la coordinación de una reforma, la gestión y el cuidado del inmueble o el asesoramiento para una futura venta, de acuerdo con el alcance contratado."
+          },
+          {
+            "type": "p",
+            "text": "No trabajamos con un catálogo público ni con promesas de rentabilidad. Estudiamos cada proyecto de manera privada y valoramos las posibilidades y los riesgos con la información disponible."
+          },
+          {
+            "type": "link",
+            "text": "Explorar la gestión de propiedades",
+            "href": "/gestion-propiedades-barcelona/"
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-06",
+        "label": "Preguntas frecuentes",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Antes de invertir en Cataluña"
+          },
+          {
+            "type": "h3",
+            "text": "¿Trabajáis con inversores nacionales e internacionales?"
+          },
+          {
+            "type": "p",
+            "text": "Sí. El servicio se dirige tanto a personas que invierten desde España como a quienes tienen su residencia o su patrimonio en otro país. El acompañamiento se adapta a la operación y a las necesidades de cada inversor."
+          },
+          {
+            "type": "h3",
+            "text": "¿Incluís asesoramiento legal y fiscal?"
+          },
+          {
+            "type": "p",
+            "text": "Integramos ambas perspectivas en el proyecto de inversión. Antes de comenzar, concretamos las revisiones, gestiones y profesionales incluidos en la propuesta, así como cualquier intervención que deba contratarse de forma adicional."
+          },
+          {
+            "type": "h3",
+            "text": "¿Podéis ayudarme a traer fondos desde el extranjero?"
+          },
+          {
+            "type": "p",
+            "text": "Te acompañamos en la preparación de la documentación y en la coordinación con las entidades y asesores que intervienen. El análisis depende del país de origen, la titularidad de los fondos y tu situación fiscal; la transferencia y su aceptación corresponden a las entidades financieras."
+          },
+          {
+            "type": "h3",
+            "text": "¿Garantizáis una rentabilidad o un ahorro fiscal?"
+          },
+          {
+            "type": "p",
+            "text": "No. Una inversión inmobiliaria está sujeta a riesgos y sus resultados dependen de la propiedad, el mercado, los costes y las circunstancias del inversor. El asesoramiento fiscal se realiza sobre la normativa aplicable y tu situación concreta."
+          },
+          {
+            "type": "h3",
+            "text": "¿Puedo contratar únicamente apoyo para una operación concreta?"
+          },
+          {
+            "type": "p",
+            "text": "Sí. Podemos estudiar un encargo delimitado o un acompañamiento que abarque varias etapas. La primera conversación sirve para entender lo que necesitas y definir una propuesta proporcionada."
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-07",
+        "label": "Tu siguiente decisión",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Una inversión empieza por una buena conversación"
+          },
+          {
+            "type": "p",
+            "text": "Cuéntanos qué quieres construir, desde dónde inviertes y en qué momento se encuentra tu proyecto. Prepararemos el siguiente paso con la atención que merece."
+          },
+          {
+            "type": "link",
+            "text": "Plantear una consulta de inversión",
+            "href": "/contacto/#formulario"
+          }
+        ]
+      }
+    ],
+    "id": "INVERSION"
+  },
+  {
+    "lang": "en",
+    "name": "Property investment",
+    "route": "/en/property-investment-catalonia/",
+    "title": "Property Investment in Catalonia | Solera Estates",
+    "description": "Property, legal and tax advice for investing in real estate in Catalonia. Personal support for Spanish and international investors, from purchase onwards.",
+    "blocks": [
+      {
+        "id": "INVERSION-01",
+        "label": "An investment in perspective",
+        "nodes": [
+          {
+            "type": "h1",
+            "text": "Property investment in Catalonia, with a complete perspective"
+          },
+          {
+            "type": "p",
+            "text": "A property can be part of a much larger picture: your assets, your plans for the years ahead or a new relationship with a country. We help you approach an investment in Catalonia with context, considered advice and continuity."
+          },
+          {
+            "type": "p",
+            "text": "We advise Spanish and international investors buying property for investment purposes. We bring together the property, legal and tax aspects of the purchase, preparation of funds and the ongoing care of your asset."
+          },
+          {
+            "type": "link",
+            "text": "Let’s discuss your investment",
+            "href": "/en/contact/#formulario"
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-02",
+        "label": "Our support",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Understand the investment before choosing the property"
+          },
+          {
+            "type": "h3",
+            "text": "Your objectives and time horizon"
+          },
+          {
+            "type": "p",
+            "text": "We begin with your objectives, overall budget, investment horizon and preferred level of involvement. A purchase intended to preserve wealth calls for a different perspective from a project focused on letting, renovation or a future sale."
+          },
+          {
+            "type": "h3",
+            "text": "The property and its context"
+          },
+          {
+            "type": "p",
+            "text": "We help assess the location, condition, intended use and possible works. The analysis is tailored to each purchase, in Barcelona and across Catalonia, to understand both its suitability and its limitations."
+          },
+          {
+            "type": "h3",
+            "text": "The full cost of the decision"
+          },
+          {
+            "type": "p",
+            "text": "Our perspective includes the purchase price, taxes, transaction costs, potential renovation and ongoing obligations. We work with scenarios and clearly stated assumptions to help you make an informed decision."
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-03",
+        "label": "Legal and tax perspective",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "The purchase, its tax implications and your assets, considered together"
+          },
+          {
+            "type": "h3",
+            "text": "Property legal advice"
+          },
+          {
+            "type": "p",
+            "text": "A review of the legal position of the property and the documents relevant to the purchase: ownership, charges, contracts and terms. We coordinate the checks each transaction requires before commitments are made and through completion."
+          },
+          {
+            "type": "h3",
+            "text": "Tax advice for your investment"
+          },
+          {
+            "type": "p",
+            "text": "We consider the taxes and obligations associated with acquisition, ownership, income and a future sale. Your tax residence, ownership structure and use of the property inform the analysis; every situation needs an individual assessment."
+          },
+          {
+            "type": "h3",
+            "text": "Coordinating the transaction"
+          },
+          {
+            "type": "p",
+            "text": "We connect property, legal and tax decisions with the documentation, people and timetable involved in the purchase. The proposal sets out the scope of the advice and the professionals required."
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-04",
+        "label": "International investors",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Invest from abroad, with a point of contact here"
+          },
+          {
+            "type": "p",
+            "text": "If your assets are outside Spain, we help prepare the documentary and tax aspects of the investment and coordinate the arrival of funds with the banks and professionals involved. Identification, representation and evidence of the source of funds are considered according to your circumstances."
+          },
+          {
+            "type": "p",
+            "text": "Planning takes account of the countries involved, banking timescales, currency and any applicable reporting obligations. Transfers are carried out through financial institutions; Solera Estates provides support and coordination."
+          },
+          {
+            "type": "p",
+            "text": "Investing and moving your residence are separate decisions. If you also plan to live in Barcelona, we connect the property project with arrival support and an assessment of your personal circumstances."
+          },
+          {
+            "type": "link",
+            "text": "Explore our support for moving to Barcelona",
+            "href": "/en/relocation-barcelona/"
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-05",
+        "label": "After the purchase",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "The relationship continues beyond completion"
+          },
+          {
+            "type": "p",
+            "text": "Once the purchase is complete, the property needs attention. We can connect your investment with renovation coordination, property management and care, or advice on a future sale, according to the agreed scope."
+          },
+          {
+            "type": "p",
+            "text": "We do not operate a public property catalogue or promise investment returns. We consider each project privately, assessing opportunities and risks against the information available."
+          },
+          {
+            "type": "link",
+            "text": "Explore property management",
+            "href": "/en/property-management-barcelona/"
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-06",
+        "label": "Frequently asked questions",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "Before investing in Catalonia"
+          },
+          {
+            "type": "h3",
+            "text": "Do you work with Spanish and international investors?"
+          },
+          {
+            "type": "p",
+            "text": "Yes. The service is for people investing from Spain as well as those whose residence or assets are in another country. Our support is tailored to the transaction and the needs of each investor."
+          },
+          {
+            "type": "h3",
+            "text": "Does the service include legal and tax advice?"
+          },
+          {
+            "type": "p",
+            "text": "We bring both perspectives into the investment project. Before work begins, the proposal specifies the reviews, procedures and professionals included, together with any work that needs a separate engagement."
+          },
+          {
+            "type": "h3",
+            "text": "Can you help me bring funds from abroad?"
+          },
+          {
+            "type": "p",
+            "text": "We support the preparation of documentation and coordination with the institutions and advisers involved. The assessment depends on the country of origin, ownership of the funds and your tax circumstances; financial institutions handle and approve the transfer."
+          },
+          {
+            "type": "h3",
+            "text": "Do you guarantee returns or tax savings?"
+          },
+          {
+            "type": "p",
+            "text": "No. Property investment carries risks and its results depend on the asset, market, costs and the investor’s circumstances. Tax advice is based on the applicable rules and your individual situation."
+          },
+          {
+            "type": "h3",
+            "text": "Can I engage you for a specific transaction?"
+          },
+          {
+            "type": "p",
+            "text": "Yes. We can consider a defined assignment or support across several stages. The first conversation helps us understand what you need and prepare an appropriate proposal."
+          }
+        ]
+      },
+      {
+        "id": "INVERSION-07",
+        "label": "Your next decision",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "An investment begins with a considered conversation"
+          },
+          {
+            "type": "p",
+            "text": "Tell us what you want to build, where you are investing from and how far your plans have progressed. We will help shape the next step with the attention it deserves."
+          },
+          {
+            "type": "link",
+            "text": "Make a property investment enquiry",
+            "href": "/en/contact/#formulario"
+          }
+        ]
+      }
+    ],
+    "id": "INVERSION"
+  }
+]

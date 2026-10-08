@@ -27,7 +27,7 @@ const contact = pageFor('CONTACTO', lang).route;
 <nav id="menu-panel" class="menu-panel" hidden aria-label={tx(lang, 'Todas las páginas', 'All pages')}>
   <div class="menu-inner">
     <p class="eyebrow">Solera Estates · Barcelona</p>
-    <div class="menu-main">{['HOME', 'FIRMA', 'GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'JOURNAL', 'CONTACTO'].map(id => {
+    <div class="menu-main">{['HOME', 'FIRMA', 'GESTION', 'REFORMA', 'VENTA', 'LLEGADA', 'INVERSION', 'JOURNAL', 'CONTACTO'].map(id => {
       const item = pageFor(id, lang);
       return <a class="menu-link" href={item.route}>{item.name}</a>;
     })}</div>
