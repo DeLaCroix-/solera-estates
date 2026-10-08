@@ -31,7 +31,7 @@ if(form){
    const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json'},body:bodyData,signal:AbortSignal.timeout(30000)});
    const result=await response.json().catch(()=>null);
    if(!response.ok||!result||result.ok===false||result.error||result.errors?.length){message(t('No hemos podido enviar tu consulta. Conserva el mensaje e inténtalo de nuevo.','We could not send your enquiry. Keep a copy of your message and try again.'),true);return;}
-   confirmEnquiry(form.id);
+   await confirmEnquiry(form.id);
    try{sessionStorage.setItem('solera-enquiry-confirmed',String(Date.now()));}catch{message(t('Hemos recibido tu consulta. Revisaremos la información para valorar el siguiente paso.','We have received your enquiry. We will review the information to consider the next step.'));form.reset();return;}
    window.location.assign(en?'/en/thank-you/':'/gracias/');
   }catch{message(t('No hemos podido confirmar el envío. Comprueba tu conexión y evita reenviar varias veces seguidas.','We could not confirm submission. Check your connection and avoid sending repeatedly.'),true);}

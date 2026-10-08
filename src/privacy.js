@@ -106,9 +106,19 @@ window.addEventListener('storage', event => {
 
 export function confirmEnquiry(formId) {
   document.dispatchEvent(new CustomEvent('nat:form:confirmed', { detail: { formId } }));
-  if (analyticsAllowed && typeof window.gtag === 'function') {
-    window.gtag('event', 'generate_lead', { form_id: formId, method: 'contact_form' });
-  }
+  if (!analyticsAllowed || typeof window.gtag !== 'function') return Promise.resolve();
+  // Give the confirmed conversion time to leave before navigating away.
+  // A blocked Google tag must never block the enquiry's success page.
+  return new Promise(resolve => {
+    const timeout = setTimeout(resolve, 1500);
+    window.gtag('event', 'generate_lead', {
+      send_to: measurement.ga4Id,
+      form_id: formId,
+      method: 'contact_form',
+      event_callback: () => { clearTimeout(timeout); resolve(); },
+      event_timeout: 1500,
+    });
+  });
 }
 
 const goUp = document.querySelector('.go-up');
