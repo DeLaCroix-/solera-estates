@@ -7,6 +7,9 @@
   PUBLIC_SITE_INDEXABLE = "false"
   PUBLIC_SITE_URL = "https://soleraestates.eu"
 
+[context.production.environment]
+  PUBLIC_SITE_INDEXABLE = "true"
+
 [dev]
   command = "npm run dev"
   targetPort = 4179

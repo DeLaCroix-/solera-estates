@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PUBLIC_SITE_URL: https://soleraestates.eu
-      PUBLIC_SITE_INDEXABLE: "false"
+      PUBLIC_SITE_INDEXABLE: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -1,6 +1,6 @@
 {
   "origin": "https://soleraestates.eu",
-  "indexable": false,
+  "indexable": true,
   "formEndpoint": "https://formspree.io/f/xnpjplje",
   "formEnabled": true,
   "legalReady": true,

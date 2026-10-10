@@ -30,9 +30,9 @@ No ejecutar los dos servidores a la vez.
 
 Netlify publica dist. netlify.toml define Node 22 y npm run check:all. La web no depende de Sites ni incluye su manifiesto. Los documentos editoriales, informes y código fuente no se publican en dist.
 
-La configuración está en src/site-config.json. PUBLIC_SITE_URL y PUBLIC_SITE_INDEXABLE definen el origen y la indexación. La revisión conserva noindex en HTML y cabeceras; noindex no restringe el acceso. El sitemap queda vacío mientras esté desactivada la indexación. Journal espera artículos reales.
+La configuración está en src/site-config.json. PUBLIC_SITE_URL y PUBLIC_SITE_INDEXABLE definen el origen y la indexación. La producción permite indexar las páginas comerciales y los artículos publicados, con sitemap de las URLs indexables. Las páginas legales, de agradecimiento y de error, y el blog sin artículos de su idioma, conservan noindex. Las vistas previas de Netlify y las comprobaciones de pull requests mantienen la indexación desactivada; noindex no restringe el acceso.
 
-El dominio definitivo es soleraestates.eu, configurado en Arsys y Netlify. Se han conservado los registros DNS del correo. El repositorio original DeLaCroix-/solera-estates publica desde master mediante GitHub Actions. Search Console está verificado para https://soleraestates.eu/ y la analítica está instalada. La activación de la indexación sigue pendiente de una decisión específica.
+El dominio definitivo es soleraestates.eu, configurado en Arsys y Netlify. Se han conservado los registros DNS del correo. El repositorio original DeLaCroix-/solera-estates publica desde master mediante GitHub Actions. Search Console está verificado para https://soleraestates.eu/ y la analítica está instalada. La indexación de producción se ha activado por solicitud de Eduardo el 10 de octubre de 2026.
 
 ## Privacidad y medición
 
