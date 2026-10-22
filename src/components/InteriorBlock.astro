@@ -52,7 +52,7 @@ const journalServices = ['GESTION', 'REFORMA', 'VENTA', 'LLEGADA'];
   {groups.length ? <div class:list={['service-principles', { 'service-principles--pair': groups.length === 2 }]}>{groups.map(g => <article><span class="principle-line" aria-hidden="true"></span><h3 set:html={marked.parseInline(g.title)} /><ContentNodes nodes={g.nodes} /></article>)}</div> : <div class="service-overview-copy"><ContentNodes nodes={body} /></div>}
 </section> : b.id === 'FIRMA-02' ? <section class="firm-manifesto wrap" {...attrs}>
   <p class="eyebrow">{tx(l, 'Nuestra razón de ser', 'Our purpose')}</p><div class="firm-manifesto-grid"><ContentNodes nodes={titles} /><div><ContentNodes nodes={body} /></div></div>
-  <figure class="firm-panorama"><ResponsiveImage name="living" lang={l} sizes="100vw" /><figcaption>Private Real Estate Advisory</figcaption></figure>
+  <figure class="firm-panorama"><ResponsiveImage name="living" lang={l} sizes="100vw" /><figcaption>{tx(l, 'Asesoramiento inmobiliario privado', 'Private Real Estate Advisory')}</figcaption></figure>
 </section> : b.id === 'FIRMA-04' ? <section class="firm-relationship wrap" {...attrs}>
   <figure><ResponsiveImage name="terrace" lang={l} sizes="(max-width: 760px) 100vw, 38vw" /></figure><div><p class="eyebrow">{tx(l, 'Personal, desde el primer día', 'Personal, from the first day')}</p><ContentNodes nodes={b.nodes} /></div>
 </section> : <section class:list={['interior-essay', { 'interior-essay--inset': isService && i === 4, 'interior-essay--contact': p.id === 'CONTACTO' }]} {...attrs}>

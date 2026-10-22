@@ -27,14 +27,14 @@ const method = p.blocks[2];
       {confirmed ? <ContentNodes nodes={copy} /> : <p>{tx(p.lang, 'Esta página no confirma un envío. Para iniciar una consulta, utiliza nuestro contacto.', 'This page does not confirm a submission. To start an enquiry, use our contact page.')}</p>}
       <div class="interior-actions">{confirmed ? links.map((link, i) => <a class:list={['interior-action', { 'is-primary': i === 0 }]} href={link.href}>{link.text}<span aria-hidden="true">↗</span></a>) : <a class="interior-action is-primary" href={pageFor('CONTACTO', p.lang).route}>{tx(p.lang, 'Ir a contacto', 'Go to contact')}<span aria-hidden="true">↗</span></a>}</div>
     </div>
-    <p class="utility-signature">Private Real Estate Advisory · Barcelona</p>
+    <p class="utility-signature">{tx(p.lang, 'Asesoramiento inmobiliario privado', 'Private Real Estate Advisory')} · Barcelona</p>
   </div>
   <figure class="utility-art"><ResponsiveImage name="hero" lang={p.lang} hero sizes="(max-width: 760px) 100vw, 50vw" /></figure>
 </section> : <>
   <section class:list={['interior-hero', `interior-hero--${p.id.toLowerCase()}`, { 'interior-hero--service': isService }]} data-block={b.id}>
     <div class="interior-hero-top wrap">
       <nav class="breadcrumbs" aria-label={tx(p.lang, 'Migas de pan', 'Breadcrumbs')}><a href={pageFor('HOME', p.lang).route}>{tx(p.lang, 'Inicio', 'Home')}</a><span aria-hidden="true"> / </span><span>{p.name}</span></nav>
-      <span class="interior-location">Private Real Estate Advisory · Barcelona</span>
+      <span class="interior-location">{tx(p.lang, 'Asesoramiento inmobiliario privado', 'Private Real Estate Advisory')} · Barcelona</span>
     </div>
     <div class="interior-hero-layout wrap">
       <div class="interior-hero-heading">
