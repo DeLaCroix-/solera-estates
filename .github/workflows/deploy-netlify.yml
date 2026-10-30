@@ -26,7 +26,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run check:all
+      - name: Build with CRM failure reporting
+        env:
+          SEO_BUILD_REPORT_SECRET: ${{ secrets.SEO_BUILD_REPORT_SECRET }}
+        run: npm run build:reported
       - name: Deploy validated master branch
         if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         env:

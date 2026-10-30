@@ -1,0 +1,7 @@
+{
+  "site": "bb108c1d-638b-4a7d-bdb6-0e54ba52c831",
+  "repo": "solera-estates",
+  "branch": "master",
+  "provider": "github",
+  "script": "check:all"
+}
