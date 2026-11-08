@@ -59,3 +59,59 @@
 .article-conversation{padding-top:85px;padding-bottom:90px;background:#e9e4d9;text-align:center;color:var(--green)}.article-conversation .eyebrow{font-size:11px}.article-conversation h2{max-width:850px;margin:0 auto 36px;font-size:clamp(39px,4.5vw,68px)}.article-conversation .button span{margin-left:25px}
 @media(max-width:1100px){.blog-opening-note{width:62%;margin-top:-130px}.blog-feature-copy{margin-left:-35px;padding:35px 30px}.blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.article-reading{grid-template-columns:180px minmax(0,1fr);gap:7%}.blog-perspectives{gap:8%}}
 @media(max-width:760px){.blog-masthead{padding-top:125px;padding-bottom:30px}.blog-kicker{padding-bottom:16px}.blog-kicker .eyebrow{font-size:10px}.blog-kicker>span{display:none}.blog-masthead h1{font-size:clamp(59px,13.5vw,100px);margin:22px 0 20px;letter-spacing:-.055em}.blog-masthead-bottom{display:block}.blog-masthead-bottom>p{font-size:29px;margin-bottom:15px}.blog-masthead-bottom>span{display:block;max-width:330px;font-size:12px}.blog-opening{padding-bottom:60px}.blog-opening-image{height:380px}.blog-opening-image img{object-position:60% center}.blog-photo-caption{right:19px;bottom:88px;font-size:9px}.blog-opening-note{width:calc(100% - 18px);margin:-70px 0 0 18px;padding:32px 26px}.blog-opening-note h2{font-size:37px}.blog-opening-note .eyebrow{font-size:9px;margin-bottom:23px}.blog-opening-note>p:not(.eyebrow){font-size:13px;margin-bottom:25px}.blog-perspectives{grid-template-columns:1fr;gap:35px;padding-top:60px;padding-bottom:65px}.blog-perspectives-intro h2{font-size:42px}.blog-theme{padding:25px 0}.blog-theme-title{font-size:30px}.blog-feature{grid-template-columns:1fr;padding-top:5px;padding-bottom:60px}.blog-feature-image{aspect-ratio:1.05}.blog-feature-copy{margin:-40px 0 0 18px;padding:30px 26px}.blog-feature-copy h2{font-size:38px}.blog-feature-copy>p:not(.eyebrow){font-size:13px}.blog-feature-copy .eyebrow{font-size:9px}.blog-collection{padding-top:60px;padding-bottom:65px}.blog-section-heading{display:block;margin-bottom:35px}.blog-section-heading .eyebrow{margin-bottom:20px}.blog-grid,.blog-grid-related{grid-template-columns:1fr;gap:44px}.blog-card h3{font-size:34px}.article-heading{padding-top:121px;padding-bottom:32px;text-align:left}.article-breadcrumb{justify-content:flex-start;margin-bottom:35px}.article-heading .eyebrow{margin-bottom:22px;font-size:10px}.article-heading h1{font-size:45px;margin-bottom:25px}.article-standfirst{font-size:15px;margin-bottom:25px}.article-byline{justify-content:flex-start;gap:6px 18px;font-size:10px}.article-cover{height:310px;margin-bottom:35px}.article-reading{grid-template-columns:1fr;gap:35px;padding-bottom:65px}.article-rail{position:static;padding-top:20px}.article-rail nav{gap:10px}.article-back{display:none}.article-prose{font-size:16px;line-height:1.9}.article-prose>p:first-child{font-size:19px}.article-prose h2{font-size:36px;margin-top:40px}.article-prose h3{font-size:28px}.article-prose blockquote{font-size:29px;padding-left:24px}.article-conversation{padding-top:60px;padding-bottom:65px}.article-conversation h2{font-size:41px}}
+
+/* CRM content is deliberately free of editor CSS. The site owns these blocks. */
+.article-prose a:not(.seo-cta-btn) {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: #8d9984;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  text-decoration-skip-ink: auto;
+}
+.article-prose a:not(.seo-cta-btn):hover { color: var(--green); text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+.article-prose a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.article-prose .seo-cta-block {
+  margin: 2.25rem 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 0;
+  background: #ebe7dc;
+}
+.article-prose .seo-cta-block p { margin: 0; color: var(--green); font-size: 1.05rem; line-height: 1.7; font-weight: 500; }
+.article-prose .seo-cta-btn-wrap { margin-top: 1.25rem; }
+.article-prose .seo-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  max-width: 100%;
+  padding: .85rem 1.5rem;
+  border: 1px solid var(--green);
+  border-radius: 0;
+  background: var(--green);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+.article-prose .seo-cta-btn:hover { background: var(--ink); color: var(--paper); }
+.article-prose .seo-faq-section { margin: 3rem 0; padding: clamp(1.1rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: 0; background: #ebe7dc; }
+.article-prose .seo-faq-section > h2 { margin: 0 0 1.5rem; font-size: clamp(1.35rem, 2.5vw, 1.6rem); line-height: 1.35; }
+.article-prose .seo-faq-item { margin: .75rem 0 0; border: 1px solid var(--line); border-radius: 0; background: #fff; overflow: hidden; }
+.article-prose .seo-faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 56px; padding: 1rem 1.1rem; color: var(--green); font-family: var(--sans); font-size: .95rem; font-weight: 600; line-height: 1.55; cursor: pointer; list-style: none; }
+.article-prose .seo-faq-item summary::-webkit-details-marker { display: none; }
+.article-prose .seo-faq-item summary > span[aria-hidden="true"] { display: none; }
+.article-prose .seo-faq-item summary::after { content: '+'; flex: 0 0 auto; font: 500 1.5rem/1 var(--sans); }
+.article-prose .seo-faq-item[open] summary::after { content: '−'; }
+.article-prose .seo-faq-item summary:hover { background: #ebe7dc; }
+.article-prose .seo-faq-item summary:focus-visible { outline: 2px solid var(--green); outline-offset: -3px; }
+.article-prose .seo-faq-item > p, .article-prose .seo-faq-item > div { margin: 0; padding: 0 1.1rem 1.25rem; color: var(--ink); font-size: 1rem; line-height: 1.75; }
+.article-prose .seo-faq-item > div p:last-child { margin-bottom: 0; }
+@media (max-width: 600px) { .article-prose .seo-cta-btn { width: 100%; } }
+
+.article-prose .seo-faq-section > h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; }
