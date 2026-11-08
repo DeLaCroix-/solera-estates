@@ -8,6 +8,15 @@ import { stringify } from 'yaml';
 import { parseHTML } from 'linkedom';
 import { loadBlog, renderBlogBody, optimizeBlogImage } from './blog-content.mjs';
 
+test('CRM CTA, FAQ and deployment marker survive without unsafe editor attributes', async () => {
+  const {html} = await renderBlogBody('<div class="seo-cta-block arbitrary" style="position:fixed" onclick="bad()"><p>Consulta</p><div class="seo-cta-btn-wrap"><a class="seo-cta-btn" href="/contacto/">Consultar</a></div></div><section class="seo-faq-section"><h2>Preguntas</h2><details class="seo-faq-item"><summary>Pregunta</summary><p>Respuesta</p></details></section><span hidden aria-hidden="true" data-nat-publication="test-publication"></span><script>bad()</script>');
+  const {document} = parseHTML(html);
+  for (const name of ['seo-cta-block', 'seo-cta-btn-wrap', 'seo-cta-btn', 'seo-faq-section', 'seo-faq-item']) assert.ok(document.querySelector('.'+name), name);
+  assert.equal(document.querySelector('details summary').textContent, 'Pregunta');
+  assert.ok(document.querySelector('[hidden][data-nat-publication="test-publication"]'));
+  assert.doesNotMatch(html, /onclick|position:fixed|arbitrary|<script/);
+});
+
 test('NAT CRM publication contract: bilingual articles, translations, dates, safe HTML and local images', async () => {
   const temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'solera-blog-test-'));
   const directory = path.join(temporary, 'content');

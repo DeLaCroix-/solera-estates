@@ -38,8 +38,10 @@ export async function optimizeBlogImage(src, alt, publicRoot = 'public') {
 
 export async function renderBlogBody(source, { publicRoot = 'public', title = '' } = {}) {
   const sanitized = sanitizeHtml(marked.parse(source), {
-    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'figure', 'figcaption'],
-    allowedAttributes: { a: ['href', 'title'], img: ['src', 'alt', 'title'], th: ['colspan', 'rowspan', 'scope'], td: ['colspan', 'rowspan'] },
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'figure', 'figcaption', 'details', 'summary'],
+    allowedAttributes: { a: ['href', 'title', 'class'], div: ['class'], section: ['class'], details: ['class', 'open'], span: ['hidden', 'aria-hidden', 'data-nat-publication'], img: ['src', 'alt', 'title'], th: ['colspan', 'rowspan', 'scope'], td: ['colspan', 'rowspan'] },
+    allowedClasses: { a: ['seo-cta-btn'], div: ['seo-cta-block', 'seo-cta-btn-wrap', 'seo-faq-list', 'seo-faq-item'], section: ['seo-faq-section', 'seo-cta-block'], details: ['seo-faq-item'] },
+    nonBooleanAttributes: sanitizeHtml.defaults.nonBooleanAttributes.filter(name => name !== 'hidden'),
     allowedSchemes: ['https', 'http', 'mailto'],
     allowProtocolRelative: false,
     transformTags: { h1: 'h2' },
