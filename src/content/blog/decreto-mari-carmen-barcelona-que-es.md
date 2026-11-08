@@ -326,63 +326,63 @@ natSeoArticleId: "4a4423c9-8c07-4e3f-8dd9-f4f80bf07563"
 </div>
 <div>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; es el Decreto Mari Carmen?<span>+</span></summary>
+<summary><h3>¿Qué es el Decreto Mari Carmen?</h3><span>+</span></summary>
 <div>
-<div>Es el nombre popular asociado al paquete estatal de medidas de vivienda impulsado en 2026 tras el desahucio de Mar&iacute;a del Carmen Abascal. Actualmente una de sus principales normas es el Real Decreto-ley 29/2026, en vigor desde el 8 de octubre de 2026.</div>
+<div>Es el nombre popular asociado al paquete estatal de medidas de vivienda impulsado en 2026 tras el desahucio de María del Carmen Abascal. Actualmente una de sus principales normas es el Real Decreto-ley 29/2026, en vigor desde el 8 de octubre de 2026.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;El Decreto Mari Carmen es una ley espec&iacute;fica de Barcelona?<span>+</span></summary>
+<summary><h3>¿El Decreto Mari Carmen es una ley específica de Barcelona?</h3><span>+</span></summary>
 <div>
-<div>No. Se trata de normativa estatal y, por tanto, no es un decreto municipal de Barcelona. Sin embargo, determinadas medidas tienen especial importancia en Barcelona porque la ciudad est&aacute; declarada zona de mercado residencial tensionado.</div>
+<div>No. Se trata de normativa estatal y, por tanto, no es un decreto municipal de Barcelona. Sin embargo, determinadas medidas tienen especial importancia en Barcelona porque la ciudad está declarada zona de mercado residencial tensionado.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Por qu&eacute; se llama Decreto Mari Carmen?<span>+</span></summary>
+<summary><h3>¿Por qué se llama Decreto Mari Carmen?</h3><span>+</span></summary>
 <div>
-<div>El nombre procede del caso de Mar&iacute;a del Carmen Abascal, una mujer de 87 a&ntilde;os cuyo desahucio gener&oacute; una fuerte movilizaci&oacute;n social. El propio RDL 29/2026 hace referencia expresa a su caso en la exposici&oacute;n de motivos.</div>
+<div>El nombre procede del caso de María del Carmen Abascal, una mujer de 87 años cuyo desahucio generó una fuerte movilización social. El propio RDL 29/2026 hace referencia expresa a su caso en la exposición de motivos.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Siguen siendo v&aacute;lidos los contratos de alquiler de 11 meses?<span>+</span></summary>
+<summary><h3>¿Siguen siendo válidos los contratos de alquiler de 11 meses?</h3><span>+</span></summary>
 <div>
-<div>La duraci&oacute;n de 11 meses no convierte por s&iacute; sola un contrato en ilegal ni garantiza que sea temporal. Lo esencial es que exista una causa real y acreditable que justifique la necesidad temporal de la vivienda. Si en realidad satisface una necesidad permanente, puede aplicarse el r&eacute;gimen de vivienda habitual.</div>
+<div>La duración de 11 meses no convierte por sí sola un contrato en ilegal ni garantiza que sea temporal. Lo esencial es que exista una causa real y acreditable que justifique la necesidad temporal de la vivienda. Si en realidad satisface una necesidad permanente, puede aplicarse el régimen de vivienda habitual.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; cambia en el alquiler por habitaciones?<span>+</span></summary>
+<summary><h3>¿Qué cambia en el alquiler por habitaciones?</h3><span>+</span></summary>
 <div>
-<div>La nueva regulaci&oacute;n integra expresamente el alquiler parcial de habitaciones dentro del r&eacute;gimen de vivienda habitual o temporal seg&uacute;n la necesidad que satisfaga. Adem&aacute;s, la suma de las rentas de las habitaciones vigentes simult&aacute;neamente no puede superar la renta correspondiente al arrendamiento de la vivienda completa, con las limitaciones adicionales que procedan en zonas tensionadas.</div>
+<div>La nueva regulación integra expresamente el alquiler parcial de habitaciones dentro del régimen de vivienda habitual o temporal según la necesidad que satisfaga. Además, la suma de las rentas de las habitaciones vigentes simultáneamente no puede superar la renta correspondiente al arrendamiento de la vivienda completa, con las limitaciones adicionales que procedan en zonas tensionadas.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Se han prohibido los desahucios hasta 2030?<span>+</span></summary>
+<summary><h3>¿Se han prohibido los desahucios hasta 2030?</h3><span>+</span></summary>
 <div>
-<div>No de forma general. Existen medidas espec&iacute;ficas de suspensi&oacute;n para determinados casos de vulnerabilidad sin alternativa habitacional. Las condiciones dependen, entre otros factores, del tipo de propietario o demandante y de la situaci&oacute;n del ocupante.</div>
+<div>No de forma general. Existen medidas específicas de suspensión para determinados casos de vulnerabilidad sin alternativa habitacional. Las condiciones dependen, entre otros factores, del tipo de propietario o demandante y de la situación del ocupante.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Puede un propietario particular recuperar su vivienda?<span>+</span></summary>
+<summary><h3>¿Puede un propietario particular recuperar su vivienda?</h3><span>+</span></summary>
 <div>
-<div>El Decreto Mari Carmen no elimina de forma general la posibilidad de recuperar una vivienda. Deben analizarse el tipo de contrato, su duraci&oacute;n, los plazos de preaviso, las causas legales y, cuando exista un procedimiento de desahucio, las circunstancias del propietario y del ocupante.</div>
+<div>El Decreto Mari Carmen no elimina de forma general la posibilidad de recuperar una vivienda. Deben analizarse el tipo de contrato, su duración, los plazos de preaviso, las causas legales y, cuando exista un procedimiento de desahucio, las circunstancias del propietario y del ocupante.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;El propietario puede cobrar al inquilino los honorarios de la inmobiliaria?<span>+</span></summary>
+<summary><h3>¿El propietario puede cobrar al inquilino los honorarios de la inmobiliaria?</h3><span>+</span></summary>
 <div>
-<div>El RDL 29/2026 establece que los gastos de gesti&oacute;n inmobiliaria y formalizaci&oacute;n del contrato no pueden repercutirse directa ni indirectamente al arrendatario en los contratos sometidos a esta regulaci&oacute;n.</div>
+<div>El RDL 29/2026 establece que los gastos de gestión inmobiliaria y formalización del contrato no pueden repercutirse directa ni indirectamente al arrendatario en los contratos sometidos a esta regulación.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Ya son indefinidos los contratos de alquiler por el Decreto Mari Carmen?<span>+</span></summary>
+<summary><h3>¿Ya son indefinidos los contratos de alquiler por el Decreto Mari Carmen?</h3><span>+</span></summary>
 <div>
-<div>No debe expresarse as&iacute;. El RDL 28/2026 contempla nuevas pr&oacute;rrogas sucesivas de cinco o siete a&ntilde;os y otras modificaciones en la extinci&oacute;n del contrato, pero su entrada en vigor est&aacute; prevista para el 15 de noviembre de 2026. A fecha 18 de octubre esas reglas todav&iacute;a no est&aacute;n vigentes.</div>
+<div>No debe expresarse así. El RDL 28/2026 contempla nuevas prórrogas sucesivas de cinco o siete años y otras modificaciones en la extinción del contrato, pero su entrada en vigor está prevista para el 15 de noviembre de 2026. A fecha 18 de octubre esas reglas todavía no están vigentes.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; deber&iacute;a hacer ahora si tengo un piso alquilado en Barcelona?<span>+</span></summary>
+<summary><h3>¿Qué debería hacer ahora si tengo un piso alquilado en Barcelona?</h3><span>+</span></summary>
 <div>
-<div>Conviene revisar la fecha y modalidad del contrato, la renta, sus actualizaciones, la causa de temporalidad si existe, las pr&oacute;rrogas y la situaci&oacute;n del inmueble dentro de la zona tensionada antes de renovar, extinguir o modificar el arrendamiento.</div>
+<div>Conviene revisar la fecha y modalidad del contrato, la renta, sus actualizaciones, la causa de temporalidad si existe, las prórrogas y la situación del inmueble dentro de la zona tensionada antes de renovar, extinguir o modificar el arrendamiento.</div>
 </div>
 </details>
 </div>

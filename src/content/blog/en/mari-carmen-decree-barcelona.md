@@ -326,63 +326,63 @@ natSeoArticleId: "4a4423c9-8c07-4e3f-8dd9-f4f80bf07563"
 </div>
 <div>
 <details class="seo-faq-item">
-<summary>What is the Mari Carmen Decree?<span>+</span></summary>
+<summary><h3>What is the Mari Carmen Decree?</h3><span>+</span></summary>
 <div>
-<div>It is the popular name associated with the national housing measures package introduced in 2026 following the eviction of Mar&iacute;a del Carmen Abascal. One of its main current regulations is Royal Decree-Law 29/2026, in force since 8 October 2026.</div>
+<div>It is the popular name associated with the national housing measures package introduced in 2026 following the eviction of María del Carmen Abascal. One of its main current regulations is Royal Decree-Law 29/2026, in force since 8 October 2026.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Is the Mari Carmen Decree a specific law for Barcelona?<span>+</span></summary>
+<summary><h3>Is the Mari Carmen Decree a specific law for Barcelona?</h3><span>+</span></summary>
 <div>
 <div>No. It is national legislation and is therefore not a municipal decree of Barcelona. However, certain measures are particularly important in Barcelona because the city has been declared a stressed residential market area.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Why is it called the Mari Carmen Decree?<span>+</span></summary>
+<summary><h3>Why is it called the Mari Carmen Decree?</h3><span>+</span></summary>
 <div>
-<div>The name comes from the case of Mar&iacute;a del Carmen Abascal, an 87-year-old woman whose eviction generated strong social mobilisation. RDL 29/2026 itself expressly refers to her case in its explanatory memorandum.</div>
+<div>The name comes from the case of María del Carmen Abascal, an 87-year-old woman whose eviction generated strong social mobilisation. RDL 29/2026 itself expressly refers to her case in its explanatory memorandum.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Are 11-month rental contracts still valid?<span>+</span></summary>
+<summary><h3>Are 11-month rental contracts still valid?</h3><span>+</span></summary>
 <div>
 <div>An 11-month duration does not in itself make a contract illegal or guarantee that it is temporary. What is essential is that there is a genuine, demonstrable reason justifying the temporary need for the property. If it actually meets a permanent need, the primary residence regime may apply.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>What changes for room rentals?<span>+</span></summary>
+<summary><h3>What changes for room rentals?</h3><span>+</span></summary>
 <div>
 <div>The new regulation expressly brings partial room rentals within the primary residence or temporary rental regime, depending on the need they meet. In addition, the total rents for rooms simultaneously in force cannot exceed the rent corresponding to the rental of the entire property, subject to any additional restrictions applicable in stressed areas.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Have evictions been prohibited until 2030?<span>+</span></summary>
+<summary><h3>Have evictions been prohibited until 2030?</h3><span>+</span></summary>
 <div>
-<div>Not generally. There are specific suspension measures for certain cases of vulnerability without alternative housing. The conditions depend, among other factors, on the type of owner or claimant and the occupant&rsquo;s situation.</div>
+<div>Not generally. There are specific suspension measures for certain cases of vulnerability without alternative housing. The conditions depend, among other factors, on the type of owner or claimant and the occupant’s situation.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Can a private owner recover their property?<span>+</span></summary>
+<summary><h3>Can a private owner recover their property?</h3><span>+</span></summary>
 <div>
 <div>The Mari Carmen Decree does not generally eliminate the possibility of recovering a property. The type and duration of the contract, notice periods, legal grounds and, where eviction proceedings exist, the circumstances of the owner and occupant must all be analysed.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Can the owner charge estate agency fees to the tenant?<span>+</span></summary>
+<summary><h3>Can the owner charge estate agency fees to the tenant?</h3><span>+</span></summary>
 <div>
 <div>RDL 29/2026 establishes that property management and contract formalisation costs cannot be passed on, directly or indirectly, to the tenant in contracts subject to this regulation.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Have rental contracts become indefinite under the Mari Carmen Decree?<span>+</span></summary>
+<summary><h3>Have rental contracts become indefinite under the Mari Carmen Decree?</h3><span>+</span></summary>
 <div>
 <div>It should not be expressed in those terms. RDL 28/2026 provides for new successive extensions of five or seven years and other changes to contract termination, but it is not due to enter into force until 15 November 2026. As of 18 October, those rules are not yet in force.</div>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>What should I do now if I own a rented flat in Barcelona?<span>+</span></summary>
+<summary><h3>What should I do now if I own a rented flat in Barcelona?</h3><span>+</span></summary>
 <div>
-<div>It is advisable to review the contract date and type, rent, rent reviews, the temporary reason where applicable, extensions and the property&rsquo;s position within the stressed area before renewing, terminating or amending the tenancy.</div>
+<div>It is advisable to review the contract date and type, rent, rent reviews, the temporary reason where applicable, extensions and the property’s position within the stressed area before renewing, terminating or amending the tenancy.</div>
 </div>
 </details>
 </div>

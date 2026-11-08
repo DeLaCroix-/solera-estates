@@ -182,31 +182,31 @@ natSeoArticleId: "9414d8e6-76fd-485f-8aff-5d114df148dd"
   </div>
 </div>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; son las arras penitenciarias?</summary>
-<div>Son unas arras que permiten desistir de la compraventa asumiendo una consecuencia econ&oacute;mica. Si desiste el comprador, pierde la cantidad entregada; si desiste el vendedor, debe devolverla doblada.</div>
+<summary><h3>¿Qué son las arras penitenciarias?</h3></summary>
+<div>Son unas arras que permiten desistir de la compraventa asumiendo una consecuencia económica. Si desiste el comprador, pierde la cantidad entregada; si desiste el vendedor, debe devolverla doblada.</div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;En Catalu&ntilde;a las arras son penitenciarias autom&aacute;ticamente?</summary>
-<div>No. El C&oacute;digo Civil de Catalu&ntilde;a establece que la cantidad entregada por el comprador se entiende como arras confirmatorias. Para que sean penitenciarias deben pactarse expresamente.</div>
+<summary><h3>¿En Cataluña las arras son penitenciarias automáticamente?</h3></summary>
+<div>No. El Código Civil de Cataluña establece que la cantidad entregada por el comprador se entiende como arras confirmatorias. Para que sean penitenciarias deben pactarse expresamente.</div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Cu&aacute;nto se paga de arras en Barcelona?</summary>
+<summary><h3>¿Cuánto se paga de arras en Barcelona?</h3></summary>
 <div>La ley no establece un porcentaje obligatorio. En muchas operaciones residenciales se utiliza como referencia alrededor del 10 % del precio, pero comprador y vendedor pueden pactar otra cantidad.</div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Pierdo las arras si el banco no me concede la hipoteca?</summary>
-<div>No necesariamente. En Catalu&ntilde;a, si el contrato prev&eacute; la financiaci&oacute;n por una entidad de cr&eacute;dito, el comprador puede tener derecho a desistir y recuperar las cantidades entregadas cuando acredita documentalmente la negativa de la entidad dentro del plazo pactado, salvo pacto en contrario o negligencia del comprador.</div>
+<summary><h3>¿Pierdo las arras si el banco no me concede la hipoteca?</h3></summary>
+<div>No necesariamente. En Cataluña, si el contrato prevé la financiación por una entidad de crédito, el comprador puede tener derecho a desistir y recuperar las cantidades entregadas cuando acredita documentalmente la negativa de la entidad dentro del plazo pactado, salvo pacto en contrario o negligencia del comprador.</div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; ocurre si el vendedor se arrepiente?</summary>
+<summary><h3>¿Qué ocurre si el vendedor se arrepiente?</h3></summary>
 <div>Si se han pactado correctamente arras penitenciarias y el vendedor desiste, debe devolver doblada la cantidad recibida.</div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Es obligatorio firmar arras para comprar una vivienda?</summary>
+<summary><h3>¿Es obligatorio firmar arras para comprar una vivienda?</h3></summary>
 <div>No. El contrato de arras no es obligatorio, aunque es habitual utilizarlo cuando existe un periodo entre el acuerdo sobre la compra y la firma definitiva ante notario.</div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Puedo inscribir las arras en el Registro de la Propiedad?</summary>
-<div>En Catalu&ntilde;a existe una posibilidad espec&iacute;fica para arras penitenciarias pactadas por un m&aacute;ximo de seis meses y depositadas ante notario. En esos supuestos pueden hacerse constar en el Registro de la Propiedad y el inmueble queda afecto a su devoluci&oacute;n en los t&eacute;rminos previstos legalmente.</div>
+<summary><h3>¿Puedo inscribir las arras en el Registro de la Propiedad?</h3></summary>
+<div>En Cataluña existe una posibilidad específica para arras penitenciarias pactadas por un máximo de seis meses y depositadas ante notario. En esos supuestos pueden hacerse constar en el Registro de la Propiedad y el inmueble queda afecto a su devolución en los términos previstos legalmente.</div>
 </details>
 </section>

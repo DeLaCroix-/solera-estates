@@ -159,9 +159,9 @@ natSeoArticleId: "b7bca1ea-d979-4258-b30b-bd2deec96cbb"
 <section class="seo-faq-section">
 <h2>Preguntas frecuentes sobre inversi&oacute;n inmobiliaria en Barcelona</h2>
 <details class="seo-faq-item">
-<summary>&iquest;Cu&aacute;les son las zonas m&aacute;s interesantes para invertir en Barcelona en 2026?</summary>
+<summary><h3>¿Cuáles son las zonas más interesantes para invertir en Barcelona en 2026?</h3></summary>
 <div>
-<p>Eixample, Poblenou-22@, Gr&agrave;cia, La Sagrera-Sant Andreu y Sarri&agrave;-Sant Gervasi presentan perfiles especialmente interesantes, aunque la elecci&oacute;n depende del objetivo del inversor y del activo concreto.</p>
+<p>Eixample, Poblenou-22@, Gràcia, La Sagrera-Sant Andreu y Sarrià-Sant Gervasi presentan perfiles especialmente interesantes, aunque la elección depende del objetivo del inversor y del activo concreto.</p>
 <div class="seo-cta-block">
   <p>
     ¿Reside fuera de España y quiere invertir en Barcelona con seguridad? Le ayudamos a entender el mercado local y a coordinar todo el proceso desde el extranjero, con un interlocutor de confianza en la ciudad.
@@ -173,27 +173,27 @@ natSeoArticleId: "b7bca1ea-d979-4258-b30b-bd2deec96cbb"
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; zona es mejor para una inversi&oacute;n patrimonial?</summary>
+<summary><h3>¿Qué zona es mejor para una inversión patrimonial?</h3></summary>
 <div>
-<p>Eixample y Sarri&agrave;-Sant Gervasi suelen atraer a inversores que priorizan activos consolidados y producto prime. Eso no elimina el riesgo ni garantiza futuras plusval&iacute;as, por lo que debe analizarse cada inmueble.</p>
+<p>Eixample y Sarrià-Sant Gervasi suelen atraer a inversores que priorizan activos consolidados y producto prime. Eso no elimina el riesgo ni garantiza futuras plusvalías, por lo que debe analizarse cada inmueble.</p>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; zonas tienen m&aacute;s componente de transformaci&oacute;n?</summary>
+<summary><h3>¿Qué zonas tienen más componente de transformación?</h3></summary>
 <div>
-<p>Poblenou-22@ y La Sagrera-Sant Andreu tienen una tesis especialmente vinculada a transformaci&oacute;n urbana, actividad econ&oacute;mica e infraestructuras. Esto puede aportar recorrido, pero tambi&eacute;n introduce incertidumbre sobre plazos y evoluci&oacute;n futura.</p>
+<p>Poblenou-22@ y La Sagrera-Sant Andreu tienen una tesis especialmente vinculada a transformación urbana, actividad económica e infraestructuras. Esto puede aportar recorrido, pero también introduce incertidumbre sobre plazos y evolución futura.</p>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Qu&eacute; impuestos paga un inversor al comprar vivienda usada en Catalu&ntilde;a?</summary>
+<summary><h3>¿Qué impuestos paga un inversor al comprar vivienda usada en Cataluña?</h3></summary>
 <div>
-<p>Con car&aacute;cter general, el TPO aplica actualmente una escala progresiva del 10 %, 11 %, 12 % y 13 % por tramos de valor. Existen reglas espec&iacute;ficas, incluido un tipo del 20 % en determinados supuestos de grandes tenedores y edificios enteros de viviendas.</p>
+<p>Con carácter general, el TPO aplica actualmente una escala progresiva del 10 %, 11 %, 12 % y 13 % por tramos de valor. Existen reglas específicas, incluido un tipo del 20 % en determinados supuestos de grandes tenedores y edificios enteros de viviendas.</p>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>&iquest;Es suficiente elegir un buen barrio para asegurar una buena inversi&oacute;n?</summary>
+<summary><h3>¿Es suficiente elegir un buen barrio para asegurar una buena inversión?</h3></summary>
 <div>
-<p>No. El precio de compra, estado del edificio, cargas, regulaci&oacute;n del alquiler, fiscalidad, reforma y estrategia de salida pueden convertir dos inmuebles de la misma calle en inversiones completamente diferentes.</p>
+<p>No. El precio de compra, estado del edificio, cargas, regulación del alquiler, fiscalidad, reforma y estrategia de salida pueden convertir dos inmuebles de la misma calle en inversiones completamente diferentes.</p>
 </div>
 </details>
 </section>

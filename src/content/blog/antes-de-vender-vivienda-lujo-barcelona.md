@@ -130,31 +130,31 @@ natSeoArticleId: "1864162e-278c-490c-8b5b-679c289912bd"
 </section><section class="seo-faq-section">
 <h2>Preguntas frecuentes antes de vender una vivienda de lujo en Barcelona</h2>
 <details class="seo-faq-item">
-<summary>¿Cómo puedo saber cuánto vale mi vivienda de lujo en Barcelona?</summary>
+<summary><h3>¿Cómo puedo saber cuánto vale mi vivienda de lujo en Barcelona?</h3></summary>
 <p>Solicita una valoración que explique sus referencias y las diferencias con tu propiedad. Conviene distinguir precios anunciados de operaciones cerradas verificables y revisar ubicación, superficies, espacios exteriores, estado y características del edificio. Una cifra sin esa explicación resulta insuficiente para decidir el precio de salida.</p>
 </details>
 <details class="seo-faq-item">
-<summary>¿Puedo vender sin publicar fotografías ni anuncios en portales?</summary>
+<summary><h3>¿Puedo vender sin publicar fotografías ni anuncios en portales?</h3></summary>
 <p>Sí, puedes plantear una comercialización privada y acordar qué información se comparte con cada interesado. Antes de elegirla, concreta cómo se buscarán compradores y cuándo revisarás la estrategia. La ausencia de publicidad abierta no garantiza un precio superior ni una venta más rápida.</p>
 </details>
 <details class="seo-faq-item">
-<summary>¿Cuánto tiempo debería reservar para vender la propiedad?</summary>
+<summary><h3>¿Cuánto tiempo debería reservar para vender la propiedad?</h3></summary>
 <p>No hay un plazo único que pueda asegurarse sin estudiar la vivienda y la operación. Separa preparación, comercialización y formalización, y organiza tu calendario personal con margen. Pide una estimación basada en supuestos explícitos y evita comprometer una mudanza o una nueva compra sobre una fecha de venta no confirmada.</p>
 </details>
 <details class="seo-faq-item">
-<summary>¿Es necesario reformar una vivienda de lujo antes de venderla?</summary>
+<summary><h3>¿Es necesario reformar una vivienda de lujo antes de venderla?</h3></summary>
 <p>No necesariamente. Compara el estado actual con las actuaciones propuestas, su coste y el tiempo que requieren. Puedes preparar una presentación cuidada sin renovar toda la vivienda. Una reforma mayor debe valorarse como una inversión adicional, no como una garantía de recuperar el gasto.</p>
 </details>
 <details class="seo-faq-item">
-<summary>¿Qué ocurre si los metros de la escritura no coinciden con los del plano?</summary>
+<summary><h3>¿Qué ocurre si los metros de la escritura no coinciden con los del plano?</h3></summary>
 <p>Conviene aclarar la diferencia antes de anunciar una superficie. Solicita que se contrasten los documentos y, cuando sea necesario, una medición técnica. No elijas simplemente la cifra mayor: identifica qué superficie describe cada documento y qué discrepancias requieren revisión.</p>
 </details>
 <details class="seo-faq-item">
-<summary>¿Puedo preparar la venta si vivo fuera de España?</summary>
+<summary><h3>¿Puedo preparar la venta si vivo fuera de España?</h3></summary>
 <p>Sí, puedes organizar la preparación a distancia. Determina quién tendrá acceso a la vivienda, atenderá incidencias y coordinará visitas. Para la formalización, consulta con antelación los requisitos de identificación y representación que correspondan. Revisa también tu residencia fiscal y su efecto en la operación.</p>
 </details>
 <details class="seo-faq-item">
-<summary>¿Cómo podemos ayudarte en Solera Estates a decidir si vender?</summary>
+<summary><h3>¿Cómo podemos ayudarte en Solera Estates a decidir si vender?</h3></summary>
 <p>En Solera Estates acompañamos a propietarios de Barcelona a definir sus prioridades, organizar la información de la vivienda y valorar las propuestas de preparación. Acordamos qué tareas asumimos y cómo coordinarnos con los demás profesionales, sin dar por incluidas la comercialización, la representación o revisiones especializadas.</p>
 </details>
 </section>
