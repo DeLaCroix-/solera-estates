@@ -182,31 +182,31 @@ natSeoArticleId: "9414d8e6-76fd-485f-8aff-5d114df148dd"
   </div>
 </div>
 <details class="seo-faq-item">
-<summary>What are forfeit deposits?</summary>
+<summary><h3>What are forfeit deposits?</h3></summary>
 <div>They are deposits that allow either party to withdraw from the sale and purchase while accepting a financial consequence. If the buyer withdraws, they lose the amount paid; if the seller withdraws, they must return it in double.</div>
 </details>
 <details class="seo-faq-item">
-<summary>Are deposits automatically forfeit deposits in Catalonia?</summary>
+<summary><h3>Are deposits automatically forfeit deposits in Catalonia?</h3></summary>
 <div>No. The Catalan Civil Code states that the amount paid by the buyer is deemed to be a confirmatory deposit. For it to be a forfeit deposit, this must be expressly agreed.</div>
 </details>
 <details class="seo-faq-item">
-<summary>How much is paid as a deposit in Barcelona?</summary>
+<summary><h3>How much is paid as a deposit in Barcelona?</h3></summary>
 <div>The law does not set a mandatory percentage. In many residential transactions, around 10% of the price is used as a reference, but buyer and seller can agree a different amount.</div>
 </details>
 <details class="seo-faq-item">
-<summary>Do I lose the deposit if the bank does not approve my mortgage?</summary>
+<summary><h3>Do I lose the deposit if the bank does not approve my mortgage?</h3></summary>
 <div>Not necessarily. In Catalonia, if the contract provides for financing through a credit institution, the buyer may have the right to withdraw and recover the amounts paid when they provide documentary evidence of the institution's refusal within the agreed period, unless otherwise agreed or the buyer has been negligent.</div>
 </details>
 <details class="seo-faq-item">
-<summary>What happens if the seller changes their mind?</summary>
+<summary><h3>What happens if the seller changes their mind?</h3></summary>
 <div>If forfeit deposits have been properly agreed and the seller withdraws, they must return double the amount received.</div>
 </details>
 <details class="seo-faq-item">
-<summary>Is it mandatory to sign a deposit contract to buy a home?</summary>
+<summary><h3>Is it mandatory to sign a deposit contract to buy a home?</h3></summary>
 <div>No. A deposit contract is not mandatory, although it is commonly used where there is a period between agreeing the purchase and the final signing before a notary.</div>
 </details>
 <details class="seo-faq-item">
-<summary>Can I register the deposit in the Property Registry?</summary>
+<summary><h3>Can I register the deposit in the Property Registry?</h3></summary>
 <div>In Catalonia, there is a specific option for forfeit deposits agreed for a maximum of six months and deposited with a notary. In these cases, they can be recorded in the Property Registry and the property is subject to their repayment on the terms provided by law.</div>
 </details>
 </section>

@@ -159,9 +159,9 @@ natSeoArticleId: "b7bca1ea-d979-4258-b30b-bd2deec96cbb"
 <section class="seo-faq-section">
 <h2>Frequently asked questions about real estate investment in Barcelona</h2>
 <details class="seo-faq-item">
-<summary>Which are the most attractive areas to invest in Barcelona in 2026?</summary>
+<summary><h3>Which are the most attractive areas to invest in Barcelona in 2026?</h3></summary>
 <div>
-<p>Eixample, Poblenou-22@, Gr&agrave;cia, La Sagrera-Sant Andreu and Sarri&agrave;-Sant Gervasi offer particularly attractive profiles, although the choice depends on the investor's objective and the specific asset.</p>
+<p>Eixample, Poblenou-22@, Gràcia, La Sagrera-Sant Andreu and Sarrià-Sant Gervasi offer particularly attractive profiles, although the choice depends on the investor's objective and the specific asset.</p>
 <div class="seo-cta-block">
   <p>
     Do you live outside Spain and want to invest in Barcelona with confidence? We help you understand the local market and coordinate the entire process from abroad, with a trusted point of contact in the city.
@@ -173,25 +173,25 @@ natSeoArticleId: "b7bca1ea-d979-4258-b30b-bd2deec96cbb"
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Which area is best for an asset preservation investment?</summary>
+<summary><h3>Which area is best for an asset preservation investment?</h3></summary>
 <div>
-<p>Eixample and Sarri&agrave;-Sant Gervasi tend to attract investors prioritising established assets and prime stock. This does not eliminate risk or guarantee future capital gains, so each property must be analysed individually.</p>
+<p>Eixample and Sarrià-Sant Gervasi tend to attract investors prioritising established assets and prime stock. This does not eliminate risk or guarantee future capital gains, so each property must be analysed individually.</p>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Which areas have the strongest transformation component?</summary>
+<summary><h3>Which areas have the strongest transformation component?</h3></summary>
 <div>
 <p>Poblenou-22@ and La Sagrera-Sant Andreu have an investment case particularly linked to urban transformation, economic activity and infrastructure. This can offer potential, but it also introduces uncertainty regarding timelines and future development.</p>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>What taxes does an investor pay when buying a second-hand home in Catalonia?</summary>
+<summary><h3>What taxes does an investor pay when buying a second-hand home in Catalonia?</h3></summary>
 <div>
 <p>As a general rule, the Property Transfer Tax currently applies a progressive scale of 10%, 11%, 12% and 13% according to value bands. Specific rules apply, including a 20% rate in certain cases involving large-scale landlords and entire residential buildings.</p>
 </div>
 </details>
 <details class="seo-faq-item">
-<summary>Is choosing a good neighbourhood enough to ensure a sound investment?</summary>
+<summary><h3>Is choosing a good neighbourhood enough to ensure a sound investment?</h3></summary>
 <div>
 <p>No. The purchase price, building condition, encumbrances, rental regulation, taxation, renovation and exit strategy can make two properties on the same street entirely different investments.</p>
 </div>

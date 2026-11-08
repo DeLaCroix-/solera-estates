@@ -130,31 +130,31 @@ natSeoArticleId: "1864162e-278c-490c-8b5b-679c289912bd"
 </section><section class="seo-faq-section">
 <h2>Frequently asked questions before selling a luxury home in Barcelona</h2>
 <details class="seo-faq-item">
-<summary>How can I find out what my luxury home in Barcelona is worth?</summary>
+<summary><h3>How can I find out what my luxury home in Barcelona is worth?</h3></summary>
 <p>Request a valuation that explains its references and the differences from your property. It is advisable to distinguish asking prices from verifiable completed transactions and review the location, floor areas, outdoor spaces, condition and building features. A figure without this explanation is insufficient for deciding on the asking price.</p>
 </details>
 <details class="seo-faq-item">
-<summary>Can I sell without publishing photographs or adverts on property portals?</summary>
+<summary><h3>Can I sell without publishing photographs or adverts on property portals?</h3></summary>
 <p>Yes, you can opt for private marketing and agree what information is shared with each interested party. Before choosing this option, specify how buyers will be found and when you will review the strategy. The absence of open advertising does not guarantee a higher price or a faster sale.</p>
 </details>
 <details class="seo-faq-item">
-<summary>How much time should I allow to sell the property?</summary>
+<summary><h3>How much time should I allow to sell the property?</h3></summary>
 <p>There is no single timeframe that can be guaranteed without assessing the property and transaction. Separate preparation, marketing and completion, and plan your personal schedule with some margin. Request an estimate based on explicit assumptions and avoid committing to a move or new purchase based on an unconfirmed sale date.</p>
 </details>
 <details class="seo-faq-item">
-<summary>Is it necessary to renovate a luxury home before selling it?</summary>
+<summary><h3>Is it necessary to renovate a luxury home before selling it?</h3></summary>
 <p>Not necessarily. Compare the current condition with the proposed work, its cost and the time it requires. You can prepare a carefully presented property without renovating the entire home. A major renovation should be assessed as an additional investment, not as a guarantee of recovering the expense.</p>
 </details>
 <details class="seo-faq-item">
-<summary>What happens if the floor area in the deed does not match the floor plan?</summary>
+<summary><h3>What happens if the floor area in the deed does not match the floor plan?</h3></summary>
 <p>It is advisable to clarify the difference before advertising an area. Ask for the documents to be compared and, where necessary, obtain a technical measurement. Do not simply choose the larger figure: identify which area each document describes and which discrepancies require review.</p>
 </details>
 <details class="seo-faq-item">
-<summary>Can I prepare the sale if I live outside Spain?</summary>
+<summary><h3>Can I prepare the sale if I live outside Spain?</h3></summary>
 <p>Yes, you can organise the preparation remotely. Determine who will have access to the property, deal with issues and coordinate viewings. For completion, check the applicable identification and representation requirements in advance. Also review your tax residence and its effect on the transaction.</p>
 </details>
 <details class="seo-faq-item">
-<summary>How can Solera Estates help us decide whether to sell?</summary>
+<summary><h3>How can Solera Estates help us decide whether to sell?</h3></summary>
 <p>At Solera Estates, we support Barcelona property owners in defining their priorities, organising information about the property and assessing preparation proposals. We agree which tasks we undertake and how to coordinate with other professionals, without assuming that marketing, representation or specialist reviews are included.</p>
 </details>
 </section>
